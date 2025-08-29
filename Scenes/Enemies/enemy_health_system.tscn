@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwkwudhsymg3s"]
+
+[ext_resource type="Script" uid="uid://coqxkgyk3ocyp" path="res://Scripts/Enemies/enemy_health_system.gd" id="1_10h62"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqaqd"]
+size = Vector2(34, 33)
+
+[node name="EnemyHealthSystem" type="Area2D" groups=["Enemy"]]
+script = ExtResource("1_10h62")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bqaqd")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

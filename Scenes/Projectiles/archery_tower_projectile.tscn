@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://l3pffiqfhhyy"]
+
+[ext_resource type="Script" uid="uid://ccm0fdtqgvtxf" path="res://Scripts/Projectiles/archery_tower_projectile.gd" id="1_cj3yc"]
+[ext_resource type="Texture2D" uid="uid://c83k5d7wvp3d1" path="res://Art/VisualArt/Towers/Tower 01 - Level 01 - Projectile.png" id="1_toash"]
+[ext_resource type="PackedScene" uid="uid://bssmcnmtaknm6" path="res://Scenes/Projectiles/damage_source.tscn" id="3_cj3yc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13rbg"]
+atlas = ExtResource("1_toash")
+region = Rect2(0, 0, 8, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3gij"]
+atlas = ExtResource("1_toash")
+region = Rect2(8, 0, 8, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urg20"]
+atlas = ExtResource("1_toash")
+region = Rect2(16, 0, 8, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_72juo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13rbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3gij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urg20")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ArcheryTowerProjectile" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_cj3yc")
+speed = 8
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_72juo")
+frame_progress = 0.637898
+
+[node name="DamageSource" parent="." instance=ExtResource("3_cj3yc")]
+position = Vector2(-1, 0)

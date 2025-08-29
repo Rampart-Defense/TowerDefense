@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://fbpnjcks4x0i"]
+
+[ext_resource type="Script" uid="uid://dc5trhvepwc1s" path="res://Scripts/Enemies/enemy.gd" id="1_ujvid"]
+[ext_resource type="Texture2D" uid="uid://bkmh1qucagwam" path="res://Art/VisualArt/Enemies/Clampbeetle.png" id="2_jvvlv"]
+[ext_resource type="PackedScene" uid="uid://dwkwudhsymg3s" path="res://Scenes/Enemies/enemy_health_system.tscn" id="3_mrsmi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrsmi"]
+atlas = ExtResource("2_jvvlv")
+region = Rect2(0, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty621"]
+atlas = ExtResource("2_jvvlv")
+region = Rect2(64, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik4oy"]
+atlas = ExtResource("2_jvvlv")
+region = Rect2(128, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqb5o"]
+atlas = ExtResource("2_jvvlv")
+region = Rect2(192, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_306xk"]
+atlas = ExtResource("2_jvvlv")
+region = Rect2(256, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6agn"]
+atlas = ExtResource("2_jvvlv")
+region = Rect2(320, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq07t"]
+atlas = ExtResource("2_jvvlv")
+region = Rect2(384, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db8je"]
+atlas = ExtResource("2_jvvlv")
+region = Rect2(448, 192, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8hfag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrsmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty621")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ik4oy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqb5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_306xk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6agn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq07t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db8je")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwono"]
+
+[node name="Clampbeetle" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_ujvid")
+movement_speed = 50
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 70.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_8hfag")
+frame_progress = 0.146337
+
+[node name="PathUpdateTimer" type="Timer" parent="."]
+wait_time = 0.7
+
+[node name="CharacterCollision" type="CollisionShape2D" parent="." groups=["Enemy"]]
+shape = SubResource("RectangleShape2D_nwono")
+
+[node name="EnemyHealthSystem" parent="." instance=ExtResource("3_mrsmi")]
+position = Vector2(0, -26)
