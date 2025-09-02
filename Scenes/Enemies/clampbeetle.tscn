@@ -76,7 +76,7 @@ script = ExtResource("1_ujvid")
 movement_speed = 50
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 70.0
+path_desired_distance = 50.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -32)
