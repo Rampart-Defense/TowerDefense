@@ -40,3 +40,5 @@ func _on_path_update_timer_timeout() -> void:
 		move_and_slide()
 	else:
 		velocity = Vector2.ZERO
+		print("Enemy has reached the goal! Deleting enemy...")
+		self.queue_free()
