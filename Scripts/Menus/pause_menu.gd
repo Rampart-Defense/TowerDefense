@@ -13,7 +13,7 @@ func _ready() -> void:
 	visible = false  # start hidden
 		# Instantiate (create an instance of) the scene
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Pause"):
 		if get_tree().paused:
 			resume()

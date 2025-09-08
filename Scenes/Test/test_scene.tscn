@@ -1,25 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpwihjx65sri4"]
 
 [ext_resource type="PackedScene" uid="uid://do1yoeqhppahe" path="res://Scenes/Maps/map_1.tscn" id="1_uvmkt"]
-[ext_resource type="PackedScene" uid="uid://fbpnjcks4x0i" path="res://Scenes/Enemies/clampbeetle.tscn" id="2_436f1"]
 [ext_resource type="PackedScene" uid="uid://84r04x5pvahu" path="res://Scenes/Towers/archery_tower.tscn" id="3_if6mo"]
 [ext_resource type="PackedScene" uid="uid://bbfjispwcoc36" path="res://Scenes/Menus/pause_menu.tscn" id="4_t1ujl"]
+[ext_resource type="PackedScene" uid="uid://cptmjynhr1bk2" path="res://Scenes/Enemies/enemy_spawn.tscn" id="5_xoe5n"]
 
 [node name="TestScene" type="Node2D"]
 
 [node name="Map1" parent="." instance=ExtResource("1_uvmkt")]
-
-[node name="Clampbeetle" parent="." instance=ExtResource("2_436f1")]
-position = Vector2(29, 352)
-
-[node name="Clampbeetle4" parent="." instance=ExtResource("2_436f1")]
-position = Vector2(151, 368)
-
-[node name="Clampbeetle2" parent="." instance=ExtResource("2_436f1")]
-position = Vector2(195, 367)
-
-[node name="Clampbeetle3" parent="." instance=ExtResource("2_436f1")]
-position = Vector2(85, 353)
 
 [node name="Goal" type="Marker2D" parent="."]
 position = Vector2(1141, 445)
@@ -28,10 +16,19 @@ gizmo_extents = 91.1
 [node name="ArcheryTower" parent="." instance=ExtResource("3_if6mo")]
 position = Vector2(381, 226)
 
+[node name="ArcheryTower3" parent="." instance=ExtResource("3_if6mo")]
+position = Vector2(370, 346)
+firing_cooldown = 0.1
+
 [node name="ArcheryTower2" parent="." instance=ExtResource("3_if6mo")]
-position = Vector2(324, 484)
+position = Vector2(322, 513)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_t1ujl")]
 process_mode = 3
+
+[node name="EnemySpawn" parent="." instance=ExtResource("5_xoe5n")]
+position = Vector2(8, 370)
+
+[node name="Enemies" type="Node2D" parent="."]
