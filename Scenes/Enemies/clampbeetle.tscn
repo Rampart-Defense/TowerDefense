@@ -94,4 +94,4 @@ disabled = true
 
 [node name="EnemyHealthSystem" parent="." instance=ExtResource("3_mrsmi")]
 position = Vector2(0, -26)
-maxHealth = 1
+maxHealth = 3
