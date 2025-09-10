@@ -46,14 +46,12 @@ func fire_projectile(target_pos: Vector2) -> void:
 	# esim. animaatio tähän
 	turret.play("Fire")
 	get_tree().current_scene.add_child(projectile)
-	print("pam!")
 	
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	
 	if area.is_in_group("Enemy"):
-		print("iseeu")
 		enemies.append(area)
 		
 		_select_new_target()
@@ -62,12 +60,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	
 	if area.is_in_group("Enemy"):
-		print("byebye")
 		enemies.erase(area)
 		if area == current_target:
 			_select_new_target()
 
 
 func _on_turret_animation_finished() -> void:
-	print("pysähdy!!!!!!")
 	turret.play("Default")

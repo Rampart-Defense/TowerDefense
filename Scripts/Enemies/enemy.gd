@@ -3,11 +3,12 @@ extends CharacterBody2D
 @export var movement_speed = 100
 var goal: Node2D = null
 
-
 #Navigoinnin hoitaa NavigationAgent2D ja Tilesettiin asetettu navigointi.
 @onready var navAgent:  NavigationAgent2D = $NavigationAgent2D 
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D 
 @onready var pathTimer: Timer = $PathUpdateTimer   
+@onready var health_component = $EnemyHealthSystem
+
 
 func _ready() -> void:
 	pathTimer.start()
@@ -40,5 +41,10 @@ func _on_path_update_timer_timeout() -> void:
 		move_and_slide()
 	else:
 		velocity = Vector2.ZERO
-		print("Enemy has reached the goal! Deleting enemy...")
-		self.queue_free()
+		print("Enemy has reached the goal!")
+		# Call the die function on the health component
+		if health_component:
+			health_component.die()
+		else:
+			print("Health component not found, cannot call die().")
+		

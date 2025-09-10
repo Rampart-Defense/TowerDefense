@@ -87,10 +87,10 @@ func _spawn_enemy(index: int):
 	var x_offset = -index * spacing
 	var y_offset = randf_range(-5, 5)  # small random vertical variation
 	enemy.global_position = start_pos + Vector2(x_offset, y_offset)
-	var size = randf_range(0.8, 1.2)
+	#var size = randf_range(0.8, 1.2)
 	
 	#Random Scaling
-	enemy.scale = Vector2(size, size)
+	#enemy.scale = Vector2(size, size)
 
 
 	

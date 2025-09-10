@@ -1,0 +1,47 @@
+{
+  "waves": [
+
+	{
+	  "wave_number": 1,
+	  "enemies": [
+		{
+		  "enemy_type": "clampbeetle",
+		  "count": 3,
+		  "spawn_delay": 0.1,
+		  "delay_before_spawn": 0
+
+		},
+		{
+		  	"enemy_type": "clampbeetle",
+		  	"count": 4,
+		  	"spawn_delay": 0.9,
+			"delay_before_spawn": 10
+		},
+
+	  ]
+	},
+	{
+	  "wave_number": 2,
+	  "enemies": [
+		{
+		  "enemy_type": "clampbeetle",
+		  "count": 30,
+		  "spawn_delay": 0.2,
+			"delay_before_spawn": 5
+		},
+	  ]
+	},
+	{
+	  "wave_number": 3,
+	  "enemies": [
+	  {
+		  "enemy_type": "clampbeetle",
+		  "count": 20,
+		  "spawn_delay": 0.5,
+			"delay_before_spawn": 5
+
+		},
+	  ]
+	}
+  ]
+}
