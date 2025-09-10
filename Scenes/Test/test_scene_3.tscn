@@ -10,17 +10,13 @@
 
 [node name="Goal" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(736.9, -49.351)
+position = Vector2(736.9, 35.649)
 
 [node name="EnemySpawn" parent="." instance=ExtResource("4_pyiq1")]
 z_index = 2
 position = Vector2(156.758, 179.249)
 
 [node name="Enemies" type="Node" parent="."]
-
-[node name="ArcheryTower" parent="." instance=ExtResource("3_iaq4d")]
-position = Vector2(159, 107)
-scale = Vector2(0.75, 0.75)
 
 [node name="ArcheryTower2" parent="." instance=ExtResource("3_iaq4d")]
 position = Vector2(492, 191)
