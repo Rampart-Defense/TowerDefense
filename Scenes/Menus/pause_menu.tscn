@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c2gno3ouixg3v" path="res://Scripts/Menus/pause_menu.gd" id="1_as6yf"]
 
 [node name="PauseMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -47,5 +48,5 @@ layout_mode = 2
 text = "Exit"
 
 [connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Exit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
