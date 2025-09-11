@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cya8m7wxld6ou"]
+
+[ext_resource type="PackedScene" uid="uid://2ddu6hl4xro4" path="res://Scenes/Maps/map_3.tscn" id="1_obb86"]
+[ext_resource type="PackedScene" uid="uid://84r04x5pvahu" path="res://Scenes/Towers/archery_tower.tscn" id="3_iaq4d"]
+[ext_resource type="Script" uid="uid://b70whad7mc288" path="res://Scripts/Tests/test_button.gd" id="4_dclbm"]
+[ext_resource type="PackedScene" uid="uid://cptmjynhr1bk2" path="res://Scenes/Enemies/enemy_spawn.tscn" id="4_pyiq1"]
+
+[node name="TestScene3" type="Node2D"]
+
+[node name="Map3" parent="." instance=ExtResource("1_obb86")]
+
+[node name="Goal" type="Marker2D" parent="."]
+unique_name_in_owner = true
+z_index = 7
+position = Vector2(736, 41)
+gizmo_extents = 30.0
+
+[node name="EnemySpawn" parent="." instance=ExtResource("4_pyiq1")]
+z_index = 2
+position = Vector2(156.758, 179.249)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="ArcheryTower2" parent="." instance=ExtResource("3_iaq4d")]
+z_index = 3
+position = Vector2(492, 191)
+scale = Vector2(0.75, 0.75)
+
+[node name="ArcheryTower4" parent="." instance=ExtResource("3_iaq4d")]
+z_index = 3
+position = Vector2(159, 111)
+scale = Vector2(0.75, 0.75)
+
+[node name="ArcheryTower3" parent="." instance=ExtResource("3_iaq4d")]
+position = Vector2(195, 329)
+scale = Vector2(0.75, 0.75)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TestButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("4_dclbm")
+
+[connection signal="button_down" from="Control/TestButton" to="Control/TestButton" method="_on_button_down"]
