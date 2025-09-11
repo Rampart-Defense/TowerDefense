@@ -29,6 +29,7 @@ func _ready():
 
 func _on_map_button_pressed(map_path):
 	# This function is now generic and can handle any map
+	GlobalUi.get_node("PauseMenu").can_pause = true
 	get_tree().change_scene_to_file(map_path)
 
 

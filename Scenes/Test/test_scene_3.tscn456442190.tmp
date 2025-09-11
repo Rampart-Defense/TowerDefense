@@ -17,7 +17,9 @@ gizmo_extents = 30.0
 
 [node name="EnemySpawn" parent="." instance=ExtResource("4_pyiq1")]
 z_index = 2
-position = Vector2(-19, 92)
+position = Vector2(156.758, 179.249)
+
+[node name="Enemies" type="Node" parent="."]
 
 [node name="ArcheryTower2" parent="." instance=ExtResource("3_iaq4d")]
 z_index = 3
@@ -30,39 +32,19 @@ position = Vector2(159, 111)
 scale = Vector2(0.75, 0.75)
 
 [node name="ArcheryTower3" parent="." instance=ExtResource("3_iaq4d")]
-position = Vector2(161, 336)
+position = Vector2(195, 329)
 scale = Vector2(0.75, 0.75)
 
 [node name="Control" type="Control" parent="."]
-z_index = 2
 layout_mode = 3
 anchors_preset = 0
-offset_left = 207.0
-offset_top = 68.0
-offset_right = 247.0
-offset_bottom = 108.0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="TestButton" type="Button" parent="Control"]
-z_index = 2
 layout_mode = 0
-offset_left = 72.0
-offset_top = 25.0
-offset_right = 131.0
-offset_bottom = 56.0
-text = "STOP"
+offset_right = 8.0
+offset_bottom = 8.0
 script = ExtResource("4_dclbm")
 
-[node name="Button" type="Button" parent="Control"]
-z_index = 1
-layout_mode = 0
-offset_left = 165.0
-offset_top = 24.0
-offset_right = 208.0
-offset_bottom = 55.0
-scale = Vector2(1.68142, 1.06664)
-text = "Start"
-
-[node name="Enemies" type="Node2D" parent="."]
-
 [connection signal="button_down" from="Control/TestButton" to="Control/TestButton" method="_on_button_down"]
-[connection signal="button_down" from="Control/Button" to="Control/TestButton" method="_on_button_button_down"]
