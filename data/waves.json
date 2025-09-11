@@ -5,17 +5,60 @@
 	  "wave_number": 1,
 	  "enemies": [
 		{
-		  "enemy_type": "clampbeetle",
+		  "enemy_type": "goblinLVL1",
 		  "count": 3,
-		  "spawn_delay": 0.1,
+		  "spawn_delay": 0.5,
 		  "delay_before_spawn": 0
 
 		},
 		{
-		  	"enemy_type": "clampbeetle",
+		  "enemy_type": "goblinLVL2",
+		  "count": 3,
+		  "spawn_delay": 0.5,
+		  "delay_before_spawn": 2
+
+		},
+		{
+		  "enemy_type": "goblinLVL3",
+		  "count": 3,
+		  "spawn_delay": 0.5,
+		  "delay_before_spawn": 4
+
+		},
+		{
+		  "enemy_type": "goblinLVL4",
+		  "count": 3,
+		  "spawn_delay": 0.5,
+		  "delay_before_spawn": 6
+
+		},
+		{
+		  "enemy_type": "goblinLVL5",
+		  "count": 3,
+		  "spawn_delay": 0.5,
+		  "delay_before_spawn": 8
+
+		},
+		{
+		  "enemy_type": "goblinLVL6",
+		  "count": 3,
+		  "spawn_delay": 0.5,
+		  "delay_before_spawn": 10
+
+		},
+		{
+		  "enemy_type": "goblinLVL7",
+		  "count": 3,
+		  "spawn_delay": 0.5,
+		  "delay_before_spawn": 12
+
+		},
+		{
+		  	"enemy_type": "goblinLVL1",
 		  	"count": 4,
 		  	"spawn_delay": 0.9,
-			"delay_before_spawn": 10
+			"delay_before_spawn": 14
+			
 		},
 
 	  ]
@@ -24,10 +67,22 @@
 	  "wave_number": 2,
 	  "enemies": [
 		{
-		  "enemy_type": "clampbeetle",
+		  "enemy_type": "goblinLVL1",
 		  "count": 30,
 		  "spawn_delay": 0.2,
 			"delay_before_spawn": 5
+		},
+		{
+		  	"enemy_type": "goblinLVL2",
+		  	"count": 4,
+		  	"spawn_delay": 0.9,
+			"delay_before_spawn": 10
+		},
+		{
+		  	"enemy_type": "goblinLVL3",
+		  	"count": 4,
+		  	"spawn_delay": 0.9,
+			"delay_before_spawn": 10
 		},
 	  ]
 	},
@@ -35,7 +90,7 @@
 	  "wave_number": 3,
 	  "enemies": [
 	  {
-		  "enemy_type": "clampbeetle",
+		  "enemy_type": "goblinLVL1",
 		  "count": 20,
 		  "spawn_delay": 0.5,
 			"delay_before_spawn": 5

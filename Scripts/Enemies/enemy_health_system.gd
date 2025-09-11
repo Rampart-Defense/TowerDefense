@@ -1,5 +1,6 @@
 extends Area2D
 @export var maxHealth: int = 10
+@export var payout:int = 5
 var currentHealth: int
 var goal_marker: Marker2D = null
 signal died

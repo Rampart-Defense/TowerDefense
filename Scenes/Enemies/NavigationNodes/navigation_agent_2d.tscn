@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://204crpusr8rh"]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D"]
+target_desired_distance = 30.0
+path_postprocessing = 1
+debug_enabled = true

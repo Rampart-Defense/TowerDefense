@@ -8,11 +8,25 @@ var difficulty: Difficulty = Difficulty.MEDIUM
 func set_spawner_location(marker: Node2D):
 	spawner_location = marker
 
-const CLAMPBEETLE = preload("res://Scenes/Enemies/clampbeetle.tscn")
+#Preload enemies
+const goblinLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_1.tscn")
+const goblinLVL2 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_2.tscn")
+const goblinLVL3 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_3.tscn")
+const goblinLVL4 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_4.tscn")
+const goblinLVL5 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_5.tscn")
+const goblinLVL6 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_6.tscn")
+const goblinLVL7 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_7.tscn")
+#waves data
 const WAVES_FILE_PATH = "res://data/waves.json"
 
 var enemy_scenes = {
-	"clampbeetle": CLAMPBEETLE
+	"goblinLVL1": goblinLVL1,
+	"goblinLVL2": goblinLVL2,
+	"goblinLVL3": goblinLVL3,
+	"goblinLVL4": goblinLVL4,
+	"goblinLVL5": goblinLVL5,
+	"goblinLVL6": goblinLVL6,
+	"goblinLVL7": goblinLVL7
 }
 var wave_data = {}
 

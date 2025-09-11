@@ -25,6 +25,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 		move_and_slide()
+		update_animation()
 
 ## 0.3s timer ja alle hyvä, pidempi aika aiheuttaa ongelmia.
 func _on_path_update_timer_timeout() -> void:
@@ -48,3 +49,17 @@ func _on_path_update_timer_timeout() -> void:
 		else:
 			print("Health component not found, cannot call die().")
 		
+func update_animation() -> void:
+	if velocity.length_squared() > 0:
+		if abs(velocity.x) > abs(velocity.y):
+			if velocity.x > 0:
+				animation.play("walk_right")
+			else:
+				animation.play("walk_left")
+		else:
+			if velocity.y > 0:
+				animation.play("walk_down")
+			else:
+				animation.play("walk_up")
+	else:
+		animation.play("idle")

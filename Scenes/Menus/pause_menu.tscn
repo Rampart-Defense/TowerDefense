@@ -47,5 +47,5 @@ layout_mode = 2
 text = "Exit"
 
 [connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Exit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Exit" to="." method="_on_quit_pressed"]
