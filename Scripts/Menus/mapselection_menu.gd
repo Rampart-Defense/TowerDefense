@@ -30,6 +30,9 @@ func _ready():
 func _on_map_button_pressed(map_path):
 	# This function is now generic and can handle any map
 	GlobalUi.get_node("PauseMenu").can_pause = true
+	PlayerStats.start_game("MEDIUM") # TODO tälle pitäis olla oma pop up valita EASY/MEDIUM/ HARD 
+	
+	
 	get_tree().change_scene_to_file(map_path)
 
 

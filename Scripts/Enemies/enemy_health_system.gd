@@ -1,6 +1,7 @@
 extends Area2D
 @export var maxHealth: int = 10
-@export var payout:int = 5
+@export var payout: int = 5
+@export var points: int = 5
 var currentHealth: int
 var goal_marker: Marker2D = null
 signal died
@@ -20,6 +21,8 @@ func die() -> void:
 	else:
 		emit_signal("died")
 		queue_free()
+	PlayerStats.add_points(points)
+	PlayerStats.add_money(payout)
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("damageSource"):

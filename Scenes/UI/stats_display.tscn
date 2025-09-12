@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://h4mwmxm7m5pj"]
+
+[ext_resource type="Script" uid="uid://c23iwhhsyvxow" path="res://Scripts/Player/stats_display.gd" id="1_kmca8"]
+
+[node name="StatsDisplay" type="Control"]
+layout_mode = 3
+anchor_left = 0.715
+anchor_top = 0.037
+anchor_right = 0.979
+anchor_bottom = 0.173
+offset_left = -247.68
+offset_top = -23.976
+offset_right = -551.808
+offset_bottom = -112.104
+grow_horizontal = 2
+script = ExtResource("1_kmca8")
+
+[node name="MoneyLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 240.0
+offset_top = 16.0
+offset_right = 316.0
+offset_bottom = 39.0
+text = "MONEY: 0"
+
+[node name="PointsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 16.0
+offset_right = 428.0
+offset_bottom = 39.0
+text = "POINTS: 0"
+
+[node name="HealthLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 448.0
+offset_top = 16.0
+offset_right = 533.0
+offset_bottom = 39.0
+grow_horizontal = 2
+text = "Health: 0/0"
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 64.0
+offset_right = 552.0
+offset_bottom = 91.0

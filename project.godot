@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Waves="*res://Scripts/Waves/wavemanager.gd"
 GlobalUi="*res://Scenes/Menus/global_ui.tscn"
+PlayerStats="*res://Scripts/Player/PlayerStats.gd"
 
 [input]
 
