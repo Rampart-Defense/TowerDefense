@@ -51,7 +51,12 @@ text = "start HARD PlayerStats"
 layout_mode = 2
 text = "reset PlayerStats"
 
+[node name="Free money" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "FREE MONEY"
+
 [connection signal="button_down" from="Panel/VBoxContainer/StopWavesButton" to="." method="_on_stop_waves_button_button_down"]
 [connection signal="button_down" from="Panel/VBoxContainer/StartWavesButton" to="." method="_on_start_waves_button_button_down"]
 [connection signal="button_down" from="Panel/VBoxContainer/HARD stats" to="." method="_on_hard_stats_button_down"]
 [connection signal="button_down" from="Panel/VBoxContainer/reset player stats" to="." method="_on_reset_player_stats_button_down"]
+[connection signal="button_down" from="Panel/VBoxContainer/Free money" to="." method="_on_free_money_button_down"]

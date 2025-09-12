@@ -17,3 +17,7 @@ func _on_reset_player_stats_button_down() -> void:
 	PlayerStats.set_money(0)
 	PlayerStats.set_points(0)
 	PlayerStats.set_current_health(PlayerStats.get_max_health())
+
+
+func _on_free_money_button_down() -> void:
+	PlayerStats.add_money(200)

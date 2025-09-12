@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://qcjcoo3nif0m"]
+
+[ext_resource type="PackedScene" uid="uid://dvgmkrlkllw5w" path="res://Scenes/UI/tower_shop_panel.tscn" id="1_obd1k"]
+
+[node name="TowerShop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.822
+anchor_top = 0.316
+anchor_right = 0.97
+anchor_bottom = 0.934
+offset_left = 0.0559692
+offset_top = -8.76801
+offset_right = -11.4401
+offset_bottom = -6.23199
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 157.0
+offset_bottom = 404.0
+alignment = 1
+last_wrap_alignment = 2
+reverse_fill = true
+
+[node name="TowerShopPanel" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+layout_mode = 2
+
+[node name="TowerShopPanel9" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+layout_mode = 2
+
+[node name="TowerShopPanel10" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+layout_mode = 2
+
+[node name="TowerShopPanel11" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+layout_mode = 2
+
+[node name="TowerShopPanel12" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+layout_mode = 2
+
+[node name="TowerShopPanel2" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+layout_mode = 2
+
+[node name="TowerShopPanel3" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+layout_mode = 2
+
+[node name="TowerShopPanel4" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+layout_mode = 2
+
+[node name="TowerShopPanel5" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+layout_mode = 2
+
+[node name="TowerShopPanel6" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+layout_mode = 2
+
+[node name="TowerShopPanel7" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+layout_mode = 2
+
+[node name="TowerShopPanel8" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+layout_mode = 2

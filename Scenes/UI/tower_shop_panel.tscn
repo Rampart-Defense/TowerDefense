@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvgmkrlkllw5w"]
+
+[ext_resource type="Script" uid="uid://d0k3gq2bdrkf" path="res://Scripts/UI/tower_shop_panel.gd" id="1_fc6fk"]
+[ext_resource type="Texture2D" uid="uid://dotyjp2gjwe5q" path="res://Art/VisualArt/Towers/Tower 01.png" id="2_hr75y"]
+
+[node name="TowerShopPanel" type="Panel"]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_fc6fk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(32, 24)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hr75y")
+hframes = 3
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxrwmwvr76mrf"]
+[gd_scene load_steps=5 format=3 uid="uid://cdiq4fn17upk0"]
 
 [ext_resource type="PackedScene" uid="uid://2ddu6hl4xro4" path="res://Scenes/Maps/map_3.tscn" id="1_8lvo6"]
 [ext_resource type="PackedScene" uid="uid://84r04x5pvahu" path="res://Scenes/Towers/archery_tower.tscn" id="3_7cjyd"]

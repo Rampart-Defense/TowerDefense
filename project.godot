@@ -21,6 +21,10 @@ Waves="*res://Scripts/Waves/wavemanager.gd"
 GlobalUi="*res://Scenes/Menus/global_ui.tscn"
 PlayerStats="*res://Scripts/Player/PlayerStats.gd"
 
+[global_group]
+
+map="group a tilemap to find it(tower placement needs this)"
+
 [input]
 
 Pause={
