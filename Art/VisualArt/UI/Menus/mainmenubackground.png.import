@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f23i8o1if2me"
-path="res://.godot/imported/AIroad.png-43f3240356fbfb3d481153f4bf3fbe54.ctex"
+uid="uid://c2cxurfxfk8bc"
+path="res://.godot/imported/mainmenubackground.png-d81a6463b68e2354bc36ebce6c3a3ecf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/VisualArt/Tilesets/AIroad.png"
-dest_files=["res://.godot/imported/AIroad.png-43f3240356fbfb3d481153f4bf3fbe54.ctex"]
+source_file="res://Art/VisualArt/UI/Menus/mainmenubackground.png"
+dest_files=["res://.godot/imported/mainmenubackground.png-d81a6463b68e2354bc36ebce6c3a3ecf.ctex"]
 
 [params]
 

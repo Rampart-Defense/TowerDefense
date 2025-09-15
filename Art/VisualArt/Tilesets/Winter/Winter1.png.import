@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqon4wuixh06v"
-path="res://.godot/imported/Animated water tiles.png-d5a26697bd0371296ca93683f91ccdab.ctex"
+uid="uid://dtu671b0jv0b8"
+path="res://.godot/imported/Winter1.png-896bc7f0c18b372b740c4326ea017711.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/VisualArt/Tilesets/Animated water tiles.png"
-dest_files=["res://.godot/imported/Animated water tiles.png-d5a26697bd0371296ca93683f91ccdab.ctex"]
+source_file="res://Art/VisualArt/Tilesets/Winter/Winter1.png"
+dest_files=["res://.godot/imported/Winter1.png-896bc7f0c18b372b740c4326ea017711.ctex"]
 
 [params]
 

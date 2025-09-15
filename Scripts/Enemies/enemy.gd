@@ -1,59 +1,64 @@
 extends CharacterBody2D
 
-@export var movement_speed = 100
+@export var movement_speed = 100.0
 @export var damage: int = 1
 
-var goal: Node2D = null
+# A small buffer for checking if we've reached the end of the path.
+var reached_distance = 5
 
-#Navigoinnin hoitaa NavigationAgent2D ja Tilesettiin asetettu navigointi.
-@onready var navAgent:  NavigationAgent2D = $NavigationAgent2D 
-@onready var animation: AnimatedSprite2D = $AnimatedSprite2D 
-@onready var pathTimer: Timer = $PathUpdateTimer   
+@onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 
+var path_follower: PathFollow2D = null
+var previous_position: Vector2 = Vector2.ZERO
 
-
-func _ready() -> void:
-	pathTimer.start()
-	pathTimer.one_shot = false
-	pathTimer.timeout.connect(_on_path_update_timer_timeout)
-	animation.play()
-	goal = get_tree().get_current_scene().get_node("Goal")
-	if goal == null:
-		push_error("Enemy could not find a node named 'goal' in the current scene!")
+func _ready():
+	# Find the Path2D node in the current scene.
+	var path_node = get_tree().get_current_scene().get_node("Path2D")
+	if not path_node:
+		push_error("Could not find a Path2D node named 'Path2D' in the current scene!")
 		return
-	navAgent.target_position = goal.position
-	print("Enemy goal set to: ", goal.position)
+	
+	# Create a PathFollow2D node to handle movement along the path.
+	path_follower = PathFollow2D.new()
+	path_follower.h_offset = 0 # Ensure the enemy starts at the beginning of the path.
+	
+	# Add the PathFollow2D to the Path2D node in the scene tree.
+	path_node.add_child(path_follower)
+	
+	# Make the enemy a child of the PathFollow2D for movement.
+	path_follower.add_child(self)
+	
+	# Set the enemy's position to the beginning of the path.
+	global_position = path_follower.global_position
+	previous_position = global_position
 
 
 func _physics_process(_delta: float) -> void:
-		move_and_slide()
-		update_animation()
-
-## 0.3s timer ja alle hyvä, pidempi aika aiheuttaa ongelmia.
-func _on_path_update_timer_timeout() -> void:
-	if goal == null:
+	if not path_follower:
 		return
-	if not navAgent.is_navigation_finished():
-		var next_pos = navAgent.get_next_path_position()
-		if next_pos == null:
-			push_error("NavigationAgent2D returned null for next path position!")
-			velocity = Vector2.ZERO
-			return
-		var nav_direction = to_local(next_pos).normalized()
-		velocity = nav_direction * movement_speed
-		move_and_slide()
-	else:
-		#Enemy reached the goal
-		velocity = Vector2.ZERO
+		
+	# Move the enemy along the path using the PathFollow2D's progress.
+	path_follower.progress += movement_speed * _delta
+	
+	# The enemy's position is automatically updated by the PathFollow2D.
+	# Calculate the enemy's velocity for animation.
+	var current_position = path_follower.global_position
+	velocity = (current_position - previous_position) / _delta
+	previous_position = current_position
+	update_animation(velocity)
+	move_and_slide()
+	# Check if we have reached the end of the path.
+	var path_length = path_follower.get_parent().get_curve().get_baked_length()
+	if path_follower.progress >= path_length - reached_distance:
 		enemy_win()
-		
-		
+
+
 func enemy_win():
 	PlayerStats.damage_player(damage)
 	print("Enemy has reached the goal!")
 	queue_free()
 
-func update_animation() -> void:
+func update_animation(velocity: Vector2) -> void:
 	if velocity.length_squared() > 0:
 		if abs(velocity.x) > abs(velocity.y):
 			if velocity.x > 0:

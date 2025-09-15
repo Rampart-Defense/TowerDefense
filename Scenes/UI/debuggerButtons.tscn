@@ -55,6 +55,18 @@ text = "reset PlayerStats"
 layout_mode = 2
 text = "FREE MONEY"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -8.575
+anchor_top = 1.325
+anchor_right = -8.575
+anchor_bottom = 1.325
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+text = "FPS: null"
+
 [connection signal="button_down" from="Panel/VBoxContainer/StopWavesButton" to="." method="_on_stop_waves_button_button_down"]
 [connection signal="button_down" from="Panel/VBoxContainer/StartWavesButton" to="." method="_on_start_waves_button_button_down"]
 [connection signal="button_down" from="Panel/VBoxContainer/HARD stats" to="." method="_on_hard_stats_button_down"]

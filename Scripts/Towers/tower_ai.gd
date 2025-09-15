@@ -8,11 +8,12 @@ extends Node2D
 @export var firing_point: Marker2D #Kannattaa olla turretin lapsi niin pysyy oikealla kohdalla.
 @export var rotating: bool = false #Kääntyykö turret?
 @export var fire_timer: Timer 
-@export var footprint_size := Vector2(2, 4) # width x height in tiles
+@export var footprint_size: int = 32 # width x height in tiles
 
 var enemies: Array = [] # kaikki havaitut viholliset
 var current_target: Node2D = null
 var can_fire: bool = true
+var placing_tower = false
 
 # --- TILEMAP FOR PLACEMENT CHECK ---
 var tilemap: TileMapLayer = null
@@ -35,14 +36,15 @@ func _ready() -> void:
 		print("No tilemap found in 'map' group!")
 
 func _on_fire_timer_timeout() -> void:
-	if current_target and is_instance_valid(current_target):
-		# käännä tykki kohti vihollista jos pitää (rotating turret towards enemy)
-		if rotating:
-			var to_enemy = current_target.global_position - global_position
-			turret.rotation = to_enemy.angle() + deg_to_rad(90)
+	if not placing_tower:
+		if current_target and is_instance_valid(current_target):
+			# käännä tykki kohti vihollista jos pitää (rotating turret towards enemy)
+			if rotating:
+				var to_enemy = current_target.global_position - global_position
+				turret.rotation = to_enemy.angle() + deg_to_rad(90)
 
-		# ammu
-		fire_projectile(current_target.global_position)
+			# ammu
+			fire_projectile(current_target.global_position)
 
 
 func _select_new_target() -> void:
@@ -64,11 +66,11 @@ func fire_projectile(target_pos: Vector2) -> void:
 
 func can_place() -> bool:
 	# 1) Outside map check
-	if is_outside_map(32, 32):
+	if is_outside_map(footprint_size, footprint_size):
 		return false
 	
 	# 2) Road & NoBuild check
-	if is_on_blocked_area(32, 32): # footprint size
+	if is_on_blocked_area(footprint_size, footprint_size): # footprint size 32 for our basic towers
 		return false
 
 	# 3) Tower overlap check
@@ -83,7 +85,7 @@ func can_place() -> bool:
 	return true
 
 
-func is_on_blocked_area(base_w := 32, base_h := 32) -> bool:
+func is_on_blocked_area(base_w := 32.0, base_h := 32.0) -> bool:
 	var maps = get_tree().get_nodes_in_group("map")
 	if maps.size() == 0:
 		return false
@@ -91,7 +93,7 @@ func is_on_blocked_area(base_w := 32, base_h := 32) -> bool:
 	# Go inside Map3 -> TilemapLayers
 	var layers_node = maps[0].get_node_or_null("TileMapLayers")
 	if layers_node == null:
-		print("No TilemapLayers node found! Make sure to type it as TileMapLayers (uppercase T, M, and L)")
+		print("No TileMapLayers node found! Make sure to type it as TileMapLayers (uppercase T, M, and L)")
 		return false
 
 	# Check both Path and NoBuild
@@ -135,7 +137,7 @@ func is_outside_map(base_w := 32, base_h := 32) -> bool:
 	if layers_node == null:
 		return true
 
-	# Assume "Grass" layer is the main buildable area
+	
 	var grass_layer: TileMapLayer = layers_node.get_node_or_null("Grass")
 	if grass_layer == null:
 		return true

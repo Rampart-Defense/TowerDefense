@@ -1,6 +1,6 @@
 extends Node
 
-var spawner_location: Marker2D = null
+
 
 enum Difficulty { EASY, MEDIUM, HARD }
 var difficulty: Difficulty = Difficulty.MEDIUM
@@ -10,9 +10,6 @@ var is_spawning_stopped = false
 # A reference to the Node2D where enemies will be spawned.
 var enemies_container: Node2D = null
 var current_session_id: int = 0
-
-func set_spawner_location(marker: Node2D):
-	spawner_location = marker
 
 #Preload enemies
 const goblinLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_1.tscn")
@@ -131,7 +128,6 @@ func spawn_single_enemy(enemy_type: String) -> void:
 	if enemy_scenes.has(enemy_type):
 		var enemy_scene = enemy_scenes[enemy_type]
 		var new_enemy = enemy_scene.instantiate()
-		new_enemy.global_position = spawner_location.global_position
 		# Add the new enemy to the "enemies" group for easy management.
 		new_enemy.add_to_group("enemies")
 		

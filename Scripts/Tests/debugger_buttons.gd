@@ -1,5 +1,9 @@
 extends Control
 
+@onready var fps_label = $Label
+
+func _process(delta: float) -> void:
+	fps_label.text = "FPS: %d" % Engine.get_frames_per_second()
 
 func _on_stop_waves_button_button_down() -> void:
 	Waves.stop_spawning_and_clear_enemies()

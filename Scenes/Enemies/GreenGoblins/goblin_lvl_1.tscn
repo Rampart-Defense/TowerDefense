@@ -1,8 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://bfagwosuguabo"]
+[gd_scene load_steps=32 format=3 uid="uid://bfagwosuguabo"]
 
 [ext_resource type="Script" uid="uid://dc5trhvepwc1s" path="res://Scripts/Enemies/enemy.gd" id="1_1g0jq"]
 [ext_resource type="Texture2D" uid="uid://deske5vjkqb7j" path="res://Art/VisualArt/Enemies/GreenGoblins/GoblinLVL1/goblin-tribesman-walk.png" id="2_3jbwf"]
-[ext_resource type="PackedScene" uid="uid://204crpusr8rh" path="res://Scenes/Enemies/NavigationNodes/navigation_agent_2d.tscn" id="2_jwh6u"]
 [ext_resource type="Script" uid="uid://coqxkgyk3ocyp" path="res://Scripts/Enemies/enemy_health_system.gd" id="3_jwh6u"]
 [ext_resource type="PackedScene" uid="uid://citrekiwb17ph" path="res://Scenes/Enemies/NavigationNodes/path_update_timer.tscn" id="5_yko8s"]
 
@@ -217,7 +216,6 @@ z_index = 2
 texture_filter = 1
 safe_margin = 0.001
 script = ExtResource("1_1g0jq")
-movement_speed = 50
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
@@ -232,8 +230,6 @@ payout = 2
 
 [node name="Hitbox" type="CollisionShape2D" parent="EnemyHealthSystem"]
 shape = SubResource("RectangleShape2D_bqaqd")
-
-[node name="NavigationAgent2D" parent="." instance=ExtResource("2_jwh6u")]
 
 [node name="PathUpdateTimer" parent="." instance=ExtResource("5_yko8s")]
 

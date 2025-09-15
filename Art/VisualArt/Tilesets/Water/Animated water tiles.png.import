@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2cxurfxfk8bc"
-path="res://.godot/imported/mainmenubackground.png-580e85e1f9926bfa1a84c964cd0f00e0.ctex"
+uid="uid://cqon4wuixh06v"
+path="res://.godot/imported/Animated water tiles.png-da4a48a871460be9e211b83887ffc448.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/VisualArt/Menus/mainmenubackground.png"
-dest_files=["res://.godot/imported/mainmenubackground.png-580e85e1f9926bfa1a84c964cd0f00e0.ctex"]
+source_file="res://Art/VisualArt/Tilesets/Water/Animated water tiles.png"
+dest_files=["res://.godot/imported/Animated water tiles.png-da4a48a871460be9e211b83887ffc448.ctex"]
 
 [params]
 

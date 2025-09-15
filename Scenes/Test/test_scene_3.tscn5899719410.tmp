@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cya8m7wxld6ou"]
+
+[ext_resource type="PackedScene" uid="uid://2ddu6hl4xro4" path="res://Scenes/Maps/map_3.tscn" id="1_obb86"]
+[ext_resource type="PackedScene" uid="uid://cptmjynhr1bk2" path="res://Scenes/Enemies/enemy_spawn.tscn" id="4_pyiq1"]
+[ext_resource type="PackedScene" uid="uid://baeo8tirve5fm" path="res://Scenes/UI/debuggerButtons.tscn" id="5_5rdvp"]
+
+[node name="TestScene3" type="Node2D"]
+
+[node name="Map3" parent="." instance=ExtResource("1_obb86")]
+position = Vector2(0, -8)
+scale = Vector2(1.5, 1.5)
+
+[node name="Goal" type="Marker2D" parent="."]
+unique_name_in_owner = true
+z_index = 7
+position = Vector2(1104, -16)
+gizmo_extents = 30.0
+
+[node name="EnemySpawn" parent="." instance=ExtResource("4_pyiq1")]
+z_index = 2
+position = Vector2(-24, 136)
+goal_path_node = null
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Debugger" parent="." instance=ExtResource("5_5rdvp")]
+offset_left = 464.0
+offset_top = 248.0
+offset_right = 504.0
+offset_bottom = 288.0
+
+[node name="Towers" type="Node2D" parent="."]

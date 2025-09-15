@@ -28,5 +28,6 @@ func _on_exit_pressed() -> void:
 	
 	get_tree().paused = false # Unpause the game tree
 	Waves.stop_spawning_and_clear_enemies()
+
 	get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
 	

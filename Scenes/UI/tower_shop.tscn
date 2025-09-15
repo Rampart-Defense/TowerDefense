@@ -1,14 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://qcjcoo3nif0m"]
+[gd_scene load_steps=7 format=3 uid="uid://qcjcoo3nif0m"]
 
+[ext_resource type="Script" uid="uid://dht7aprvbd7h1" path="res://Scripts/UI/tower_shop.gd" id="1_bhdn4"]
 [ext_resource type="PackedScene" uid="uid://dvgmkrlkllw5w" path="res://Scenes/UI/tower_shop_panel.tscn" id="1_obd1k"]
+[ext_resource type="Texture2D" uid="uid://bnig08qvay1gd" path="res://Art/VisualArt/UI/Buttons/BuildButton.png" id="2_xb3fm"]
+[ext_resource type="Texture2D" uid="uid://c8hwaroslpx5r" path="res://Art/VisualArt/UI/Buttons/BuildButtonPressed.png" id="3_bhdn4"]
+[ext_resource type="Texture2D" uid="uid://b7y2ccxtvvfct" path="res://Art/VisualArt/UI/Buttons/BuildButtonHover.png" id="4_hxpkr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhdn4"]
+texture = ExtResource("2_xb3fm")
+expand_margin_left = 5.0
+expand_margin_top = 20.0
+expand_margin_right = 5.0
+expand_margin_bottom = 15.0
 
 [node name="TowerShop" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+script = ExtResource("1_bhdn4")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -24,9 +32,10 @@ offset_bottom = -6.23199
 
 [node name="FlowContainer" type="FlowContainer" parent="Panel"]
 layout_mode = 0
-offset_top = -2.0
-offset_right = 157.0
-offset_bottom = 404.0
+offset_left = 1.94403
+offset_top = 108.768
+offset_right = 158.944
+offset_bottom = 514.768
 alignment = 1
 last_wrap_alignment = 2
 reverse_fill = true
@@ -39,6 +48,7 @@ layout_mode = 2
 
 [node name="TowerShopPanel10" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bhdn4")
 
 [node name="TowerShopPanel11" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
 layout_mode = 2
@@ -66,3 +76,15 @@ layout_mode = 2
 
 [node name="TowerShopPanel8" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
 layout_mode = 2
+
+[node name="ShowShopButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = -19.0
+offset_right = 141.0
+offset_bottom = 109.0
+texture_normal = ExtResource("2_xb3fm")
+texture_pressed = ExtResource("3_bhdn4")
+texture_hover = ExtResource("4_hxpkr")
+
+[connection signal="pressed" from="ShowShopButton" to="." method="_on_show_shop_button_pressed"]

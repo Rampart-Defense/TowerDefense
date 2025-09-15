@@ -1,7 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://bwxxjd7ru2x3i"]
+[gd_scene load_steps=32 format=3 uid="uid://bwxxjd7ru2x3i"]
 
 [ext_resource type="Script" uid="uid://dc5trhvepwc1s" path="res://Scripts/Enemies/enemy.gd" id="1_1twr8"]
-[ext_resource type="PackedScene" uid="uid://204crpusr8rh" path="res://Scenes/Enemies/NavigationNodes/navigation_agent_2d.tscn" id="2_83fsw"]
 [ext_resource type="Texture2D" uid="uid://d5m7wohxnvxs" path="res://Art/VisualArt/Enemies/GreenGoblins/GoblinLVL2/goblin-huntsman-walk.png" id="2_d4ihp"]
 [ext_resource type="Script" uid="uid://coqxkgyk3ocyp" path="res://Scripts/Enemies/enemy_health_system.gd" id="2_ht2c7"]
 [ext_resource type="PackedScene" uid="uid://citrekiwb17ph" path="res://Scenes/Enemies/NavigationNodes/path_update_timer.tscn" id="5_83fsw"]
@@ -217,9 +216,7 @@ z_index = 2
 texture_filter = 1
 safe_margin = 0.001
 script = ExtResource("1_1twr8")
-movement_speed = 50
-
-[node name="NavigationAgent2D" parent="." instance=ExtResource("2_83fsw")]
+movement_speed = 150.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)

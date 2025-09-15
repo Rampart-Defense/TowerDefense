@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8ohjjn8ph1ls"
-path="res://.godot/imported/mock.png-e28973036d68c78745b90a364df99f37.ctex"
+uid="uid://8w63mqt8r7bf"
+path="res://.godot/imported/Autumn1.png-ce0f519bb8a47e357c7c83038b5a160d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/VisualArt/Tilesets/mock.png"
-dest_files=["res://.godot/imported/mock.png-e28973036d68c78745b90a364df99f37.ctex"]
+source_file="res://Art/VisualArt/Tilesets/Autumn/Autumn1.png"
+dest_files=["res://.godot/imported/Autumn1.png-ce0f519bb8a47e357c7c83038b5a160d.ctex"]
 
 [params]
 

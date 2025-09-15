@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diw7yqlnjnopd"
-path="res://.godot/imported/FieldsTileset.png-3cde0cbfb12aa95b81a63bab2446be09.ctex"
+uid="uid://dp1kx71fu0ev"
+path="res://.godot/imported/Shadows.png-d0dbf3b770f627abc7970fd68000a894.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/VisualArt/Tilesets/FieldsTileset.png"
-dest_files=["res://.godot/imported/FieldsTileset.png-3cde0cbfb12aa95b81a63bab2446be09.ctex"]
+source_file="res://Art/VisualArt/Tilesets/Shadows/Shadows.png"
+dest_files=["res://.godot/imported/Shadows.png-d0dbf3b770f627abc7970fd68000a894.ctex"]
 
 [params]
 

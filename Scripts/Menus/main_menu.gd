@@ -6,11 +6,9 @@ func _ready() -> void:
 	#piilota ja estä "pause" käyttö
 	GlobalUi.get_node("PauseMenu").visible = false
 	GlobalUi.get_node("PauseMenu").can_pause = false
+	GlobalUi.get_node("TowerShop").hide_shop()
+	GlobalUi.get_node("StatsDisplay").visible = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Menus/mapselection_menu.tscn")

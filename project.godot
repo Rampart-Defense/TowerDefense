@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Tower Defense"
-run/main_scene="res://Scenes/Maps/map_2.tscn"
+run/main_scene="uid://27qcaq5mvvu7"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 Waves="*res://Scripts/Waves/wavemanager.gd"
 GlobalUi="*res://Scenes/Menus/global_ui.tscn"
 PlayerStats="*res://Scripts/Player/PlayerStats.gd"
+GlobalCamera="*res://Scenes/UI/global_camera.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [global_group]
 
