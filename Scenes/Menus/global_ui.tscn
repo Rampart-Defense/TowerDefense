@@ -1,10 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://xpuirmk86mft"]
+[gd_scene load_steps=4 format=3 uid="uid://xpuirmk86mft"]
 
 [ext_resource type="PackedScene" uid="uid://bbfjispwcoc36" path="res://Scenes/Menus/pause_menu.tscn" id="1_tfgit"]
 [ext_resource type="PackedScene" uid="uid://h4mwmxm7m5pj" path="res://Scenes/UI/stats_display.tscn" id="2_yqihm"]
 [ext_resource type="PackedScene" uid="uid://qcjcoo3nif0m" path="res://Scenes/UI/tower_shop.tscn" id="3_a74lq"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yqihm"]
 
 [node name="GlobalUI" type="CanvasLayer"]
 
@@ -27,11 +25,3 @@ offset_left = -16.5041
 offset_top = -32.056
 offset_right = -187.0
 offset_bottom = -401.416
-
-[node name="Panel" type="Panel" parent="."]
-anchors_preset = -1
-anchor_right = 0.035
-offset_left = 937.0
-offset_right = 1105.68
-offset_bottom = 649.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_yqihm")
