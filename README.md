@@ -2,6 +2,14 @@
 
 A simple and fun Tower Defense game built with Godot game engine.
 
+## How to use
+- Download the latest Godot game engine (This project uses V.4.4.1): https://godotengine.org
+- Clone this repository into your own folder
+- Open the repository folder in Godot
+- play the demo from the debug button (Play button in the top-right corner)
+
+- In the future we will release a playable build of the game here in Github
+
 ## Features
 - Main Menu: A main menu lets you start a new game and access other options.
 - Place towers to defend your base from waves of enemies
