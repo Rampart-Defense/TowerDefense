@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var movement_speed = 100.0
 @export var damage: int = 1
+@onready var health_component = $EnemyHealthSystem
+
 
 # A small buffer for checking if we've reached the end of the path.
 var reached_distance = 5
@@ -56,7 +58,10 @@ func _physics_process(_delta: float) -> void:
 func enemy_win():
 	PlayerStats.damage_player(damage)
 	print("Enemy has reached the goal!")
-	queue_free()
+	if health_component:
+		health_component.die("win")
+	else:
+		print("Health component not found, cannot call die().")
 
 func update_animation(velocity: Vector2) -> void:
 	if velocity.length_squared() > 0:

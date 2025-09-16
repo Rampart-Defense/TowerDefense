@@ -12,17 +12,19 @@ func _ready() -> void:
 func take_damage(amount: int) -> void:
 	currentHealth -= amount
 	if currentHealth <= 0:
-		die()
+		die("no")
 
-func die() -> void:
+func die(win: String) -> void:
+	
 	if owner:
 		emit_signal("died")
 		owner.queue_free()
 	else:
 		emit_signal("died")
 		queue_free()
-	PlayerStats.add_points(points)
-	PlayerStats.add_money(payout)
+	if win != "win":
+		PlayerStats.add_points(points)
+		PlayerStats.add_money(payout)
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("damageSource"):
