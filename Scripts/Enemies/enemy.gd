@@ -4,7 +4,6 @@ extends CharacterBody2D
 @export var damage: int = 1
 @onready var health_component = $EnemyHealthSystem
 
-
 # A small buffer for checking if we've reached the end of the path.
 var reached_distance = 5
 

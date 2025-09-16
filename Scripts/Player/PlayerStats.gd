@@ -27,7 +27,7 @@ func start_game(difficulty: String):
 	set_current_health(_max_health)
 	set_points(0)
 
-# --- SETTERS AND GETTERT ---
+# --- SETTERS AND GETTERS ---
 
 
 # --- HEALTH ---
