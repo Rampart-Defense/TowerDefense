@@ -13,25 +13,22 @@ point_count = 8
 
 [node name="Winter map" parent="." groups=["map"] instance=ExtResource("1_1lb32")]
 position = Vector2(0, -8)
-scale = Vector2(1.47, 1.47)
 
 [node name="Enemies" type="Node2D" parent="."]
 z_index = 2
 scale = Vector2(1.47, 1.47)
 
 [node name="Debugger" parent="." instance=ExtResource("4_djkqo")]
-offset_left = 216.327
-offset_top = -36.8056
-offset_right = 256.327
-offset_bottom = 3.19444
-scale = Vector2(0.5, 0.5)
+offset_left = 670.0
+offset_top = 242.0
+offset_right = 710.0
+offset_bottom = 266.0
 
 [node name="Towers" type="Node2D" parent="."]
 z_as_relative = false
 texture_filter = 1
-scale = Vector2(1.47, 1.47)
 
 [node name="Path2D" type="Path2D" parent="."]
 z_index = 10
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.47, 1.47)
 curve = SubResource("Curve2D_7fevf")

@@ -80,7 +80,7 @@ corner_radius_bottom_left = 450
 [node name="ArcheryTower" type="Node2D" node_paths=PackedStringArray("turret", "firing_point", "fire_timer")]
 z_index = 1
 texture_filter = 1
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_pdlmi")
 projectile_scene = ExtResource("2_p7nk1")
 turret = NodePath("Turret")

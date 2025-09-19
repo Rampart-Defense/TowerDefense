@@ -9771,6 +9771,7 @@ texture = ExtResource("3_ac51v")
 sources/0 = SubResource("TileSetAtlasSource_7qy6t")
 
 [node name="Winter map" type="Node2D"]
+scale = Vector2(1.47, 1.47)
 
 [node name="TileMapLayers" type="Node2D" parent="."]
 
