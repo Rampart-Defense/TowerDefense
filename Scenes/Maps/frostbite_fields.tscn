@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3r1que71svqm"]
+
+[ext_resource type="PackedScene" uid="uid://3eiilcsr0v31" path="res://Scenes/Maps/winter map.tscn" id="1_1lb32"]
+[ext_resource type="PackedScene" uid="uid://baeo8tirve5fm" path="res://Scenes/UI/debuggerButtons.tscn" id="4_djkqo"]
+
+[sub_resource type="Curve2D" id="Curve2D_7fevf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 304, 3, 0, 0, 0, 0, 305, 92, 0, 0, 0, 0, 129, 96, 0, 0, 0, 0, 131, 363, 0, 0, 0, 0, 652, 367, 0, 0, 0, 0, 653, 98, 0, 0, 0, 0, 484, 95, 0, 0, 0, 0, 483, 5)
+}
+point_count = 8
+
+[node name="Frostbite Fields" type="Node2D"]
+position = Vector2(-1, 0)
+
+[node name="Winter map" parent="." groups=["map"] instance=ExtResource("1_1lb32")]
+position = Vector2(1, 1)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Debugger" parent="." instance=ExtResource("4_djkqo")]
+offset_left = 216.327
+offset_top = -36.8056
+offset_right = 256.327
+offset_bottom = 3.19444
+scale = Vector2(0.5, 0.5)
+
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="."]
+z_index = 10
+curve = SubResource("Curve2D_7fevf")
