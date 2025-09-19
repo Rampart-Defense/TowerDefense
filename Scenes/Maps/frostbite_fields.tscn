@@ -10,7 +10,6 @@ _data = {
 point_count = 8
 
 [node name="Frostbite Fields" type="Node2D"]
-position = Vector2(-1, 0)
 
 [node name="Winter map" parent="." groups=["map"] instance=ExtResource("1_1lb32")]
 position = Vector2(1, 1)
