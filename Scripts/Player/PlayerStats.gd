@@ -20,7 +20,8 @@ func start_game(difficulty: String):
 			set_max_health(10)
 			set_current_health(100)
 			set_money(300)
-		_: # Default case for "EASY" or any other string
+		# Default case for "EASY" or any other string
+		"EASY":	
 			set_max_health(200)
 			set_money(500)
 	
