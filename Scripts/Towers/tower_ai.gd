@@ -138,7 +138,7 @@ func is_outside_map(base_w := 32, base_h := 32) -> bool:
 		return true
 
 	
-	var grass_layer: TileMapLayer = layers_node.get_node_or_null("Grass")
+	var grass_layer: TileMapLayer = layers_node.get_node_or_null("Background")
 	if grass_layer == null:
 		return true
 
