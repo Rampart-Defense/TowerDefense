@@ -9,6 +9,9 @@ var is_spawning_stopped = false
 var enemies_container: Node2D = null
 var current_session_id: int = 0
 
+var paths: Array[Path2D] = []
+var current_path_index = 0
+
 #Preload enemies
 const goblinLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_1.tscn")
 const goblinLVL2 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_2.tscn")
@@ -62,9 +65,24 @@ func begin() -> void:
 			print("Error: 'Enemies' Node2D not found in the scene tree. Spawning will not work.")
 			return
 		
+		get_paths()
+		
 		start_wave()
 	else:
 		print("Error: Failed to parse JSON data.")
+
+func get_paths() -> void:
+	  # FIND THE PATHS IN THE SCENE TREE
+	var main_scene_root = get_tree().current_scene
+	var path_1 = main_scene_root.get_node("Path_1")
+	var path_2 = main_scene_root.get_node("Path_2")
+	paths.append(path_1)
+
+	if path_2:
+		paths.append(path_2)
+	else:
+		print("This map only has 1 path")
+		return
 
 func start_wave() -> void:
 	
@@ -119,16 +137,27 @@ func _spawn_enemy_group_after_delay(enemy_group: Dictionary, session_id: int) ->
 		
 # A function to spawn a single enemy.
 func spawn_single_enemy(enemy_type: String) -> void:
+
+	if paths.is_empty():
+		print("Error: No paths found. Cannot spawn enemy.")
+		return
+
 	if not enemies_container:
 		print("Error: Enemy container not set. Cannot spawn enemy.")
 		return
-		
+
 	if enemy_scenes.has(enemy_type):
 		var enemy_scene = enemy_scenes[enemy_type]
 		var new_enemy = enemy_scene.instantiate()
 		# Add the new enemy to the "enemies" group for easy management.
 		new_enemy.add_to_group("enemies")
-		
+	
+		# Get the path the enemies are supposed to use
+		var current_path = paths[current_path_index]
+		print("Current path child: ",current_path.get_child(0))
+		current_path.add_child(new_enemy)
+		current_path_index = (current_path_index + 1) % paths.size()
+
 		var enemy_area: Area2D = new_enemy.find_child("EnemyHealthSystem")
 		if enemy_area:
 			enemy_area.died.connect(_on_enemy_died)
