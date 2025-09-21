@@ -6,7 +6,6 @@ var difficulty: Difficulty = Difficulty.MEDIUM
 # A flag to control whether new enemies can be spawned.
 var is_spawning_stopped = false
 # A reference to the Node2D where enemies will be spawned.
-var enemies_container: Node2D = null
 var current_session_id: int = 0
 
 var paths: Array[Path2D] = []
@@ -58,12 +57,6 @@ func begin() -> void:
 	if json_result is Dictionary:
 		wave_data = json_result
 		print("Successfully loaded wave data.")
-		
-		# Find the "Enemies" node to spawn into
-		enemies_container = get_tree().current_scene.get_node("Enemies")
-		if not enemies_container:
-			print("Error: 'Enemies' Node2D not found in the scene tree. Spawning will not work.")
-			return
 		
 		get_paths()
 		
@@ -143,9 +136,6 @@ func spawn_single_enemy(enemy_type: String) -> void:
 		print("Error: No paths found. Cannot spawn enemy.")
 		return
 
-	if not enemies_container:
-		print("Error: Enemy container not set. Cannot spawn enemy.")
-		return
 
 	if enemy_scenes.has(enemy_type):
 		var enemy_scene = enemy_scenes[enemy_type]

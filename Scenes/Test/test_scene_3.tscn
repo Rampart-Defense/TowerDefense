@@ -15,8 +15,6 @@ point_count = 26
 position = Vector2(0, -8)
 scale = Vector2(1.5, 1.5)
 
-[node name="Enemies" type="Node2D" parent="."]
-
 [node name="Debugger" parent="." instance=ExtResource("5_5rdvp")]
 offset_left = 464.0
 offset_top = 248.0
