@@ -28,7 +28,7 @@ offset_bottom = 266.0
 z_as_relative = false
 texture_filter = 1
 
-[node name="Path_1" type="Path2D" parent="."]
+[node name="Path_1" type="Path2D" parent="." groups=["path"]]
 z_index = 10
 scale = Vector2(1.47, 1.47)
 curve = SubResource("Curve2D_7fevf")

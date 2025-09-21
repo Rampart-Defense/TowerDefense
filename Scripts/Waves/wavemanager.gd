@@ -71,18 +71,19 @@ func begin() -> void:
 	else:
 		print("Error: Failed to parse JSON data.")
 
-func get_paths() -> void:
-	  # FIND THE PATHS IN THE SCENE TREE
-	var main_scene_root = get_tree().current_scene
-	var path_1 = main_scene_root.get_node("Path_1")
-	var path_2 = main_scene_root.get_node("Path_2")
-	paths.append(path_1)
 
-	if path_2:
-		paths.append(path_2)
+func get_paths() -> void:
+	# FIND THE PATHS USING GROUPS
+	paths.clear()
+	var found_paths = get_tree().get_nodes_in_group("path")
+	for p in found_paths:
+		if p is Path2D:
+			paths.append(p)
+	
+	if paths.is_empty():
+		print("Error: No Path2D nodes found in group 'path'. Enemies will not spawn correctly.")
 	else:
-		print("This map only has 1 path")
-		return
+		print("Found paths: ", paths.size())
 
 func start_wave() -> void:
 	
@@ -164,8 +165,7 @@ func spawn_single_enemy(enemy_type: String) -> void:
 		else:
 			print("Error: 'EnemyHealthSystem' node not found in enemy scene.")
 		
-		# Add the new enemy to the dedicated enemies container.
-		enemies_container.add_child(new_enemy)
+
 	else:
 		print("Error: Enemy type '", enemy_type, "' not found in scene dictionary.")
 
@@ -180,17 +180,16 @@ func _on_next_wave_button_pressed() -> void:
 func stop_spawning_and_clear_enemies() -> void:
 	# Set the flag to true to stop new enemies from spawning.
 	is_spawning_stopped = true
+	#increment current_session_id to start the wave at beginning next time.
 	current_session_id += 1
 	
-	if not enemies_container:
-		print("Error: Enemy container not set. Cannot clear enemies.")
-		return
-		
-	# Get all children that are in the "enemies" group.
-	# Using groups is a robust way to identify and manage nodes.
-	for child in enemies_container.get_children():
-		child.queue_free()
-	# Reset the counter since all enemies have been removed.
+	# Clear enemies using the "enemies" group (works no matter where they are parented).
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	for enemy in enemies:
+		if is_instance_valid(enemy):
+			enemy.queue_free()
+	
+	# Reset counters
 	enemies_alive = 0
 	current_wave = 0
 	

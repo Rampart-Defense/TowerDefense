@@ -25,12 +25,12 @@ scale = Vector2(1.47, 1.47)
 
 [node name="Towers" type="Node2D" parent="."]
 
-[node name="Path_1" type="Path2D" parent="."]
+[node name="Path_1" type="Path2D" parent="." groups=["path"]]
 position = Vector2(3.42706, -0.862394)
 scale = Vector2(1.46708, 1.47982)
 curve = SubResource("Curve2D_0g6m4")
 
-[node name="Path_2" type="Path2D" parent="."]
+[node name="Path_2" type="Path2D" parent="." groups=["path"]]
 position = Vector2(6.06493, 71.1066)
 scale = Vector2(1.46183, 1.29844)
 curve = SubResource("Curve2D_3x6we")

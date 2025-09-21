@@ -25,5 +25,5 @@ offset_bottom = 288.0
 
 [node name="Towers" type="Node2D" parent="."]
 
-[node name="Path_1" type="Path2D" parent="."]
+[node name="Path_1" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_pjw00")
