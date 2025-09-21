@@ -14,9 +14,10 @@ var previous_position: Vector2 = Vector2.ZERO
 
 func _ready():
 	# Find the Path2D node in the current scene.
-	var path_node = get_tree().get_current_scene().get_node("Path2D")
+	var path_node = get_parent()
+	print("PATH NODE: ", path_node)
 	if not path_node:
-		push_error("Could not find a Path2D node named 'Path2D' in the current scene!")
+		push_error("Could not find a Path2D nodes in the current scene!")
 		return
 	
 	# Create a PathFollow2D node to handle movement along the path.
