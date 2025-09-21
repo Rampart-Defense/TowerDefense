@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwoauli6f7cud"
-path="res://.godot/imported/towers.png-5037f61fa4ac4354aaea09a265d9defd.ctex"
+uid="uid://cgs2xgox62b8x"
+path="res://.godot/imported/Tower 02 - Level 03 - Projectile.png-0b412555b06a764f2201e0a2ac6260c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/VisualArt/Towers/towers.png"
-dest_files=["res://.godot/imported/towers.png-5037f61fa4ac4354aaea09a265d9defd.ctex"]
+source_file="res://Art/VisualArt/Towers/LightningTower/Tower 02 - Level 03 - Projectile.png"
+dest_files=["res://.godot/imported/Tower 02 - Level 03 - Projectile.png-0b412555b06a764f2201e0a2ac6260c5.ctex"]
 
 [params]
 
