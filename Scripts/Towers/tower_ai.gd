@@ -39,7 +39,7 @@ var range_level: int = 0
 var tower_level: int = 1
 
 # --- Current Stats ---
-var damage: int
+var damage: int = base_damage
 var fire_cooldown: float = base_fire_cooldown
 var current_range: float = base_range
 

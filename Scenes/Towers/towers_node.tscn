@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx48obq8wn63j"]
+
+[ext_resource type="Script" uid="uid://v8edpxyt8wbc" path="res://Scripts/UI/towers_node.gd" id="1_y45fx"]
+
+[node name="TowersNode" type="Node2D"]
+script = ExtResource("1_y45fx")
+
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="Temp" type="Node2D" parent="."]

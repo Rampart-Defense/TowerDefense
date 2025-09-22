@@ -89,3 +89,34 @@ func _unhandled_input(event: InputEvent) -> void:
 				current_upgraded_tower.tower_leveling_system.visible = false
 				current_upgraded_tower.get_node("RangeArea").visible = false
 				current_upgraded_tower = null
+
+
+
+func close_all_tower_upgrade_menus() -> void:
+	# Get all towers in the scene.
+	var towers = get_tree().get_nodes_in_group("tower")
+
+	# Iterate through each tower.
+	for tower in towers:
+		# Check if the tower's upgrade system is currently visible.
+		if is_instance_valid(tower.tower_leveling_system) and tower.tower_leveling_system.visible:
+			# If the PlayerStats.money_changed signal is connected to the tower's menu, disconnect it to prevent errors and memory leaks.
+			if PlayerStats.money_changed.is_connected(tower.tower_leveling_system._on_money_changed):
+				PlayerStats.money_changed.disconnect(tower.tower_leveling_system._on_money_changed)
+			
+			# Reparent the upgrade menu back to its original tower node.
+			tower.tower_leveling_system.reparent(tower)
+			
+			# Hide the upgrade menu.
+			tower.tower_leveling_system.visible = false
+			
+			# Hide the tower's range indicator.
+			# We check if the node exists to prevent potential errors.
+			if is_instance_valid(tower.get_node_or_null("RangeArea")):
+				tower.get_node("RangeArea").visible = false
+
+	# After hiding all menus, reset the `current_upgraded_tower` variable to `null`.
+	# This prevents the script from thinking a tower is still selected.
+	if current_upgraded_tower != null:
+		current_upgraded_tower = null
+		print("All tower menus and ranges have been closed.")

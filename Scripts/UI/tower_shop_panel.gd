@@ -26,7 +26,7 @@ func _handle_shopkeeping(event):
 			var viewport_mouse_position = get_viewport().get_mouse_position()
 			var world_mouse_position = main_camera.get_canvas_transform().affine_inverse() * viewport_mouse_position
 			preview_tower.global_position = world_mouse_position
-			get_tree().get_current_scene().add_child(preview_tower)
+			TowersNode.get_node_or_null("Temp").add_child(preview_tower)
 			preview_tower.placing_tower = true
 			preview_tower.modulate = Color(1,1,1,0.7) # semi-transparent while dragging
 			preview_tower.get_node("RangeArea").visible = true
@@ -48,7 +48,7 @@ func _handle_shopkeeping(event):
 		if preview_tower:
 			if preview_tower.can_place():
 			# Finalize placement
-				var tower_parent = get_tree().get_current_scene().get_node_or_null("Towers")
+				var tower_parent = TowersNode.get_node_or_null("Towers")
 				if tower_parent:
 					# Save current global position
 					preview_tower.get_node("RangeArea").visible = false
