@@ -22,6 +22,7 @@ func _handle_shopkeeping(event):
 	
 	if event is InputEventMouseButton and event.button_mask == 1: #1 = hiiren vasen näppäin pohjassa
 		if PlayerStats.get_money() >= price and preview_tower == null:
+			TowersNode.delete_temporary_towers()
 			preview_tower = tower.instantiate()
 			var viewport_mouse_position = get_viewport().get_mouse_position()
 			var world_mouse_position = main_camera.get_canvas_transform().affine_inverse() * viewport_mouse_position

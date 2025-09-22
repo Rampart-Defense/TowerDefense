@@ -21,7 +21,7 @@ Waves="*res://Scripts/Waves/wavemanager.gd"
 GlobalUi="*res://Scenes/Menus/global_ui.tscn"
 PlayerStats="*res://Scripts/Player/PlayerStats.gd"
 GlobalCamera="*res://Scenes/UI/global_camera.tscn"
-InputManager="*res://Scripts/UI/input_manager.gd"
+TowerUpgradeManager="*res://Scripts/UI/tower_upgrade_manager.gd"
 TowersNode="*res://Scenes/Towers/towers_node.tscn"
 
 [display]

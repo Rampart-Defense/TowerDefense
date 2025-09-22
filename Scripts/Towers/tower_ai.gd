@@ -24,7 +24,7 @@ var placing_tower: = false
 
 # --- TILEMAP AND PLACEMENT CHECK RELATED ---
 var tilemap: TileMapLayer = null
-var placement_radius := 40
+var placement_radius := 62
 var footprint_size: int = 32
 const TowerPlacementCheck = preload("res://scripts/Towers/tower_placement_check.gd")
 

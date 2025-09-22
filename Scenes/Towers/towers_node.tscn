@@ -6,5 +6,6 @@
 script = ExtResource("1_y45fx")
 
 [node name="Towers" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Temp" type="Node2D" parent="."]

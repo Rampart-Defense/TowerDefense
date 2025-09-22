@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 # This script should be attached to the root node of your main scene.
 # It is now the central handler for all mouse clicks that are NOT handled by other nodes.
@@ -28,6 +28,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 		# Iterate through each tower and check if the mouse position is inside its bounding box.
 		for tower in towers:
+			#NoNo for moneyglitch #1
+			if tower.get_parent().name == "Temp":
+				tower.queue_free()
+				break
+			
 			# Get the tower's bounding rectangle in global coordinates.
 			var tower_rect = Rect2(tower.global_position - tower.get_node("clickshape").shape.size / 2, tower.get_node("clickshape").shape.size)
 
@@ -61,6 +66,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				else:
 					# Otherwise, move it to GlobalUI and show it.
 					tower.tower_leveling_system.reparent(GlobalUi, true) # `true` keeps the global transform.
+					tower.tower_leveling_system.position += get_position_changes(tower)
 					tower.tower_leveling_system.visible = true
 					tower.get_node("RangeArea").visible = true
 					current_upgraded_tower = tower # Set the currently selected tower.
@@ -90,6 +96,40 @@ func _unhandled_input(event: InputEvent) -> void:
 				current_upgraded_tower.get_node("RangeArea").visible = false
 				current_upgraded_tower = null
 
+
+func get_position_changes(tower: Area2D) -> Vector2:
+	var position_changes = Vector2.ZERO
+	
+	var leveling_system = tower.tower_leveling_system
+	var tower_global_position = tower.global_position
+	
+	# Check and adjust X position
+	if tower_global_position.x < 200 and not leveling_system.too_far_left:
+		position_changes.x = 350
+		position_changes.y = -200
+		leveling_system.too_far_left = true
+		# Reset other horizontal bools
+		leveling_system.too_far_right = false
+	elif tower_global_position.x > 900 and not leveling_system.too_far_right:
+		position_changes.x = -350
+		position_changes.y = -200
+		leveling_system.too_far_right = true
+		# Reset other horizontal bools
+		leveling_system.too_far_left = false
+		
+	# Check and adjust Y position
+	if tower_global_position.y < 50 and not leveling_system.too_far_up:
+		position_changes.y = 50
+		leveling_system.too_far_up = true
+		# Reset other vertical bools
+		leveling_system.too_far_down = false
+	elif tower_global_position.y > 400 and not leveling_system.too_far_down:
+		position_changes.y = -400
+		leveling_system.too_far_down = true
+		# Reset other vertical bools
+		leveling_system.too_far_up = false
+		
+	return position_changes
 
 
 func close_all_tower_upgrade_menus() -> void:

@@ -11,7 +11,7 @@ static func can_place(tower: Node2D, footprint_size: int, placement_radius: floa
 		return false
 
 	# 3) Tower overlap check
-	var towers_node = tower.get_tree().get_current_scene().get_node_or_null("Towers")
+	var towers_node = TowersNode.get_node("Towers")
 	if towers_node:
 		for other in towers_node.get_children():
 			if other == tower:
