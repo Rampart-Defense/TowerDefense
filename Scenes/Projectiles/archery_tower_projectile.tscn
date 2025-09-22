@@ -36,9 +36,8 @@ animations = [{
 [node name="ArcheryTowerProjectile" type="Node2D"]
 z_index = 6
 texture_filter = 1
-scale = Vector2(0.5, 0.5)
 script = ExtResource("1_cj3yc")
-speed = 8
+speed = 20
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708

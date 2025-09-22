@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://xpuirmk86mft"]
+[gd_scene load_steps=5 format=3 uid="uid://xpuirmk86mft"]
 
 [ext_resource type="PackedScene" uid="uid://bbfjispwcoc36" path="res://Scenes/Menus/pause_menu.tscn" id="1_tfgit"]
 [ext_resource type="PackedScene" uid="uid://h4mwmxm7m5pj" path="res://Scenes/UI/stats_display.tscn" id="2_yqihm"]
 [ext_resource type="PackedScene" uid="uid://qcjcoo3nif0m" path="res://Scenes/UI/tower_shop.tscn" id="3_a74lq"]
+[ext_resource type="Script" uid="uid://dcd1xvinxkbav" path="res://Scripts/UI/hide_tower_upgrades.gd" id="4_a74lq"]
 
 [node name="GlobalUI" type="CanvasLayer"]
+
+[node name="HideTowerUpgrades" type="Control" parent="."]
+z_index = 99
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+script = ExtResource("4_a74lq")
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_tfgit")]
 z_index = 102

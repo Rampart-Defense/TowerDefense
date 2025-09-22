@@ -145,7 +145,7 @@ func spawn_single_enemy(enemy_type: String) -> void:
 	
 		# Get the path the enemies are supposed to use
 		var current_path = paths[current_path_index]
-		print("Current path child: ",current_path.get_child(0))
+		#print("Current path child: ",current_path.get_child(0))
 		current_path.add_child(new_enemy)
 		current_path_index = (current_path_index + 1) % paths.size()
 

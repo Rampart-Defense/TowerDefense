@@ -1,28 +1,60 @@
 extends Node2D
 
 
-
+# --- Base stats and things needed.
 @export var projectile_scene: PackedScene
-@export var firing_cooldown: float = 1.0 # sekuntia per laukaus
+@export var base_fire_cooldown: float = 1.0 # sekuntia per laukaus
+@export var base_damage: int = 10
+@export var range_area: CollisionShape2D = null
+@export var base_range: int = 248
+@export var tower_base: Sprite2D = null #kuva tower base
 @export var turret: AnimatedSprite2D = null #Kuva turretista
 @export var firing_point: Marker2D #Kannattaa olla turretin lapsi niin pysyy oikealla kohdalla.
 @export var rotating: bool = false #Kääntyykö turret?
 @export var fire_timer: Timer 
-@export var footprint_size: int = 32 # width x height in tiles
+ # width x height in tiles
 
+# ---Enemy related ---
 var enemies: Array = [] # kaikki havaitut viholliset
 var current_target: Node2D = null
-var can_fire: bool = true
-var placing_tower = false
 
-# --- TILEMAP FOR PLACEMENT CHECK ---
+# --- Checking bools ---
+var can_fire: bool = true
+var placing_tower: = false
+
+# --- TILEMAP AND PLACEMENT CHECK RELATED ---
 var tilemap: TileMapLayer = null
 var placement_radius := 40
+var footprint_size: int = 32
 const TowerPlacementCheck = preload("res://scripts/Towers/tower_placement_check.gd")
 
+# --- LEVEL SYSTEM UPGRADES ---
+var fire_cooldown_level: int = 0
+var damage_level: int = 0
+var range_level: int = 0
+
+
+
+# --- ACTUAL LEVEL ---
+var tower_level: int = 1
+
+# --- Current Stats ---
+var damage: int
+var fire_cooldown: float = base_fire_cooldown
+var current_range: float = base_range
+
+
+@onready var tower_leveling_system: Control = $TowerLevelingSystem
+
+
+
 func _ready() -> void:
+	#make visuals appear as lvl1
+	_apply_visuals_and_stats()
+	
+	
 	turret.play("Default")
-	fire_timer.wait_time = firing_cooldown
+	fire_timer.wait_time = fire_cooldown
 	fire_timer.one_shot = false
 	fire_timer.start()
 	fire_timer.timeout.connect(_on_fire_timer_timeout)
@@ -37,6 +69,8 @@ func _ready() -> void:
 
 func _on_fire_timer_timeout() -> void:
 	if not placing_tower:
+		if fire_cooldown != fire_timer.wait_time:
+			fire_timer.wait_time = fire_cooldown
 		if current_target and is_instance_valid(current_target):
 			# käännä tykki kohti vihollista jos pitää (rotating turret towards enemy)
 			if rotating:
@@ -44,7 +78,7 @@ func _on_fire_timer_timeout() -> void:
 				turret.rotation = to_enemy.angle() + deg_to_rad(90)
 
 			# ammu
-			fire_projectile(current_target.global_position)
+			fire_projectile(current_target.global_position + current_target.get_parent().velocity * 0.1)
 
 
 func _select_new_target() -> void:
@@ -55,14 +89,76 @@ func _select_new_target() -> void:
 
 
 func fire_projectile(target_pos: Vector2) -> void:
-	var projectile = projectile_scene.instantiate()
-	projectile.global_position = firing_point.global_position
-	projectile.direction = (target_pos - firing_point.global_position).normalized()
+	var offsets: Array = []
+
+	match tower_level:
+		1:
+			offsets = [Vector2(0, 0)]  # single shot
+			turret.play("Fire")
+		2:
+			offsets = [Vector2(-5, 0), Vector2(5, 0)]  # two shots
+			turret.play("Fire2")
+		3:
+			offsets = [Vector2(-10, 0), Vector2(0, 0), Vector2(10, 0)]  # three shots
+			turret.play("Fire3")
+
+	# Spawn all projectiles with the given offsets. also shoot towards the offset
+	for offset in offsets:
+		var projectile = projectile_scene.instantiate()
+		projectile.global_position = firing_point.global_position + offset
+		projectile.direction = (target_pos - projectile.global_position + offset ).normalized()
+		projectile.get_node("DamageSource").damage = damage
+		get_tree().current_scene.add_child(projectile)
 	
-	# esim. animaatio tähän
-	turret.play("Fire")
-	get_tree().current_scene.add_child(projectile)
+
+func upgrade_tower(stat: String, value ):
+	match stat:
+		"fire_rate":
+			fire_cooldown_level += 1
+			fire_cooldown -= value
+		"damage":
+			damage_level += 1
+			damage += value
+		"range":
+			range_level += 1
+			current_range += value
+	_recalculate_level()
 	
+func _recalculate_level():
+	var total_upgrades = fire_cooldown_level + damage_level + range_level
+
+	if total_upgrades >= 6:
+		tower_level = 3
+	elif total_upgrades >= 3:
+		tower_level = 2
+	else:
+		tower_level = 1
+
+	_apply_visuals_and_stats()
+
+func _apply_visuals_and_stats():
+	#Applying visuals
+	match tower_level:
+		1:
+			tower_base.frame = 0
+			turret.frame = 0
+			turret.position = Vector2(0,-12)
+		2:
+			tower_base.frame = 1
+			turret.frame = 1
+			turret.position = Vector2(0, -20)
+		3:
+			tower_base.frame = 2
+			turret.frame = 2
+			turret.position = Vector2(0, -30)
+	# Applying stats and visuals
+	range_area.shape.radius = current_range
+	get_node("RangeArea").size = Vector2(current_range*2, current_range*2)
+	get_node("RangeArea").position = Vector2(-current_range, -current_range)
+	_on_turret_animation_finished()
+	print("Damage level: " + str(damage_level))
+	print("Speed level: " + str(fire_cooldown_level))
+	print("Ra(n)ge level: " + str(range_level))
 
 func can_place() -> bool:
 	return TowerPlacementCheck.can_place(self, footprint_size, placement_radius)
@@ -84,4 +180,10 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 
 
 func _on_turret_animation_finished() -> void:
-	turret.play("Default")
+	if tower_level == 1:
+		turret.play("Default")
+	if tower_level == 2:
+		turret.play("Default2")
+	if tower_level == 3:
+		turret.play("Default3")
+		

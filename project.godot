@@ -21,6 +21,7 @@ Waves="*res://Scripts/Waves/wavemanager.gd"
 GlobalUi="*res://Scenes/Menus/global_ui.tscn"
 PlayerStats="*res://Scripts/Player/PlayerStats.gd"
 GlobalCamera="*res://Scenes/UI/global_camera.tscn"
+InputManager="*res://Scripts/UI/input_manager.gd"
 
 [display]
 
@@ -29,6 +30,8 @@ window/stretch/mode="viewport"
 [global_group]
 
 map="group a tilemap to find it(tower placement needs this)"
+path=""
+tower=""
 
 [input]
 

@@ -38,12 +38,12 @@ static func is_on_blocked_area(tower: Node2D, base_w := 32.0, base_h := 32.0) ->
 		layers_node.get_node_or_null("NoBuild")
 	]
 
-	var base_offset = Vector2(0, base_h / 2)
+	var base_offset = Vector2(0, base_h / 2.0)
 	var offsets = [
-		Vector2(-base_w/2, -base_h/2),
-		Vector2(base_w/2, -base_h/2),
-		Vector2(-base_w/2, base_h/2),
-		Vector2(base_w/2, base_h/2)
+		Vector2(-base_w/2.0, -base_h/2.0),
+		Vector2(base_w/2.0, -base_h/2.0),
+		Vector2(-base_w/2.0, base_h/2.0),
+		Vector2(base_w/2.0, base_h/2.0)
 	]
 
 	for layer in blocked_layers:
@@ -74,12 +74,12 @@ static func is_outside_map(tower: Node2D, base_w := 32, base_h := 32) -> bool:
 	if grass_layer == null:
 		return true
 
-	var base_offset = Vector2(0, base_h / 2)
+	var base_offset = Vector2(0, base_h / 2.0)
 	var offsets = [
-		Vector2(-base_w/2, -base_h/2),
-		Vector2(base_w/2, -base_h/2),
-		Vector2(-base_w/2, base_h/2),
-		Vector2(base_w/2, base_h/2)
+		Vector2(-base_w/2.0, -base_h/2.0),
+		Vector2(base_w/2.0, -base_h/2.0),
+		Vector2(-base_w/2.0, base_h/2.0),
+		Vector2(base_w/2.0, base_h/2.0)
 	]
 
 	var used_rect = grass_layer.get_used_rect()

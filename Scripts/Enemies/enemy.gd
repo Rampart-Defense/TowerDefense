@@ -15,7 +15,7 @@ var previous_position: Vector2 = Vector2.ZERO
 func _ready():
 	# Find the Path2D node in the current scene.
 	var path_node = get_parent()
-	print("PATH NODE: ", path_node)
+	#print("PATH NODE: ", path_node)
 	if not path_node:
 		push_error("Could not find a Path2D nodes in the current scene!")
 		return
@@ -27,9 +27,7 @@ func _ready():
 	# Add the PathFollow2D to the Path2D node in the scene tree.
 	path_node.add_child(path_follower)
 	
-	# Make the enemy a child of the PathFollow2D for movement.
-	path_follower.add_child(self)
-	
+
 	# Set the enemy's position to the beginning of the path.
 	global_position = path_follower.global_position
 	previous_position = global_position
@@ -63,15 +61,15 @@ func enemy_win():
 	else:
 		print("Health component not found, cannot call die().")
 
-func update_animation(velocity: Vector2) -> void:
-	if velocity.length_squared() > 0:
-		if abs(velocity.x) > abs(velocity.y):
-			if velocity.x > 0:
+func update_animation(current_velocity: Vector2) -> void:
+	if current_velocity.length_squared() > 0:
+		if abs(current_velocity.x) > abs(current_velocity.y):
+			if current_velocity.x > 0:
 				animation.play("walk_right")
 			else:
 				animation.play("walk_left")
 		else:
-			if velocity.y > 0:
+			if current_velocity.y > 0:
 				animation.play("walk_down")
 			else:
 				animation.play("walk_up")
