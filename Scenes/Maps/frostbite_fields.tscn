@@ -14,19 +14,11 @@ point_count = 8
 [node name="Winter map" parent="." groups=["map"] instance=ExtResource("1_1lb32")]
 position = Vector2(0, -8)
 
-[node name="Enemies" type="Node2D" parent="."]
-z_index = 2
-scale = Vector2(1.47, 1.47)
-
 [node name="Debugger" parent="." instance=ExtResource("4_djkqo")]
 offset_left = 670.0
 offset_top = 242.0
 offset_right = 710.0
 offset_bottom = 266.0
-
-[node name="Towers" type="Node2D" parent="."]
-z_as_relative = false
-texture_filter = 1
 
 [node name="Path_1" type="Path2D" parent="." groups=["path"]]
 z_index = 10

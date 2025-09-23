@@ -20,11 +20,6 @@ point_count = 11
 [node name="Scorched Sands" parent="." instance=ExtResource("1_sf560")]
 scale = Vector2(1.47, 1.45)
 
-[node name="Enemies" type="Node2D" parent="."]
-scale = Vector2(1.47, 1.47)
-
-[node name="Towers" type="Node2D" parent="."]
-
 [node name="Path_1" type="Path2D" parent="." groups=["path"]]
 position = Vector2(3.42706, -0.862394)
 scale = Vector2(1.46708, 1.47982)
