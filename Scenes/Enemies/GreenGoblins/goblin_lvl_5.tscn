@@ -221,11 +221,11 @@ position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_jttko")
 animation = &"walk_right"
 
-[node name="EnemyHealthSystem" type="Area2D" parent="." groups=["Enemy"]]
+[node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -26)
 script = ExtResource("3_1ca0c")
-maxHealth = 8
-payout = 16
+maxHealth = 50
+payout = 80
 
 [node name="Hitbox" type="CollisionShape2D" parent="EnemyHealthSystem"]
 position = Vector2(0, 12.25)

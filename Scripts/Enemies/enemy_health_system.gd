@@ -25,12 +25,3 @@ func die(win: String) -> void:
 	if win != "win":
 		PlayerStats.add_points(points)
 		PlayerStats.add_money(payout)
-
-func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("damageSource"):
-		take_damage(area.damage)
-		##delete projectile
-		if area.owner:
-			area.owner.queue_free()
-		else:
-			area.queue_free()

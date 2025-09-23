@@ -222,11 +222,11 @@ sprite_frames = SubResource("SpriteFrames_ctl0b")
 animation = &"idle"
 frame_progress = 0.169527
 
-[node name="EnemyHealthSystem" type="Area2D" parent="." groups=["Enemy"]]
+[node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -26)
 script = ExtResource("3_rf2gt")
-maxHealth = 6
-payout = 12
+maxHealth = 40
+payout = 70
 
 [node name="Hitbox" type="CollisionShape2D" parent="EnemyHealthSystem"]
 position = Vector2(0, 12.25)

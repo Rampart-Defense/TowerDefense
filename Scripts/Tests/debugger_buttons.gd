@@ -2,7 +2,7 @@ extends Control
 
 @onready var fps_label = $Label
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	fps_label.text = "FPS: %d" % Engine.get_frames_per_second()
 
 func _on_stop_waves_button_button_down() -> void:
@@ -24,4 +24,4 @@ func _on_reset_player_stats_button_down() -> void:
 
 
 func _on_free_money_button_down() -> void:
-	PlayerStats.add_money(200)
+	PlayerStats.add_money(2000)

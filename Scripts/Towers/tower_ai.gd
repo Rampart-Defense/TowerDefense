@@ -5,18 +5,23 @@ extends Node2D
 @export var projectile_scene: PackedScene
 @export var base_fire_cooldown: float = 1.0 # sekuntia per laukaus
 @export var base_damage: int = 10
-@export var range_area: CollisionShape2D = null
+@export var tower_range: Area2D = null
+
 @export var base_range: int = 248
 @export var tower_base: Sprite2D = null #kuva tower base
 @export var turret: AnimatedSprite2D = null #Kuva turretista
 @export var firing_point: Marker2D #Kannattaa olla turretin lapsi niin pysyy oikealla kohdalla.
 @export var rotating: bool = false #Kääntyykö turret?
 @export var fire_timer: Timer 
- # width x height in tiles
+
+
+@onready var range_area: CollisionShape2D = tower_range.get_child(0)
 
 # ---Enemy related ---
 var enemies: Array = [] # kaikki havaitut viholliset
 var current_target: Node2D = null
+
+
 
 # --- Checking bools ---
 var can_fire: bool = true
@@ -49,14 +54,25 @@ var current_range: float = base_range
 
 
 func _ready() -> void:
+	
+	
+	damage = base_damage
+	current_range = base_range
+	# Connect the `area_entered` signal to the `_on_area_2d_area_entered` function.
+	tower_range.area_entered.connect(_on_area_2d_area_entered)
+	
+	# Connect the `area_exited` signal to the `_on_area_2d_area_exited` function.
+	tower_range.area_exited.connect(_on_area_2d_area_exited)
+	
+	
+	turret.animation_finished.connect(_on_turret_animation_finished)
 	#make visuals appear as lvl1
 	_apply_visuals_and_stats()
 	
-	
+	fire_cooldown = base_fire_cooldown
 	turret.play("Default")
 	fire_timer.wait_time = fire_cooldown
 	fire_timer.one_shot = false
-	fire_timer.start()
 	fire_timer.timeout.connect(_on_fire_timer_timeout)
 	
 	# Auto-find the tilemap from "map" group
@@ -108,7 +124,7 @@ func fire_projectile(target_pos: Vector2) -> void:
 		projectile.global_position = firing_point.global_position + offset
 		projectile.direction = (target_pos - projectile.global_position + offset ).normalized()
 		projectile.get_node("DamageSource").damage = damage
-		get_tree().current_scene.add_child(projectile)
+		get_tree().current_scene.call_deferred("add_child", projectile)
 	
 
 func upgrade_tower(stat: String, value ):
@@ -165,19 +181,27 @@ func can_place() -> bool:
 	
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	
-	if area.is_in_group("Enemy"):
-		enemies.append(area)
+	if area.is_in_group("enemy"):
 		
+		enemies.append(area)
 		_select_new_target()
+		fire_timer.autostart = true
+		if not fire_timer.is_stopped():
+			return  # already firing
+		_on_fire_timer_timeout() # manually fire once
+		
+		fire_timer.start()    
+		
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	
-	if area.is_in_group("Enemy"):
+	if area.is_in_group("enemy"):
 		enemies.erase(area)
 		if area == current_target:
 			_select_new_target()
-
+		if enemies.is_empty():
+			fire_timer.autostart = false
 
 func _on_turret_animation_finished() -> void:
 	if tower_level == 1:

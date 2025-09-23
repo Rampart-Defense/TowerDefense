@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://cdup63q8p1qiu"]
+
+[ext_resource type="Script" uid="uid://ccm0fdtqgvtxf" path="res://Scripts/Projectiles/tower_projectile.gd" id="1_dltfg"]
+[ext_resource type="Texture2D" uid="uid://dxabfpb4jcx1" path="res://Art/VisualArt/Towers/LightningTower/Tower 02 - Level 01 - Projectile.png" id="1_yqlm1"]
+[ext_resource type="PackedScene" uid="uid://cdfcwl5p1ld1w" path="res://Scenes/Projectiles/LightningTower/lightning_on_hit_lvl_1.tscn" id="2_h2t4w"]
+[ext_resource type="Script" uid="uid://bl1a4o232oxjv" path="res://Scripts/Projectiles/damage_source.gd" id="2_yru8o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yru8o"]
+atlas = ExtResource("1_yqlm1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dltfg"]
+atlas = ExtResource("1_yqlm1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2t4w"]
+atlas = ExtResource("1_yqlm1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od76p"]
+atlas = ExtResource("1_yqlm1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pk52"]
+atlas = ExtResource("1_yqlm1")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t808c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yru8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dltfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2t4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_od76p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pk52")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dltfg"]
+size = Vector2(22, 21)
+
+[node name="LightningTowerProjectileLvl1" type="Node2D"]
+script = ExtResource("1_dltfg")
+speed = 20
+on_hit_animation = ExtResource("2_h2t4w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_t808c")
+frame_progress = 0.118438
+
+[node name="DamageSource" type="Area2D" parent="." groups=["damageSource"]]
+script = ExtResource("2_yru8o")
+
+[node name="DamageArea" type="CollisionShape2D" parent="DamageSource"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_dltfg")
+
+[node name="DeathTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="DamageSource" to="DamageSource" method="_on_area_entered"]

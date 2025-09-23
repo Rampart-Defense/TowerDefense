@@ -1,5 +1,5 @@
 extends Panel
-@onready var tower = preload("res://Scenes/Towers/archery_tower.tscn")
+@export var tower = preload("res://Scenes/Towers/archery_tower.tscn")
 @export var price: int = 200
 var preview_tower: Node2D = null
 

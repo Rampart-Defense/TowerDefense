@@ -201,12 +201,12 @@ radius = 250.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7nk1"]
 size = Vector2(77, 144)
 
-[node name="ArcheryTower" type="Area2D" node_paths=PackedStringArray("range_area", "tower_base", "turret", "firing_point", "fire_timer") groups=["tower"]]
+[node name="ArcheryTower" type="Area2D" node_paths=PackedStringArray("tower_range", "tower_base", "turret", "firing_point", "fire_timer") groups=["tower"]]
 z_index = 1
 texture_filter = 1
 script = ExtResource("1_pdlmi")
 projectile_scene = ExtResource("2_p7nk1")
-range_area = NodePath("Range/CollisionShape2D")
+tower_range = NodePath("Range")
 tower_base = NodePath("Base")
 turret = NodePath("Turret")
 firing_point = NodePath("Turret/Marker2D")
@@ -218,7 +218,7 @@ offset_left = -250.0
 offset_top = -252.0
 offset_right = 250.0
 offset_bottom = 248.0
-mouse_filter = 1
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_p7nk1")
 
 [node name="Base" type="Sprite2D" parent="."]
@@ -260,8 +260,3 @@ range_value_2 = 200
 z_index = 101
 position = Vector2(-1.5, 13)
 shape = SubResource("RectangleShape2D_p7nk1")
-
-[connection signal="input_event" from="." to="." method="_on_input_event"]
-[connection signal="animation_finished" from="Turret" to="." method="_on_turret_animation_finished"]
-[connection signal="area_entered" from="Range" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Range" to="." method="_on_area_2d_area_exited"]

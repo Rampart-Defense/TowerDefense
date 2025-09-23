@@ -87,12 +87,12 @@ func _on_attackspeed_level_up_button_down() -> void:
 		if tower.fire_cooldown_level == 0:
 			AttackspeedButton.get_child(1).text = "cost: " + str(attack_speed_cost_2)
 			tower.upgrade_tower("fire_rate", attack_speed_value_1)
-			sell_price += attack_speed_cost_1/2.0
+			sell_price += attack_speed_cost_1/2
 			update_sell_price()
 			PlayerStats.spend_money(attack_speed_cost_1)
 		elif tower.fire_cooldown_level == 1:
 			AttackspeedButton.get_child(1).text = "MAX"
-			sell_price += attack_speed_cost_2/2.0
+			sell_price += attack_speed_cost_2/2
 			update_sell_price()
 			tower.upgrade_tower("fire_rate", attack_speed_value_2)
 			PlayerStats.spend_money(attack_speed_cost_2)
@@ -107,13 +107,13 @@ func _on_damage_level_up_button_down() -> void:
 	if tower != null:
 		if tower.damage_level == 0:
 			DamageButton.get_child(1).text = "cost: " + str(attack_damage_cost_2)
-			sell_price += attack_damage_cost_1/2.0
+			sell_price += attack_damage_cost_1/2
 			update_sell_price()
 			tower.upgrade_tower("damage", attack_damage_value_1)
 			PlayerStats.spend_money(attack_damage_cost_1)
 		elif tower.damage_level == 1:
 			DamageButton.get_child(1).text = "MAX"
-			sell_price += attack_damage_cost_2/2.0
+			sell_price += attack_damage_cost_2/2
 			update_sell_price()
 			tower.upgrade_tower("damage", attack_damage_value_2)
 			PlayerStats.spend_money(attack_damage_cost_2)

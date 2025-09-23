@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://l3pffiqfhhyy"]
+[gd_scene load_steps=9 format=3 uid="uid://l3pffiqfhhyy"]
 
-[ext_resource type="Script" uid="uid://ccm0fdtqgvtxf" path="res://Scripts/Projectiles/archery_tower_projectile.gd" id="1_cj3yc"]
+[ext_resource type="Script" uid="uid://ccm0fdtqgvtxf" path="res://Scripts/Projectiles/tower_projectile.gd" id="1_cj3yc"]
 [ext_resource type="Texture2D" uid="uid://c83k5d7wvp3d1" path="res://Art/VisualArt/Towers/ArcheryTower/Tower 01 - Level 01 - Projectile.png" id="1_toash"]
-[ext_resource type="PackedScene" uid="uid://bssmcnmtaknm6" path="res://Scenes/Projectiles/damage_source.tscn" id="3_cj3yc"]
+[ext_resource type="Script" uid="uid://bl1a4o232oxjv" path="res://Scripts/Projectiles/damage_source.gd" id="3_cj3yc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13rbg"]
 atlas = ExtResource("1_toash")
@@ -33,6 +33,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cj3yc"]
+size = Vector2(40, 8)
+
 [node name="ArcheryTowerProjectile" type="Node2D"]
 z_index = 6
 texture_filter = 1
@@ -44,5 +47,15 @@ rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_72juo")
 frame_progress = 0.637898
 
-[node name="DamageSource" parent="." instance=ExtResource("3_cj3yc")]
+[node name="DamageSource" type="Area2D" parent="." groups=["damageSource"]]
 position = Vector2(-1, 0)
+script = ExtResource("3_cj3yc")
+
+[node name="DamageArea" type="CollisionShape2D" parent="DamageSource"]
+shape = SubResource("RectangleShape2D_cj3yc")
+
+[node name="DeathTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="DamageSource" to="DamageSource" method="_on_area_entered"]
