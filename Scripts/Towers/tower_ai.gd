@@ -46,7 +46,8 @@ var current_range: float = base_range
 
 @onready var tower_leveling_system: Control = $TowerLevelingSystem
 
-
+#Scale of the map
+var map_scale = 0
 
 func _ready() -> void:
 	#make visuals appear as lvl1
@@ -63,6 +64,7 @@ func _ready() -> void:
 	if tilemap == null:
 		var maps = get_tree().get_nodes_in_group("map")
 		if maps.size() > 0:
+			map_scale = maps[0].global_scale
 			tilemap = maps[0].get_node_or_null("Grass&path")
 	else:
 		print("No tilemap found in 'map' group!")
@@ -105,8 +107,8 @@ func fire_projectile(target_pos: Vector2) -> void:
 	# Spawn all projectiles with the given offsets. also shoot towards the offset
 	for offset in offsets:
 		var projectile = projectile_scene.instantiate()
-		projectile.global_position = firing_point.global_position + offset
-		projectile.direction = (target_pos - projectile.global_position + offset ).normalized()
+		projectile.global_position = firing_point.global_position / map_scale + offset
+		projectile.direction = (target_pos / map_scale - projectile.global_position + offset ).normalized()
 		projectile.get_node("DamageSource").damage = damage
 		get_tree().current_scene.add_child(projectile)
 	

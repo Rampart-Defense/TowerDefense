@@ -4,9 +4,8 @@ extends Control
 
 var maps = {
 	"Frostbite Fields": "res://Scenes/Maps/frostbite_fields.tscn",
-	"Scorched Sands": "res://Scenes/Maps/scorched_sands_full.tscn",
-	"Oasis": "res://Scenes/Maps/oasis_full_map.tscn",
-	"testscene2": "res://Scenes/Test/testscene_2.tscn",
+	"Scorched Sands": "res://Scenes/Maps/scorched_sands.tscn",
+	"Oasis": "res://Scenes/Maps/oasis.tscn",
 	"testscene3": "res://Scenes/Test/test_scene_3.tscn",
 	"testscene4": "res://Scenes/Test/test_scene_3.tscn",
 	"testscene5": "res://Scenes/Test/test_scene_3.tscn",
