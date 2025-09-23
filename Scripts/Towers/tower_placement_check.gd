@@ -18,9 +18,7 @@ static func can_place(tower: Node2D, footprint_size: int, placement_radius: floa
 				continue
 			if tower.global_position.distance_to(other.global_position) < placement_radius:
 				return false
-
 	return true
-
 
 # Check if tower footprint overlaps with blocked areas (Path, NoBuild)
 static func is_on_blocked_area(tower: Node2D, base_w := 32.0, base_h := 32.0) -> bool:
@@ -51,9 +49,7 @@ static func is_on_blocked_area(tower: Node2D, base_w := 32.0, base_h := 32.0) ->
 
 			if layer.get_cell_source_id(cell) != -1:
 				return true
-
 	return false
-
 
 # Check if tower footprint is outside background layer
 static func is_outside_map(tower: Node2D, base_w := 32, base_h := 32) -> bool:
