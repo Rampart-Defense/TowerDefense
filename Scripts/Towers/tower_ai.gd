@@ -111,12 +111,11 @@ func _on_fire_timer_timeout() -> void:
 		fire_timer.start()
 
 
+			# ammu
 func _fire() -> void:
 	fire_projectile(current_target.global_position + current_target.get_parent().velocity * 0.1)
-
-			# ammu
-			fire_projectile(current_target.global_position + current_target.get_parent().velocity * 0.1)
-			arrow_shoot.play()
+	# arrow_shoot.play()
+	
 
 func _select_new_target() -> void:
 	if enemies.size() > 0:
@@ -229,4 +228,3 @@ func _on_turret_animation_finished() -> void:
 		turret.play("Default2")
 	if tower_level == 3:
 		turret.play("Default3")
-
