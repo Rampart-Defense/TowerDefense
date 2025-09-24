@@ -63,6 +63,7 @@ frame_progress = 0.118438
 
 [node name="DamageSource" type="Area2D" parent="." groups=["damageSource"]]
 script = ExtResource("2_yru8o")
+offset = Vector2(0, -10)
 
 [node name="DamageArea" type="CollisionShape2D" parent="DamageSource"]
 position = Vector2(0, 0.5)

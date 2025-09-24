@@ -5,14 +5,29 @@ extends Area2D
 var currentHealth: int
 var goal_marker: Marker2D = null
 signal died
-
+var stunned = false
 func _ready() -> void:
 	currentHealth = maxHealth
+
 
 func take_damage(amount: int) -> void:
 	currentHealth -= amount
 	if currentHealth <= 0:
 		die("no")
+
+func stun(duration: float) -> void:
+	var enemy = get_parent()
+	if not enemy: 
+		return  # parent is gone
+	stunned = true
+	enemy.stunned = stunned #TODO create function on enemy that plays stun animation and toggles true
+	await get_tree().create_timer(duration).timeout
+	if is_instance_valid(enemy):
+		stunned = false
+		enemy.stunned = stunned
+
+
+
 
 func die(win: String) -> void:
 	

@@ -41,16 +41,16 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_volie")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_j0guf")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_wixef")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_4g4sh")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_v40d8")
 }, {
 "duration": 1.0,
@@ -65,28 +65,30 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwwcr"]
-size = Vector2(93, 26.75)
+size = Vector2(72, 26.75)
 
 [node name="LightningOnHitLvl3" type="Node2D"]
 z_index = 5
 script = ExtResource("1_uwwcr")
+move_duration = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_0f5yx")
 autoplay = "default"
-frame = 5
-frame_progress = 0.207881
+frame = 7
+frame_progress = 1.0
 
 [node name="DamageSource" parent="." instance=ExtResource("3_volie")]
 damage = 30
+stun = 1.0
 penetrating = true
 single_target = false
 on_hit = true
+offset = Vector2(0, -20)
 
 [node name="DamageArea" parent="DamageSource" index="0"]
-position = Vector2(3.5, 3.625)
 shape = SubResource("RectangleShape2D_uwwcr")
 
 [editable path="DamageSource"]

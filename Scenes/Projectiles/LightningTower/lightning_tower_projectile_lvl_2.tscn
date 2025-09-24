@@ -62,6 +62,7 @@ sprite_frames = SubResource("SpriteFrames_wnksw")
 
 [node name="DamageSource" type="Area2D" parent="." groups=["damageSource"]]
 script = ExtResource("4_a53a4")
+offset = Vector2(0, -10)
 
 [node name="DamageArea" type="CollisionShape2D" parent="DamageSource"]
 position = Vector2(0, 0.5)

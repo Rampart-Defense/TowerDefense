@@ -56,6 +56,7 @@ size = Vector2(57, 19.5)
 [node name="LightningOnHitLvl1" type="Node2D"]
 z_index = 5
 script = ExtResource("1_mptbl")
+move_distance = 30.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -66,7 +67,7 @@ frame = 2
 frame_progress = 0.881698
 
 [node name="DamageSource" parent="." instance=ExtResource("2_mptbl")]
-damage = 10
+damage = 20
 penetrating = true
 single_target = false
 on_hit = true

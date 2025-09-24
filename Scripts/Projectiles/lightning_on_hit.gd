@@ -1,6 +1,6 @@
 extends Node2D
-@export var move_duration: float = 0.3
-
+@export var move_duration: float = 0.1
+@export var move_distance: float = 40
 func _ready():
 	
 	
@@ -18,7 +18,7 @@ func _ready():
 	# 2. The property to animate (its "position").
 	# 3. The final value of the property (a Vector2 with an x of 40 and a y of 0).
 	# 4. The duration of the animation (our exposed `move_duration` variable).
-	tween.tween_property(damage_source_area, "position", Vector2(40, 0), move_duration)
+	tween.tween_property(damage_source_area, "position", Vector2(0, move_distance), move_duration)
 
 
 func _die() -> void:

@@ -54,6 +54,10 @@ var current_range: float = base_range
 #Scale of the map
 var map_scale = 0
 
+#doubleshot fix
+var suppress_next_shot: bool = false
+
+
 func _ready() -> void:
 	
 	
@@ -73,7 +77,7 @@ func _ready() -> void:
 	fire_cooldown = base_fire_cooldown
 	turret.play("Default")
 	fire_timer.wait_time = fire_cooldown
-	fire_timer.one_shot = false
+	fire_timer.one_shot = true
 	fire_timer.timeout.connect(_on_fire_timer_timeout)
 	
 	# Auto-find the tilemap from "map" group
@@ -86,18 +90,28 @@ func _ready() -> void:
 		print("No tilemap found in 'map' group!")
 
 func _on_fire_timer_timeout() -> void:
+	
 	if not placing_tower:
 		if fire_cooldown != fire_timer.wait_time:
 			fire_timer.wait_time = fire_cooldown
+
 		if current_target and is_instance_valid(current_target):
-			# käännä tykki kohti vihollista jos pitää (rotating turret towards enemy)
 			if rotating:
 				var to_enemy = current_target.global_position - global_position
 				turret.rotation = to_enemy.angle() + deg_to_rad(90)
+			if suppress_next_shot and enemies.is_empty():
+		# cooldown expired while enemies was empty → do nothing if enemies are still empty
+				suppress_next_shot = false
+				return
+			_fire()
 
-			# ammu
-			fire_projectile(current_target.global_position + current_target.get_parent().velocity * 0.1)
+	# Keep firing if enemies remain
+	if not enemies.is_empty():
+		fire_timer.start()
 
+
+func _fire() -> void:
+	fire_projectile(current_target.global_position + current_target.get_parent().velocity * 0.1)
 
 func _select_new_target() -> void:
 	if enemies.size() > 0:
@@ -187,12 +201,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		
 		enemies.append(area)
 		_select_new_target()
-		fire_timer.autostart = true
-		if not fire_timer.is_stopped():
-			return  # already firing
-		_on_fire_timer_timeout() # manually fire once
 		
-		fire_timer.start()    
+		if fire_timer.is_stopped():
+			_fire()
+			fire_timer.start()
 		
 
 
@@ -203,7 +215,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		if area == current_target:
 			_select_new_target()
 		if enemies.is_empty():
-			fire_timer.autostart = false
+			suppress_next_shot = true
 
 func _on_turret_animation_finished() -> void:
 	if tower_level == 1:

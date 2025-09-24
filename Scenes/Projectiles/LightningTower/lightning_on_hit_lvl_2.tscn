@@ -37,16 +37,16 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yalen")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_j56bj")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_r06g0")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_csmoy")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_rsneu")
 }, {
 "duration": 1.0,
@@ -63,20 +63,23 @@ size = Vector2(70, 19.5)
 [node name="LightningOnHitLvl2" type="Node2D"]
 z_index = 5
 script = ExtResource("1_trp0n")
+move_duration = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_l4upv")
 autoplay = "default"
-frame = 4
-frame_progress = 0.164039
+frame = 6
+frame_progress = 1.0
 
 [node name="DamageSource" parent="." instance=ExtResource("3_agfeu")]
 damage = 20
+stun = 1.0
 penetrating = true
 single_target = false
 on_hit = true
+offset = Vector2(0, -20)
 
 [node name="DamageArea" parent="DamageSource" index="0"]
 position = Vector2(-1, 0)

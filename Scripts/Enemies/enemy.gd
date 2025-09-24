@@ -12,6 +12,8 @@ var reached_distance = 5
 var path_follower: PathFollow2D = null
 var previous_position: Vector2 = Vector2.ZERO
 
+var stunned: bool = false
+
 func _ready():
 	# Find the Path2D node in the current scene.
 	var path_node = get_parent()
@@ -34,6 +36,8 @@ func _ready():
 
 
 func _physics_process(_delta: float) -> void:
+	if stunned:
+		return
 	if not path_follower:
 		return
 		
