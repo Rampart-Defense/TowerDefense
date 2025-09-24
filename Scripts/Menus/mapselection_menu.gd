@@ -28,6 +28,7 @@ func _ready():
 		map_list.add_child(button)
 
 func _on_map_button_pressed(map_path):
+	SoundManager.get_node("buttonpress").play()
 	# This function is now generic and can handle any map
 	GlobalUi.get_node("PauseMenu").can_pause = true
 	GlobalUi.get_node("TowerShop").show_shop()
@@ -38,4 +39,5 @@ func _on_map_button_pressed(map_path):
 
 
 func _on_button_pressed() -> void:
+	SoundManager.get_node("buttonpress").play()
 	get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")

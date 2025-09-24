@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://84r04x5pvahu"]
+[gd_scene load_steps=34 format=3 uid="uid://84r04x5pvahu"]
 
 [ext_resource type="Script" uid="uid://dea3wmrsbrow0" path="res://Scripts/Towers/tower_ai.gd" id="1_pdlmi"]
 [ext_resource type="Texture2D" uid="uid://dotyjp2gjwe5q" path="res://Art/VisualArt/Towers/ArcheryTower/Tower 01.png" id="2_2irmm"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b4vs1v57h2d8s" path="res://Scenes/UI/tower_leveling_system.tscn" id="5_ffrak"]
 [ext_resource type="Texture2D" uid="uid://csog1icjd54x1" path="res://Art/VisualArt/Towers/ArcheryTower/Tower 01 - Level 02 - Weapon.png" id="5_lyyo3"]
 [ext_resource type="Texture2D" uid="uid://clppjvjvecb42" path="res://Art/VisualArt/Towers/ArcheryTower/Tower 01 - Level 03 - Weapon.png" id="6_3mb5d"]
+[ext_resource type="AudioStream" uid="uid://mgbsw7uxiyxp" path="res://Art/audio/arrow-twang_01-306041.mp3" id="8_3mb5d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7nk1"]
 bg_color = Color(0, 0, 0, 0.352941)
@@ -260,6 +261,10 @@ range_value_2 = 200
 z_index = 101
 position = Vector2(-1.5, 13)
 shape = SubResource("RectangleShape2D_p7nk1")
+
+[node name="arrowshoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_3mb5d")
+bus = &"sfx"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="animation_finished" from="Turret" to="." method="_on_turret_animation_finished"]

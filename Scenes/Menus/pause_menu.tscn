@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbfjispwcoc36"]
+[gd_scene load_steps=3 format=3 uid="uid://bbfjispwcoc36"]
 
 [ext_resource type="Script" uid="uid://c2gno3ouixg3v" path="res://Scripts/Menus/pause_menu.gd" id="1_as6yf"]
+[ext_resource type="PackedScene" uid="uid://dtn7ynavh8ood" path="res://Scenes/Menus/options_menu.tscn" id="2_1j166"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -47,6 +48,10 @@ text = "Options"
 layout_mode = 2
 text = "Exit"
 
+[node name="OptionsMenu" parent="." instance=ExtResource("2_1j166")]
+layout_mode = 1
+
 [connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Exit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
