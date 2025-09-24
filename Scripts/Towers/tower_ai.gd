@@ -90,22 +90,24 @@ func _ready() -> void:
 	else:
 		print("No tilemap found in 'map' group!")
 
-func _on_fire_timer_timeout() -> void:
-	
-	if not placing_tower:
-		if fire_cooldown != fire_timer.wait_time:
-			fire_timer.wait_time = fire_cooldown
 
-		if current_target and is_instance_valid(current_target):
-			if rotating:
+
+
+
+func _on_fire_timer_timeout() -> void:
+
+	if fire_cooldown != fire_timer.wait_time:
+		fire_timer.wait_time = fire_cooldown
+	if not placing_tower:
+		if rotating:
+			if current_target and is_instance_valid(current_target):
 				var to_enemy = current_target.global_position - global_position
 				turret.rotation = to_enemy.angle() + deg_to_rad(90)
-			if suppress_next_shot and enemies.is_empty():
-		# cooldown expired while enemies was empty → do nothing if enemies are still empty
-				suppress_next_shot = false
-				return
-			_fire()
-
+	if suppress_next_shot and enemies.is_empty():
+	# cooldown expired while enemies was empty → do nothing if enemies are still empty
+		suppress_next_shot = false
+		return
+	_fire()
 	# Keep firing if enemies remain
 	if not enemies.is_empty():
 		fire_timer.start()
@@ -113,8 +115,10 @@ func _on_fire_timer_timeout() -> void:
 
 			# ammu
 func _fire() -> void:
-	fire_projectile(current_target.global_position + current_target.get_parent().velocity * 0.1)
-	# arrow_shoot.play()
+	if not placing_tower:
+		if current_target and is_instance_valid(current_target):
+			fire_projectile(current_target.global_position + current_target.get_parent().velocity * 0.1)
+			# arrow_shoot.play()
 	
 
 func _select_new_target() -> void:
