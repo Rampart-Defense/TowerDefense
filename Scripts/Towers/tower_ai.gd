@@ -50,7 +50,8 @@ var current_range: float = base_range
 
 
 @onready var tower_leveling_system: Control = $TowerLevelingSystem
-@onready var arrow_shoot = $arrowshoot
+@export var shoot_sound: AudioStreamPlayer2D
+
 
 #Scale of the map
 var map_scale = 0
@@ -114,7 +115,8 @@ func _on_fire_timer_timeout() -> void:
 			# ammu
 func _fire() -> void:
 	fire_projectile(current_target.global_position + current_target.get_parent().velocity * 0.1)
-	# arrow_shoot.play()
+	if shoot_sound:
+			shoot_sound.play()
 	
 
 func _select_new_target() -> void:

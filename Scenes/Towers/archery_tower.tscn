@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b4vs1v57h2d8s" path="res://Scenes/UI/tower_leveling_system.tscn" id="5_ffrak"]
 [ext_resource type="Texture2D" uid="uid://csog1icjd54x1" path="res://Art/VisualArt/Towers/ArcheryTower/Tower 01 - Level 02 - Weapon.png" id="5_lyyo3"]
 [ext_resource type="Texture2D" uid="uid://clppjvjvecb42" path="res://Art/VisualArt/Towers/ArcheryTower/Tower 01 - Level 03 - Weapon.png" id="6_3mb5d"]
-[ext_resource type="AudioStream" uid="uid://mgbsw7uxiyxp" path="res://Art/audio/arrow-twang_01-306041.mp3" id="8_3mb5d"]
+[ext_resource type="AudioStream" uid="uid://mgbsw7uxiyxp" path="res://Art/Audio/Towers/ArcheryTower/arrow-twang_01-306041.mp3" id="8_3mb5d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7nk1"]
 bg_color = Color(0, 0, 0, 0.352941)
@@ -202,7 +202,7 @@ radius = 250.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7nk1"]
 size = Vector2(77, 144)
 
-[node name="ArcheryTower" type="Area2D" node_paths=PackedStringArray("tower_range", "tower_base", "turret", "firing_point", "fire_timer") groups=["tower"]]
+[node name="ArcheryTower" type="Area2D" node_paths=PackedStringArray("tower_range", "tower_base", "turret", "firing_point", "fire_timer", "shoot_sound") groups=["tower"]]
 z_index = 1
 texture_filter = 1
 script = ExtResource("1_pdlmi")
@@ -213,6 +213,7 @@ turret = NodePath("Turret")
 firing_point = NodePath("Turret/Marker2D")
 rotating = true
 fire_timer = NodePath("FireTimer")
+shoot_sound = NodePath("arrowshoot")
 
 [node name="RangeArea" type="Panel" parent="."]
 offset_left = -250.0

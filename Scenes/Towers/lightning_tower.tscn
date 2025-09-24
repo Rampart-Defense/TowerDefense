@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://dschpsj6gim0l"]
+[gd_scene load_steps=114 format=3 uid="uid://dschpsj6gim0l"]
 
 [ext_resource type="Script" uid="uid://dgty54hrcioku" path="res://Scripts/Towers/lightning_tower.gd" id="1_6kre2"]
 [ext_resource type="Texture2D" uid="uid://w0mwxjl1eha2" path="res://Art/VisualArt/Towers/LightningTower/Tower 02.png" id="2_7beeb"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bwbkoqobnhlt3" path="res://Art/VisualArt/Towers/LightningTower/Tower 02 - Level 02 - Weapon.png" id="5_tajq6"]
 [ext_resource type="Texture2D" uid="uid://dwj2pe843gu45" path="res://Art/VisualArt/Towers/LightningTower/Tower 02 - Level 03 - Weapon.png" id="6_10riq"]
 [ext_resource type="PackedScene" uid="uid://b4vs1v57h2d8s" path="res://Scenes/UI/tower_leveling_system.tscn" id="7_tajq6"]
+[ext_resource type="AudioStream" uid="uid://kx7836v0md4b" path="res://Art/Audio/Towers/LightningTower/lightning-magic-2-378646.mp3" id="10_0trrp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0trrp"]
 bg_color = Color(0, 0, 0, 0.352941)
@@ -811,3 +812,6 @@ tower = NodePath("..")
 sell_price = 200
 attack_damage_cost_1 = 200
 attack_damage_cost_2 = 500
+
+[node name="lightningshoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_0trrp")
