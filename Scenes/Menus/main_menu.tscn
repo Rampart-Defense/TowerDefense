@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://hm1u6t2q8w0b" path="res://Scripts/Menus/main_menu.gd" id="1_pha2q"]
 [ext_resource type="Texture2D" uid="uid://c2cxurfxfk8bc" path="res://Art/VisualArt/UI/Menus/mainmenubackground.png" id="2_penys"]
 [ext_resource type="PackedScene" uid="uid://dtn7ynavh8ood" path="res://Scenes/Menus/options_menu.tscn" id="3_penys"]
-[ext_resource type="AudioStream" uid="uid://vbqrok4n14un" path="res://Art/audio/desert.ogg" id="4_aur2u"]
-[ext_resource type="AudioStream" uid="uid://by2hpfbn3qoyi" path="res://Art/audio/buttonpress.mp3" id="5_5wi6m"]
+[ext_resource type="AudioStream" uid="uid://vbqrok4n14un" path="res://Art/Audio/Music/desert.ogg" id="4_aur2u"]
+[ext_resource type="AudioStream" uid="uid://by2hpfbn3qoyi" path="res://Art/Audio/UI/buttonpress.mp3" id="5_5wi6m"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
