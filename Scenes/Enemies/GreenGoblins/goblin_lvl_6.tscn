@@ -221,10 +221,11 @@ position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_rf5p6")
 animation = &"walk_up"
 
-[node name="EnemyHealthSystem" type="Area2D" parent="." groups=["Enemy"]]
+[node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -26)
 script = ExtResource("4_cd05o")
-payout = 20
+maxHealth = 60
+payout = 90
 
 [node name="Hitbox" type="CollisionShape2D" parent="EnemyHealthSystem"]
 position = Vector2(0, 11)

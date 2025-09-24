@@ -3,10 +3,9 @@ extends Control
 @onready var map_list = $ScrollContainer/CenterContainer/GridContainer
 
 var maps = {
-	"Frostbite_fields": "res://Scenes/Maps/frostbite_fields.tscn",
-	"Scorched_sands_full": "res://Scenes/Maps/scorched_sands_full.tscn",
-	"testscene1": "res://Scenes/Test/test_scene.tscn",
-	"testscene2": "res://Scenes/Test/testscene_2.tscn",
+	"Frostbite Fields": "res://Scenes/Maps/frostbite_fields.tscn",
+	"Scorched Sands": "res://Scenes/Maps/scorched_sands.tscn",
+	"Oasis": "res://Scenes/Maps/oasis.tscn",
 	"testscene3": "res://Scenes/Test/test_scene_3.tscn",
 	"testscene4": "res://Scenes/Test/test_scene_3.tscn",
 	"testscene5": "res://Scenes/Test/test_scene_3.tscn",

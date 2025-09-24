@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://qcjcoo3nif0m"]
+[gd_scene load_steps=8 format=3 uid="uid://qcjcoo3nif0m"]
 
 [ext_resource type="Script" uid="uid://dht7aprvbd7h1" path="res://Scripts/UI/tower_shop.gd" id="1_bhdn4"]
-[ext_resource type="PackedScene" uid="uid://dvgmkrlkllw5w" path="res://Scenes/UI/tower_shop_panel.tscn" id="1_obd1k"]
+[ext_resource type="PackedScene" uid="uid://dvgmkrlkllw5w" path="res://Scenes/UI/Towershop/tower_shop_panel.tscn" id="1_obd1k"]
 [ext_resource type="Texture2D" uid="uid://bnig08qvay1gd" path="res://Art/VisualArt/UI/Buttons/BuildButton.png" id="2_xb3fm"]
 [ext_resource type="Texture2D" uid="uid://c8hwaroslpx5r" path="res://Art/VisualArt/UI/Buttons/BuildButtonPressed.png" id="3_bhdn4"]
+[ext_resource type="PackedScene" uid="uid://lnxhjh2qrihs" path="res://Scenes/UI/Towershop/lightning_tower_panel.tscn" id="4_0c3qk"]
 [ext_resource type="Texture2D" uid="uid://b7y2ccxtvvfct" path="res://Art/VisualArt/UI/Buttons/BuildButtonHover.png" id="4_hxpkr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhdn4"]
@@ -59,22 +60,22 @@ layout_mode = 2
 [node name="TowerShopPanel2" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
 layout_mode = 2
 
-[node name="TowerShopPanel3" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+[node name="LightningTowerPanel" parent="Panel/FlowContainer" instance=ExtResource("4_0c3qk")]
 layout_mode = 2
 
-[node name="TowerShopPanel4" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+[node name="LightningTowerPanel2" parent="Panel/FlowContainer" instance=ExtResource("4_0c3qk")]
 layout_mode = 2
 
-[node name="TowerShopPanel5" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+[node name="LightningTowerPanel3" parent="Panel/FlowContainer" instance=ExtResource("4_0c3qk")]
 layout_mode = 2
 
-[node name="TowerShopPanel6" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+[node name="LightningTowerPanel4" parent="Panel/FlowContainer" instance=ExtResource("4_0c3qk")]
 layout_mode = 2
 
-[node name="TowerShopPanel7" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+[node name="LightningTowerPanel5" parent="Panel/FlowContainer" instance=ExtResource("4_0c3qk")]
 layout_mode = 2
 
-[node name="TowerShopPanel8" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+[node name="LightningTowerPanel6" parent="Panel/FlowContainer" instance=ExtResource("4_0c3qk")]
 layout_mode = 2
 
 [node name="ShowShopButton" type="TextureButton" parent="."]

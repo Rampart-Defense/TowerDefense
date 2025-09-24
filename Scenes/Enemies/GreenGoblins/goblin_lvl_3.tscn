@@ -223,11 +223,11 @@ animation = &"walk_down"
 frame = 5
 frame_progress = 0.251369
 
-[node name="EnemyHealthSystem" type="Area2D" parent="." groups=["Enemy"]]
+[node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -26)
 script = ExtResource("2_8cgbs")
-maxHealth = 4
-payout = 8
+maxHealth = 30
+payout = 50
 
 [node name="Hitbox" type="CollisionShape2D" parent="EnemyHealthSystem"]
 position = Vector2(0, 12.25)

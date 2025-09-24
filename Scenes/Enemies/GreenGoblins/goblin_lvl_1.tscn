@@ -222,11 +222,10 @@ position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_87hy0")
 animation = &"walk_down"
 
-[node name="EnemyHealthSystem" type="Area2D" parent="." groups=["Enemy"]]
+[node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -14)
 script = ExtResource("3_jwh6u")
-maxHealth = 1
-payout = 2
+payout = 20
 
 [node name="Hitbox" type="CollisionShape2D" parent="EnemyHealthSystem"]
 shape = SubResource("RectangleShape2D_bqaqd")

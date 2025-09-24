@@ -34,6 +34,7 @@ window/stretch/mode="viewport"
 map="group a tilemap to find it(tower placement needs this)"
 path=""
 tower=""
+enemy=""
 
 [input]
 

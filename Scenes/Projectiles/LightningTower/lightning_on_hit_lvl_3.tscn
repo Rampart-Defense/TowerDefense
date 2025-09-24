@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://cdyb8y4upvlc8"]
+
+[ext_resource type="Script" uid="uid://quom3ltnpqlf" path="res://Scripts/Projectiles/lightning_on_hit.gd" id="1_uwwcr"]
+[ext_resource type="Texture2D" uid="uid://cv4r6fw4t1y5p" path="res://Art/VisualArt/Towers/LightningTower/Tower 02 - Level 03 - Projectile - Impact.png" id="2_uwwcr"]
+[ext_resource type="PackedScene" uid="uid://bssmcnmtaknm6" path="res://Scenes/Projectiles/damage_source.tscn" id="3_volie"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0a5k"]
+atlas = ExtResource("2_uwwcr")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_volie"]
+atlas = ExtResource("2_uwwcr")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0guf"]
+atlas = ExtResource("2_uwwcr")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wixef"]
+atlas = ExtResource("2_uwwcr")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g4sh"]
+atlas = ExtResource("2_uwwcr")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v40d8"]
+atlas = ExtResource("2_uwwcr")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhyep"]
+atlas = ExtResource("2_uwwcr")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0f5yx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0a5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_volie")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_j0guf")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_wixef")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_4g4sh")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_v40d8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhyep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0a5k")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwwcr"]
+size = Vector2(72, 26.75)
+
+[node name="LightningOnHitLvl3" type="Node2D"]
+z_index = 5
+script = ExtResource("1_uwwcr")
+move_duration = 1.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0f5yx")
+autoplay = "default"
+frame = 7
+frame_progress = 1.0
+
+[node name="DamageSource" parent="." instance=ExtResource("3_volie")]
+damage = 30
+stun = 1.0
+penetrating = true
+single_target = false
+on_hit = true
+offset = Vector2(0, -20)
+
+[node name="DamageArea" parent="DamageSource" index="0"]
+shape = SubResource("RectangleShape2D_uwwcr")
+
+[editable path="DamageSource"]
