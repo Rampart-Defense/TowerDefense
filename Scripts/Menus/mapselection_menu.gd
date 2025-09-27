@@ -6,6 +6,7 @@ var maps = {
 	"Frostbite Fields": "res://Scenes/Maps/frostbite_fields.tscn",
 	"Scorched Sands": "res://Scenes/Maps/scorched_sands.tscn",
 	"Oasis": "res://Scenes/Maps/oasis.tscn",
+	"Nature's Edge": "res://Scenes/Maps/natures_edge.tscn",
 	"testscene3": "res://Scenes/Test/test_scene_3.tscn",
 	"testscene4": "res://Scenes/Test/test_scene_3.tscn",
 	"testscene5": "res://Scenes/Test/test_scene_3.tscn",
