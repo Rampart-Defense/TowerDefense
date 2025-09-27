@@ -20,12 +20,12 @@ extends Node2D
 # ---Enemy related ---
 var enemies: Array = [] # kaikki havaitut viholliset
 var current_target: Node2D = null
-
-
+var pending_target_pos: Vector2 = Vector2.ZERO
 
 # --- Checking bools ---
 var can_fire: bool = true
-var placing_tower: = false
+var placing_tower: bool = false
+var firing: bool = false
 
 # --- TILEMAP AND PLACEMENT CHECK RELATED ---
 var tilemap: TileMapLayer = null
@@ -99,11 +99,7 @@ func _on_fire_timer_timeout() -> void:
 
 	if fire_cooldown != fire_timer.wait_time:
 		fire_timer.wait_time = fire_cooldown
-	if not placing_tower:
-		if rotating:
-			if current_target and is_instance_valid(current_target):
-				var to_enemy = current_target.global_position - global_position
-				turret.rotation = to_enemy.angle() + deg_to_rad(90)
+		
 	if suppress_next_shot and enemies.is_empty():
 	# cooldown expired while enemies was empty → do nothing if enemies are still empty
 		suppress_next_shot = false
@@ -116,13 +112,24 @@ func _on_fire_timer_timeout() -> void:
 
 			# ammu
 func _fire() -> void:
-	if not placing_tower:
-		if current_target and is_instance_valid(current_target):
-			fire_projectile(current_target.global_position + current_target.get_parent().velocity * 0.1)
-			if shoot_sound:
-				shoot_sound.play()
+	if placing_tower or firing:
+		return
 	
+	if current_target and is_instance_valid(current_target):
+		if rotating:
+			var to_enemy = current_target.global_position - global_position
+			turret.rotation = to_enemy.angle() + deg_to_rad(90)
+		pending_target_pos = current_target.global_position
+		firing = true
+		play_fire_animation()
+		if shoot_sound:
+			shoot_sound.play()
 	
+func play_fire_animation() -> void:
+	match tower_level:
+		1: turret.play("Fire")
+		2: turret.play("Fire2")
+		3: turret.play("Fire3")
 	
 
 func _select_new_target() -> void:
@@ -183,6 +190,10 @@ func _recalculate_level():
 func _apply_visuals_and_stats():
 	#Applying visuals
 	match tower_level:
+		1: turret.play("Default")
+		2: turret.play("Default2")
+		3: turret.play("Default3")
+	match tower_level:
 		1:
 			tower_base.frame = 0
 			turret.frame = 0
@@ -229,10 +240,15 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		if enemies.is_empty():
 			suppress_next_shot = true
 
+# --- Animation finish hook ---
 func _on_turret_animation_finished() -> void:
-	if tower_level == 1:
-		turret.play("Default")
-	if tower_level == 2:
-		turret.play("Default2")
-	if tower_level == 3:
-		turret.play("Default3")
+	if firing:
+		fire_projectile(pending_target_pos)
+		firing = false
+		pending_target_pos = Vector2.ZERO
+
+	# Reset idle anim
+		match tower_level:
+			1: turret.play("Default")
+			2: turret.play("Default2")
+			3: turret.play("Default3")

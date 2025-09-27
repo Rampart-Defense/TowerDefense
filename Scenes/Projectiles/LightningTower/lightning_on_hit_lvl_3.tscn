@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cdyb8y4upvlc8"]
 
-[ext_resource type="Script" uid="uid://quom3ltnpqlf" path="res://Scripts/Projectiles/lightning_on_hit.gd" id="1_uwwcr"]
+[ext_resource type="Script" uid="uid://quom3ltnpqlf" path="res://Scripts/Projectiles/on_hit.gd" id="1_uwwcr"]
 [ext_resource type="Texture2D" uid="uid://cv4r6fw4t1y5p" path="res://Art/VisualArt/Towers/LightningTower/Tower 02 - Level 03 - Projectile - Impact.png" id="2_uwwcr"]
 [ext_resource type="PackedScene" uid="uid://bssmcnmtaknm6" path="res://Scenes/Projectiles/damage_source.tscn" id="3_volie"]
 
@@ -65,12 +65,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwwcr"]
-size = Vector2(72, 26.75)
+size = Vector2(90, 61.375)
 
 [node name="LightningOnHitLvl3" type="Node2D"]
 z_index = 5
 script = ExtResource("1_uwwcr")
-move_duration = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -89,6 +88,7 @@ on_hit = true
 offset = Vector2(0, -20)
 
 [node name="DamageArea" parent="DamageSource" index="0"]
+position = Vector2(3, 17.3125)
 shape = SubResource("RectangleShape2D_uwwcr")
 
 [editable path="DamageSource"]

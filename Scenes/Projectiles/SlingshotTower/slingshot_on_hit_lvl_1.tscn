@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://bwj6rhurt4tqq"]
+
+[ext_resource type="Script" uid="uid://quom3ltnpqlf" path="res://Scripts/Projectiles/on_hit.gd" id="1_vq17p"]
+[ext_resource type="Texture2D" uid="uid://bvrglf571xhum" path="res://Art/VisualArt/Towers/SlingshotTower/Tower 03 - Level 01 - Projectile - Impact.png" id="2_1yrv6"]
+[ext_resource type="PackedScene" uid="uid://bssmcnmtaknm6" path="res://Scenes/Projectiles/damage_source.tscn" id="2_34kda"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53vki"]
+atlas = ExtResource("2_1yrv6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyeas"]
+atlas = ExtResource("2_1yrv6")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdfoq"]
+atlas = ExtResource("2_1yrv6")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj7y4"]
+atlas = ExtResource("2_1yrv6")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b551a"]
+atlas = ExtResource("2_1yrv6")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsgx3"]
+atlas = ExtResource("2_1yrv6")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1yrv6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53vki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyeas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdfoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj7y4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b551a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsgx3")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34kda"]
+size = Vector2(96, 78)
+
+[node name="SlingshotOnHitLvl1" type="Node2D"]
+z_index = 5
+script = ExtResource("1_vq17p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1yrv6")
+autoplay = "default"
+
+[node name="DamageSource" parent="." instance=ExtResource("2_34kda")]
+damage = 30
+penetrating = true
+single_target = false
+on_hit = true
+offset = Vector2(0, -20)
+
+[node name="DamageArea" parent="DamageSource" index="0"]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_34kda")
+
+[editable path="DamageSource"]

@@ -1,0 +1,293 @@
+[gd_scene load_steps=39 format=3 uid="uid://mhei1ejaql8l"]
+
+[ext_resource type="Script" uid="uid://d2k3bmahagci1" path="res://Scripts/Towers/slingshot_tower.gd" id="1_c1lf5"]
+[ext_resource type="Texture2D" uid="uid://bv2wx1w2lt6v" path="res://Art/VisualArt/Towers/SlingshotTower/Tower 03.png" id="1_k4cxa"]
+[ext_resource type="Texture2D" uid="uid://c47thy21pp7b8" path="res://Art/VisualArt/Towers/SlingshotTower/Tower 03 - Level 01 - Weapon.png" id="2_qxqc0"]
+[ext_resource type="PackedScene" uid="uid://bja12arg74kx1" path="res://Scenes/Projectiles/SlingshotTower/slingshot_projectile_lvl_2.tscn" id="2_s7tqa"]
+[ext_resource type="PackedScene" uid="uid://cdl2jekyej3x1" path="res://Scenes/Projectiles/SlingshotTower/slingshot_projectile_lvl_3.tscn" id="3_60nfj"]
+[ext_resource type="Texture2D" uid="uid://6ugsda1ilxai" path="res://Art/VisualArt/Towers/SlingshotTower/Tower 03 - Level 02 - Weapon.png" id="3_84kso"]
+[ext_resource type="Texture2D" uid="uid://yops6i0jpts4" path="res://Art/VisualArt/Towers/SlingshotTower/Tower 03 - Level 03 - Weapon.png" id="4_c1lf5"]
+[ext_resource type="PackedScene" uid="uid://db7dpf0u1djhq" path="res://Scenes/Projectiles/SlingshotTower/slingshot_projectile_lvl_1.tscn" id="4_qnuik"]
+[ext_resource type="PackedScene" uid="uid://b4vs1v57h2d8s" path="res://Scenes/UI/tower_leveling_system.tscn" id="5_c1lf5"]
+[ext_resource type="AudioStream" uid="uid://mgbsw7uxiyxp" path="res://Art/Audio/Towers/ArcheryTower/arrow-twang_01-306041.mp3" id="6_5khnr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fm6af"]
+bg_color = Color(0, 0, 0, 0.352941)
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce44g"]
+atlas = ExtResource("2_qxqc0")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl24g"]
+atlas = ExtResource("2_qxqc0")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq5mn"]
+atlas = ExtResource("2_qxqc0")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5khnr"]
+atlas = ExtResource("3_84kso")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm6af"]
+atlas = ExtResource("3_84kso")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a8dn"]
+atlas = ExtResource("3_84kso")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13kvr"]
+atlas = ExtResource("4_c1lf5")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6ki5"]
+atlas = ExtResource("4_c1lf5")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8o7u"]
+atlas = ExtResource("4_c1lf5")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1lf5"]
+atlas = ExtResource("2_qxqc0")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7tqa"]
+atlas = ExtResource("2_qxqc0")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60nfj"]
+atlas = ExtResource("2_qxqc0")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnuik"]
+atlas = ExtResource("2_qxqc0")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5qcb"]
+atlas = ExtResource("2_qxqc0")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfp25"]
+atlas = ExtResource("3_84kso")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm5n4"]
+atlas = ExtResource("3_84kso")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a28xb"]
+atlas = ExtResource("3_84kso")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hl45"]
+atlas = ExtResource("3_84kso")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1yp6"]
+atlas = ExtResource("3_84kso")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmh8w"]
+atlas = ExtResource("4_c1lf5")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vbec"]
+atlas = ExtResource("4_c1lf5")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhu8a"]
+atlas = ExtResource("4_c1lf5")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwh8b"]
+atlas = ExtResource("4_c1lf5")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlgrk"]
+atlas = ExtResource("4_c1lf5")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tq5mn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce44g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl24g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq5mn")
+}],
+"loop": false,
+"name": &"Default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5khnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm6af")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a8dn")
+}],
+"loop": false,
+"name": &"Default2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13kvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6ki5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8o7u")
+}],
+"loop": false,
+"name": &"Default3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1lf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7tqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60nfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnuik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5qcb")
+}],
+"loop": false,
+"name": &"Fire",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfp25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm5n4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a28xb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hl45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1yp6")
+}],
+"loop": false,
+"name": &"Fire2",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmh8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vbec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhu8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwh8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlgrk")
+}],
+"loop": false,
+"name": &"Fire3",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5cc57"]
+radius = 250.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cc57"]
+size = Vector2(77, 144)
+
+[node name="SlingshotTower" type="Area2D" node_paths=PackedStringArray("tower_range", "tower_base", "turret", "firing_point", "fire_timer", "shoot_sound") groups=["tower"]]
+z_index = 5
+script = ExtResource("1_c1lf5")
+projectile_scene2 = ExtResource("2_s7tqa")
+projectile_scene3 = ExtResource("3_60nfj")
+projectile_scene = ExtResource("4_qnuik")
+base_fire_cooldown = 2.0
+tower_range = NodePath("Range")
+tower_base = NodePath("Base")
+turret = NodePath("Turret")
+firing_point = NodePath("Turret/Marker2D")
+rotating = true
+fire_timer = NodePath("FireTimer")
+shoot_sound = NodePath("arrowshoot")
+
+[node name="RangeArea" type="Panel" parent="."]
+offset_left = -250.0
+offset_top = -252.0
+offset_right = 250.0
+offset_bottom = 248.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fm6af")
+
+[node name="Base" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("1_k4cxa")
+hframes = 3
+frame = 2
+
+[node name="Turret" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -30)
+sprite_frames = SubResource("SpriteFrames_tq5mn")
+animation = &"Default3"
+
+[node name="Marker2D" type="Marker2D" parent="Turret"]
+position = Vector2(0, -33)
+
+[node name="FireTimer" type="Timer" parent="."]
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+modulate = Color(0.294118, 0.294118, 0.294118, 0.67451)
+self_modulate = Color(0.27451, 0.27451, 0.27451, 0.52549)
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_5cc57")
+
+[node name="clickshape" type="CollisionShape2D" parent="."]
+z_index = 101
+position = Vector2(-1.5, 13)
+shape = SubResource("RectangleShape2D_5cc57")
+
+[node name="TowerLevelingSystem" parent="." node_paths=PackedStringArray("tower") instance=ExtResource("5_c1lf5")]
+z_index = 101
+offset_left = -608.0
+offset_top = -72.0
+offset_right = -608.0
+offset_bottom = -72.0
+tower = NodePath("..")
+range_value_1 = 100
+range_value_2 = 200
+
+[node name="arrowshoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_5khnr")
+bus = &"sfx"
