@@ -1,0 +1,145 @@
+[gd_scene load_steps=21 format=3 uid="uid://ctens4jt0ylxn"]
+
+[ext_resource type="Texture2D" uid="uid://ddw70blxomunv" path="res://Art/VisualArt/Towers/CatapultTower/Tower 04 - Level 01 - Projectile.png" id="1_fx8fj"]
+[ext_resource type="Script" uid="uid://ccm0fdtqgvtxf" path="res://Scripts/Projectiles/tower_projectile.gd" id="1_jrmb8"]
+[ext_resource type="Script" uid="uid://bl1a4o232oxjv" path="res://Scripts/Projectiles/damage_source.gd" id="2_go7e3"]
+[ext_resource type="Texture2D" uid="uid://cilxsmgggmt1a" path="res://Art/VisualArt/Towers/CatapultTower/Tower 04 - Level 03 - Projectile.png" id="3_v5i8d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go7e3"]
+atlas = ExtResource("1_fx8fj")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrmb8"]
+atlas = ExtResource("1_fx8fj")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5i8d"]
+atlas = ExtResource("1_fx8fj")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7fjc"]
+atlas = ExtResource("1_fx8fj")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chjvj"]
+atlas = ExtResource("1_fx8fj")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy56e"]
+atlas = ExtResource("1_fx8fj")
+region = Rect2(40, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xm2ow"]
+atlas = ExtResource("3_v5i8d")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c52h"]
+atlas = ExtResource("3_v5i8d")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbgv3"]
+atlas = ExtResource("3_v5i8d")
+region = Rect2(20, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r1ik"]
+atlas = ExtResource("3_v5i8d")
+region = Rect2(30, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jte4"]
+atlas = ExtResource("3_v5i8d")
+region = Rect2(40, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyww6"]
+atlas = ExtResource("3_v5i8d")
+region = Rect2(50, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asmtu"]
+atlas = ExtResource("3_v5i8d")
+region = Rect2(60, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fro1c"]
+atlas = ExtResource("3_v5i8d")
+region = Rect2(70, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fx8fj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go7e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrmb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5i8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7fjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chjvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy56e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xm2ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c52h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbgv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r1ik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jte4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyww6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asmtu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fro1c")
+}],
+"loop": true,
+"name": &"default3",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xm2ow"]
+size = Vector2(8, 9)
+
+[node name="CatapultProjectile" type="Node2D"]
+script = ExtResource("1_jrmb8")
+speed = 300.0
+death_time = 4.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fx8fj")
+autoplay = "default"
+
+[node name="DamageSource" type="Area2D" parent="." groups=["damageSource"]]
+script = ExtResource("2_go7e3")
+damage = 5
+penetrating = true
+single_target = false
+
+[node name="DamageArea" type="CollisionShape2D" parent="DamageSource"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_xm2ow")
+
+[node name="DeathTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="DamageSource" to="DamageSource" method="_on_area_entered"]

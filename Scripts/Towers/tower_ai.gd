@@ -21,6 +21,7 @@ extends Node2D
 var enemies: Array = [] # kaikki havaitut viholliset
 var current_target: Node2D = null
 var pending_target_pos: Vector2 = Vector2.ZERO
+var shoot_target: Node2D = null
 
 # --- Checking bools ---
 var can_fire: bool = true
@@ -120,6 +121,7 @@ func _fire() -> void:
 			var to_enemy = current_target.global_position - global_position
 			turret.rotation = to_enemy.angle() + deg_to_rad(90)
 		pending_target_pos = current_target.global_position
+		shoot_target = current_target
 		firing = true
 		play_fire_animation()
 		if shoot_sound:
@@ -139,20 +141,23 @@ func _select_new_target() -> void:
 		current_target = null
 
 
-func fire_projectile(target_pos: Vector2) -> void:
+func fire_projectile() -> void:
 	var offsets: Array = []
-
+	
+	var target_pos = pending_target_pos
+	
 	match tower_level:
 		1:
 			offsets = [Vector2(0, 0)]  # single shot
-			turret.play("Fire")
+			
 		2:
 			offsets = [Vector2(-5, 0), Vector2(5, 0)]  # two shots
-			turret.play("Fire2")
+			
 		3:
 			offsets = [Vector2(-10, 0), Vector2(0, 0), Vector2(10, 0)]  # three shots
-			turret.play("Fire3")
-
+			
+	if shoot_target != null:
+		target_pos = shoot_target.global_position
 	# Spawn all projectiles with the given offsets. also shoot towards the offset
 	for offset in offsets:
 		var projectile = projectile_scene.instantiate()
@@ -243,7 +248,8 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 # --- Animation finish hook ---
 func _on_turret_animation_finished() -> void:
 	if firing:
-		fire_projectile(pending_target_pos)
+		
+		fire_projectile()
 		firing = false
 		pending_target_pos = Vector2.ZERO
 

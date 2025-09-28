@@ -62,7 +62,6 @@ size = Vector2(22, 21)
 z_index = 6
 texture_filter = 1
 script = ExtResource("1_1qa5o")
-speed = 2
 on_hit_animation = ExtResource("2_pptv0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

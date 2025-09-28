@@ -53,7 +53,7 @@ size = Vector2(22, 21)
 
 [node name="LightningTowerProjectileLvl1" type="Node2D"]
 script = ExtResource("1_dltfg")
-speed = 20
+speed = 500.0
 on_hit_animation = ExtResource("2_h2t4w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

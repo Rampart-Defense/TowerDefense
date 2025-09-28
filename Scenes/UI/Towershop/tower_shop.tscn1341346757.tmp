@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://qcjcoo3nif0m"]
+[gd_scene load_steps=9 format=3 uid="uid://qcjcoo3nif0m"]
 
 [ext_resource type="Script" uid="uid://dht7aprvbd7h1" path="res://Scripts/UI/tower_shop.gd" id="1_bhdn4"]
 [ext_resource type="PackedScene" uid="uid://dvgmkrlkllw5w" path="res://Scenes/UI/Towershop/tower_shop_panel.tscn" id="1_obd1k"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://lnxhjh2qrihs" path="res://Scenes/UI/Towershop/lightning_tower_panel.tscn" id="4_0c3qk"]
 [ext_resource type="Texture2D" uid="uid://b7y2ccxtvvfct" path="res://Art/VisualArt/UI/Buttons/BuildButtonHover.png" id="4_hxpkr"]
 [ext_resource type="PackedScene" uid="uid://cve023ur7mal" path="res://Scenes/UI/Towershop/slingshot_tower_panel.tscn" id="5_qlr4l"]
-[ext_resource type="PackedScene" uid="uid://bbbnnj5e0btlt" path="res://Scenes/UI/Towershop/catapult_tower_panel.tscn" id="6_yderm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhdn4"]
 texture = ExtResource("2_xb3fm")
@@ -69,15 +68,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="SlingshotTowerPanel3" parent="Panel/FlowContainer" instance=ExtResource("5_qlr4l")]
-layout_mode = 2
-
-[node name="CatapultTowerPanel" parent="Panel/FlowContainer" instance=ExtResource("6_yderm")]
-layout_mode = 2
-
-[node name="CatapultTowerPanel2" parent="Panel/FlowContainer" instance=ExtResource("6_yderm")]
-layout_mode = 2
-
-[node name="CatapultTowerPanel3" parent="Panel/FlowContainer" instance=ExtResource("6_yderm")]
 layout_mode = 2
 
 [node name="ShowShopButton" type="TextureButton" parent="."]

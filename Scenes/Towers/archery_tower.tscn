@@ -255,8 +255,7 @@ offset_top = -72.0
 offset_right = -608.0
 offset_bottom = -72.0
 tower = NodePath("..")
-range_value_1 = 100
-range_value_2 = 200
+range_value_2 = 30
 
 [node name="clickshape" type="CollisionShape2D" parent="."]
 z_index = 101

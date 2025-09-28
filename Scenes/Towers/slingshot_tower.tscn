@@ -226,12 +226,12 @@ radius = 250.0
 size = Vector2(77, 144)
 
 [node name="SlingshotTower" type="Area2D" node_paths=PackedStringArray("tower_range", "tower_base", "turret", "firing_point", "fire_timer", "shoot_sound") groups=["tower"]]
-z_index = 5
+z_index = 1
 script = ExtResource("1_c1lf5")
 projectile_scene2 = ExtResource("2_s7tqa")
 projectile_scene3 = ExtResource("3_60nfj")
 projectile_scene = ExtResource("4_qnuik")
-base_fire_cooldown = 2.0
+base_fire_cooldown = 3.0
 tower_range = NodePath("Range")
 tower_base = NodePath("Base")
 turret = NodePath("Turret")
@@ -285,8 +285,7 @@ offset_top = -72.0
 offset_right = -608.0
 offset_bottom = -72.0
 tower = NodePath("..")
-range_value_1 = 100
-range_value_2 = 200
+range_value_2 = 30
 
 [node name="arrowshoot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_5khnr")
