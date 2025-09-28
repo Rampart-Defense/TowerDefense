@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bwbkoqobnhlt3" path="res://Art/VisualArt/Towers/LightningTower/Tower 02 - Level 02 - Weapon.png" id="5_tajq6"]
 [ext_resource type="Texture2D" uid="uid://dwj2pe843gu45" path="res://Art/VisualArt/Towers/LightningTower/Tower 02 - Level 03 - Weapon.png" id="6_10riq"]
 [ext_resource type="PackedScene" uid="uid://b4vs1v57h2d8s" path="res://Scenes/UI/tower_leveling_system.tscn" id="7_tajq6"]
-[ext_resource type="AudioStream" uid="uid://kx7836v0md4b" path="res://Art/Audio/Towers/LightningTower/lightning-magic-2-378646.mp3" id="10_0trrp"]
+[ext_resource type="AudioStream" uid="uid://krps8fsqleau" path="res://Art/Audio/Towers/LightningTower/lightning-magic-short.wav" id="10_0trrp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0trrp"]
 bg_color = Color(0, 0, 0, 0.352941)

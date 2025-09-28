@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://yops6i0jpts4" path="res://Art/VisualArt/Towers/SlingshotTower/Tower 03 - Level 03 - Weapon.png" id="4_c1lf5"]
 [ext_resource type="PackedScene" uid="uid://db7dpf0u1djhq" path="res://Scenes/Projectiles/SlingshotTower/slingshot_projectile_lvl_1.tscn" id="4_qnuik"]
 [ext_resource type="PackedScene" uid="uid://b4vs1v57h2d8s" path="res://Scenes/UI/tower_leveling_system.tscn" id="5_c1lf5"]
-[ext_resource type="AudioStream" uid="uid://mgbsw7uxiyxp" path="res://Art/Audio/Towers/ArcheryTower/arrow-twang_01-306041.mp3" id="6_5khnr"]
+[ext_resource type="AudioStream" uid="uid://hc67afxwq6ul" path="res://Art/Audio/Towers/SlingshotTower/slingshot-1-40486.wav" id="10_c1lf5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fm6af"]
 bg_color = Color(0, 0, 0, 0.352941)
@@ -288,5 +288,5 @@ tower = NodePath("..")
 range_value_2 = 30
 
 [node name="arrowshoot" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_5khnr")
+stream = ExtResource("10_c1lf5")
 bus = &"sfx"
