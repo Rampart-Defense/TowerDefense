@@ -1,10 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://27qcaq5mvvu7"]
+[gd_scene load_steps=25 format=3 uid="uid://27qcaq5mvvu7"]
 
 [ext_resource type="Script" uid="uid://hm1u6t2q8w0b" path="res://Scripts/Menus/main_menu.gd" id="1_pha2q"]
-[ext_resource type="Texture2D" uid="uid://c2cxurfxfk8bc" path="res://Art/VisualArt/UI/Menus/mainmenubackground.png" id="2_penys"]
+[ext_resource type="Texture2D" uid="uid://7uu8gfq00fe7" path="res://Art/VisualArt/UI/Menus/Main_menu/bg/banner.png" id="2_8bdjp"]
+[ext_resource type="Texture2D" uid="uid://b3alm6t4l8ejm" path="res://Art/VisualArt/UI/Buttons/Play_button/Play.png" id="3_chkef"]
+[ext_resource type="Texture2D" uid="uid://dmj8aexng1k0j" path="res://Art/VisualArt/UI/Menus/Main_menu/bg/background.png" id="3_fx838"]
 [ext_resource type="PackedScene" uid="uid://dtn7ynavh8ood" path="res://Scenes/Menus/options_menu.tscn" id="3_penys"]
-[ext_resource type="AudioStream" uid="uid://vbqrok4n14un" path="res://Art/Audio/Music/desert.ogg" id="4_aur2u"]
+[ext_resource type="Texture2D" uid="uid://dp7lu3hdwv5ec" path="res://Art/VisualArt/UI/Menus/Main_menu/bg/castle.png" id="4_0rh2w"]
+[ext_resource type="Texture2D" uid="uid://dm42dpsr1wx7e" path="res://Art/VisualArt/UI/Buttons/Play_button/Play_pressed2.png" id="4_4fgt5"]
 [ext_resource type="AudioStream" uid="uid://by2hpfbn3qoyi" path="res://Art/Audio/UI/buttonpress.mp3" id="5_5wi6m"]
+[ext_resource type="Texture2D" uid="uid://cpywxxmt1cxvy" path="res://Art/VisualArt/UI/Buttons/Play_button/Play_hover.png" id="5_j4kqa"]
+[ext_resource type="Texture2D" uid="uid://checm8kqiuit0" path="res://Art/VisualArt/UI/Menus/Main_menu/bg/tree_left.png" id="5_ou7d0"]
+[ext_resource type="Texture2D" uid="uid://c87tpil3vjcxt" path="res://Art/VisualArt/UI/Menus/Main_menu/bg/tree_right.png" id="6_47bqg"]
+[ext_resource type="Texture2D" uid="uid://chmxob7npaxyx" path="res://Art/VisualArt/UI/Buttons/Options_button/options.png" id="6_ftsii"]
+[ext_resource type="Texture2D" uid="uid://b1yhxndh05m7d" path="res://Art/VisualArt/UI/Menus/Main_menu/clouds/cloud1.png" id="7_cflx4"]
+[ext_resource type="Texture2D" uid="uid://cx4anvtus5hx0" path="res://Art/VisualArt/UI/Buttons/Options_button/Options_pressed.png" id="7_lg1h6"]
+[ext_resource type="Texture2D" uid="uid://c4awx24tchsfu" path="res://Art/VisualArt/UI/Buttons/Options_button/Options_hovered.png" id="8_80s4p"]
+[ext_resource type="Script" uid="uid://c4dk1w1v2mvpn" path="res://Scripts/Menus/cloud.gd" id="8_hg3ot"]
+[ext_resource type="Texture2D" uid="uid://bvswga6ma2tk1" path="res://Art/VisualArt/UI/Buttons/Exit_button/exit.png" id="9_6t1rs"]
+[ext_resource type="Texture2D" uid="uid://bq5hfg0h31dri" path="res://Art/VisualArt/UI/Menus/Main_menu/clouds/cloud2.png" id="9_h56lv"]
+[ext_resource type="Texture2D" uid="uid://b1rn501s5wloa" path="res://Art/VisualArt/UI/Buttons/Exit_button/Exit_pressed.png" id="10_0xbgx"]
+[ext_resource type="Texture2D" uid="uid://blwhqgmrtyjkc" path="res://Art/VisualArt/UI/Menus/Main_menu/clouds/cloud3.png" id="10_e57l0"]
+[ext_resource type="Texture2D" uid="uid://cmfy0fn4kphdu" path="res://Art/VisualArt/UI/Buttons/Exit_button/Exit_hovered.png" id="11_8dws6"]
+[ext_resource type="Texture2D" uid="uid://cvolwogyewxv1" path="res://Art/VisualArt/UI/Menus/Main_menu/clouds/cloud4.png" id="11_bwyy1"]
+[ext_resource type="AudioStream" uid="uid://g4ab5lpj6rym" path="res://Art/Audio/Music/Piano Loop.wav" id="25_bwyy1"]
+[ext_resource type="Script" uid="uid://d3b75wy7foj46" path="res://Scenes/Menus/menumusic.gd" id="26_ef2r8"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -18,14 +37,70 @@ grow_vertical = 2
 script = ExtResource("1_pha2q")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_penys")
+texture = ExtResource("3_fx838")
+
+[node name="castletop" type="Sprite2D" parent="TextureRect"]
+z_index = 1
+texture = ExtResource("4_0rh2w")
+centered = false
+
+[node name="tree1" type="Sprite2D" parent="TextureRect"]
+z_index = 1
+texture = ExtResource("5_ou7d0")
+centered = false
+
+[node name="tree2" type="Sprite2D" parent="TextureRect"]
+z_index = 1
+texture = ExtResource("6_47bqg")
+centered = false
+
+[node name="cloud1" type="Sprite2D" parent="TextureRect"]
+position = Vector2(91, 71)
+texture = ExtResource("7_cflx4")
+script = ExtResource("8_hg3ot")
+speed = 17.0
+
+[node name="cloud2" type="Sprite2D" parent="TextureRect"]
+position = Vector2(851, 125)
+texture = ExtResource("9_h56lv")
+script = ExtResource("8_hg3ot")
+
+[node name="cloud3" type="Sprite2D" parent="TextureRect"]
+position = Vector2(356, 22)
+texture = ExtResource("10_e57l0")
+script = ExtResource("8_hg3ot")
+speed = 15.0
+
+[node name="cloud4" type="Sprite2D" parent="TextureRect"]
+position = Vector2(604, 88)
+texture = ExtResource("11_bwyy1")
+script = ExtResource("8_hg3ot")
+speed = 18.0
+
+[node name="rampartbanner" type="TextureRect" parent="TextureRect"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -296.0
+offset_right = 224.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8bdjp")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="Button_manager" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -34,33 +109,54 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -24.0
-offset_right = 100.0
-offset_bottom = 119.0
+offset_left = -73.0
+offset_top = 19.0
+offset_right = 124.0
+offset_bottom = 187.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 15
 
-[node name="Play" type="Button" parent="Button_manager"]
+[node name="Play" type="TextureButton" parent="Button_manager"]
 layout_mode = 2
-text = "Play"
+size_flags_vertical = 3
+texture_normal = ExtResource("3_chkef")
+texture_pressed = ExtResource("4_4fgt5")
+texture_hover = ExtResource("5_j4kqa")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Options" type="Button" parent="Button_manager"]
+[node name="Options" type="TextureButton" parent="Button_manager"]
 layout_mode = 2
-text = "Options"
+size_flags_vertical = 3
+texture_normal = ExtResource("6_ftsii")
+texture_pressed = ExtResource("7_lg1h6")
+texture_hover = ExtResource("8_80s4p")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Quit" type="Button" parent="Button_manager"]
+[node name="Quit" type="TextureButton" parent="Button_manager"]
 layout_mode = 2
-text = "Quit"
+size_flags_vertical = 3
+texture_normal = ExtResource("9_6t1rs")
+texture_pressed = ExtResource("10_0xbgx")
+texture_hover = ExtResource("11_8dws6")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="OptionsMenu" parent="." instance=ExtResource("3_penys")]
+visible = false
 layout_mode = 1
+offset_left = 25.0
+offset_top = 148.0
+offset_right = 25.0
+offset_bottom = 148.0
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_aur2u")
+[node name="menumusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_bwyy1")
 autoplay = true
 bus = &"music"
+script = ExtResource("26_ef2r8")
 
 [node name="buttonpress" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_5wi6m")
