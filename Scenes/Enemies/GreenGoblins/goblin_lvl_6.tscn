@@ -399,10 +399,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bob1t"]
 size = Vector2(20, 27)
 
-[node name="GoblinLVL6" type="CharacterBody2D"]
+[node name="GoblinLVL6" type="Node2D"]
 z_index = 2
 texture_filter = 1
-safe_margin = 0.001
 script = ExtResource("1_juiqu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

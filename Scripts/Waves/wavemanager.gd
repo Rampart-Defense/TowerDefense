@@ -72,7 +72,7 @@ func get_paths() -> void:
 	for p in found_paths:
 		if p is Path2D:
 			paths.append(p)
-	
+	current_path_index = 0
 	if paths.is_empty():
 		print("Error: No Path2D nodes found in group 'path'. Enemies will not spawn correctly.")
 	else:
@@ -142,7 +142,7 @@ func spawn_single_enemy(enemy_type: String) -> void:
 		var new_enemy = enemy_scene.instantiate()
 		# Add the new enemy to the "enemies" group for easy management.
 		new_enemy.add_to_group("enemies")
-	
+		
 		# Get the path the enemies are supposed to use
 		var current_path = paths[current_path_index]
 		#print("Current path child: ",current_path.get_child(0))

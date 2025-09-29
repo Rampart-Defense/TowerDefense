@@ -399,10 +399,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bqaqd"]
 size = Vector2(20, 27.5)
 
-[node name="GoblinLVL7" type="CharacterBody2D"]
+[node name="GoblinLVL7" type="Node2D"]
 z_index = 2
 texture_filter = 1
-safe_margin = 0.001
 script = ExtResource("1_vbhum")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Node2D
 
 @export var movement_speed = 100.0
 @export var damage: int = 1
@@ -10,7 +10,8 @@ var reached_distance = 5
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 
 var path_follower: PathFollow2D = null
-var previous_position: Vector2 = Vector2.ZERO
+var direction_vector: Vector2
+
 
 var stunned: bool = false
 var flash_tween: Tween = null
@@ -26,37 +27,38 @@ func _ready():
 	# Create a PathFollow2D node to handle movement along the path.
 	path_follower = PathFollow2D.new()
 	path_follower.h_offset = 0 # Ensure the enemy starts at the beginning of the path.
-	
+	path_follower.set_rotates(false)
 	# Add the PathFollow2D to the Path2D node in the scene tree.
 	path_node.add_child(path_follower)
-	
-
+	 #  Store a reference to the enemy's original parent (for cleanup/safety, though not strictly needed here).
+	var original_parent = get_parent()
+	# Make the enemy a child of the PathFollow2D.
+	self.reparent(path_follower, true) 
 	# Set the enemy's position to the beginning of the path.
-	global_position = path_follower.global_position
-	previous_position = global_position
+	self.position = Vector2.ZERO
+	# Store the reference for later use in _physics_process
 
 
-func _physics_process(_delta: float) -> void:
-	if stunned:
+
+func _physics_process(delta: float) -> void:
+	if stunned or not path_follower:
 		return
-	if not path_follower:
-		return
-		
-	# Move the enemy along the path using the PathFollow2D's progress.
-	path_follower.progress += movement_speed * _delta
+	# 1. Store the enemy's global position before movement update.
+	var current_global_position = global_position
 	
-	# The enemy's position is automatically updated by the PathFollow2D.
-	# Calculate the enemy's velocity for animation.
-	var current_position = path_follower.global_position
-	velocity = (current_position - previous_position) / _delta
-	previous_position = current_position
-	update_animation(velocity)
-	move_and_slide()
-	# Check if we have reached the end of the path.
+	# 2. Move the PathFollower (The enemy moves with it automatically)
+	path_follower.progress += movement_speed * delta
+
+	# 3 We use the vector difference between the new position and the old position.
+	direction_vector = (global_position - current_global_position).normalized()
+	
+	# 4. Update animation based on this derived direction
+	update_animation(direction_vector)
+	
+	# 5. Check if we have reached the end of the path.
 	var path_length = path_follower.get_parent().get_curve().get_baked_length()
 	if path_follower.progress >= path_length - reached_distance:
 		enemy_win()
-
 
 func enemy_win():
 	PlayerStats.damage_player(damage)
@@ -68,7 +70,7 @@ func enemy_win():
 
 func stun_enemy():
 	stunned = true
-	var current_velocity = velocity
+	var current_velocity = direction_vector
 	if current_velocity.length_squared() > 0:
 		if abs(current_velocity.x) > abs(current_velocity.y):
 			if current_velocity.x > 0:

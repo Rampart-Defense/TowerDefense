@@ -1,10 +1,9 @@
-[gd_scene load_steps=57 format=3 uid="uid://bwxxjd7ru2x3i"]
+[gd_scene load_steps=56 format=3 uid="uid://bwxxjd7ru2x3i"]
 
 [ext_resource type="Script" uid="uid://dc5trhvepwc1s" path="res://Scripts/Enemies/enemy.gd" id="1_1twr8"]
 [ext_resource type="Texture2D" uid="uid://d5m7wohxnvxs" path="res://Art/VisualArt/Enemies/GreenGoblins/GoblinLVL2/goblin-huntsman-walk.png" id="2_d4ihp"]
 [ext_resource type="Script" uid="uid://coqxkgyk3ocyp" path="res://Scripts/Enemies/enemy_health_system.gd" id="2_ht2c7"]
 [ext_resource type="Texture2D" uid="uid://dyo3n6xn6a2eg" path="res://Art/VisualArt/Enemies/GreenGoblins/GoblinLVL2/goblin-huntsman-hurt.png" id="3_83fsw"]
-[ext_resource type="PackedScene" uid="uid://citrekiwb17ph" path="res://Scenes/Enemies/NavigationNodes/path_update_timer.tscn" id="5_83fsw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_83fsw"]
 atlas = ExtResource("2_d4ihp")
@@ -400,10 +399,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bqaqd"]
 size = Vector2(20.5, 28)
 
-[node name="GoblinLVL2" type="CharacterBody2D"]
+[node name="GoblinLVL2" type="Node2D"]
 z_index = 2
 texture_filter = 1
-safe_margin = 0.001
 script = ExtResource("1_1twr8")
 movement_speed = 150.0
 
@@ -421,7 +419,5 @@ payout = 40
 [node name="Hitbox" type="CollisionShape2D" parent="EnemyHealthSystem"]
 position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_bqaqd")
-
-[node name="PathUpdateTimer" parent="." instance=ExtResource("5_83fsw")]
 
 [connection signal="area_entered" from="EnemyHealthSystem" to="EnemyHealthSystem" method="_on_area_entered"]
