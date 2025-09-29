@@ -765,7 +765,7 @@ radius = 250.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohhkr"]
 size = Vector2(77, 144)
 
-[node name="LightningTower" type="Area2D" node_paths=PackedStringArray("tower_range", "tower_base", "turret", "firing_point", "fire_timer") groups=["tower"]]
+[node name="LightningTower" type="Area2D" node_paths=PackedStringArray("tower_range", "tower_base", "turret", "firing_point", "fire_timer", "shoot_sound") groups=["tower"]]
 z_index = 1
 script = ExtResource("1_6kre2")
 projectile_scene2 = ExtResource("2_kwij4")
@@ -778,6 +778,7 @@ tower_base = NodePath("Base")
 turret = NodePath("Turret")
 firing_point = NodePath("Turret/Marker2D")
 fire_timer = NodePath("FireTimer")
+shoot_sound = NodePath("lightningshoot")
 
 [node name="RangeArea" type="Panel" parent="."]
 z_index = 1

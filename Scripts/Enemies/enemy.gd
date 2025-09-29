@@ -13,6 +13,7 @@ var path_follower: PathFollow2D = null
 var previous_position: Vector2 = Vector2.ZERO
 
 var stunned: bool = false
+var flash_tween: Tween = null
 
 func _ready():
 	# Find the Path2D node in the current scene.
@@ -64,6 +65,45 @@ func enemy_win():
 		health_component.die("win")
 	else:
 		print("Health component not found, cannot call die().")
+
+func stun_enemy():
+	stunned = true
+	var current_velocity = velocity
+	if current_velocity.length_squared() > 0:
+		if abs(current_velocity.x) > abs(current_velocity.y):
+			if current_velocity.x > 0:
+				animation.play("stun_right")
+			else:
+				animation.play("stun_left")
+		else:
+			if current_velocity.y > 0:
+				animation.play("stun_down")
+			else:
+				animation.play("stun_up")
+	else:
+		animation.play("stun_up")
+	
+
+func hurt():
+	if is_instance_valid(animation):
+		# 1. Kill the previously running tween if it exists.
+		# This stops the old flash fade-out immediately.
+		if flash_tween:
+			flash_tween.kill()
+		
+		# 2. Define colors and duration
+		var flash_duration = 0.1
+		var normal_color = Color(1, 1, 1, 1) # White (normal)
+		var flash_color = Color(1, 0, 0, 1) # Red
+		
+		# 3. Set initial color to red immediately (The actual flash part)
+		animation.modulate = flash_color
+		
+		# 4. Create a new Tween and store its reference.
+		flash_tween = create_tween()
+		
+		# 5. Tween back to normal color (white) over the duration
+		flash_tween.tween_property(animation, "modulate", normal_color, flash_duration)
 
 func update_animation(current_velocity: Vector2) -> void:
 	if current_velocity.length_squared() > 0:

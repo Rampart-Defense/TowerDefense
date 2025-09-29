@@ -14,13 +14,16 @@ func take_damage(amount: int) -> void:
 	currentHealth -= amount
 	if currentHealth <= 0:
 		die("no")
+	else:
+		var enemy = get_parent()
+		enemy.hurt()
 
 func stun(duration: float) -> void:
 	var enemy = get_parent()
 	if not enemy: 
 		return  # parent is gone
 	stunned = true
-	enemy.stunned = stunned #TODO create function on enemy that plays stun animation and toggles true
+	enemy.stun_enemy() #TODO create function on enemy that plays stun animation and toggles true
 	await get_tree().create_timer(duration).timeout
 	if is_instance_valid(enemy):
 		stunned = false

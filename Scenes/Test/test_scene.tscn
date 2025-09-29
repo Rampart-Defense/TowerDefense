@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpwihjx65sri4"]
+[gd_scene load_steps=3 format=3 uid="uid://bpwihjx65sri4"]
 
 [ext_resource type="PackedScene" uid="uid://do1yoeqhppahe" path="res://Scenes/Maps/map_1.tscn" id="1_uvmkt"]
-[ext_resource type="PackedScene" uid="uid://84r04x5pvahu" path="res://Scenes/Towers/archery_tower.tscn" id="3_if6mo"]
-[ext_resource type="PackedScene" uid="uid://cptmjynhr1bk2" path="res://Scenes/Enemies/enemy_spawn.tscn" id="5_xoe5n"]
 
 [sub_resource type="Curve2D" id="Curve2D_if6mo"]
 _data = {
@@ -14,20 +12,5 @@ point_count = 10
 
 [node name="Map1" parent="." instance=ExtResource("1_uvmkt")]
 
-[node name="ArcheryTower" parent="." instance=ExtResource("3_if6mo")]
-position = Vector2(381, 226)
-
-[node name="ArcheryTower3" parent="." instance=ExtResource("3_if6mo")]
-position = Vector2(370, 346)
-
-[node name="ArcheryTower2" parent="." instance=ExtResource("3_if6mo")]
-position = Vector2(322, 513)
-
-[node name="EnemySpawn" parent="." instance=ExtResource("5_xoe5n")]
-
-[node name="Enemies" type="Node2D" parent="."]
-
 [node name="Path2D" type="Path2D" parent="." groups=["path"]]
 curve = SubResource("Curve2D_if6mo")
-
-[node name="Towers" type="Node2D" parent="."]
