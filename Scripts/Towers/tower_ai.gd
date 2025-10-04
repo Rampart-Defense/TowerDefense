@@ -30,7 +30,7 @@ var firing: bool = false
 
 # --- TILEMAP AND PLACEMENT CHECK RELATED ---
 var tilemap: TileMapLayer = null
-var placement_radius := 62
+var placement_radius: int= 62
 var footprint_size: int = 32
 const TowerPlacementCheck = preload("res://scripts/Towers/tower_placement_check.gd")
 
@@ -202,15 +202,15 @@ func _apply_visuals_and_stats():
 		1:
 			tower_base.frame = 0
 			turret.frame = 0
-			turret.position = Vector2(0,-12)
+			turret.position = Vector2(0,-28)
 		2:
 			tower_base.frame = 1
 			turret.frame = 1
-			turret.position = Vector2(0, -20)
+			turret.position = Vector2(0, -36)
 		3:
 			tower_base.frame = 2
 			turret.frame = 2
-			turret.position = Vector2(0, -30)
+			turret.position = Vector2(0, -46)
 	# Applying stats and visuals
 	range_area.shape.radius = current_range
 	get_node("RangeArea").size = Vector2(current_range*2, current_range*2)

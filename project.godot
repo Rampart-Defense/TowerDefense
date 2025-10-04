@@ -22,8 +22,8 @@ GlobalUi="*res://Scenes/Menus/global_ui.tscn"
 PlayerStats="*res://Scripts/Player/PlayerStats.gd"
 GlobalCamera="*res://Scenes/UI/global_camera.tscn"
 TowerUpgradeManager="*res://Scripts/UI/tower_upgrade_manager.gd"
-TowersNode="*res://Scenes/Towers/towers_node.tscn"
 SoundManager="*res://Scenes/Menus/SoundManager.tscn"
+TowersNode="*res://Scripts/Towers/towers_node.gd"
 
 [display]
 
@@ -35,6 +35,7 @@ map="group a tilemap to find it(tower placement needs this)"
 path=""
 tower=""
 enemy=""
+ysorter=""
 
 [input]
 

@@ -120,6 +120,7 @@ animations = [{
 size = Vector2(8, 9)
 
 [node name="CatapultProjectile" type="Node2D"]
+z_index = 6
 script = ExtResource("1_jrmb8")
 speed = 300.0
 death_time = 4.0

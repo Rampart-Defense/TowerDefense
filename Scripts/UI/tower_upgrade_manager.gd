@@ -7,7 +7,7 @@ var current_upgraded_tower = null # A variable to store the currently selected t
 func _unhandled_input(event: InputEvent) -> void:
 	# Check for a left mouse button press
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-
+		
 		# Get the global mouse position in viewport space.
 		var viewport_mouse_position = get_viewport().get_mouse_position()
 
@@ -29,7 +29,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		# Iterate through each tower and check if the mouse position is inside its bounding box.
 		for tower in towers:
 			#NoNo for moneyglitch #1
-			if tower.get_parent().name == "Temp":
+			if tower.is_in_group("temp"):
 				tower.queue_free()
 				break
 			

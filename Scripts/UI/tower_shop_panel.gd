@@ -15,7 +15,6 @@ func _handle_shopkeeping(event):
 	if not main_camera:
 		if GlobalCamera and is_instance_valid(GlobalCamera):
 			main_camera = GlobalCamera.camera
-			print(main_camera)
 		else:
 			print("Error: GlobalCamera singleton not found!")
 			return # Exit the function if the camera is not available.
@@ -24,13 +23,18 @@ func _handle_shopkeeping(event):
 		if PlayerStats.get_money() >= price and preview_tower == null:
 			TowersNode.delete_temporary_towers()
 			preview_tower = tower.instantiate()
+			preview_tower.add_to_group("temp")
 			var viewport_mouse_position = get_viewport().get_mouse_position()
 			var world_mouse_position = main_camera.get_canvas_transform().affine_inverse() * viewport_mouse_position
 			preview_tower.global_position = world_mouse_position
-			TowersNode.get_node_or_null("Temp").add_child(preview_tower)
-			preview_tower.placing_tower = true
-			preview_tower.modulate = Color(1,1,1,0.7) # semi-transparent while dragging
-			preview_tower.get_node("RangeArea").visible = true
+			var ysortter = TowersNode.get_ysorter()
+			if ysortter != null:
+				ysortter.add_child(preview_tower)
+				preview_tower.placing_tower = true
+				preview_tower.modulate = Color(1,1,1,0.7) # semi-transparent while dragging
+				preview_tower.get_node("RangeArea").visible = true
+			else: 
+				print("map needs a node in group ysortter")
 	if event is InputEventMouseMotion and event.button_mask == 1 and  PlayerStats.get_money() >= price:
 	
 		if preview_tower:
@@ -49,26 +53,15 @@ func _handle_shopkeeping(event):
 		if preview_tower:
 			if preview_tower.can_place():
 			# Finalize placement
-				var tower_parent = TowersNode.get_node_or_null("Towers")
-				if tower_parent:
-					# Save current global position
-					preview_tower.get_node("RangeArea").visible = false
-					var viewport_mouse_position = get_viewport().get_mouse_position()
-					var final_pos =  main_camera.get_canvas_transform().affine_inverse() * viewport_mouse_position
-					preview_tower.modulate = Color(1,1,1,1) # full color
-					preview_tower.get_parent().remove_child(preview_tower)
-					preview_tower.placing_tower = false
-					tower_parent.add_child(preview_tower)
-					preview_tower.global_position = final_pos
-					PlayerStats.spend_money(price)
-					preview_tower = null
-					print("Tower placed!")
-				else:
-					print('No "Towers" node found')
-			else:
-				# Invalid placement → cancel
-				preview_tower.queue_free()
+				PlayerStats.spend_money(price)
+				preview_tower.get_node("RangeArea").visible = false
+				preview_tower.modulate = Color(1,1,1,1) # full color
+				preview_tower.placing_tower = false
+				preview_tower.remove_from_group("temp")
 				preview_tower = null
-				print("Cannot place turret on road!")
+				print("Tower placed!")
+			else:
+				print('Cant place there. aborting.')
+				
+		TowersNode.delete_temporary_towers()
 		print("clickup")
-	

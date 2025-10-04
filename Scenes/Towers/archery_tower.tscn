@@ -203,8 +203,10 @@ radius = 250.0
 size = Vector2(77, 144)
 
 [node name="ArcheryTower" type="Area2D" node_paths=PackedStringArray("tower_range", "tower_base", "turret", "firing_point", "fire_timer", "shoot_sound") groups=["tower"]]
-z_index = 1
+z_index = 2
 texture_filter = 1
+scale = Vector2(0.68, 0.68)
+priority = 1
 script = ExtResource("1_pdlmi")
 projectile_scene = ExtResource("2_p7nk1")
 tower_range = NodePath("Range")
@@ -224,10 +226,9 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_p7nk1")
 
 [node name="Base" type="Sprite2D" parent="."]
-z_index = 1
+position = Vector2(0, -16)
 texture = ExtResource("2_2irmm")
 hframes = 3
-frame = 2
 
 [node name="Turret" type="AnimatedSprite2D" parent="."]
 z_index = 1

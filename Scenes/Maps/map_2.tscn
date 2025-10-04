@@ -4,3 +4,6 @@
 position = Vector2(-33, 14)
 
 [node name="TileMapLayers" type="Node2D" parent="."]
+
+[node name="TowersAndEnemyYsorter" type="Node2D" parent="." groups=["ysorter"]]
+y_sort_enabled = true

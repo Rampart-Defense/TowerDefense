@@ -11,13 +11,14 @@ static func can_place(tower: Node2D, footprint_size: int, placement_radius: floa
 		return false
 
 	# 3) Tower overlap check
-	var towers_node = TowersNode.get_node("Towers")
+	var towers_node = TowersNode.get_ysorter()
 	if towers_node:
 		for other in towers_node.get_children():
-			if other == tower:
-				continue
-			if tower.global_position.distance_to(other.global_position) < placement_radius:
-				return false
+			if other.is_in_group("tower"):
+				if other == tower:
+					continue
+				if tower.global_position.distance_to(other.global_position) < placement_radius:
+					return false
 	return true
 
 # Check if tower footprint overlaps with blocked areas (Path, NoBuild)

@@ -3541,3 +3541,6 @@ visible = false
 z_index = 10
 position = Vector2(392, 224)
 zoom = Vector2(1.47, 1.47)
+
+[node name="TowersAndEnemyYsorter" type="Node2D" parent="." groups=["ysorter"]]
+y_sort_enabled = true

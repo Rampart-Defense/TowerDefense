@@ -30,12 +30,12 @@ func _ready():
 	path_follower.set_rotates(false)
 	# Add the PathFollow2D to the Path2D node in the scene tree.
 	path_node.add_child(path_follower)
-	 #  Store a reference to the enemy's original parent (for cleanup/safety, though not strictly needed here).
-	var original_parent = get_parent()
+	var ysortter = TowersNode.get_ysorter()
 	# Make the enemy a child of the PathFollow2D.
-	self.reparent(path_follower, true) 
+	if ysortter:
+		self.reparent(ysortter, true) 
 	# Set the enemy's position to the beginning of the path.
-	self.position = Vector2.ZERO
+		self.position = path_follower.position
 	# Store the reference for later use in _physics_process
 
 
@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	
 	# 2. Move the PathFollower (The enemy moves with it automatically)
 	path_follower.progress += movement_speed * delta
-
+	self.position = path_follower.position
 	# 3 We use the vector difference between the new position and the old position.
 	direction_vector = (global_position - current_global_position).normalized()
 	

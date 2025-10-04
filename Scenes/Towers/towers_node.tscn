@@ -1,11 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bx48obq8wn63j"]
+[gd_scene format=3 uid="uid://bx48obq8wn63j"]
 
-[ext_resource type="Script" uid="uid://v8edpxyt8wbc" path="res://Scripts/Towers/towers_node.gd" id="1_y45fx"]
-
-[node name="TowersNode" type="Node2D"]
-script = ExtResource("1_y45fx")
+[node name="TowersNode" type="Node2D" groups=["towersnode"]]
 
 [node name="Towers" type="Node2D" parent="."]
-y_sort_enabled = true
 
 [node name="Temp" type="Node2D" parent="."]

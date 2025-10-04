@@ -766,7 +766,8 @@ radius = 250.0
 size = Vector2(77, 144)
 
 [node name="LightningTower" type="Area2D" node_paths=PackedStringArray("tower_range", "tower_base", "turret", "firing_point", "fire_timer", "shoot_sound") groups=["tower"]]
-z_index = 1
+z_index = 2
+scale = Vector2(0.68, 0.68)
 script = ExtResource("1_6kre2")
 projectile_scene2 = ExtResource("2_kwij4")
 projectile_scene3 = ExtResource("3_0trrp")
@@ -790,7 +791,6 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0trrp")
 
 [node name="Base" type="Sprite2D" parent="."]
-z_index = 1
 position = Vector2(0, -48)
 texture = ExtResource("2_7beeb")
 hframes = 3

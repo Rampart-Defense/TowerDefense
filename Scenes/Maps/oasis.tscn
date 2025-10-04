@@ -2584,7 +2584,6 @@ tile_map_data = PackedByteArray("AAANAAkAAAAAAAMAAAANAAoAAAAAAAQAAAANAAsAAAAAAAU
 tile_set = SubResource("TileSet_p1cbl")
 
 [node name="Clutter" type="Node2D" parent="."]
-z_index = 5
 
 [node name="Cacti" type="TileMapLayer" parent="Clutter"]
 z_index = 2
@@ -2616,3 +2615,6 @@ offset_top = 178.0
 offset_right = 457.0
 offset_bottom = 200.0
 scale = Vector2(0.75, 0.75)
+
+[node name="TowersAndEnemyYsorter" type="Node2D" parent="." groups=["ysorter"]]
+y_sort_enabled = true

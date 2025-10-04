@@ -329,7 +329,8 @@ radius = 250.0
 size = Vector2(77, 144)
 
 [node name="CatapultTower" type="Area2D" node_paths=PackedStringArray("tower_range", "tower_base", "turret", "firing_point", "fire_timer") groups=["tower"]]
-z_index = 1
+z_index = 2
+scale = Vector2(0.67, 0.67)
 script = ExtResource("1_7tf08")
 projectile_scene = ExtResource("2_vc81t")
 base_fire_cooldown = 2.0
@@ -349,7 +350,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7oiao")
 
 [node name="Base" type="Sprite2D" parent="."]
-z_index = 1
+position = Vector2(0, -16)
 texture = ExtResource("3_x2l72")
 hframes = 3
 frame = 2

@@ -223,10 +223,11 @@ animations = [{
 radius = 250.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5cc57"]
-size = Vector2(77, 144)
+size = Vector2(77, 125)
 
 [node name="SlingshotTower" type="Area2D" node_paths=PackedStringArray("tower_range", "tower_base", "turret", "firing_point", "fire_timer", "shoot_sound") groups=["tower"]]
-z_index = 1
+z_index = 2
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_c1lf5")
 projectile_scene2 = ExtResource("2_s7tqa")
 projectile_scene3 = ExtResource("3_60nfj")
@@ -249,10 +250,9 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fm6af")
 
 [node name="Base" type="Sprite2D" parent="."]
-z_index = 1
+position = Vector2(0, -16)
 texture = ExtResource("1_k4cxa")
 hframes = 3
-frame = 2
 
 [node name="Turret" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -271,11 +271,12 @@ position = Vector2(0, -33)
 modulate = Color(0.294118, 0.294118, 0.294118, 0.67451)
 self_modulate = Color(0.27451, 0.27451, 0.27451, 0.52549)
 position = Vector2(0, -4)
+scale = Vector2(0.68, 0.68)
 shape = SubResource("CircleShape2D_5cc57")
 
 [node name="clickshape" type="CollisionShape2D" parent="."]
 z_index = 101
-position = Vector2(-1.5, 13)
+position = Vector2(-1, -24.5)
 shape = SubResource("RectangleShape2D_5cc57")
 
 [node name="TowerLevelingSystem" parent="." node_paths=PackedStringArray("tower") instance=ExtResource("5_c1lf5")]
