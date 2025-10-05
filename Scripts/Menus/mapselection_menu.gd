@@ -9,7 +9,7 @@ var maps = {
 	"Nature's Edge": "res://Scenes/Maps/natures_edge.tscn",
 	"Amber Fall": "res://Scenes/Maps/amber_fall.tscn",
 	"Crossroads of Doom": "res://Scenes/Maps/crossroads_of_doom.tscn",
-	"testscene4": "res://Scenes/Test/test_scene_3.tscn",
+	"Crystal Caverns": "res://Scenes/Maps/crystal_caverns.tscn",
 	"testscene5": "res://Scenes/Test/test_scene_3.tscn",
 }
 
