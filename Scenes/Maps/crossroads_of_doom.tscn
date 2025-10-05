@@ -6634,12 +6634,11 @@ texture = ExtResource("1_008ij")
 [sub_resource type="TileSet" id="TileSet_2rht6"]
 sources/0 = SubResource("TileSetAtlasSource_wpbq6")
 
-[node name="Node2D" type="Node2D" groups=["map"]]
+[node name="Crossroads of Doom" type="Node2D" groups=["map"]]
 texture_filter = 1
 scale = Vector2(1.47, 1.47)
 
 [node name="NoBuild" type="TileMapLayer" parent="."]
-scale = Vector2(1, 1)
 tile_map_data = PackedByteArray("AAArAAAAAAAZABsAAAAsAAAAAAAZABsAAAAsAAEAAAAZABsAAAAsAAIAAAAZABsAAAAsAAQAAAAZABsAAAAsAAUAAAAZABsAAAAsAAYAAAAZABsAAAArAAUAAAAZABsAAAArAAQAAAAZABsAAAArAAMAAAAZABsAAAArAAEAAAAZABsAAAArAAIAAAAZABsAAAArAAYAAAAZABsAAAArAAcAAAAZABsAAAArAAgAAAAZABsAAAArAAkAAAAZABsAAAArAAoAAAAZABsAAAArAAsAAAAZABsAAAArAAwAAAAZABsAAAArAA0AAAAZABsAAAArAA4AAAAZABsAAAArAA8AAAAZABsAAAAsAAMAAAAZABsAAAAsAAcAAAAZABsAAAAsAAgAAAAZABsAAAAsAAkAAAAZABsAAAAsAAoAAAAZABsAAAAsAAsAAAAZABsAAAAsAAwAAAAZABsAAAAsAA0AAAAZABsAAAAsAA4AAAAZABsAAAAsAA8AAAAZABsAAAArABAAAAAZABsAAAArABEAAAAZABsAAAArABIAAAAZABsAAAArABMAAAAZABsAAAArABQAAAAZABsAAAArABUAAAAZABsAAAArABYAAAAZABsAAAArABcAAAAZABsAAAArABgAAAAZABsAAAArABkAAAAZABsAAAArABoAAAAZABsAAAArABsAAAAZABsAAAAsABAAAAAZABsAAAAsABEAAAAZABsAAAAsABIAAAAZABsAAAAsABMAAAAZABsAAAAsABQAAAAZABsAAAAsABUAAAAZABsAAAAsABYAAAAZABsAAAAsABcAAAAZABsAAAAsABgAAAAZABsAAAAsABkAAAAZABsAAAAsABoAAAAZABsAAAAsABsAAAAZABsAAAAnABoAAAAZABsAAAAnABsAAAAZABsAAAAoABoAAAAZABsAAAAoABsAAAAZABsAAAApABgAAAAZABsAAAApABkAAAAZABsAAAApABoAAAAZABsAAAApABsAAAAZABsAAAAqABgAAAAZABsAAAAqABkAAAAZABsAAAAqABoAAAAZABsAAAAqABsAAAAZABsAAAAmABoAAAAZABsAAAAmABsAAAAZABsAAAA=")
 tile_set = SubResource("TileSet_ps1aq")
 
@@ -6660,10 +6659,8 @@ tile_set = SubResource("TileSet_6lkji")
 
 [node name="Enemy Pathing" type="Node2D" parent="."]
 z_index = 1
-scale = Vector2(1, 1)
 
 [node name="Path_1" type="Path2D" parent="Enemy Pathing" groups=["path"]]
-scale = Vector2(1, 1)
 curve = SubResource("Curve2D_ky0em")
 
 [node name="Path_2" type="Path2D" parent="Enemy Pathing" groups=["path"]]
@@ -6673,7 +6670,6 @@ curve = SubResource("Curve2D_ps1aq")
 curve = SubResource("Curve2D_3axyq")
 
 [node name="Clutter" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="Torches" type="TileMapLayer" parent="Clutter"]
 z_index = 1

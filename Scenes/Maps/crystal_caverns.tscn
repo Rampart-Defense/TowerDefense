@@ -8767,7 +8767,7 @@ region = Rect2(9, 264, 51, 154)
 atlas = ExtResource("3_1fvv6")
 region = Rect2(131, 293, 126, 209)
 
-[node name="Node2D" type="Node2D" groups=["map"]]
+[node name="Crystal Caverns" type="Node2D" groups=["map"]]
 texture_filter = 1
 scale = Vector2(1.47, 1.47)
 
