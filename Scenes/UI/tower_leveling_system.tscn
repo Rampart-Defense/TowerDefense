@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b4vs1v57h2d8s"]
+[gd_scene load_steps=19 format=3 uid="uid://b4vs1v57h2d8s"]
 
 [ext_resource type="Texture2D" uid="uid://bxi2pq65pjs6y" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/DamageLvlButton.png" id="1_3nsgu"]
 [ext_resource type="Script" uid="uid://dgswc3xu6f5ks" path="res://Scripts/UI/tower_leveling_system.gd" id="1_rvch5"]
@@ -17,20 +17,17 @@
 [ext_resource type="Texture2D" uid="uid://b2ho6a77251w7" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/SellButtonPressed.png" id="15_sj1nv"]
 [ext_resource type="Texture2D" uid="uid://sllesgmhn65g" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/SellButtonHover.png" id="16_lhwxi"]
 [ext_resource type="Texture2D" uid="uid://4272vxlnjwhn" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/SellButtonDisabled.png" id="17_lxfy0"]
+[ext_resource type="FontFile" uid="uid://c3sky53vd0g4j" path="res://Art/VisualArt/UI/Fonts/Varnished.ttf" id="18_k5twe"]
 
 [node name="TowerLevelingSystem" type="Control"]
 visible = false
 z_index = 1001
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -551.0
-offset_top = -203.0
-offset_right = -551.0
-offset_bottom = -203.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_left = 128.0
+offset_top = 48.0
+offset_right = 128.0
+offset_bottom = 48.0
 mouse_filter = 2
 script = ExtResource("1_rvch5")
 attack_speed_value_1 = 0.1
@@ -38,15 +35,16 @@ attack_speed_value_2 = 0.1
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 348.0
-offset_top = 176.0
-offset_right = 871.0
-offset_bottom = 336.0
+offset_left = -128.0
+offset_top = -56.0
+offset_right = 132.0
+offset_bottom = 464.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+[node name="HBoxContainer" type="FlowContainer" parent="Panel"]
 layout_mode = 0
-offset_right = 365.0
-offset_bottom = 157.0
+offset_top = 184.0
+offset_right = 260.0
+offset_bottom = 512.0
 
 [node name="AttackspeedLevelUp" type="TextureButton" parent="Panel/HBoxContainer"]
 texture_filter = 1
@@ -144,6 +142,15 @@ offset_top = 131.0
 offset_right = 103.0
 offset_bottom = 154.0
 text = "price"
+
+[node name="StatsLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 240.0
+offset_bottom = 184.0
+theme_override_fonts/normal_font = ExtResource("18_k5twe")
+text = "asdsdsdasdasd"
 
 [connection signal="button_down" from="Panel/HBoxContainer/AttackspeedLevelUp" to="." method="_on_attackspeed_level_up_button_down"]
 [connection signal="button_down" from="Panel/HBoxContainer/DamageLevelUp" to="." method="_on_damage_level_up_button_down"]

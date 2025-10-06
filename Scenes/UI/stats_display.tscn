@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://h4mwmxm7m5pj"]
+[gd_scene load_steps=5 format=3 uid="uid://h4mwmxm7m5pj"]
 
 [ext_resource type="Script" uid="uid://c23iwhhsyvxow" path="res://Scripts/Player/stats_display.gd" id="1_kmca8"]
+[ext_resource type="FontFile" uid="uid://c3sky53vd0g4j" path="res://Art/VisualArt/UI/Fonts/Varnished.ttf" id="2_cio2l"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kmca8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cio2l"]
+texture = SubResource("CanvasTexture_kmca8")
+modulate_color = Color(0, 0, 0, 0.419608)
 
 [node name="StatsDisplay" type="Control"]
 layout_mode = 3
@@ -15,36 +22,48 @@ offset_bottom = -112.104
 grow_horizontal = 2
 script = ExtResource("1_kmca8")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 7.0
+offset_right = 540.0
+offset_bottom = 97.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_cio2l")
+
 [node name="MoneyLabel" type="Label" parent="."]
 layout_mode = 1
-offset_left = 240.0
+offset_left = 272.0
 offset_top = 16.0
-offset_right = 316.0
+offset_right = 348.0
 offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("2_cio2l")
 text = "MONEY: 0"
 
 [node name="PointsLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 352.0
+offset_left = 432.0
 offset_top = 16.0
-offset_right = 428.0
+offset_right = 526.0
 offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("2_cio2l")
 text = "POINTS: 0"
 
 [node name="HealthLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 448.0
-offset_top = 16.0
-offset_right = 533.0
-offset_bottom = 39.0
+offset_left = 272.0
+offset_top = 40.0
+offset_right = 372.0
+offset_bottom = 63.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_cio2l")
 text = "Health: 0/0"
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_left = 272.0
+offset_left = 280.0
 offset_top = 64.0
-offset_right = 552.0
+offset_right = 528.0
 offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("2_cio2l")

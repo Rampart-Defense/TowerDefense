@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbbnnj5e0btlt"]
+[gd_scene load_steps=8 format=3 uid="uid://bbbnnj5e0btlt"]
 
 [ext_resource type="Texture2D" uid="uid://bnig08qvay1gd" path="res://Art/VisualArt/UI/Buttons/BuildButton.png" id="1_ssmm6"]
 [ext_resource type="Script" uid="uid://d0k3gq2bdrkf" path="res://Scripts/UI/tower_shop_panel.gd" id="2_pbagj"]
 [ext_resource type="PackedScene" uid="uid://b0r2fm0olqpe7" path="res://Scenes/Towers/catapult_tower.tscn" id="3_q3nhl"]
-[ext_resource type="Texture2D" uid="uid://ctsrb0kdcd5jj" path="res://Art/VisualArt/Towers/CatapultTower/Tower 04.png" id="4_q3nhl"]
-[ext_resource type="Texture2D" uid="uid://co7mvklvehdry" path="res://Art/VisualArt/Towers/CatapultTower/Tower 04 - Level 01 - Weapon.png" id="5_di1d3"]
+[ext_resource type="Texture2D" uid="uid://cwe3wchpruwn1" path="res://Art/VisualArt/Towers/Previews/Tower4Preview.png" id="4_pbagj"]
+[ext_resource type="Texture2D" uid="uid://bmhmmfy4rpyj0" path="res://Art/VisualArt/UI/SideBar/LabelForCost.png" id="5_di1d3"]
+[ext_resource type="FontFile" uid="uid://c3sky53vd0g4j" path="res://Art/VisualArt/UI/Fonts/Varnished.ttf" id="6_wj4e1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iwnec"]
 texture = ExtResource("1_ssmm6")
@@ -15,7 +16,7 @@ expand_margin_bottom = 14.0
 
 [node name="CatapultTowerPanel" type="Panel"]
 texture_filter = 1
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(90, 128)
 offset_right = 64.0
 offset_bottom = 64.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_iwnec")
@@ -23,16 +24,33 @@ script = ExtResource("2_pbagj")
 tower = ExtResource("3_q3nhl")
 price = 400
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(32, 16)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_q3nhl")
-hframes = 3
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = -23.0
+offset_right = 78.0
+offset_bottom = 105.0
+texture = ExtResource("4_pbagj")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(32, 8)
-scale = Vector2(0.5, 0.5)
+[node name="PriceTag" type="TextureRect" parent="."]
+offset_left = -13.0
+offset_top = 40.0
+offset_right = 134.0
+offset_bottom = 158.0
+mouse_filter = 2
 texture = ExtResource("5_di1d3")
-hframes = 17
+expand_mode = 1
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PriceTag"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 53.0
+offset_right = 106.0
+offset_bottom = 80.0
+theme_override_fonts/normal_font = ExtResource("6_wj4e1")
+theme_override_font_sizes/normal_font_size = 16
+text = "400
+"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

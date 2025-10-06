@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://bg8rsrllvnpgj"]
+
+[ext_resource type="Texture2D" uid="uid://c2s3igd4r1v5j" path="res://Art/VisualArt/UI/SideBar/ChatGPT Image 4. lokak. 2025 klo 20.34.30.png" id="1_cleyv"]
+[ext_resource type="Script" uid="uid://xcynxt58gebm" path="res://Scripts/UI/side_panel.gd" id="1_u7hjx"]
+[ext_resource type="PackedScene" uid="uid://qcjcoo3nif0m" path="res://Scenes/UI/Towershop/tower_shop.tscn" id="2_cleyv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u7hjx"]
+texture = ExtResource("1_cleyv")
+texture_margin_right = 500.0
+
+[node name="SidePanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_u7hjx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -7.0
+offset_right = 5.0
+offset_bottom = 11.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_u7hjx")
+
+[node name="UpgradeAnchor" type="Control" parent="."]
+z_index = 101
+layout_mode = 1
+anchor_left = 0.757
+anchor_top = 0.185
+anchor_right = 1.165
+anchor_bottom = 0.886
+offset_left = -0.0640259
+offset_top = 0.119995
+offset_right = -182.08
+offset_bottom = 49.872
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TowerShop" parent="." instance=ExtResource("2_cleyv")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.771
+anchor_top = 0.222
+anchor_right = 0.995
+anchor_bottom = 0.963
+offset_left = -8.19202
+offset_top = 0.143982
+offset_right = -16.2401
+offset_bottom = 119.976

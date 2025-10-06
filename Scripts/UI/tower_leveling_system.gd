@@ -29,6 +29,8 @@ extends Control
 @onready var RangeButton = $Panel/HBoxContainer/RangeLevelUp
 @onready var SellButton =$Panel/HBoxContainer/SellTower
 
+#Statslabel for tower stats
+@onready var StatsLabel = $Panel/StatsLabel
 # bools for proper placement on screen
 var too_far_up = false
 var too_far_down = false
@@ -46,11 +48,39 @@ func _ready() -> void:
 	RangeButton.get_child(1).text = "cost: " + str(range_cost_1)
 	
 	update_sell_price()
-	
+	update_stats_display()
 	# Initial check to set button disabled states
 	_on_money_changed(PlayerStats.get_money())
 	pass
 
+
+func update_stats_display() -> void:
+	"""
+	Updates the text of the StatsLabel with the tower's current attributes
+	and its respective upgrade levels.
+	"""
+	if tower == null or StatsLabel == null:
+		push_error("Tower or StatsLabel is not set for display update.")
+		return
+
+	# Retrieve current actual stats
+	var dmg: int = tower.damage
+	var cd: float = tower.fire_cooldown
+	var rng: float = tower.current_range
+
+	# Retrieve current upgrade levels
+	var dmg_lvl: int = tower.damage_level
+	var cd_lvl: int = tower.fire_cooldown_level
+	var rng_lvl: int = tower.range_level
+	var t_lvl: int = tower.tower_level
+
+	# Format the display text
+	var stat_text: String = "Tower Level: %d\n" % [t_lvl]
+	stat_text += "Damage: %d\n (Upgrades: %d/2)\n" % [dmg, dmg_lvl]
+	stat_text += "Cooldown: %.2f\n (Upgrades: %d/2)\n" % [cd, cd_lvl]
+	stat_text += "Range: %d\n (Upgrades: %d/2)" % [rng, rng_lvl]
+
+	StatsLabel.text = stat_text
 
 func _on_money_changed(money: int) -> void:
 	if tower == null:
@@ -99,7 +129,7 @@ func _on_attackspeed_level_up_button_down() -> void:
 			AttackspeedButton.disabled = true
 	else:
 		push_error("Please set the tower for the tower leveling system.")
-	
+	update_stats_display()
 	_on_money_changed(PlayerStats.get_money())
 
 
@@ -120,7 +150,7 @@ func _on_damage_level_up_button_down() -> void:
 			DamageButton.disabled = true
 	else:
 		push_error("Please set the tower for the tower leveling system.")
-	
+	update_stats_display()
 	_on_money_changed(PlayerStats.get_money())
 
 
@@ -141,7 +171,7 @@ func _on_range_level_up_button_down() -> void:
 			RangeButton.disabled = true
 	else:
 		push_error("Please set the tower for the tower leveling system.")
-		
+	update_stats_display()
 	_on_money_changed(PlayerStats.get_money())
 
 
@@ -153,3 +183,5 @@ func _on_sell_tower_pressed() -> void:
 	self.visible = false
 	PlayerStats.add_money(sell_price)
 	tower.queue_free()
+	var side_panel = GlobalUi.get_node("SidePanel")
+	side_panel.show_shop()

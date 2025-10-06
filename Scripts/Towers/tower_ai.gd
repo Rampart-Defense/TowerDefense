@@ -32,7 +32,7 @@ var firing: bool = false
 var tilemap: TileMapLayer = null
 var placement_radius: int= 62
 var footprint_size: int = 32
-const TowerPlacementCheck = preload("res://scripts/Towers/tower_placement_check.gd")
+const TowerPlacementCheck = preload("res://Scripts/Towers/tower_placement_check.gd")
 
 # --- LEVEL SYSTEM UPGRADES ---
 var fire_cooldown_level: int = 0

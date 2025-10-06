@@ -5,7 +5,7 @@
 .export/
 .import/
 mono_crash.*
-
+export_presets.cfg
 # System
 .DS_Store
 Thumbs.db

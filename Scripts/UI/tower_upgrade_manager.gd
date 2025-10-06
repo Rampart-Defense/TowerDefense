@@ -40,50 +40,58 @@ func _unhandled_input(event: InputEvent) -> void:
 			if tower_rect.has_point(world_mouse_position):
 				tower_clicked = true
 				print("Tower was clicked: " + str(tower.name))
+				var side_panel = GlobalUi.get_node("SidePanel")
 
-				# If a different tower was previously selected, hide its menu.
-				if current_upgraded_tower != null and current_upgraded_tower != tower:
-					# Disconnect the signal from the previous tower's menu
-					if PlayerStats.money_changed.is_connected(current_upgraded_tower.tower_leveling_system._on_money_changed):
-						PlayerStats.money_changed.disconnect(current_upgraded_tower.tower_leveling_system._on_money_changed)
-						
-					# Move the upgrade system back to its original parent and hide it.
-					current_upgraded_tower.tower_leveling_system.reparent(current_upgraded_tower)
-					current_upgraded_tower.tower_leveling_system.visible = false
-					current_upgraded_tower.get_node("RangeArea").visible = false
+				# --- CASE 1: Clicked the same tower again (toggle off)
+				if current_upgraded_tower == tower:
+					print("Same tower clicked again — closing upgrade menu.")
+					side_panel.show_shop()
 
-				# Toggle visibility and reparent the clicked tower's menu.
-				if tower.tower_leveling_system.get_parent() == GlobalUi:
-					# If it's already in GlobalUI, move it back to the tower and hide it.
-					# Disconnect the signal as the menu is now hidden.
+					# Disconnect and hide
 					if PlayerStats.money_changed.is_connected(tower.tower_leveling_system._on_money_changed):
 						PlayerStats.money_changed.disconnect(tower.tower_leveling_system._on_money_changed)
-						
+
 					tower.tower_leveling_system.reparent(tower)
 					tower.tower_leveling_system.visible = false
 					tower.get_node("RangeArea").visible = false
 					current_upgraded_tower = null
-				else:
-					# Otherwise, move it to GlobalUI and show it.
-					tower.tower_leveling_system.reparent(GlobalUi, true) # `true` keeps the global transform.
-					tower.tower_leveling_system.position += get_position_changes(tower)
-					tower.tower_leveling_system.visible = true
-					tower.get_node("RangeArea").visible = true
-					current_upgraded_tower = tower # Set the currently selected tower.
-					
-					# Connect the signal for the newly selected tower's menu.
-					if not PlayerStats.money_changed.is_connected(tower.tower_leveling_system._on_money_changed):
-						PlayerStats.money_changed.connect(tower.tower_leveling_system._on_money_changed)
-						
-					# Also call the update function to set the initial button states.
-					tower.tower_leveling_system._on_money_changed(PlayerStats.get_money())
+					break
 
+				# --- CASE 2: Clicked a different tower
+				if current_upgraded_tower != null and current_upgraded_tower != tower:
+					print("Switching from another tower to this one.")
+					# Disconnect old tower menu
+					if PlayerStats.money_changed.is_connected(current_upgraded_tower.tower_leveling_system._on_money_changed):
+						PlayerStats.money_changed.disconnect(current_upgraded_tower.tower_leveling_system._on_money_changed)
 
-				# We found a tower, so we can stop checking.
+					current_upgraded_tower.tower_leveling_system.reparent(current_upgraded_tower)
+					current_upgraded_tower.tower_leveling_system.visible = false
+					current_upgraded_tower.get_node("RangeArea").visible = false
+
+				# --- CASE 3: Show this tower’s upgrade menu
+				side_panel.hide_shop()
+				if side_panel.is_hidden:
+					side_panel.show_side_panel()
+				var anchor = side_panel.get_node("UpgradeAnchor")
+				tower.tower_leveling_system.reparent(anchor, false)
+				tower.tower_leveling_system.position = Vector2(135, 50)  # move it here since controls are mysterious..
+				tower.tower_leveling_system.visible = true
+				tower.get_node("RangeArea").visible = true
+				current_upgraded_tower = tower
+
+				# Connect the money signal
+				if not PlayerStats.money_changed.is_connected(tower.tower_leveling_system._on_money_changed):
+					PlayerStats.money_changed.connect(tower.tower_leveling_system._on_money_changed)
+
+				# Initialize buttons and UI state
+				tower.tower_leveling_system._on_money_changed(PlayerStats.get_money())
+
 				break
 
 		# If no tower was clicked, hide all menus.
 		if not tower_clicked:
+			var side_panel = GlobalUi.get_node("SidePanel") # Adjust path if needed
+			side_panel.show_shop()
 			print("Blank space clicked. Hiding all tower menus.")
 			if current_upgraded_tower != null:
 				# Disconnect the signal from the menu before hiding it.
@@ -97,39 +105,6 @@ func _unhandled_input(event: InputEvent) -> void:
 				current_upgraded_tower = null
 
 
-func get_position_changes(tower: Area2D) -> Vector2:
-	var position_changes = Vector2.ZERO
-	
-	var leveling_system = tower.tower_leveling_system
-	var tower_global_position = tower.global_position
-	
-	# Check and adjust X position
-	if tower_global_position.x < 200 and not leveling_system.too_far_left:
-		position_changes.x = 350
-		position_changes.y = -200
-		leveling_system.too_far_left = true
-		# Reset other horizontal bools
-		leveling_system.too_far_right = false
-	elif tower_global_position.x > 900 and not leveling_system.too_far_right:
-		position_changes.x = -350
-		position_changes.y = -200
-		leveling_system.too_far_right = true
-		# Reset other horizontal bools
-		leveling_system.too_far_left = false
-		
-	# Check and adjust Y position
-	if tower_global_position.y < 50 and not leveling_system.too_far_up:
-		position_changes.y = 50
-		leveling_system.too_far_up = true
-		# Reset other vertical bools
-		leveling_system.too_far_down = false
-	elif tower_global_position.y > 400 and not leveling_system.too_far_down:
-		position_changes.y = -400
-		leveling_system.too_far_down = true
-		# Reset other vertical bools
-		leveling_system.too_far_up = false
-		
-	return position_changes
 
 
 func close_all_tower_upgrade_menus() -> void:

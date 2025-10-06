@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvgmkrlkllw5w"]
+[gd_scene load_steps=7 format=3 uid="uid://dvgmkrlkllw5w"]
 
 [ext_resource type="Texture2D" uid="uid://bnig08qvay1gd" path="res://Art/VisualArt/UI/Buttons/BuildButton.png" id="1_0t8mc"]
 [ext_resource type="Script" uid="uid://d0k3gq2bdrkf" path="res://Scripts/UI/tower_shop_panel.gd" id="2_usbql"]
-[ext_resource type="Texture2D" uid="uid://dotyjp2gjwe5q" path="res://Art/VisualArt/Towers/ArcheryTower/Tower 01.png" id="3_l1fce"]
-[ext_resource type="Texture2D" uid="uid://duy54jghwh6i0" path="res://Art/VisualArt/Towers/ArcheryTower/Tower 01 - Level 01 - Weapon.png" id="4_8knxs"]
+[ext_resource type="Texture2D" uid="uid://jtsh3o8eoupr" path="res://Art/VisualArt/Towers/Previews/Tower1Preview.png" id="3_mgvto"]
+[ext_resource type="Texture2D" uid="uid://bmhmmfy4rpyj0" path="res://Art/VisualArt/UI/SideBar/LabelForCost.png" id="4_usbql"]
+[ext_resource type="FontFile" uid="uid://c3sky53vd0g4j" path="res://Art/VisualArt/UI/Fonts/Varnished.ttf" id="5_l1fce"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iwnec"]
 texture = ExtResource("1_0t8mc")
@@ -14,22 +15,41 @@ expand_margin_bottom = 14.0
 
 [node name="TowerShopPanel" type="Panel"]
 texture_filter = 1
-custom_minimum_size = Vector2(64, 64)
-offset_right = 40.0
-offset_bottom = 40.0
+clip_contents = true
+custom_minimum_size = Vector2(90, 128)
+offset_right = 80.0
+offset_bottom = 128.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_iwnec")
 script = ExtResource("2_usbql")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(32, 16)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_l1fce")
-hframes = 3
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = -24.0
+offset_right = 78.0
+offset_bottom = 104.0
+texture = ExtResource("3_mgvto")
+stretch_mode = 4
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(32, 8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_8knxs")
-hframes = 6
+[node name="PriceTag" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 40.0
+offset_right = 134.0
+offset_bottom = 158.0
+mouse_filter = 2
+texture = ExtResource("4_usbql")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PriceTag"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 53.0
+offset_right = 106.0
+offset_bottom = 80.0
+theme_override_fonts/normal_font = ExtResource("5_l1fce")
+theme_override_font_sizes/normal_font_size = 16
+text = "200"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

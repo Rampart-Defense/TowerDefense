@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://qcjcoo3nif0m"]
+[gd_scene load_steps=8 format=3 uid="uid://qcjcoo3nif0m"]
 
 [ext_resource type="Script" uid="uid://dht7aprvbd7h1" path="res://Scripts/UI/tower_shop.gd" id="1_bhdn4"]
 [ext_resource type="PackedScene" uid="uid://dvgmkrlkllw5w" path="res://Scenes/UI/Towershop/tower_shop_panel.tscn" id="1_obd1k"]
 [ext_resource type="Texture2D" uid="uid://bnig08qvay1gd" path="res://Art/VisualArt/UI/Buttons/BuildButton.png" id="2_xb3fm"]
-[ext_resource type="Texture2D" uid="uid://c8hwaroslpx5r" path="res://Art/VisualArt/UI/Buttons/BuildButtonPressed.png" id="3_bhdn4"]
 [ext_resource type="PackedScene" uid="uid://lnxhjh2qrihs" path="res://Scenes/UI/Towershop/lightning_tower_panel.tscn" id="4_0c3qk"]
-[ext_resource type="Texture2D" uid="uid://b7y2ccxtvvfct" path="res://Art/VisualArt/UI/Buttons/BuildButtonHover.png" id="4_hxpkr"]
 [ext_resource type="PackedScene" uid="uid://cve023ur7mal" path="res://Scenes/UI/Towershop/slingshot_tower_panel.tscn" id="5_qlr4l"]
 [ext_resource type="PackedScene" uid="uid://bbbnnj5e0btlt" path="res://Scenes/UI/Towershop/catapult_tower_panel.tscn" id="6_yderm"]
 
@@ -17,78 +15,88 @@ expand_margin_right = 5.0
 expand_margin_bottom = 15.0
 
 [node name="TowerShop" type="Control"]
+custom_minimum_size = Vector2(250, 600)
 layout_mode = 3
 anchors_preset = 0
+offset_right = 312.0
+offset_bottom = 600.0
 script = ExtResource("1_bhdn4")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.822
-anchor_top = 0.316
-anchor_right = 0.97
-anchor_bottom = 0.934
-offset_left = 0.0559692
-offset_top = -8.76801
-offset_right = -11.4401
-offset_bottom = -6.23199
-
-[node name="FlowContainer" type="FlowContainer" parent="Panel"]
-layout_mode = 0
-offset_left = 1.94403
-offset_top = 108.768
-offset_right = 158.944
-offset_bottom = 514.768
-alignment = 1
-last_wrap_alignment = 2
-reverse_fill = true
-
-[node name="TowerShopPanel" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+[node name="TowerShopPanel" parent="." instance=ExtResource("1_obd1k")]
 layout_mode = 2
+offset_left = -8.0
+offset_right = 82.0
 
-[node name="TowerShopPanel9" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
+[node name="TowerShopPanel10" parent="." instance=ExtResource("1_obd1k")]
 layout_mode = 2
-
-[node name="TowerShopPanel10" parent="Panel/FlowContainer" instance=ExtResource("1_obd1k")]
-layout_mode = 2
+offset_left = 88.2906
+offset_right = 178.291
 theme_override_styles/panel = SubResource("StyleBoxTexture_bhdn4")
 
-[node name="LightningTowerPanel" parent="Panel/FlowContainer" instance=ExtResource("4_0c3qk")]
+[node name="TowerShopPanel9" parent="." instance=ExtResource("1_obd1k")]
 layout_mode = 2
+offset_left = 184.291
+offset_right = 274.291
 
-[node name="LightningTowerPanel2" parent="Panel/FlowContainer" instance=ExtResource("4_0c3qk")]
+[node name="LightningTowerPanel" parent="." instance=ExtResource("4_0c3qk")]
 layout_mode = 2
+offset_left = -8.0
+offset_top = 120.0
+offset_right = 82.0
+offset_bottom = 248.0
 
-[node name="LightningTowerPanel3" parent="Panel/FlowContainer" instance=ExtResource("4_0c3qk")]
+[node name="LightningTowerPanel2" parent="." instance=ExtResource("4_0c3qk")]
 layout_mode = 2
+offset_left = 88.0
+offset_top = 120.0
+offset_right = 178.0
+offset_bottom = 248.0
 
-[node name="SlingshotTowerPanel" parent="Panel/FlowContainer" instance=ExtResource("5_qlr4l")]
+[node name="LightningTowerPanel3" parent="." instance=ExtResource("4_0c3qk")]
 layout_mode = 2
+offset_left = 184.0
+offset_top = 120.0
+offset_right = 274.0
+offset_bottom = 248.0
 
-[node name="SlingshotTowerPanel2" parent="Panel/FlowContainer" instance=ExtResource("5_qlr4l")]
+[node name="SlingshotTowerPanel" parent="." instance=ExtResource("5_qlr4l")]
 layout_mode = 2
+offset_left = -8.0
+offset_top = 240.0
+offset_right = 82.0
+offset_bottom = 368.0
 
-[node name="SlingshotTowerPanel3" parent="Panel/FlowContainer" instance=ExtResource("5_qlr4l")]
+[node name="SlingshotTowerPanel2" parent="." instance=ExtResource("5_qlr4l")]
 layout_mode = 2
+offset_left = 88.0
+offset_top = 240.0
+offset_right = 178.0
+offset_bottom = 368.0
 
-[node name="CatapultTowerPanel" parent="Panel/FlowContainer" instance=ExtResource("6_yderm")]
+[node name="SlingshotTowerPanel3" parent="." instance=ExtResource("5_qlr4l")]
 layout_mode = 2
+offset_left = 184.0
+offset_top = 240.0
+offset_right = 274.0
+offset_bottom = 368.0
 
-[node name="CatapultTowerPanel2" parent="Panel/FlowContainer" instance=ExtResource("6_yderm")]
+[node name="CatapultTowerPanel" parent="." instance=ExtResource("6_yderm")]
 layout_mode = 2
+offset_left = -8.0
+offset_top = 360.0
+offset_right = 82.0
+offset_bottom = 488.0
 
-[node name="CatapultTowerPanel3" parent="Panel/FlowContainer" instance=ExtResource("6_yderm")]
+[node name="CatapultTowerPanel2" parent="." instance=ExtResource("6_yderm")]
 layout_mode = 2
+offset_left = 88.0
+offset_top = 360.0
+offset_right = 178.0
+offset_bottom = 488.0
 
-[node name="ShowShopButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 13.0
-offset_top = -19.0
-offset_right = 141.0
-offset_bottom = 109.0
-texture_normal = ExtResource("2_xb3fm")
-texture_pressed = ExtResource("3_bhdn4")
-texture_hover = ExtResource("4_hxpkr")
-ignore_texture_size = true
-
-[connection signal="pressed" from="ShowShopButton" to="." method="_on_show_shop_button_pressed"]
+[node name="CatapultTowerPanel3" parent="." instance=ExtResource("6_yderm")]
+layout_mode = 2
+offset_left = 184.0
+offset_top = 360.0
+offset_right = 274.0
+offset_bottom = 488.0

@@ -8,6 +8,7 @@ var can_pause = true
 func resume() -> void:
 	get_tree().paused = false
 	visible = false  # hide pause menu
+	GlobalUi.get_node("SidePanel").show_shop()
 
 func pause() -> void:
 	get_tree().paused = true
@@ -18,6 +19,7 @@ func _ready() -> void:
 		# Instantiate (create an instance of) the scene
 	options_menu.visible = false
 	options_menu.connect("back_pressed", Callable(self, "_on_options_back"))
+	
 
 
 
@@ -40,7 +42,7 @@ func _on_resume_pressed() -> void:
 func _on_exit_pressed() -> void:
 	SoundManager.get_node("buttonpress").play()
 	var sound_node = SoundManager.get_node("buttonpress")
-
+	GlobalCamera.change_zoom_for_menu()
 	TowersNode.delete_bought_towers()
 	get_tree().paused = false # Unpause the game tree
 	Waves.stop_spawning_and_clear_enemies()

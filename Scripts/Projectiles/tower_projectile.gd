@@ -11,7 +11,6 @@ func _ready():
 	death_timer.timeout.connect(_on_death_timer_timeout)
 	death_timer.wait_time = death_time
 	death_timer.start()
-	print(death_timer)
 	animation.play()
 	if direction.length() > 0:
 		rotation = direction.angle()

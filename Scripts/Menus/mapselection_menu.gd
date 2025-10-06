@@ -31,10 +31,13 @@ func _on_map_button_pressed(map_path):
 	SoundManager.get_node("buttonpress").play()
 	# This function is now generic and can handle any map
 	GlobalUi.get_node("PauseMenu").can_pause = true
-	GlobalUi.get_node("TowerShop").show_shop()
+	GlobalUi.get_node("SidePanel").show_all()
+	if GlobalUi.get_node("SidePanel").is_hidden:
+		GlobalUi.get_node("SidePanel").show_side_panel()
+	GlobalUi.get_node("SidePanelButton").show()
+	GlobalUi.get_node("StatsDisplay").show()
 	PlayerStats.start_game("MEDIUM") # TODO tälle pitäis olla oma pop up valita EASY/MEDIUM/ HARD 
-	GlobalUi.get_node("StatsDisplay").visible = true
-
+	GlobalCamera.change_zoom_for_map()
 	get_tree().change_scene_to_file(map_path)
 
 

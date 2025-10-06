@@ -403,6 +403,7 @@ size = Vector2(20.5, 28)
 z_index = 2
 y_sort_enabled = true
 texture_filter = 1
+scale = Vector2(1.2, 1)
 script = ExtResource("1_1twr8")
 movement_speed = 150.0
 
