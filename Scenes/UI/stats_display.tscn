@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://h4mwmxm7m5pj"]
+[gd_scene load_steps=7 format=3 uid="uid://h4mwmxm7m5pj"]
 
 [ext_resource type="Script" uid="uid://c23iwhhsyvxow" path="res://Scripts/Player/stats_display.gd" id="1_kmca8"]
 [ext_resource type="FontFile" uid="uid://c3sky53vd0g4j" path="res://Art/VisualArt/UI/Fonts/Varnished.ttf" id="2_cio2l"]
+[ext_resource type="Texture2D" uid="uid://dxe708a02bwfx" path="res://Art/VisualArt/UI/SideBar/GeminiCoin.png" id="3_0s02t"]
+[ext_resource type="Texture2D" uid="uid://bydjqvrtv4mfy" path="res://Art/VisualArt/UI/SideBar/Heart.png" id="4_2d0ps"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kmca8"]
 
@@ -32,10 +34,10 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_cio2l")
 
 [node name="MoneyLabel" type="Label" parent="."]
 layout_mode = 1
-offset_left = 272.0
-offset_top = 16.0
-offset_right = 348.0
-offset_bottom = 39.0
+offset_left = 292.0
+offset_top = 15.0
+offset_right = 378.0
+offset_bottom = 38.0
 theme_override_fonts/font = ExtResource("2_cio2l")
 text = "MONEY: 0"
 
@@ -52,10 +54,10 @@ text = "POINTS: 0"
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 272.0
-offset_top = 40.0
-offset_right = 372.0
-offset_bottom = 63.0
+offset_left = 293.0
+offset_top = 45.0
+offset_right = 393.0
+offset_bottom = 68.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_cio2l")
 text = "Health: 0/0"
@@ -67,3 +69,23 @@ offset_top = 64.0
 offset_right = 528.0
 offset_bottom = 91.0
 theme_override_fonts/font = ExtResource("2_cio2l")
+
+[node name="GeminiCoin" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 264.0
+offset_top = 4.0
+offset_right = 296.0
+offset_bottom = 36.0
+texture = ExtResource("3_0s02t")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 255.0
+offset_top = 30.0
+offset_right = 299.0
+offset_bottom = 73.0
+texture = ExtResource("4_2d0ps")
+expand_mode = 1

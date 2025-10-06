@@ -40,9 +40,12 @@ func _on_difficulty_selected(difficulty: String):
 	
 	# 2. Set up the necessary UI/Game state
 	GlobalUi.get_node("PauseMenu").can_pause = true
-	GlobalUi.get_node("TowerShop").show_shop()
-	GlobalUi.get_node("StatsDisplay").visible = true
-	
+	GlobalUi.get_node("SidePanel").show_all()
+	if GlobalUi.get_node("SidePanel").is_hidden:
+		GlobalUi.get_node("SidePanel").show_side_panel()
+	GlobalUi.get_node("SidePanelButton").show()
+	GlobalUi.get_node("StatsDisplay").show()
+	GlobalCamera.change_zoom_for_map()
 	# 3. Load the selected map scene
 	get_tree().change_scene_to_file(selected_map_scene_path)
 

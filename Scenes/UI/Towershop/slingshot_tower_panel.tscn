@@ -33,6 +33,7 @@ offset_bottom = 102.0
 texture = ExtResource("4_0flox")
 
 [node name="PriceTag" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = -13.0
 offset_top = 40.0
 offset_right = 134.0

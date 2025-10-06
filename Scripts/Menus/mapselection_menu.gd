@@ -62,16 +62,10 @@ func _on_map_button_pressed(map_name, map_data):
 	
 	# NOTE: The game start logic is MOVED to the difficulty scene.
 	get_tree().change_scene_to_file("res://Scenes/Menus/difficulty_selection.tscn")
-	# This function is now generic and can handle any map
-	GlobalUi.get_node("PauseMenu").can_pause = true
-	GlobalUi.get_node("SidePanel").show_all()
-	if GlobalUi.get_node("SidePanel").is_hidden:
-		GlobalUi.get_node("SidePanel").show_side_panel()
-	GlobalUi.get_node("SidePanelButton").show()
-	GlobalUi.get_node("StatsDisplay").show()
-	PlayerStats.start_game("MEDIUM") # TODO tälle pitäis olla oma pop up valita EASY/MEDIUM/ HARD 
-	GlobalCamera.change_zoom_for_map()
-	get_tree().change_scene_to_file(map_path)
+
+	
+	
+	
 
 
 func _on_button_pressed() -> void:
