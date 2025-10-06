@@ -8785,7 +8785,7 @@ tile_map_data = PackedByteArray("AAAHAAAAAAAeAAIAAAAHAAEAAAAeAAMAAAAHAAIAAAAeAAQ
 tile_set = SubResource("TileSet_0nmas")
 
 [node name="Path_1" type="Path2D" parent="." groups=["path"]]
-scale = Vector2(1, 1)
+visible = false
 curve = SubResource("Curve2D_rq857")
 
 [node name="Clutter" type="Node2D" parent="."]
@@ -8796,7 +8796,6 @@ tile_map_data = PackedByteArray("AAAKAAAAAAAUAAMAAAAKAAEAAAAUAAMAAAAKAAIAAAAUAAQ
 tile_set = SubResource("TileSet_f5wia")
 
 [node name="Reservoir" type="Node2D" parent="Clutter"]
-scale = Vector2(1, 1)
 
 [node name="Upper Pond" type="TileMapLayer" parent="Clutter/Reservoir"]
 position = Vector2(-142.177, -2.72109)
@@ -8807,7 +8806,6 @@ tile_set = SubResource("TileSet_tv6co")
 [node name="Waterfall" type="TileMapLayer" parent="Clutter/Reservoir"]
 z_index = 1
 position = Vector2(0.680272, 4.08163)
-scale = Vector2(1, 1)
 tile_map_data = PackedByteArray("AAAsAAMAAAATAA8AAAAsAAUAAAATABEAAAAtAAMAAAAUAA8AAAAtAAQAAAAUABAAAAAtAAUAAAAUABEAAAArAA0AAAASABkAAAArAA4AAAASABoAAAAsAAYAAAATABIAAAAsAAcAAAATABMAAAAsAAgAAAATABQAAAAsAAkAAAATABUAAAAsAAoAAAATABYAAAAsAAsAAAATABcAAAAsAAwAAAATABgAAAAsAA0AAAATABkAAAAsAA4AAAATABoAAAAsAA8AAAATABsAAAAtAAYAAAAUABIAAAAtAAcAAAAUABMAAAAtAAgAAAAUABQAAAAtAAkAAAAUABUAAAAtAAoAAAAUABYAAAAtAAsAAAAUABcAAAAtAAwAAAAUABgAAAAtAA0AAAAUABkAAAAtAA4AAAAUABoAAAAtAA8AAAAUABsAAAAuAAcAAAAVABMAAAAuAA0AAAAVABkAAAAuAA4AAAAVABoAAAAsAAQAAAATABAAAAAuAAQAAAAVABAAAAAuAAUAAAAVABEAAAAuAAMAAAAVAA8AAAArAAQAAAASABAAAAArAAMAAAASAA8AAAA=")
 tile_set = SubResource("TileSet_dgbxe")
 
@@ -8830,11 +8828,11 @@ tile_set = SubResource("TileSet_0r36t")
 
 [node name="Mushrooms" type="TileMapLayer" parent="Clutter"]
 z_index = 3
-scale = Vector2(1, 1)
 tile_map_data = PackedByteArray("AAAYABkAAAAWAAAAAAAYABoAAAAWAAEAAAAZABkAAAAXAAAAAAAZABoAAAAXAAEAAAAXAA0AAAAcAAAAAAAXAA4AAAAcAAEAAAAYAA0AAAAdAAAAAAAYAA4AAAAdAAEAAAAtABcAAAAcAAAAAAAtABgAAAAcAAEAAAAuABcAAAAdAAAAAAAuABgAAAAdAAEAAAABAA4AAAAOAAQAAAABAA8AAAAOAAUAAAACAA4AAAAPAAQAAAACAA8AAAAPAAUAAAAhAAIAAAAOAAQAAAAhAAMAAAAOAAUAAAAiAAIAAAAPAAQAAAAiAAMAAAAPAAUAAAA=")
 tile_set = SubResource("TileSet_ro05y")
 
 [node name="Debugger" parent="." instance=ExtResource("3_sd42k")]
+visible = false
 offset_left = 589.116
 offset_top = 321.088
 offset_right = 629.116

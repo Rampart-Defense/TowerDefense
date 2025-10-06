@@ -53,5 +53,5 @@ layout_mode = 1
 
 [connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Exit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Exit" to="." method="_on_quit_pressed"]

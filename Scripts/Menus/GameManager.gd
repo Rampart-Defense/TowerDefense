@@ -1,5 +1,8 @@
-extends Sprite2D
+extends Node
 
+var selected_map_name = ""
+var selected_map_scene_path = ""
+var selected_map_icon_path = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

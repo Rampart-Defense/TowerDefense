@@ -24,6 +24,7 @@ GlobalCamera="*res://Scenes/UI/global_camera.tscn"
 TowerUpgradeManager="*res://Scripts/UI/tower_upgrade_manager.gd"
 SoundManager="*res://Scenes/Menus/SoundManager.tscn"
 TowersNode="*res://Scripts/Towers/towers_node.gd"
+GameManager="*res://Scripts/Menus/GameManager.gd"
 
 [display]
 
