@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvy574xtcar10"]
+[gd_scene load_steps=6 format=3 uid="uid://dvy574xtcar10"]
 
 [ext_resource type="Script" uid="uid://bub2l7xmaowwj" path="res://Scripts/Menus/mapselection_menu.gd" id="1_2opjt"]
+[ext_resource type="Texture2D" uid="uid://c7cfttdrthhge" path="res://Art/VisualArt/UI/Buttons/backtomain/backtomenu.png" id="2_6rs5t"]
+[ext_resource type="Texture2D" uid="uid://vxq8pl1b1icm" path="res://Art/VisualArt/UI/Menus/Mapselection/mapselectionbg.png" id="2_jdv0c"]
+[ext_resource type="Texture2D" uid="uid://cj6dogjkm3yb4" path="res://Art/VisualArt/UI/Buttons/backtomain/backpressed.png" id="3_jdv0c"]
+[ext_resource type="Texture2D" uid="uid://dkftg8tco5g34" path="res://Art/VisualArt/UI/Buttons/backtomain/backhover.png" id="4_0nps0"]
 
 [node name="Mapselection_menu" type="Control"]
 layout_mode = 3
@@ -12,24 +16,29 @@ grow_vertical = 2
 size_flags_stretch_ratio = 8.96
 script = ExtResource("1_2opjt")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(0, 60)
+[node name="mapselectionbg" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -79.0
-offset_top = -31.0
-offset_right = 79.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+texture = ExtResource("2_jdv0c")
+expand_mode = 1
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 125.0
+offset_bottom = 124.0
+
+[node name="BackButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-text = "Back to Main Menu"
+texture_normal = ExtResource("2_6rs5t")
+texture_pressed = ExtResource("3_jdv0c")
+texture_hover = ExtResource("4_0nps0")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(0, 2)
@@ -55,9 +64,4 @@ theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 30
 columns = 3
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_button_pressed"]

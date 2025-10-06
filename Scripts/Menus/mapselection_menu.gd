@@ -3,32 +3,65 @@ extends Control
 @onready var map_list = $ScrollContainer/CenterContainer/GridContainer
 
 var maps = {
-	"Frostbite Fields": "res://Scenes/Maps/frostbite_fields.tscn",
-	"Scorched Sands": "res://Scenes/Maps/scorched_sands.tscn",
-	"Oasis": "res://Scenes/Maps/oasis.tscn",
-	"Nature's Edge": "res://Scenes/Maps/natures_edge.tscn",
-	"testscene3": "res://Scenes/Test/test_scene_3.tscn",
-	"testscene4": "res://Scenes/Test/test_scene_3.tscn",
-	"testscene5": "res://Scenes/Test/test_scene_3.tscn",
+	"Frostbite Fields": {
+		"path": "res://Scenes/Maps/frostbite_fields.tscn",
+		"icon": "res://Art/VisualArt/UI/Menus/Mapselection/map_preview/frostbite_fields.png"
+	},
+	"Scorched Sands": {
+		"path": "res://Scenes/Maps/scorched_sands.tscn",
+		"icon": "res://Art/VisualArt/UI/Menus/Mapselection/map_preview/scorched_sands.png"
+	},
+	"Oasis": {
+		"path": "res://Scenes/Maps/oasis.tscn",
+		"icon": "res://Art/VisualArt/UI/Menus/Mapselection/map_preview/oasis.png"
+	},
+	"Nature's Edge": {
+		"path": "res://Scenes/Maps/natures_edge.tscn",
+		"icon": "res://Art/VisualArt/UI/Menus/Mapselection/map_preview/natures_edge.png"
+	},
+	"Amber Fall": {
+		"path": "res://Scenes/Maps/amber_fall.tscn",
+		"icon": "res://Art/VisualArt/UI/Menus/Mapselection/map_preview/amber_fall.png"
+	},
+	"Crossroads of Doom": {
+		"path": "res://Scenes/Maps/crossroads_of_doom.tscn",
+		"icon": "res://Art/VisualArt/UI/Menus/Mapselection/map_preview/crossroads_of_doom.png"
+	},
+	"Crystal Caverns": {
+		"path": "res://Scenes/Maps/crystal_caverns.tscn",
+		"icon": "res://Art/VisualArt/UI/Menus/Mapselection/map_preview/crystal_caverns.png"
+	},
 }
 
 func _ready():
 	var button_size = Vector2(200, 200)
 	# Iterate through our data source
 	for map_name in maps:
+		var map_data = maps[map_name] # Get the map's dictionary (path and icon)
+
 		var button = Button.new()
 		button.text = map_name
 		
+		# button.icon = load(map_data.icon) 
+		# button.expand_icon = true
+		
 		button.custom_minimum_size = button_size
 		
-		# Connect the button's "pressed" signal to a function
-		button.pressed.connect(_on_map_button_pressed.bind(maps[map_name]))
+		button.pressed.connect(_on_map_button_pressed.bind(map_name, map_data))
 		
 		# Add the new button to our GridContainer
 		map_list.add_child(button)
 
-func _on_map_button_pressed(map_path):
+func _on_map_button_pressed(map_name, map_data):
 	SoundManager.get_node("buttonpress").play()
+	
+	# 1. Store the selected map data in the global GameManager
+	GameManager.selected_map_name = map_name
+	GameManager.selected_map_scene_path = map_data.path
+	GameManager.selected_map_icon_path = map_data.icon # Store the icon path!
+	
+	# NOTE: The game start logic is MOVED to the difficulty scene.
+	get_tree().change_scene_to_file("res://Scenes/Menus/difficulty_selection.tscn")
 	# This function is now generic and can handle any map
 	GlobalUi.get_node("PauseMenu").can_pause = true
 	GlobalUi.get_node("SidePanel").show_all()

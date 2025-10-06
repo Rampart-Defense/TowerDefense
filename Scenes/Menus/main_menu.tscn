@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cmfy0fn4kphdu" path="res://Art/VisualArt/UI/Buttons/Exit_button/Exit_hovered.png" id="11_8dws6"]
 [ext_resource type="Texture2D" uid="uid://cvolwogyewxv1" path="res://Art/VisualArt/UI/Menus/Main_menu/clouds/cloud4.png" id="11_bwyy1"]
 [ext_resource type="AudioStream" uid="uid://g4ab5lpj6rym" path="res://Art/Audio/Music/Piano Loop.wav" id="25_bwyy1"]
-[ext_resource type="Script" uid="uid://d3b75wy7foj46" path="res://Scenes/Menus/menumusic.gd" id="26_ef2r8"]
+[ext_resource type="Script" uid="uid://d3b75wy7foj46" path="res://Scripts/Menus/menumusic.gd" id="26_ef2r8"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
