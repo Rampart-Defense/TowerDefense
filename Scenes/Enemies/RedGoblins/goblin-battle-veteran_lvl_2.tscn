@@ -1,13 +1,12 @@
-[gd_scene load_steps=57 format=3 uid="uid://bjmtqc1djk6jv"]
+[gd_scene load_steps=56 format=3 uid="uid://bjmtqc1djk6jv"]
 
 [ext_resource type="Script" uid="uid://dc5trhvepwc1s" path="res://Scripts/Enemies/enemy.gd" id="1_366q0"]
-[ext_resource type="Texture2D" uid="uid://5js15xw4gdsh" path="res://Art/VisualArt/Enemies/RedGoblins/goblin-heavy-guard_lvl2/goblin-heavyguard-walk.png" id="2_2tgae"]
 [ext_resource type="Texture2D" uid="uid://du7rnawxm0kr2" path="res://Art/VisualArt/Enemies/RedGoblins/goblin-battle-veteran_lvl2/goblin-battle-veteran-hurt.png" id="3_ar31d"]
 [ext_resource type="Texture2D" uid="uid://dn2gkelbw24vk" path="res://Art/VisualArt/Enemies/RedGoblins/goblin-battle-veteran_lvl2/goblin-battle-veteran-walk.png" id="4_tineo"]
 [ext_resource type="Script" uid="uid://coqxkgyk3ocyp" path="res://Scripts/Enemies/enemy_health_system.gd" id="5_fwp4s"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ibm5g"]
-atlas = ExtResource("2_2tgae")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fibnt"]
+atlas = ExtResource("4_tineo")
 region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4jds4"]
@@ -206,7 +205,7 @@ region = Rect2(240, 96, 48, 48)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ibm5g")
+"texture": SubResource("AtlasTexture_fibnt")
 }],
 "loop": true,
 "name": &"idle",
@@ -409,7 +408,7 @@ script = ExtResource("1_366q0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_egydt")
-animation = &"walk_up"
+animation = &"idle"
 
 [node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -14)
