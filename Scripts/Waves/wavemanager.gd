@@ -21,7 +21,7 @@ const goblin_tribes_guardLVL1 = preload("res://Scenes/Enemies/GreenGoblins/gobli
 const goblin_battle_masterLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-battle-master_lvl_1.tscn")
 const goblin_high_shamanLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-high-shaman_lvl_1.tscn")
 const goblin_heavy_guardLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-heavy-guard_lvl_1.tscn")
-const goblin_light_conjurerLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-ligth-conjurer_lvl_1.tscn")
+const goblin_light_conjurerLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-light-conjurer_lvl_1.tscn")
 const goblin_tribesmanLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-tribesman_lvl_2.tscn")
 const goblin_huntsmanLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-huntsman_lvl_2.tscn")
 const goblin_tribes_guardLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-tribes-guard_lvl_2.tscn")
@@ -35,6 +35,11 @@ const goblin_high_shamanLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-h
 const boss1 = preload("res://Scenes/Enemies/Bosses/Boss_1.tscn")
 const boss2 = preload("res://Scenes/Enemies/Bosses/Boss_2.tscn")
 const boss3 = preload("res://Scenes/Enemies/Bosses/Boss_3.tscn")
+const boss4 = preload("res://Scenes/Enemies/Bosses/Boss_4.tscn")
+const boss5 = preload("res://Scenes/Enemies/Bosses/Boss_5.tscn")
+const boss6 = preload("res://Scenes/Enemies/Bosses/Boss_6.tscn")
+const boss7 = preload("res://Scenes/Enemies/Bosses/Boss_7.tscn")
+const boss8 = preload("res://Scenes/Enemies/Bosses/Boss_8.tscn")
 
 #waves data
 const WAVES_FILE_PATH = "res://data/waves.json"
@@ -62,7 +67,12 @@ var enemy_scenes = {
 	"goblin_high_shamanLVL2": goblin_high_shamanLVL2,
 	"boss1": boss1,
 	"boss2": boss2,
-	"boss3": boss3
+	"boss3": boss3,
+	"boss4": boss4,
+	"boss5": boss5,
+	"boss6": boss6,
+	"boss7": boss7,
+	"boss8": boss8,	
 }
 var wave_data = {}
 

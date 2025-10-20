@@ -55,7 +55,7 @@
 	  "enemies": [
 		{ "enemy_type": "goblin_huntsmanLVL1", "count": 10, "spawn_delay": 1.1, "delay_before_spawn": 3 },
 		{ "enemy_type": "goblin_battle_masterLVL1", "count": 3, "spawn_delay": 2.8, "delay_before_spawn": 10 },
-		{ "enemy_type": "goblin_high_shaman_LVL1", "count": 1, "spawn_delay": 0, "delay_before_spawn": 15 }
+		{ "enemy_type": "goblin_high_shamanLVL1", "count": 1, "spawn_delay": 0, "delay_before_spawn": 15 }
 	  ]
 	},
 	{
@@ -70,7 +70,7 @@
 	  "enemies": [
 		{ "enemy_type": "goblin_battle_veteranLVL1", "count": 10, "spawn_delay": 1, "delay_before_spawn": 2 },
 		{ "enemy_type": "goblin_light_conjurerLVL1", "count": 5, "spawn_delay": 2.5, "delay_before_spawn": 10 },
-		{ "enemy_type": "goblin_high_shaman_LVL1", "count": 2, "spawn_delay": 3.0, "delay_before_spawn": 20 },
+		{ "enemy_type": "goblin_high_shamanLVL1", "count": 2, "spawn_delay": 3.0, "delay_before_spawn": 20 },
 		{ "enemy_type": "boss1", "count": 1, "spawn_delay": 0, "delay_before_spawn": 40 }
 	  ]
 	},
@@ -114,8 +114,8 @@
 	  "wave_number": 16,
 	  "enemies": [
 		{ "enemy_type": "goblin_tribesmanLVL1", "count": 80, "spawn_delay": 0.1, "delay_before_spawn": 1 },
-		{ "enemy_type": "goblin_high_shaman_LVL1", "count": 3, "spawn_delay": 3.5, "delay_before_spawn": 15 }
-	  ]
+		{ "enemy_type": "goblin_high_shamanLVL1", "count": 3, "spawn_delay": 3.5, "delay_before_spawn": 15 }
+	 ]
 	},
 	{
 	  "wave_number": 17,
@@ -143,7 +143,7 @@
 	  "enemies": [
 		{ "enemy_type": "goblin_heavy_guardLVL1", "count": 8, "spawn_delay": 1.8, "delay_before_spawn": 2 },
 		{ "enemy_type": "goblin_battle_veteranLVL1", "count": 15, "spawn_delay": 1, "delay_before_spawn": 10 },
-		{ "enemy_type": "goblin_high_shaman_LVL1", "count": 4, "spawn_delay": 4, "delay_before_spawn": 30 },
+		{ "enemy_type": "goblin_high_shamanLVL1", "count": 4, "spawn_delay": 4, "delay_before_spawn": 30 },
 		{ "enemy_type": "boss2", "count": 1, "spawn_delay": 0, "delay_before_spawn": 50 }
 	  ]
 	},
@@ -173,7 +173,7 @@
 	  "wave_number": 24,
 	  "enemies": [
 		{ "enemy_type": "goblin_tribesmanLVL1", "count": 60, "spawn_delay": 0.3, "delay_before_spawn": 1 },
-		{ "enemy_type": "goblin_high_shaman_LVL1", "count": 5, "spawn_delay": 2.2, "delay_before_spawn": 20 }
+		{ "enemy_type": "goblin_high_shamanLVL1", "count": 5, "spawn_delay": 2.2, "delay_before_spawn": 20 }
 	  ]
 	},
 	{
@@ -214,7 +214,7 @@
 	{
 	  "wave_number": 30,
 	  "enemies": [
-		{ "enemy_type": "goblin_high_shaman_LVL1", "count": 6, "spawn_delay": 2.0, "delay_before_spawn": 2 },
+		{ "enemy_type": "goblin_high_shamanLVL1", "count": 6, "spawn_delay": 2.0, "delay_before_spawn": 2 },
 		{ "enemy_type": "goblin_tribesmanLVL1", "count": 90, "spawn_delay": 0.2, "delay_before_spawn": 10 },
 		{ "enemy_type": "goblin_heavy_guardLVL1", "count": 10, "spawn_delay": 2.5, "delay_before_spawn": 20 },
 		{ "enemy_type": "boss3", "count": 1, "spawn_delay": 0, "delay_before_spawn": 60 }
@@ -252,7 +252,7 @@
 	  "wave_number": 35,
 	  "enemies": [
 		{ "enemy_type": "goblin_apprentice_shamanLVL1", "count": 25, "spawn_delay": 0.6, "delay_before_spawn": 3 },
-		{ "enemy_type": "goblin_high_shaman_LVL1", "count": 8, "spawn_delay": 3.5, "delay_before_spawn": 25 }
+		{ "enemy_type": "goblin_high_shamanLVL1", "count": 8, "spawn_delay": 3.5, "delay_before_spawn": 25 }
 	  ]
 	},
 	{
@@ -273,7 +273,7 @@
 	  "wave_number": 38,
 	  "enemies": [
 		{ "enemy_type": "goblin_battle_masterLVL1", "count": 20, "spawn_delay": 1, "delay_before_spawn": 3 },
-		{ "enemy_type": "goblin_high_shaman_LVL1", "count": 10, "spawn_delay": 1.6, "delay_before_spawn": 20 }
+		{ "enemy_type": "goblin_high_shamanLVL1", "count": 10, "spawn_delay": 1.6, "delay_before_spawn": 20 }
 	  ]
 	},
 	{
@@ -288,7 +288,7 @@
 	  "enemies": [
 		{ "enemy_type": "goblin_heavy_guardLVL1", "count": 25, "spawn_delay": 0.9, "delay_before_spawn": 2 },
 		{ "enemy_type": "goblin_light_conjurerLVL1", "count": 15, "spawn_delay": 1.5, "delay_before_spawn": 10 },
-		{ "enemy_type": "goblin_high_shaman_LVL1", "count": 12, "spawn_delay": 3, "delay_before_spawn": 30 },
+		{ "enemy_type": "goblin_high_shamanLVL1", "count": 12, "spawn_delay": 3, "delay_before_spawn": 30 },
 		{ "enemy_type": "boss4", "count": 1, "spawn_delay": 0, "delay_before_spawn": 70 }
 	  ]
 	},
