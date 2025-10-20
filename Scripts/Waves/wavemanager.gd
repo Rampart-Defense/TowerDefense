@@ -12,15 +12,18 @@ var paths: Array[Path2D] = []
 var current_path_index = 0
 
 #Preload enemies
-const goblinLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_1.tscn")
-const goblinLVL2 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_2.tscn")
-const goblinLVL3 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_3.tscn")
-const goblinLVL4 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_4.tscn")
-const goblinLVL5 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_5.tscn")
-const goblinLVL6 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_6.tscn")
-const goblinLVL7 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_7.tscn")
+const goblin_tribesmanLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-tribesman_lvl_1.tscn")
+const goblin_huntsmanLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-huntsman_lvl_1.tscn")
+const goblin_battle_boyLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-battle-boy_lvl_1.tscn")
+const goblin_battle_veteranLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-battle-veteran_lvl_1.tscn")
+const goblin_apprentice_shamanLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-apprentice-shaman_lvl_1.tscn")
+const goblin_tribes_guardLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-tribesguard_lvl_1.tscn")
+const goblin_battle_masterLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-battle-master_lvl_1.tscn")
+const goblin_high_shamanLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-high-shaman_lvl_1.tscn")
+const goblin_heavy_guardLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-heavy-guard_lvl_1.tscn")
+const goblin_light_conjurerLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-ligth-conjurer_lvl_1.tscn")
 const goblin_tribesmanLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-tribesman_lvl_2.tscn")
-const goblin_huntsmanLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin_huntsman_lvl_2.tscn")
+const goblin_huntsmanLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-huntsman_lvl_2.tscn")
 const goblin_tribes_guardLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-tribes-guard_lvl_2.tscn")
 const goblin_heavy_guardLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-heavy-guard_lvl_2.tscn")
 const goblin_light_conjurerLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-light-conjurer_lvl_2.tscn")
@@ -29,18 +32,24 @@ const goblin_battle_veteranLVL2 = preload("res://Scenes/Enemies/RedGoblins/gobli
 const goblin_battle_masterLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-battle-master_lvl_2.tscn")
 const goblin_apprentice_shamanLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-apprentice-shaman_lvl_2.tscn")
 const goblin_high_shamanLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-high-shaman_lvl_2.tscn")
+const boss1 = preload("res://Scenes/Enemies/Bosses/Boss_1.tscn")
+const boss2 = preload("res://Scenes/Enemies/Bosses/Boss_2.tscn")
+const boss3 = preload("res://Scenes/Enemies/Bosses/Boss_3.tscn")
 
 #waves data
 const WAVES_FILE_PATH = "res://data/waves.json"
 
 var enemy_scenes = {
-	"goblinLVL1": goblinLVL1,
-	"goblinLVL2": goblinLVL2,
-	"goblinLVL3": goblinLVL3,
-	"goblinLVL4": goblinLVL4,
-	"goblinLVL5": goblinLVL5,
-	"goblinLVL6": goblinLVL6,
-	"goblinLVL7": goblinLVL7,
+	"goblin_tribesmanLVL1": goblin_tribesmanLVL1,
+	"goblin_huntsmanLVL1": goblin_huntsmanLVL1,
+	"goblin_battle_boyLVL1": goblin_battle_boyLVL1,
+	"goblin_battle_veteranLVL1": goblin_battle_veteranLVL1,
+	"goblin_apprentice_shamanLVL1": goblin_apprentice_shamanLVL1,
+	"goblin_battle_masterLVL1": goblin_battle_masterLVL1,
+	"goblin_tribes_guardLVL1": goblin_tribes_guardLVL1,
+	"goblin_heavy_guardLVL1": goblin_heavy_guardLVL1,
+	"goblin_light_conjurerLVL1": goblin_light_conjurerLVL1,
+	"goblin_high_shamanLVL1": goblin_high_shamanLVL1,
 	"goblin_tribesmanLVL2": goblin_tribesmanLVL2,
 	"goblin_huntsmanLVL2": goblin_huntsmanLVL2,
 	"goblin_tribes_guardLVL2": goblin_tribes_guardLVL2,
@@ -50,9 +59,10 @@ var enemy_scenes = {
 	"goblin_battle_veteranLVL2": goblin_battle_veteranLVL2,
 	"goblin_battle_masterLVL2": goblin_battle_masterLVL2,
 	"goblin_apprentice_shamanLVL2": goblin_apprentice_shamanLVL2,
-	"goblin_high_shamanLVL2": goblin_high_shamanLVL2
-	
-	
+	"goblin_high_shamanLVL2": goblin_high_shamanLVL2,
+	"boss1": boss1,
+	"boss2": boss2,
+	"boss3": boss3
 }
 var wave_data = {}
 
