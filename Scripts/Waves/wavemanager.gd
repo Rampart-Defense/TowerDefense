@@ -19,6 +19,17 @@ const goblinLVL4 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_4.tscn"
 const goblinLVL5 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_5.tscn")
 const goblinLVL6 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_6.tscn")
 const goblinLVL7 = preload("res://Scenes/Enemies/GreenGoblins/goblin_lvl_7.tscn")
+const goblin_tribesmanLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-tribesman_lvl_2.tscn")
+const goblin_huntsmanLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin_huntsman_lvl_2.tscn")
+const goblin_tribes_guardLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-tribes-guard_lvl_2.tscn")
+const goblin_heavy_guardLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-heavy-guard_lvl_2.tscn")
+const goblin_light_conjurerLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-light-conjurer_lvl_2.tscn")
+const goblin_battle_boyLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-battle-boy_lvl_2.tscn")
+const goblin_battle_veteranLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-battle-veteran_lvl_2.tscn")
+const goblin_battle_masterLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-battle-master_lvl_2.tscn")
+const goblin_apprentice_shamanLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-apprentice-shaman_lvl_2.tscn")
+const goblin_high_shamanLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-high-shaman_lvl_2.tscn")
+
 #waves data
 const WAVES_FILE_PATH = "res://data/waves.json"
 
@@ -29,7 +40,19 @@ var enemy_scenes = {
 	"goblinLVL4": goblinLVL4,
 	"goblinLVL5": goblinLVL5,
 	"goblinLVL6": goblinLVL6,
-	"goblinLVL7": goblinLVL7
+	"goblinLVL7": goblinLVL7,
+	"goblin_tribesmanLVL2": goblin_tribesmanLVL2,
+	"goblin_huntsmanLVL2": goblin_huntsmanLVL2,
+	"goblin_tribes_guardLVL2": goblin_tribes_guardLVL2,
+	"goblin_heavy_guardLVL2": goblin_heavy_guardLVL2,
+	"goblin_light_conjurerLVL2": goblin_light_conjurerLVL2,
+	"goblin_battle_boyLVL2": goblin_battle_boyLVL2,
+	"goblin_battle_veteranLVL2": goblin_battle_veteranLVL2,
+	"goblin_battle_masterLVL2": goblin_battle_masterLVL2,
+	"goblin_apprentice_shamanLVL2": goblin_apprentice_shamanLVL2,
+	"goblin_high_shamanLVL2": goblin_high_shamanLVL2
+	
+	
 }
 var wave_data = {}
 

@@ -5,62 +5,47 @@
 	  "wave_number": 1,
 	  "enemies": [
 		{
-		  "enemy_type": "goblinLVL1",
+		  "enemy_type": "goblin_heavy_guardLVL2",
 		  "count": 3,
-		  "spawn_delay": 0.5,
-		  "delay_before_spawn": 0
-
+		  "spawn_delay": 1,
+		  "delay_before_spawn": 1
 		},
 		{
-		  "enemy_type": "goblinLVL2",
-		  "count": 3,
-		  "spawn_delay": 0.5,
-		  "delay_before_spawn": 2
-
+		  "enemy_type": "goblin_light_conjurerLVL2",
+		  "count": 10,
+		  "spawn_delay": 1,
+		  "delay_before_spawn": 3
 		},
 		{
-		  "enemy_type": "goblinLVL3",
-		  "count": 3,
-		  "spawn_delay": 0.5,
-		  "delay_before_spawn": 4
-
+		  "enemy_type": "goblin_battle_boyLVL2",
+		  "count": 10,
+		  "spawn_delay": 1,
+		  "delay_before_spawn": 3
 		},
 		{
-		  "enemy_type": "goblinLVL4",
-		  "count": 3,
+		  "enemy_type": "goblin_battle_veteranLVL2",
+		  "count": 30,
 		  "spawn_delay": 0.5,
-		  "delay_before_spawn": 6
-
+		  "delay_before_spawn": 20
 		},
 		{
-		  "enemy_type": "goblinLVL5",
-		  "count": 3,
-		  "spawn_delay": 0.5,
-		  "delay_before_spawn": 8
-
-		},
-		{
-		  "enemy_type": "goblinLVL6",
-		  "count": 3,
-		  "spawn_delay": 0.5,
+		  "enemy_type": "goblin_battle_masterLVL2",
+		  "count": 10,
+		  "spawn_delay": 1,
 		  "delay_before_spawn": 10
-
 		},
 		{
-		  "enemy_type": "goblinLVL7",
-		  "count": 3,
+		  "enemy_type": "goblin_apprentice_shamanLVL2",
+		  "count": 20,
 		  "spawn_delay": 0.5,
-		  "delay_before_spawn": 12
-
+		  "delay_before_spawn": 30
 		},
 		{
-		  	"enemy_type": "goblinLVL1",
-		  	"count": 4,
-		  	"spawn_delay": 0.9,
-			"delay_before_spawn": 14
-			
+		  "enemy_type": "goblin_high_shamanLVL2",
+		  "count": 10,
+		  "spawn_delay": 1,
+		  "delay_before_spawn": 40
 		},
-
 	  ]
 	},
 	{
