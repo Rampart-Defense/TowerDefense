@@ -126,7 +126,7 @@ func start_wave() -> void:
 	
 	current_wave += 1
 	print(current_wave)
-	
+	PlayerStats.set_wave(current_wave)
 	if current_wave > wave_data["waves"].size():
 		print("All waves completed! Game over.")
 		return

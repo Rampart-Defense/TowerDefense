@@ -408,13 +408,11 @@ script = ExtResource("1_eny88")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_2gd3s")
 animation = &"idle"
 
 [node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -35)
-scale = Vector2(1, 1)
 script = ExtResource("4_y3dhj")
 payout = 20
 

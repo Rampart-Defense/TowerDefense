@@ -18,85 +18,40 @@ expand_margin_bottom = 15.0
 custom_minimum_size = Vector2(250, 600)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 312.0
+offset_right = 250.0
 offset_bottom = 600.0
 script = ExtResource("1_bhdn4")
 
-[node name="TowerShopPanel" parent="." instance=ExtResource("1_obd1k")]
-layout_mode = 2
-offset_left = -8.0
-offset_right = 82.0
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 520.0
 
-[node name="TowerShopPanel10" parent="." instance=ExtResource("1_obd1k")]
+[node name="HFlowContainer" type="FlowContainer" parent="ScrollContainer"]
 layout_mode = 2
-offset_left = 88.2906
-offset_right = 178.291
+size_flags_horizontal = 3
+
+[node name="TowerShopPanel" parent="ScrollContainer/HFlowContainer" instance=ExtResource("1_obd1k")]
+layout_mode = 2
+
+[node name="TowerShopPanel10" parent="ScrollContainer/HFlowContainer" instance=ExtResource("1_obd1k")]
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_bhdn4")
 
-[node name="TowerShopPanel9" parent="." instance=ExtResource("1_obd1k")]
+[node name="LightningTowerPanel" parent="ScrollContainer/HFlowContainer" instance=ExtResource("4_0c3qk")]
 layout_mode = 2
-offset_left = 184.291
-offset_right = 274.291
 
-[node name="LightningTowerPanel" parent="." instance=ExtResource("4_0c3qk")]
+[node name="LightningTowerPanel2" parent="ScrollContainer/HFlowContainer" instance=ExtResource("4_0c3qk")]
 layout_mode = 2
-offset_left = -8.0
-offset_top = 120.0
-offset_right = 82.0
-offset_bottom = 248.0
 
-[node name="LightningTowerPanel2" parent="." instance=ExtResource("4_0c3qk")]
+[node name="SlingshotTowerPanel" parent="ScrollContainer/HFlowContainer" instance=ExtResource("5_qlr4l")]
 layout_mode = 2
-offset_left = 88.0
-offset_top = 120.0
-offset_right = 178.0
-offset_bottom = 248.0
 
-[node name="LightningTowerPanel3" parent="." instance=ExtResource("4_0c3qk")]
+[node name="SlingshotTowerPanel2" parent="ScrollContainer/HFlowContainer" instance=ExtResource("5_qlr4l")]
 layout_mode = 2
-offset_left = 184.0
-offset_top = 120.0
-offset_right = 274.0
-offset_bottom = 248.0
 
-[node name="SlingshotTowerPanel" parent="." instance=ExtResource("5_qlr4l")]
+[node name="CatapultTowerPanel" parent="ScrollContainer/HFlowContainer" instance=ExtResource("6_yderm")]
 layout_mode = 2
-offset_left = -8.0
-offset_top = 240.0
-offset_right = 82.0
-offset_bottom = 368.0
 
-[node name="SlingshotTowerPanel2" parent="." instance=ExtResource("5_qlr4l")]
+[node name="CatapultTowerPanel2" parent="ScrollContainer/HFlowContainer" instance=ExtResource("6_yderm")]
 layout_mode = 2
-offset_left = 88.0
-offset_top = 240.0
-offset_right = 178.0
-offset_bottom = 368.0
-
-[node name="SlingshotTowerPanel3" parent="." instance=ExtResource("5_qlr4l")]
-layout_mode = 2
-offset_left = 184.0
-offset_top = 240.0
-offset_right = 274.0
-offset_bottom = 368.0
-
-[node name="CatapultTowerPanel" parent="." instance=ExtResource("6_yderm")]
-layout_mode = 2
-offset_left = -8.0
-offset_top = 360.0
-offset_right = 82.0
-offset_bottom = 488.0
-
-[node name="CatapultTowerPanel2" parent="." instance=ExtResource("6_yderm")]
-layout_mode = 2
-offset_left = 88.0
-offset_top = 360.0
-offset_right = 178.0
-offset_bottom = 488.0
-
-[node name="CatapultTowerPanel3" parent="." instance=ExtResource("6_yderm")]
-layout_mode = 2
-offset_left = 184.0
-offset_top = 360.0
-offset_right = 274.0
-offset_bottom = 488.0

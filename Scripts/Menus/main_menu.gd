@@ -10,7 +10,6 @@ func _ready() -> void:
 	GlobalUi.get_node("PauseMenu").can_pause = false
 	GlobalUi.get_node("SidePanel").hide_all()
 	GlobalUi.get_node("StatsDisplay").hide()
-	GlobalUi.get_node("SidePanelButton").hide()
 	GlobalCamera.change_zoom_for_menu()
 	button_manager.visible = true
 	options_menu.visible = false
