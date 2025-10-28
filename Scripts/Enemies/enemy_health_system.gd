@@ -4,6 +4,7 @@ extends Area2D
 @export var points: int = 5
 var currentHealth: int
 var goal_marker: Marker2D = null
+var has_died: bool = false
 signal died
 var stunned = false
 func _ready() -> void:
@@ -12,11 +13,11 @@ func _ready() -> void:
 
 func take_damage(amount: int) -> void:
 	currentHealth -= amount
-	if currentHealth <= 0:
+	if currentHealth <= 0 and not has_died:
+		has_died = true
 		die("no")
-	else:
-		var enemy = get_parent()
-		enemy.hurt()
+	var enemy = get_parent()
+	enemy.hurt()
 
 func stun(duration: float) -> void:
 	var enemy = get_parent()

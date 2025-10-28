@@ -408,13 +408,11 @@ script = ExtResource("1_hicbf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_bkabg")
 animation = &"idle"
 
 [node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -47)
-scale = Vector2(1, 1)
 script = ExtResource("4_wil7c")
 maxHealth = 600
 payout = 500
