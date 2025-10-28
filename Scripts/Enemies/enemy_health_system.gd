@@ -30,17 +30,14 @@ func stun(duration: float) -> void:
 		stunned = false
 		enemy.stunned = stunned
 
-
-
-
 func die(win: String) -> void:
+	var actual_payout_for_tracking = payout if win != "win" else 0
+	emit_signal("died", actual_payout_for_tracking)
 	
-	if owner:
-		emit_signal("died")
-		owner.queue_free()
-	else:
-		emit_signal("died")
-		queue_free()
 	if win != "win":
 		PlayerStats.add_points(points)
 		PlayerStats.add_money(payout)
+		
+	var node_to_free = owner if owner else self
+	if is_instance_valid(node_to_free):
+		node_to_free.queue_free()

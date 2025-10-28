@@ -79,6 +79,8 @@ var wave_data = {}
 
 var current_wave = 0
 var enemies_alive = 0
+var gold_gained_this_wave: int = 0
+
 
 func calculate_total_enemies_in_wave(wave_info: Dictionary) -> int:
 	var total_enemies = 0
@@ -153,6 +155,8 @@ func spawn_wave_and_wait(wave_info: Dictionary, session_id: int) -> void:
 		return
 		
 	print("All enemies in Wave ", wave_info["wave_number"], " have been defeated!")
+	_calculate_end_of_round_payout()
+	
 	start_wave()
 	
 # A helper function to spawn a group of enemies after a specified delay.
@@ -199,12 +203,12 @@ func spawn_single_enemy(enemy_type: String) -> void:
 		else:
 			print("Error: 'EnemyHealthSystem' node not found in enemy scene.")
 		
-
 	else:
 		print("Error: Enemy type '", enemy_type, "' not found in scene dictionary.")
 
-func _on_enemy_died() -> void:
+func _on_enemy_died(gold_value: int) -> void:
 	enemies_alive -= 1
+	gold_gained_this_wave += gold_value
 	print("An enemy has died. Enemies remaining: ", enemies_alive)
 
 func _on_next_wave_button_pressed() -> void:
@@ -228,3 +232,10 @@ func stop_spawning_and_clear_enemies() -> void:
 	current_wave = 0
 	
 	print("Spawning stopped and all enemies cleared.")
+	
+	
+func _calculate_end_of_round_payout(): # <--- NEW function
+	var payout_amount = floor(gold_gained_this_wave * 0.2)
+	PlayerStats.add_money(payout_amount)
+	print("End of Round Payout: ", payout_amount, " gold (", 20, "% of ", gold_gained_this_wave, " earned).")
+	gold_gained_this_wave = 0
