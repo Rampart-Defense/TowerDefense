@@ -22,6 +22,7 @@ const goblin_battle_masterLVL1 = preload("res://Scenes/Enemies/GreenGoblins/gobl
 const goblin_high_shamanLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-high-shaman_lvl_1.tscn")
 const goblin_heavy_guardLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-heavy-guard_lvl_1.tscn")
 const goblin_light_conjurerLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-light-conjurer_lvl_1.tscn")
+
 const goblin_tribesmanLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-tribesman_lvl_2.tscn")
 const goblin_huntsmanLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-huntsman_lvl_2.tscn")
 const goblin_tribes_guardLVL2 = preload("res://Scenes/Enemies/RedGoblins/goblin-tribes-guard_lvl_2.tscn")

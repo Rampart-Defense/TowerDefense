@@ -406,6 +406,7 @@ texture_filter = 1
 scale = Vector2(1.2, 1)
 script = ExtResource("1_1twr8")
 movement_speed = 150.0
+damage = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
@@ -415,8 +416,6 @@ animation = &"stun_down"
 [node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -26)
 script = ExtResource("2_ht2c7")
-maxHealth = 20
-payout = 40
 
 [node name="Hitbox" type="CollisionShape2D" parent="EnemyHealthSystem"]
 position = Vector2(0, 12)

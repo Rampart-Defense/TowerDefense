@@ -414,7 +414,6 @@ animation = &"stun_down"
 [node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -14)
 script = ExtResource("3_jwh6u")
-payout = 20
 
 [node name="Hitbox" type="CollisionShape2D" parent="EnemyHealthSystem"]
 shape = SubResource("RectangleShape2D_bqaqd")

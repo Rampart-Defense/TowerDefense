@@ -404,6 +404,8 @@ z_index = 2
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_s3cj2")
+movement_speed = 200.0
+damage = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
@@ -414,8 +416,8 @@ frame_progress = 0.260566
 [node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -26)
 script = ExtResource("4_4vhas")
-maxHealth = 70
-payout = 100
+maxHealth = 25
+payout = 10
 
 [node name="Hitbox" type="CollisionShape2D" parent="EnemyHealthSystem"]
 position = Vector2(0, 12.25)
