@@ -5,8 +5,8 @@ extends Node2D
 
 
 func change_zoom_for_map():
-	camera.position = Vector2(760,320)
-	camera.zoom = Vector2(0.76, 1)
+	camera.position = Vector2(705,320)
+	camera.zoom = Vector2(0.82, 1)
 	pass
 	
 func change_zoom_for_menu():

@@ -43,7 +43,6 @@ func _on_difficulty_selected(difficulty: String):
 	GlobalUi.get_node("SidePanel").show_all()
 	if GlobalUi.get_node("SidePanel").is_hidden:
 		GlobalUi.get_node("SidePanel").show_side_panel()
-	GlobalUi.get_node("SidePanelButton").show()
 	GlobalUi.get_node("StatsDisplay").show()
 	GlobalCamera.change_zoom_for_map()
 	# 3. Load the selected map scene

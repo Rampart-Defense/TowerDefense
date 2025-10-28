@@ -3,11 +3,15 @@ var _current_health: int
 var _max_health: int 
 var _money: int
 var _points: int
+var _wave: int
 
+#Signals
 signal health_changed(new_value: int) # this is for current_health
 signal max_health_changed(new_value: int)
 signal money_changed(new_value: int)
 signal points_changed(new_value: int)
+signal wave_changed(new_value: int)
+
 
 # --- START GAME  ---
 func start_game(difficulty: String):
@@ -24,7 +28,7 @@ func start_game(difficulty: String):
 		"EASY":	
 			set_max_health(200)
 			set_money(500)
-	
+	set_wave(1)
 	set_current_health(_max_health)
 	set_points(0)
 
@@ -90,3 +94,11 @@ func get_points() -> int:
 
 func add_points(amount: int) -> void:
 	set_points(_points + amount)
+
+
+# --- Wave ---
+func set_wave(value: int) -> void:
+	_wave =  max(value, 0)
+	wave_changed.emit(_wave)
+	
+	

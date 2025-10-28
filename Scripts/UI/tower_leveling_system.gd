@@ -24,10 +24,10 @@ extends Control
 @export var range_value_2: int = 20
 
 #The buttons for disabling.
-@onready var AttackspeedButton = $Panel/HBoxContainer/AttackspeedLevelUp
-@onready var DamageButton = $Panel/HBoxContainer/DamageLevelUp
-@onready var RangeButton = $Panel/HBoxContainer/RangeLevelUp
-@onready var SellButton =$Panel/HBoxContainer/SellTower
+@onready var AttackspeedButton = $Panel/AttackspeedLevelUp
+@onready var DamageButton = $Panel/DamageLevelUp
+@onready var RangeButton = $Panel/RangeLevelUp
+@onready var SellButton =$Panel/SellTower
 
 #Statslabel for tower stats
 @onready var StatsLabel = $Panel/StatsLabel

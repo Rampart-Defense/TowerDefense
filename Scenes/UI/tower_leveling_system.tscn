@@ -35,27 +35,34 @@ attack_speed_value_2 = 0.1
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = -128.0
+offset_left = -64.0
 offset_top = -56.0
 offset_right = 132.0
 offset_bottom = 464.0
 
-[node name="HBoxContainer" type="FlowContainer" parent="Panel"]
+[node name="StatsLabel" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
-offset_top = 184.0
-offset_right = 260.0
-offset_bottom = 512.0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 184.0
+offset_bottom = 232.0
+theme_override_fonts/normal_font = ExtResource("18_k5twe")
+text = "asdsdsdasdasd"
 
-[node name="AttackspeedLevelUp" type="TextureButton" parent="Panel/HBoxContainer"]
+[node name="AttackspeedLevelUp" type="TextureButton" parent="Panel"]
 texture_filter = 1
-custom_minimum_size = Vector2(128, 157)
+custom_minimum_size = Vector2(64, 157)
 layout_mode = 2
+offset_left = -16.0
+offset_top = 160.0
+offset_right = 112.0
+offset_bottom = 317.0
 texture_normal = ExtResource("2_1cxqr")
 texture_pressed = ExtResource("3_k5twe")
 texture_hover = ExtResource("4_wtswq")
 texture_disabled = ExtResource("5_o21tc")
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer/AttackspeedLevelUp"]
+[node name="Label" type="Label" parent="Panel/AttackspeedLevelUp"]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 107.0
@@ -63,7 +70,7 @@ offset_right = 103.0
 offset_bottom = 130.0
 text = "Speed Up"
 
-[node name="Label2" type="Label" parent="Panel/HBoxContainer/AttackspeedLevelUp"]
+[node name="Label2" type="Label" parent="Panel/AttackspeedLevelUp"]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 131.0
@@ -71,15 +78,20 @@ offset_right = 103.0
 offset_bottom = 154.0
 text = "cost"
 
-[node name="DamageLevelUp" type="TextureButton" parent="Panel/HBoxContainer"]
+[node name="DamageLevelUp" type="TextureButton" parent="Panel"]
 texture_filter = 1
 layout_mode = 2
+offset_left = 80.0
+offset_top = 160.0
+offset_right = 208.0
+offset_bottom = 288.0
 texture_normal = ExtResource("1_3nsgu")
 texture_pressed = ExtResource("2_rvch5")
 texture_hover = ExtResource("3_0eolr")
 texture_disabled = ExtResource("5_0eolr")
+stretch_mode = 4
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer/DamageLevelUp"]
+[node name="Label" type="Label" parent="Panel/DamageLevelUp"]
 layout_mode = 0
 offset_left = 23.0
 offset_top = 107.0
@@ -87,7 +99,7 @@ offset_right = 99.0
 offset_bottom = 130.0
 text = "Attack Up"
 
-[node name="Label2" type="Label" parent="Panel/HBoxContainer/DamageLevelUp"]
+[node name="Label2" type="Label" parent="Panel/DamageLevelUp"]
 layout_mode = 0
 offset_left = 23.0
 offset_top = 131.0
@@ -95,15 +107,19 @@ offset_right = 99.0
 offset_bottom = 154.0
 text = "cost"
 
-[node name="RangeLevelUp" type="TextureButton" parent="Panel/HBoxContainer"]
+[node name="RangeLevelUp" type="TextureButton" parent="Panel"]
 texture_filter = 1
 layout_mode = 2
+offset_left = -16.0
+offset_top = 296.0
+offset_right = 112.0
+offset_bottom = 424.0
 texture_normal = ExtResource("10_ked84")
 texture_pressed = ExtResource("11_xm277")
 texture_hover = ExtResource("12_0oam0")
 texture_disabled = ExtResource("13_dijcn")
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer/RangeLevelUp"]
+[node name="Label" type="Label" parent="Panel/RangeLevelUp"]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 107.0
@@ -111,7 +127,7 @@ offset_right = 103.0
 offset_bottom = 130.0
 text = "Range up"
 
-[node name="Label2" type="Label" parent="Panel/HBoxContainer/RangeLevelUp"]
+[node name="Label2" type="Label" parent="Panel/RangeLevelUp"]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 131.0
@@ -119,15 +135,19 @@ offset_right = 103.0
 offset_bottom = 154.0
 text = "cost"
 
-[node name="SellTower" type="TextureButton" parent="Panel/HBoxContainer"]
+[node name="SellTower" type="TextureButton" parent="Panel"]
 texture_filter = 1
 layout_mode = 2
+offset_left = 80.0
+offset_top = 296.0
+offset_right = 208.0
+offset_bottom = 424.0
 texture_normal = ExtResource("14_02wwt")
 texture_pressed = ExtResource("15_sj1nv")
 texture_hover = ExtResource("16_lhwxi")
 texture_disabled = ExtResource("17_lxfy0")
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer/SellTower"]
+[node name="Label" type="Label" parent="Panel/SellTower"]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 107.0
@@ -135,7 +155,7 @@ offset_right = 103.0
 offset_bottom = 130.0
 text = "Sell tower"
 
-[node name="Label2" type="Label" parent="Panel/HBoxContainer/SellTower"]
+[node name="Label2" type="Label" parent="Panel/SellTower"]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 131.0
@@ -143,17 +163,8 @@ offset_right = 103.0
 offset_bottom = 154.0
 text = "price"
 
-[node name="StatsLabel" type="RichTextLabel" parent="Panel"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 24.0
-offset_right = 240.0
-offset_bottom = 184.0
-theme_override_fonts/normal_font = ExtResource("18_k5twe")
-text = "asdsdsdasdasd"
-
-[connection signal="button_down" from="Panel/HBoxContainer/AttackspeedLevelUp" to="." method="_on_attackspeed_level_up_button_down"]
-[connection signal="button_down" from="Panel/HBoxContainer/DamageLevelUp" to="." method="_on_damage_level_up_button_down"]
-[connection signal="button_down" from="Panel/HBoxContainer/RangeLevelUp" to="." method="_on_range_level_up_button_down"]
-[connection signal="button_down" from="Panel/HBoxContainer/SellTower" to="." method="_on_sell_tower_button_down"]
-[connection signal="pressed" from="Panel/HBoxContainer/SellTower" to="." method="_on_sell_tower_pressed"]
+[connection signal="button_down" from="Panel/AttackspeedLevelUp" to="." method="_on_attackspeed_level_up_button_down"]
+[connection signal="button_down" from="Panel/DamageLevelUp" to="." method="_on_damage_level_up_button_down"]
+[connection signal="button_down" from="Panel/RangeLevelUp" to="." method="_on_range_level_up_button_down"]
+[connection signal="button_down" from="Panel/SellTower" to="." method="_on_sell_tower_button_down"]
+[connection signal="pressed" from="Panel/SellTower" to="." method="_on_sell_tower_pressed"]
