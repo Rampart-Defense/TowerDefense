@@ -382,6 +382,12 @@ offset_top = -72.0
 offset_right = -608.0
 offset_bottom = -72.0
 tower = NodePath("..")
+attack_damage_cost_1 = 3000
+attack_damage_cost_2 = 7500
+attack_speed_cost_1 = 4000
+attack_speed_cost_2 = 8000
+range_cost_1 = 5000
+range_cost_2 = 9500
 range_value_2 = 40
 
 [node name="clickshape" type="CollisionShape2D" parent="."]
