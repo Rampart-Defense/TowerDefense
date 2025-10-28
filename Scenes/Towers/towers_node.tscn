@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bx48obq8wn63j"]
+[gd_scene format=3 uid="uid://dlfjp4nd1gglk"]
 
 [node name="TowersNode" type="Node2D" groups=["towersnode"]]
 

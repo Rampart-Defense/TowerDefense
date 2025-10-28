@@ -826,8 +826,12 @@ offset_right = -615.0
 offset_bottom = -52.0
 tower = NodePath("..")
 sell_price = 200
-attack_damage_cost_1 = 200
-attack_damage_cost_2 = 500
+attack_damage_cost_1 = 3000
+attack_damage_cost_2 = 5000
+attack_speed_cost_1 = 8000
+attack_speed_cost_2 = 10000
+range_cost_1 = 6000
+range_cost_2 = 8000
 
 [node name="lightningshoot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_0trrp")

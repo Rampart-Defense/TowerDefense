@@ -277,7 +277,7 @@ shape = SubResource("CircleShape2D_5cc57")
 
 [node name="clickshape" type="CollisionShape2D" parent="."]
 z_index = 101
-position = Vector2(-1, -24.5)
+position = Vector2(0, -14.8614)
 shape = SubResource("RectangleShape2D_5cc57")
 
 [node name="TowerLevelingSystem" parent="." node_paths=PackedStringArray("tower") instance=ExtResource("5_c1lf5")]
@@ -287,6 +287,12 @@ offset_top = -72.0
 offset_right = -608.0
 offset_bottom = -72.0
 tower = NodePath("..")
+attack_damage_cost_1 = 2000
+attack_damage_cost_2 = 4000
+attack_speed_cost_1 = 3000
+attack_speed_cost_2 = 6000
+range_cost_1 = 4000
+range_cost_2 = 8000
 range_value_2 = 30
 
 [node name="arrowshoot" type="AudioStreamPlayer2D" parent="."]
