@@ -12,6 +12,11 @@ extends Control
 var selected_map_scene_path: String
 
 func _ready():
+	GlobalUi.get_node("PauseMenu").hide()
+	GlobalUi.get_node("PauseMenu").can_pause = false
+	GlobalUi.get_node("SidePanel").hide_all()
+	GlobalUi.get_node("StatsDisplay").hide()
+	GlobalCamera.change_zoom_for_menu()
 	# Retrieve the stored data from the global GameManager
 	var name = GameManager.selected_map_name
 	var icon_path = GameManager.selected_map_icon_path
