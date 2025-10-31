@@ -396,7 +396,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkuws"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hicbf"]
 size = Vector2(20, 27.5)
 
 [node name="Boss4" type="Node2D"]
@@ -405,6 +405,8 @@ y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_hicbf")
+movement_speed = 30.0
+damage = 200
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
@@ -412,14 +414,14 @@ sprite_frames = SubResource("SpriteFrames_bkabg")
 animation = &"idle"
 
 [node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
-position = Vector2(0, -47)
+position = Vector2(0, -26)
 script = ExtResource("4_wil7c")
-maxHealth = 600
-payout = 500
+maxHealth = 5000
+payout = 3000
 points = 100
 
 [node name="Hitbox" type="CollisionShape2D" parent="EnemyHealthSystem"]
-position = Vector2(0, 33)
-shape = SubResource("RectangleShape2D_xkuws")
+position = Vector2(0, 12.25)
+shape = SubResource("RectangleShape2D_hicbf")
 
 [connection signal="area_entered" from="EnemyHealthSystem" to="EnemyHealthSystem" method="_on_area_entered"]
