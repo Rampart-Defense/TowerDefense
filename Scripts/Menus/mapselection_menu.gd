@@ -34,6 +34,12 @@ var maps = {
 }
 
 func _ready():
+	GlobalUi.get_node("PauseMenu").hide()
+	GlobalUi.get_node("PauseMenu").can_pause = false
+	GlobalUi.get_node("SidePanel").hide_all()
+	GlobalUi.get_node("StatsDisplay").hide()
+	GlobalCamera.change_zoom_for_menu()
+	
 	var button_size = Vector2(200, 200)
 	# Iterate through our data source
 	for map_name in maps:

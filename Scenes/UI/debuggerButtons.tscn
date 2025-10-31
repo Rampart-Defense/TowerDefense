@@ -55,6 +55,14 @@ text = "reset PlayerStats"
 layout_mode = 2
 text = "FREE MONEY"
 
+[node name="win" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "win"
+
+[node name="lose" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "lose"
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -72,3 +80,5 @@ text = "FPS: null"
 [connection signal="button_down" from="Panel/VBoxContainer/HARD stats" to="." method="_on_hard_stats_button_down"]
 [connection signal="button_down" from="Panel/VBoxContainer/reset player stats" to="." method="_on_reset_player_stats_button_down"]
 [connection signal="button_down" from="Panel/VBoxContainer/Free money" to="." method="_on_free_money_button_down"]
+[connection signal="button_down" from="Panel/VBoxContainer/win" to="." method="_on_win_button_down"]
+[connection signal="button_down" from="Panel/VBoxContainer/lose" to="." method="_on_lose_button_down"]

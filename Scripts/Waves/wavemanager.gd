@@ -11,6 +11,9 @@ var current_session_id: int = 0
 var paths: Array[Path2D] = []
 var current_path_index = 0
 
+const LEVEL_VICTORY_SCENE = preload("res://Scenes/Menus/level_victory.tscn")
+
+
 #Preload enemies
 const goblin_tribesmanLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-tribesman_lvl_1.tscn")
 const goblin_huntsmanLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-huntsman_lvl_1.tscn")
@@ -130,12 +133,14 @@ func start_wave() -> void:
 	print(current_wave)
 	PlayerStats.set_wave(current_wave)
 	if current_wave > wave_data["waves"].size():
-		print("All waves completed! Game over.")
+		current_wave = 0
+		PlayerStats._handle_victory()
 		return
 
 	var wave_info = wave_data["waves"][current_wave - 1]
 	print("Starting Wave ", wave_info["wave_number"])
 	await spawn_wave_and_wait(wave_info, current_session_id)
+	
 	
 func spawn_wave_and_wait(wave_info: Dictionary, session_id: int) -> void:
 	if is_spawning_stopped:

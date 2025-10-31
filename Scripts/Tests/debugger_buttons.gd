@@ -25,3 +25,11 @@ func _on_reset_player_stats_button_down() -> void:
 
 func _on_free_money_button_down() -> void:
 	PlayerStats.add_money(2000)
+
+
+func _on_lose_button_down() -> void:
+	PlayerStats.die()
+
+
+func _on_win_button_down() -> void:
+	PlayerStats._handle_victory()
