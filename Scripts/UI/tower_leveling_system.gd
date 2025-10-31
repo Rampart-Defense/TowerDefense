@@ -41,7 +41,8 @@ var too_far_right = false
 func _ready() -> void:
 	# The InputManager will handle connecting this signal,
 	# so you don't need to do it here anymore.
-	
+	if tower == null:
+		queue_free()
 	# Set initial button text and prices
 	AttackspeedButton.get_child(1).text = "cost: " + str(attack_speed_cost_1)
 	DamageButton.get_child(1).text = "cost: " + str(attack_damage_cost_1)

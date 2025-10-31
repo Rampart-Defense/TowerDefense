@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://dlfjp4nd1gglk"]
-
-[node name="TowersNode" type="Node2D" groups=["towersnode"]]
-
-[node name="Towers" type="Node2D" parent="."]
-
-[node name="Temp" type="Node2D" parent="."]

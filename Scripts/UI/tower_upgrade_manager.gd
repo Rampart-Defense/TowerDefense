@@ -74,6 +74,7 @@ func _unhandled_input(event: InputEvent) -> void:
 					side_panel.show_side_panel()
 				var anchor = side_panel.get_node("UpgradeAnchor")
 				tower.tower_leveling_system.reparent(anchor, false)
+				tower.tower_leveling_system.update_stats_display()
 				tower.tower_leveling_system.position = Vector2(135, 50)  # move it here since controls are mysterious..
 				tower.tower_leveling_system.visible = true
 				tower.get_node("RangeArea").visible = true

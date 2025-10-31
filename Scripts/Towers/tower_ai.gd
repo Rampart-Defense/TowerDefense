@@ -62,8 +62,13 @@ var suppress_next_shot: bool = false
 
 
 func _ready() -> void:
-	
-	
+	# --- FIX: Ensure the range shape is unique to this tower instance ---
+	if range_area.shape:
+		# Duplicates the shape resource, making it unique for this tower.
+		# Subsequent changes to range_area.shape.radius will ONLY affect this tower.
+		range_area.shape = range_area.shape.duplicate()
+		
+		
 	damage = base_damage
 	current_range = base_range
 	# Connect the `area_entered` signal to the `_on_area_2d_area_entered` function.
@@ -158,6 +163,10 @@ func fire_projectile() -> void:
 			
 	if shoot_target != null:
 		target_pos = shoot_target.global_position
+		# --- CALL PREDICTION FUNCTION ---
+		var projectile = projectile_scene.instantiate()
+		var projectile_speed = projectile.speed
+		target_pos = _calculate_prediction_point(shoot_target, global_position, projectile_speed)
 	# Spawn all projectiles with the given offsets. also shoot towards the offset
 	for offset in offsets:
 		var projectile = projectile_scene.instantiate()
@@ -165,7 +174,30 @@ func fire_projectile() -> void:
 		projectile.direction = (target_pos / map_scale - projectile.global_position + offset ).normalized()
 		projectile.get_node("DamageSource").damage = damage
 		get_tree().current_scene.call_deferred("add_child", projectile)
+
+func _calculate_prediction_point(target: Node2D, tower_position: Vector2, projectile_speed: float) -> Vector2:
+	if not is_instance_valid(target) or projectile_speed <= 0:
+		return target.global_position
+
+	var target_current_pos = target.global_position
 	
+	# Attempt to get the enemy's velocity
+	var target_velocity = Vector2.ZERO
+	if target.has_method("get_velocity"):
+		target_velocity = target.get_velocity()
+	elif target.has_method("get_current_velocity"): # Check for alternative velocity getter
+		target_velocity = target.get_current_velocity()
+		
+	var aim_point: Vector2 = target_current_pos
+	
+	if target_velocity.length_squared() > 0:
+		# Simple iterative prediction: Time = Distance / Speed
+		var time_to_target = target_current_pos.distance_to(tower_position) / projectile_speed
+		
+		# Predict the enemy's future position: FuturePos = CurrentPos + Velocity * Time
+		aim_point = target_current_pos + target_velocity * time_to_target
+		
+	return aim_point
 
 func upgrade_tower(stat: String, value ):
 	match stat:

@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1e3lwulhrcop"]
+
+[ext_resource type="Texture2D" uid="uid://bnig08qvay1gd" path="res://Art/VisualArt/UI/Buttons/BuildButton.png" id="1_ddl0j"]
+[ext_resource type="Script" uid="uid://d0k3gq2bdrkf" path="res://Scripts/UI/tower_shop_panel.gd" id="2_7o4rv"]
+[ext_resource type="PackedScene" uid="uid://badxcq4j1s47t" path="res://Scenes/Towers/flame_tower.tscn" id="3_yktx5"]
+[ext_resource type="Texture2D" uid="uid://d32yk0va0s87a" path="res://Art/VisualArt/Towers/FlameTower/Tower5Preview.png" id="4_7o4rv"]
+[ext_resource type="Texture2D" uid="uid://bmhmmfy4rpyj0" path="res://Art/VisualArt/UI/SideBar/LabelForCost.png" id="4_qpf8g"]
+[ext_resource type="FontFile" uid="uid://c3sky53vd0g4j" path="res://Art/VisualArt/UI/Fonts/Varnished.ttf" id="5_xp111"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iwnec"]
+texture = ExtResource("1_ddl0j")
+expand_margin_left = 5.0
+expand_margin_top = 20.0
+expand_margin_right = 5.0
+expand_margin_bottom = 14.0
+
+[node name="FlameTowerPanel" type="Panel"]
+texture_filter = 1
+custom_minimum_size = Vector2(90, 128)
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_iwnec")
+script = ExtResource("2_7o4rv")
+tower = ExtResource("3_yktx5")
+price = 2000
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = -23.0
+offset_right = 78.0
+offset_bottom = 105.0
+texture = ExtResource("4_7o4rv")
+
+[node name="PriceTag" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 40.0
+offset_right = 134.0
+offset_bottom = 158.0
+mouse_filter = 2
+texture = ExtResource("4_qpf8g")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PriceTag"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 53.0
+offset_right = 106.0
+offset_bottom = 80.0
+theme_override_fonts/normal_font = ExtResource("5_xp111")
+theme_override_font_sizes/normal_font_size = 16
+text = "2000
+"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

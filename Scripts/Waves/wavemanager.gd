@@ -11,7 +11,7 @@ var current_session_id: int = 0
 var paths: Array[Path2D] = []
 var current_path_index = 0
 
-const LEVEL_VICTORY_SCENE = preload("res://Scenes/Menus/level_victory.tscn")
+
 
 
 #Preload enemies

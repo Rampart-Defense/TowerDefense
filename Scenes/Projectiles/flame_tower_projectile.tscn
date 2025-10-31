@@ -1,0 +1,111 @@
+[gd_scene load_steps=15 format=3 uid="uid://83f46crkrn0n"]
+
+[ext_resource type="Texture2D" uid="uid://d3bim63cb63hp" path="res://Art/VisualArt/Towers/FlameTower/FireTowerProjectile.png" id="1_4divb"]
+[ext_resource type="Script" uid="uid://ccm0fdtqgvtxf" path="res://Scripts/Projectiles/tower_projectile.gd" id="1_fjmbi"]
+[ext_resource type="Script" uid="uid://bl1a4o232oxjv" path="res://Scripts/Projectiles/damage_source.gd" id="1_opc5l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjmbi"]
+atlas = ExtResource("1_4divb")
+region = Rect2(0, 0, 10, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w0r3"]
+atlas = ExtResource("1_4divb")
+region = Rect2(10, 0, 10, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g3o1"]
+atlas = ExtResource("1_4divb")
+region = Rect2(20, 0, 10, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnei4"]
+atlas = ExtResource("1_4divb")
+region = Rect2(30, 0, 10, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxvbb"]
+atlas = ExtResource("1_4divb")
+region = Rect2(50, 0, 10, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjkui"]
+atlas = ExtResource("1_4divb")
+region = Rect2(60, 0, 10, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbgt5"]
+atlas = ExtResource("1_4divb")
+region = Rect2(70, 0, 10, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l44ci"]
+atlas = ExtResource("1_4divb")
+region = Rect2(80, 0, 10, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xub6f"]
+atlas = ExtResource("1_4divb")
+region = Rect2(90, 0, 10, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o1wge"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjmbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7w0r3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g3o1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnei4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxvbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjkui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbgt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l44ci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xub6f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4divb"]
+size = Vector2(46, 31)
+
+[node name="FlameTowerProjectile" type="Node2D"]
+z_index = 5
+texture_filter = 1
+script = ExtResource("1_fjmbi")
+speed = 150.0
+death_time = 0.7
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.87451)
+position = Vector2(-4, 0)
+rotation = -1.5708
+scale = Vector2(3, 2)
+sprite_frames = SubResource("SpriteFrames_o1wge")
+autoplay = "default"
+frame_progress = 0.217685
+
+[node name="DamageSource" type="Area2D" parent="." groups=["damageSource"]]
+position = Vector2(-1, 0)
+script = ExtResource("1_opc5l")
+penetrating = true
+single_target = false
+
+[node name="DamageArea" type="CollisionShape2D" parent="DamageSource"]
+position = Vector2(2, -1)
+shape = SubResource("RectangleShape2D_4divb")
+
+[node name="DeathTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="DamageSource" to="DamageSource" method="_on_area_entered"]

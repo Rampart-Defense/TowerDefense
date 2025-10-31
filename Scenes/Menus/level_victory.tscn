@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://deqha2h2vtl1j"]
 
-[ext_resource type="Script" uid="uid://brfwdhh1f3yoj" path="res://Scripts/Menus/level_victory.gd" id="1_f20tk"]
+[ext_resource type="Script" path="res://Scripts/Menus/level_victory.gd" id="1_f20tk"]
 [ext_resource type="Texture2D" uid="uid://dc0xwf67dijai" path="res://Art/VisualArt/UI/Menus/game_end menu/banners/victorybanner.png" id="2_u4u13"]
 [ext_resource type="Texture2D" uid="uid://bhcn4fa7kov32" path="res://Art/VisualArt/UI/Menus/game_end menu/newgamebutton/newgamebutton.png" id="3_4d6ap"]
 [ext_resource type="Texture2D" uid="uid://b15h4bw334la8" path="res://Art/VisualArt/UI/Menus/game_end menu/newgamebutton/newgamebuttonpress.png" id="4_t7pb3"]

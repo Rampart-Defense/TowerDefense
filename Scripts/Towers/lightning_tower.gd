@@ -5,14 +5,22 @@ extends "res://Scripts/Towers/tower_ai.gd"
 @export var projectile_scene3: PackedScene
 
 func fire_projectile() -> void:
+	if shoot_target == null or not is_instance_valid(shoot_target):
+		# We also need to reset the pending target and current target 
+		# to ensure the tower tries to find a new target next time.
+		pending_target_pos = Vector2.ZERO
+		current_target = null
+		shoot_target = null
+		return
+
 	var target_pos = pending_target_pos
-	if shoot_target != null:
-		target_pos = shoot_target.global_position
 	
 	match tower_level:
 		1:
 			
 			var projectile = projectile_scene.instantiate()
+			var projectile_speed = projectile.speed
+			target_pos = _calculate_prediction_point(shoot_target, global_position, projectile_speed)
 			projectile.global_position = firing_point.global_position / map_scale 
 			projectile.direction = (target_pos / map_scale - projectile.global_position  ).normalized()
 			projectile.get_node("DamageSource").damage = damage
@@ -21,12 +29,16 @@ func fire_projectile() -> void:
 		2:
 			
 			var projectile = projectile_scene2.instantiate()
+			var projectile_speed = projectile.speed
+			target_pos = _calculate_prediction_point(shoot_target, global_position, projectile_speed)
 			projectile.global_position = firing_point.global_position / map_scale 
 			projectile.direction = (target_pos / map_scale  - projectile.global_position).normalized()
 			projectile.get_node("DamageSource").damage = damage
 			get_tree().current_scene.call_deferred("add_child", projectile)
 		3:
 			var projectile = projectile_scene3.instantiate()
+			var projectile_speed = projectile.speed
+			target_pos = _calculate_prediction_point(shoot_target, global_position, projectile_speed)
 			projectile.global_position = firing_point.global_position / map_scale 
 			projectile.direction = (target_pos / map_scale  - projectile.global_position).normalized()
 			projectile.get_node("DamageSource").damage = damage

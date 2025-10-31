@@ -42,6 +42,7 @@ texture_filter = 1
 script = ExtResource("1_cj3yc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.615686)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_72juo")
 frame_progress = 0.637898

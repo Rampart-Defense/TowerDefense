@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://4272vxlnjwhn" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/SellButtonDisabled.png" id="17_lxfy0"]
 [ext_resource type="FontFile" uid="uid://c3sky53vd0g4j" path="res://Art/VisualArt/UI/Fonts/Varnished.ttf" id="18_k5twe"]
 
-[node name="TowerLevelingSystem" type="Control"]
+[node name="TowerLevelingSystem" type="Control" groups=["towerUpgrader"]]
 visible = false
 z_index = 1001
 layout_mode = 3
