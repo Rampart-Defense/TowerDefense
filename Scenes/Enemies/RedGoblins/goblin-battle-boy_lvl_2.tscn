@@ -404,6 +404,8 @@ z_index = 2
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_pimom")
+movement_speed = 140.0
+damage = 7
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
@@ -413,7 +415,8 @@ animation = &"idle"
 [node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -14)
 script = ExtResource("5_2l68o")
-payout = 20
+maxHealth = 140
+payout = 25
 
 [node name="Hitbox" type="CollisionShape2D" parent="EnemyHealthSystem"]
 shape = SubResource("RectangleShape2D_nuqyt")

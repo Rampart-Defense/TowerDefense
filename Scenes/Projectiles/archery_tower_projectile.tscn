@@ -40,6 +40,7 @@ size = Vector2(40, 8)
 z_index = 6
 texture_filter = 1
 script = ExtResource("1_cj3yc")
+speed = 600.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
