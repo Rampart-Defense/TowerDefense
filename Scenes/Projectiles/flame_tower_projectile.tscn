@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://83f46crkrn0n"]
+[gd_scene load_steps=15 format=3 uid="uid://b8wd2ssw7fdw7"]
 
 [ext_resource type="Texture2D" uid="uid://d3bim63cb63hp" path="res://Art/VisualArt/Towers/FlameTower/FireTowerProjectile.png" id="1_4divb"]
 [ext_resource type="Script" uid="uid://ccm0fdtqgvtxf" path="res://Scripts/Projectiles/tower_projectile.gd" id="1_fjmbi"]
@@ -81,6 +81,7 @@ size = Vector2(46, 31)
 [node name="FlameTowerProjectile" type="Node2D"]
 z_index = 5
 texture_filter = 1
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_fjmbi")
 speed = 150.0
 death_time = 0.7

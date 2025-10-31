@@ -1,8 +1,8 @@
-[gd_scene load_steps=54 format=3 uid="uid://badxcq4j1s47t"]
+[gd_scene load_steps=54 format=3 uid="uid://b7vqjtck2l8sl"]
 
-[ext_resource type="Script" uid="uid://c00xbr42p6hcw" path="res://Scripts/Towers/flame_tower.gd" id="1_g4u3w"]
+[ext_resource type="Script" path="res://Scripts/Towers/flame_tower.gd" id="1_g4u3w"]
 [ext_resource type="Texture2D" uid="uid://8ormh446wrhr" path="res://Art/VisualArt/Towers/FlameTower/Tower 05.png" id="2_1g660"]
-[ext_resource type="PackedScene" uid="uid://83f46crkrn0n" path="res://Scenes/Projectiles/flame_tower_projectile.tscn" id="2_v3lkr"]
+[ext_resource type="PackedScene" uid="uid://b8wd2ssw7fdw7" path="res://Scenes/Projectiles/flame_tower_projectile.tscn" id="2_v3lkr"]
 [ext_resource type="Texture2D" uid="uid://cetitcfvgbrn8" path="res://Art/VisualArt/Towers/FlameTower/Tower 05 - Level 01 - Weapon.png" id="3_g4u3w"]
 [ext_resource type="Texture2D" uid="uid://b56yqgvetbpvm" path="res://Art/VisualArt/Towers/FlameTower/Tower 05 - Level 02 - Weapon.png" id="5_g4u3w"]
 [ext_resource type="Texture2D" uid="uid://ddn48wma6kjxx" path="res://Art/VisualArt/Towers/FlameTower/Tower 05 - Level 03 - Weapon.png" id="6_1g660"]
@@ -405,8 +405,9 @@ offset_right = -608.0
 offset_bottom = -72.0
 tower = NodePath("..")
 attack_damage_cost_1 = 500
-attack_damage_value_1 = 2
+attack_damage_value_1 = 1
 attack_damage_cost_2 = 1500
+attack_damage_value_2 = 2
 attack_speed_cost_1 = 350
 attack_speed_value_1 = 0.05
 attack_speed_cost_2 = 1200
