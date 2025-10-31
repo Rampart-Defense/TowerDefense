@@ -405,6 +405,7 @@ y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_h0q7c")
+damage = 200
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
@@ -414,8 +415,8 @@ animation = &"stun_down"
 [node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -26)
 script = ExtResource("3_mxjn2")
-maxHealth = 600
-payout = 500
+maxHealth = 1500
+payout = 1000
 points = 100
 
 [node name="Hitbox" type="CollisionShape2D" parent="EnemyHealthSystem"]

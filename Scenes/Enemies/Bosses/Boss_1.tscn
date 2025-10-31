@@ -415,8 +415,8 @@ animation = &"stun_down"
 [node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -14)
 script = ExtResource("4_f8qr5")
-maxHealth = 250
-payout = 100
+maxHealth = 350
+payout = 400
 points = 25
 
 [node name="Hitbox" type="CollisionShape2D" parent="EnemyHealthSystem"]
