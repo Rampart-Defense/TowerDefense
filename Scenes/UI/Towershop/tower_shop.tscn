@@ -28,6 +28,9 @@ size_flags_horizontal = 3
 [node name="TowerShopPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("1_obd1k")]
 layout_mode = 2
 
+[node name="SniperTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("8_yderm")]
+layout_mode = 2
+
 [node name="LightningTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("4_0c3qk")]
 layout_mode = 2
 
@@ -38,7 +41,4 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="FlameTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("7_qlr4l")]
-layout_mode = 2
-
-[node name="SniperTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("8_yderm")]
 layout_mode = 2

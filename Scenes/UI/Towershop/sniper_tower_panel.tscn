@@ -22,6 +22,7 @@ offset_bottom = 64.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_iwnec")
 script = ExtResource("2_man3y")
 tower = ExtResource("3_8ysqe")
+price = 400
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -50,7 +51,7 @@ offset_right = 106.0
 offset_bottom = 80.0
 theme_override_fonts/normal_font = ExtResource("6_i0h3g")
 theme_override_font_sizes/normal_font_size = 16
-text = "200
+text = "400
 "
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
