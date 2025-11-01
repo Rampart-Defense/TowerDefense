@@ -67,7 +67,7 @@ frame_progress = 1.0
 
 [node name="DamageSource" parent="." instance=ExtResource("2_mptbl")]
 damage = 20
-stun = 1.0
+stun = 1.5
 penetrating = true
 single_target = false
 on_hit = true

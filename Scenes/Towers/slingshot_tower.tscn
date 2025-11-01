@@ -288,12 +288,16 @@ offset_right = -608.0
 offset_bottom = -72.0
 tower = NodePath("..")
 attack_damage_cost_1 = 2000
+attack_damage_value_1 = 10
 attack_damage_cost_2 = 4000
+attack_damage_value_2 = 10
 attack_speed_cost_1 = 3000
+attack_speed_value_1 = 0.5
 attack_speed_cost_2 = 6000
+attack_speed_value_2 = 0.5
 range_cost_1 = 4000
 range_cost_2 = 8000
-range_value_2 = 30
+range_value_2 = 40
 
 [node name="arrowshoot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_c1lf5")

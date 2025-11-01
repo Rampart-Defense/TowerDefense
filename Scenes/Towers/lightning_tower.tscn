@@ -829,7 +829,9 @@ sell_price = 200
 attack_damage_cost_1 = 3000
 attack_damage_cost_2 = 5000
 attack_speed_cost_1 = 8000
+attack_speed_value_1 = 1.0
 attack_speed_cost_2 = 10000
+attack_speed_value_2 = 1.0
 range_cost_1 = 6000
 range_cost_2 = 8000
 

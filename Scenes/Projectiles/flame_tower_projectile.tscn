@@ -98,8 +98,6 @@ frame_progress = 0.217685
 [node name="DamageSource" type="Area2D" parent="." groups=["damageSource"]]
 position = Vector2(-1, 0)
 script = ExtResource("1_opc5l")
-penetrating = true
-single_target = false
 
 [node name="DamageArea" type="CollisionShape2D" parent="DamageSource"]
 position = Vector2(2, -1)

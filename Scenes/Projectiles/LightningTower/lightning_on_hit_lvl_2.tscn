@@ -73,7 +73,7 @@ frame = 6
 frame_progress = 1.0
 
 [node name="DamageSource" parent="." instance=ExtResource("3_agfeu")]
-damage = 20
+damage = 50
 stun = 1.0
 penetrating = true
 single_target = false

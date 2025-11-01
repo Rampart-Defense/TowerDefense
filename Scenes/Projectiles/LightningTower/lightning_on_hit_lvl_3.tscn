@@ -80,8 +80,8 @@ frame = 7
 frame_progress = 1.0
 
 [node name="DamageSource" parent="." instance=ExtResource("3_volie")]
-damage = 30
-stun = 1.0
+damage = 80
+stun = 2.0
 penetrating = true
 single_target = false
 on_hit = true
