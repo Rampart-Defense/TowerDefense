@@ -46,7 +46,7 @@ size = Vector2(38, 10)
 [node name="SniperProjectileLvl2" type="Node2D"]
 z_index = 5
 script = ExtResource("1_q1knd")
-speed = 600.0
+speed = 1000.0
 death_time = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

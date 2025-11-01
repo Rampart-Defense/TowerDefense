@@ -1,6 +1,6 @@
 [gd_scene load_steps=54 format=3 uid="uid://b7vqjtck2l8sl"]
 
-[ext_resource type="Script" uid="uid://c00xbr42p6hcw" path="res://Scripts/Towers/flame_tower.gd" id="1_g4u3w"]
+[ext_resource type="Script" path="res://Scripts/Towers/flame_tower.gd" id="1_g4u3w"]
 [ext_resource type="Texture2D" uid="uid://8ormh446wrhr" path="res://Art/VisualArt/Towers/FlameTower/Tower 05.png" id="2_1g660"]
 [ext_resource type="PackedScene" uid="uid://b8wd2ssw7fdw7" path="res://Scenes/Projectiles/flame_tower_projectile.tscn" id="2_v3lkr"]
 [ext_resource type="Texture2D" uid="uid://cetitcfvgbrn8" path="res://Art/VisualArt/Towers/FlameTower/Tower 05 - Level 01 - Weapon.png" id="3_g4u3w"]

@@ -37,7 +37,7 @@ animations = [{
 size = Vector2(40, 8)
 
 [node name="ArcheryTowerProjectile" type="Node2D"]
-z_index = 6
+z_index = 2
 texture_filter = 1
 script = ExtResource("1_cj3yc")
 speed = 600.0

@@ -46,7 +46,7 @@ size = Vector2(38, 10)
 [node name="SniperProjectileLvl3" type="Node2D"]
 z_index = 5
 script = ExtResource("1_d351a")
-speed = 700.0
+speed = 1400.0
 death_time = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -59,8 +59,6 @@ frame_progress = 0.345426
 [node name="DamageSource" type="Area2D" parent="." groups=["damageSource"]]
 position = Vector2(-1, 0)
 script = ExtResource("3_otnql")
-penetrating = true
-single_target = false
 
 [node name="DamageArea" type="CollisionShape2D" parent="DamageSource"]
 position = Vector2(1, 0)

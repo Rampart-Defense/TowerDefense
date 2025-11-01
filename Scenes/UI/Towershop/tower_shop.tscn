@@ -1,20 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://qcjcoo3nif0m"]
+[gd_scene load_steps=8 format=3 uid="uid://qcjcoo3nif0m"]
 
 [ext_resource type="Script" uid="uid://dht7aprvbd7h1" path="res://Scripts/UI/tower_shop.gd" id="1_bhdn4"]
 [ext_resource type="PackedScene" uid="uid://dvgmkrlkllw5w" path="res://Scenes/UI/Towershop/tower_shop_panel.tscn" id="1_obd1k"]
-[ext_resource type="Texture2D" uid="uid://bnig08qvay1gd" path="res://Art/VisualArt/UI/Buttons/BuildButton.png" id="2_xb3fm"]
 [ext_resource type="PackedScene" uid="uid://lnxhjh2qrihs" path="res://Scenes/UI/Towershop/lightning_tower_panel.tscn" id="4_0c3qk"]
 [ext_resource type="PackedScene" uid="uid://cve023ur7mal" path="res://Scenes/UI/Towershop/slingshot_tower_panel.tscn" id="5_qlr4l"]
 [ext_resource type="PackedScene" uid="uid://bbbnnj5e0btlt" path="res://Scenes/UI/Towershop/catapult_tower_panel.tscn" id="6_yderm"]
 [ext_resource type="PackedScene" uid="uid://d1e3lwulhrcop" path="res://Scenes/UI/Towershop/flame_tower_panel.tscn" id="7_qlr4l"]
 [ext_resource type="PackedScene" uid="uid://drwmnb2ya6m8l" path="res://Scenes/UI/Towershop/sniper_tower_panel.tscn" id="8_yderm"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhdn4"]
-texture = ExtResource("2_xb3fm")
-expand_margin_left = 5.0
-expand_margin_top = 20.0
-expand_margin_right = 5.0
-expand_margin_bottom = 15.0
 
 [node name="TowerShop" type="Control"]
 custom_minimum_size = Vector2(250, 600)
@@ -36,36 +28,17 @@ size_flags_horizontal = 3
 [node name="TowerShopPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("1_obd1k")]
 layout_mode = 2
 
-[node name="TowerShopPanel10" parent="ScrollContainer/FlowContainer" instance=ExtResource("1_obd1k")]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_bhdn4")
-
 [node name="LightningTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("4_0c3qk")]
-layout_mode = 2
-
-[node name="LightningTowerPanel2" parent="ScrollContainer/FlowContainer" instance=ExtResource("4_0c3qk")]
 layout_mode = 2
 
 [node name="SlingshotTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("5_qlr4l")]
 layout_mode = 2
 
-[node name="SlingshotTowerPanel2" parent="ScrollContainer/FlowContainer" instance=ExtResource("5_qlr4l")]
-layout_mode = 2
-
 [node name="CatapultTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("6_yderm")]
-layout_mode = 2
-
-[node name="CatapultTowerPanel2" parent="ScrollContainer/FlowContainer" instance=ExtResource("6_yderm")]
 layout_mode = 2
 
 [node name="FlameTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("7_qlr4l")]
 layout_mode = 2
 
-[node name="FlameTowerPanel2" parent="ScrollContainer/FlowContainer" instance=ExtResource("7_qlr4l")]
-layout_mode = 2
-
 [node name="SniperTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("8_yderm")]
-layout_mode = 2
-
-[node name="SniperTowerPanel2" parent="ScrollContainer/FlowContainer" instance=ExtResource("8_yderm")]
 layout_mode = 2
