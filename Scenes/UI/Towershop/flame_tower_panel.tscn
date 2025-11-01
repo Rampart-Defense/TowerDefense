@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bnig08qvay1gd" path="res://Art/VisualArt/UI/Buttons/BuildButton.png" id="1_ddl0j"]
 [ext_resource type="Script" uid="uid://d0k3gq2bdrkf" path="res://Scripts/UI/tower_shop_panel.gd" id="2_7o4rv"]
-[ext_resource type="PackedScene" uid="uid://badxcq4j1s47t" path="res://Scenes/Towers/flame_tower.tscn" id="3_yktx5"]
+[ext_resource type="PackedScene" uid="uid://b7vqjtck2l8sl" path="res://Scenes/Towers/flame_tower.tscn" id="3_yktx5"]
 [ext_resource type="Texture2D" uid="uid://d32yk0va0s87a" path="res://Art/VisualArt/Towers/FlameTower/Tower5Preview.png" id="4_7o4rv"]
 [ext_resource type="Texture2D" uid="uid://bmhmmfy4rpyj0" path="res://Art/VisualArt/UI/SideBar/LabelForCost.png" id="4_qpf8g"]
 [ext_resource type="FontFile" uid="uid://c3sky53vd0g4j" path="res://Art/VisualArt/UI/Fonts/Varnished.ttf" id="5_xp111"]

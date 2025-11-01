@@ -235,7 +235,7 @@ hframes = 3
 z_index = 1
 position = Vector2(0, -30)
 sprite_frames = SubResource("SpriteFrames_o4ax4")
-animation = &"Fire2"
+animation = &"Default"
 
 [node name="Marker2D" type="Marker2D" parent="Turret"]
 position = Vector2(0, -14)

@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://c11gnbugoxjya"]
+
+[ext_resource type="Script" uid="uid://ccm0fdtqgvtxf" path="res://Scripts/Projectiles/tower_projectile.gd" id="1_d351a"]
+[ext_resource type="Texture2D" uid="uid://bdryqetit2u22" path="res://Art/VisualArt/Towers/SniperTower/Tower 06 - Level 03 - Projectile.png" id="2_0a2w0"]
+[ext_resource type="Script" uid="uid://bl1a4o232oxjv" path="res://Scripts/Projectiles/damage_source.gd" id="3_otnql"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u80h1"]
+atlas = ExtResource("2_0a2w0")
+region = Rect2(0, 0, 10, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvwi1"]
+atlas = ExtResource("2_0a2w0")
+region = Rect2(10, 0, 10, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l44ci"]
+atlas = ExtResource("2_0a2w0")
+region = Rect2(20, 0, 10, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ockxe"]
+atlas = ExtResource("2_0a2w0")
+region = Rect2(30, 0, 10, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8yn6d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u80h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvwi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l44ci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ockxe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2bji"]
+size = Vector2(38, 10)
+
+[node name="SniperProjectileLvl3" type="Node2D"]
+z_index = 5
+script = ExtResource("1_d351a")
+speed = 700.0
+death_time = 1.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_8yn6d")
+autoplay = "default"
+frame_progress = 0.345426
+
+[node name="DamageSource" type="Area2D" parent="." groups=["damageSource"]]
+position = Vector2(-1, 0)
+script = ExtResource("3_otnql")
+penetrating = true
+single_target = false
+
+[node name="DamageArea" type="CollisionShape2D" parent="DamageSource"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_h2bji")
+
+[node name="DeathTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="DamageSource" to="DamageSource" method="_on_area_entered"]

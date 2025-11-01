@@ -1,0 +1,427 @@
+[gd_scene load_steps=49 format=3 uid="uid://co5qpirovicau"]
+
+[ext_resource type="Script" uid="uid://dmgepg1741m8t" path="res://Scripts/Towers/sniper_tower.gd" id="1_qilr5"]
+[ext_resource type="Texture2D" uid="uid://bjbo136tqxhkj" path="res://Art/VisualArt/Towers/SniperTower/Tower 06.png" id="1_xhyvm"]
+[ext_resource type="PackedScene" uid="uid://pt48x46ivfh1" path="res://Scenes/Projectiles/SniperTower/sniper_projectile_lvl_2.tscn" id="2_ynwub"]
+[ext_resource type="Texture2D" uid="uid://bkrqmraogabn3" path="res://Art/VisualArt/Towers/SniperTower/Tower 06 - Level 01 - Weapon.png" id="3_iljh3"]
+[ext_resource type="PackedScene" uid="uid://c11gnbugoxjya" path="res://Scenes/Projectiles/SniperTower/sniper_projectile_lvl_3.tscn" id="3_sv081"]
+[ext_resource type="PackedScene" uid="uid://s627bl6g7yuj" path="res://Scenes/Projectiles/SniperTower/sniper_projectile_lvl_1.tscn" id="4_oxodf"]
+[ext_resource type="Texture2D" uid="uid://bgrnf67gl6fkc" path="res://Art/VisualArt/Towers/SniperTower/Tower 06 - Level 02 - Weapon.png" id="4_wjvpg"]
+[ext_resource type="Texture2D" uid="uid://cb03q700j8m7q" path="res://Art/VisualArt/Towers/SniperTower/Tower 06 - Level 03 - Weapon.png" id="5_r308h"]
+[ext_resource type="Script" uid="uid://dgswc3xu6f5ks" path="res://Scripts/UI/tower_leveling_system.gd" id="6_lb1t1"]
+[ext_resource type="FontFile" uid="uid://c3sky53vd0g4j" path="res://Art/VisualArt/UI/Fonts/Varnished.ttf" id="7_3auby"]
+[ext_resource type="Texture2D" uid="uid://denw7wbd2eva3" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/SpeedLvlButton.png" id="8_8th7n"]
+[ext_resource type="Texture2D" uid="uid://dfs6nabwhy564" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/SpeedLvlButtonPressed.png" id="9_ynwub"]
+[ext_resource type="Texture2D" uid="uid://k13h4bi8cx7d" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/SpeedLvlButtonHover.png" id="10_sv081"]
+[ext_resource type="Texture2D" uid="uid://c1u3b6mtglshv" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/SpeedLvlButtonDisabled.png" id="11_oxodf"]
+[ext_resource type="Texture2D" uid="uid://bxi2pq65pjs6y" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/DamageLvlButton.png" id="12_26d7b"]
+[ext_resource type="Texture2D" uid="uid://dhnpvnvw2yiny" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/DamageLvlButtonPressed.png" id="13_afndm"]
+[ext_resource type="Texture2D" uid="uid://bipcj5m5jcoc3" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/DamageLvlButtonHover.png" id="14_mjia0"]
+[ext_resource type="Texture2D" uid="uid://dlsnhpfdvh38c" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/DamageLvlButtonDisabled.png" id="15_0rg8p"]
+[ext_resource type="Texture2D" uid="uid://ddgpiisg40mqt" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/RangeLvlButton.png" id="16_78bku"]
+[ext_resource type="Texture2D" uid="uid://mo51rylimpha" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/RangeLvlButtonPressed.png" id="17_hnu71"]
+[ext_resource type="Texture2D" uid="uid://cafuy3rd78j3o" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/RangeLvlButtonHover.png" id="18_wwil1"]
+[ext_resource type="Texture2D" uid="uid://u828p4wmge37" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/RangeLvlButtonDisabled.png" id="19_vf3d3"]
+[ext_resource type="Texture2D" uid="uid://b62xls4adqp1h" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/SellButton.png" id="20_evb53"]
+[ext_resource type="Texture2D" uid="uid://b2ho6a77251w7" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/SellButtonPressed.png" id="21_tduoe"]
+[ext_resource type="Texture2D" uid="uid://sllesgmhn65g" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/SellButtonHover.png" id="22_3gbfn"]
+[ext_resource type="Texture2D" uid="uid://4272vxlnjwhn" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/SellButtonDisabled.png" id="23_1w1tm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r308h"]
+bg_color = Color(0, 0, 0, 0.352941)
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m4ve"]
+atlas = ExtResource("3_iljh3")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08wdt"]
+atlas = ExtResource("3_iljh3")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjhmw"]
+atlas = ExtResource("3_iljh3")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8f80"]
+atlas = ExtResource("3_iljh3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk7ik"]
+atlas = ExtResource("4_wjvpg")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtlna"]
+atlas = ExtResource("4_wjvpg")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu3xy"]
+atlas = ExtResource("4_wjvpg")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40kll"]
+atlas = ExtResource("4_wjvpg")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngwgf"]
+atlas = ExtResource("5_r308h")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el0nu"]
+atlas = ExtResource("5_r308h")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctb8y"]
+atlas = ExtResource("5_r308h")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tij0c"]
+atlas = ExtResource("5_r308h")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lb1t1"]
+atlas = ExtResource("3_iljh3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3auby"]
+atlas = ExtResource("3_iljh3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8th7n"]
+atlas = ExtResource("4_wjvpg")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynwub"]
+atlas = ExtResource("4_wjvpg")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv081"]
+atlas = ExtResource("5_r308h")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxodf"]
+atlas = ExtResource("5_r308h")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1m4ve"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m4ve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08wdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjhmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8f80")
+}],
+"loop": false,
+"name": &"Default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk7ik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtlna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tu3xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40kll")
+}],
+"loop": false,
+"name": &"Default2",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngwgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el0nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctb8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tij0c")
+}],
+"loop": false,
+"name": &"Default3",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lb1t1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3auby")
+}],
+"loop": false,
+"name": &"Fire",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8th7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynwub")
+}],
+"loop": false,
+"name": &"Fire2",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv081")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxodf")
+}],
+"loop": false,
+"name": &"Fire3",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ynwub"]
+radius = 450.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjhmw"]
+size = Vector2(67.0455, 106.826)
+
+[node name="SniperTower" type="Area2D" node_paths=PackedStringArray("tower_range", "tower_base", "turret", "firing_point", "fire_timer", "shoot_sound") groups=["tower"]]
+texture_filter = 1
+script = ExtResource("1_qilr5")
+projectile_scene2 = ExtResource("2_ynwub")
+projectile_scene3 = ExtResource("3_sv081")
+projectile_scene = ExtResource("4_oxodf")
+base_fire_cooldown = 2.0
+base_damage = 20
+tower_range = NodePath("Range")
+base_range = 300
+tower_base = NodePath("Base")
+turret = NodePath("Turret")
+firing_point = NodePath("Turret/Marker2D")
+rotating = true
+fire_timer = NodePath("FireTimer")
+shoot_sound = NodePath("arrowshoot")
+
+[node name="RangeArea" type="Panel" parent="."]
+z_index = 3
+offset_left = -453.0
+offset_top = -455.0
+offset_right = 447.0
+offset_bottom = 445.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r308h")
+
+[node name="Base" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_xhyvm")
+hframes = 3
+
+[node name="Turret" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -37.6812)
+sprite_frames = SubResource("SpriteFrames_1m4ve")
+animation = &"Default"
+
+[node name="Marker2D" type="Marker2D" parent="Turret"]
+position = Vector2(0, -7.24638)
+
+[node name="FireTimer" type="Timer" parent="."]
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+modulate = Color(0.294118, 0.294118, 0.294118, 0.67451)
+self_modulate = Color(0.27451, 0.27451, 0.27451, 0.52549)
+shape = SubResource("CircleShape2D_ynwub")
+
+[node name="TowerLevelingSystem" type="Control" parent="." node_paths=PackedStringArray("tower") groups=["towerUpgrader"]]
+visible = false
+z_index = 101
+layout_mode = 3
+anchors_preset = 0
+offset_left = -608.0
+offset_top = -72.0
+offset_right = -608.0
+offset_bottom = -72.0
+mouse_filter = 2
+script = ExtResource("6_lb1t1")
+tower = NodePath("..")
+attack_damage_cost_1 = 500
+attack_damage_value_1 = 10
+attack_damage_cost_2 = 1500
+attack_damage_value_2 = 20
+attack_speed_cost_1 = 350
+attack_speed_value_1 = 0.5
+attack_speed_cost_2 = 1200
+attack_speed_value_2 = 1.0
+range_cost_1 = 400
+range_value_1 = 100
+range_cost_2 = 1600
+range_value_2 = 500
+
+[node name="Panel" type="Panel" parent="TowerLevelingSystem"]
+layout_mode = 0
+offset_left = -64.0
+offset_top = -56.0
+offset_right = 132.0
+offset_bottom = 464.0
+
+[node name="StatsLabel" type="RichTextLabel" parent="TowerLevelingSystem/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 184.0
+offset_bottom = 232.0
+theme_override_fonts/normal_font = ExtResource("7_3auby")
+text = "asdsdsdasdasd"
+
+[node name="AttackspeedLevelUp" type="TextureButton" parent="TowerLevelingSystem/Panel"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 157)
+layout_mode = 2
+offset_left = -16.0
+offset_top = 160.0
+offset_right = 112.0
+offset_bottom = 317.0
+texture_normal = ExtResource("8_8th7n")
+texture_pressed = ExtResource("9_ynwub")
+texture_hover = ExtResource("10_sv081")
+texture_disabled = ExtResource("11_oxodf")
+
+[node name="Label" type="Label" parent="TowerLevelingSystem/Panel/AttackspeedLevelUp"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 107.0
+offset_right = 103.0
+offset_bottom = 130.0
+text = "Speed Up"
+
+[node name="Label2" type="Label" parent="TowerLevelingSystem/Panel/AttackspeedLevelUp"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 131.0
+offset_right = 103.0
+offset_bottom = 154.0
+text = "cost"
+
+[node name="DamageLevelUp" type="TextureButton" parent="TowerLevelingSystem/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 80.0
+offset_top = 160.0
+offset_right = 208.0
+offset_bottom = 288.0
+texture_normal = ExtResource("12_26d7b")
+texture_pressed = ExtResource("13_afndm")
+texture_hover = ExtResource("14_mjia0")
+texture_disabled = ExtResource("15_0rg8p")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="TowerLevelingSystem/Panel/DamageLevelUp"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 107.0
+offset_right = 99.0
+offset_bottom = 130.0
+text = "Attack Up"
+
+[node name="Label2" type="Label" parent="TowerLevelingSystem/Panel/DamageLevelUp"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 131.0
+offset_right = 99.0
+offset_bottom = 154.0
+text = "cost"
+
+[node name="RangeLevelUp" type="TextureButton" parent="TowerLevelingSystem/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = -16.0
+offset_top = 296.0
+offset_right = 112.0
+offset_bottom = 424.0
+texture_normal = ExtResource("16_78bku")
+texture_pressed = ExtResource("17_hnu71")
+texture_hover = ExtResource("18_wwil1")
+texture_disabled = ExtResource("19_vf3d3")
+
+[node name="Label" type="Label" parent="TowerLevelingSystem/Panel/RangeLevelUp"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 107.0
+offset_right = 103.0
+offset_bottom = 130.0
+text = "Range up"
+
+[node name="Label2" type="Label" parent="TowerLevelingSystem/Panel/RangeLevelUp"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 131.0
+offset_right = 103.0
+offset_bottom = 154.0
+text = "cost"
+
+[node name="SellTower" type="TextureButton" parent="TowerLevelingSystem/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 80.0
+offset_top = 296.0
+offset_right = 208.0
+offset_bottom = 424.0
+texture_normal = ExtResource("20_evb53")
+texture_pressed = ExtResource("21_tduoe")
+texture_hover = ExtResource("22_3gbfn")
+texture_disabled = ExtResource("23_1w1tm")
+
+[node name="Label" type="Label" parent="TowerLevelingSystem/Panel/SellTower"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 107.0
+offset_right = 103.0
+offset_bottom = 130.0
+text = "Sell tower"
+
+[node name="Label2" type="Label" parent="TowerLevelingSystem/Panel/SellTower"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 131.0
+offset_right = 103.0
+offset_bottom = 154.0
+text = "price"
+
+[node name="CheckButton" type="CheckButton" parent="TowerLevelingSystem/Panel"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 471.0
+offset_right = 173.0
+offset_bottom = 502.0
+text = "Control tower"
+
+[node name="clickshape" type="CollisionShape2D" parent="."]
+z_index = 101
+position = Vector2(-0.568183, -5.58696)
+shape = SubResource("RectangleShape2D_hjhmw")
+
+[node name="arrowshoot" type="AudioStreamPlayer2D" parent="."]
+bus = &"sfx"
+
+[connection signal="button_down" from="TowerLevelingSystem/Panel/AttackspeedLevelUp" to="TowerLevelingSystem" method="_on_attackspeed_level_up_button_down"]
+[connection signal="button_down" from="TowerLevelingSystem/Panel/DamageLevelUp" to="TowerLevelingSystem" method="_on_damage_level_up_button_down"]
+[connection signal="button_down" from="TowerLevelingSystem/Panel/RangeLevelUp" to="TowerLevelingSystem" method="_on_range_level_up_button_down"]
+[connection signal="button_down" from="TowerLevelingSystem/Panel/SellTower" to="TowerLevelingSystem" method="_on_sell_tower_button_down"]
+[connection signal="pressed" from="TowerLevelingSystem/Panel/SellTower" to="TowerLevelingSystem" method="_on_sell_tower_pressed"]
+[connection signal="toggled" from="TowerLevelingSystem/Panel/CheckButton" to="." method="_on_check_button_toggled"]

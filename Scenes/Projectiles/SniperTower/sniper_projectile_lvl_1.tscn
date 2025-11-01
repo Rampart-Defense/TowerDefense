@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://s627bl6g7yuj"]
+
+[ext_resource type="Script" uid="uid://bl1a4o232oxjv" path="res://Scripts/Projectiles/damage_source.gd" id="1_i1num"]
+[ext_resource type="Script" uid="uid://ccm0fdtqgvtxf" path="res://Scripts/Projectiles/tower_projectile.gd" id="1_ob1aa"]
+[ext_resource type="Texture2D" uid="uid://bresk303dy8cn" path="res://Art/VisualArt/Towers/SniperTower/Tower 06 - Level 01 - Projectile.png" id="1_vs7xu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob1aa"]
+atlas = ExtResource("1_vs7xu")
+region = Rect2(0, 0, 6, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lojvs"]
+atlas = ExtResource("1_vs7xu")
+region = Rect2(6, 0, 6, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyvmb"]
+atlas = ExtResource("1_vs7xu")
+region = Rect2(12, 0, 6, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sk3rm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob1aa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lojvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyvmb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vs7xu"]
+size = Vector2(26, 6)
+
+[node name="SniperProjectileLvl1" type="Node2D"]
+z_index = 5
+script = ExtResource("1_ob1aa")
+speed = 500.0
+death_time = 1.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_sk3rm")
+autoplay = "default"
+frame_progress = 0.716743
+
+[node name="DamageSource" type="Area2D" parent="." groups=["damageSource"]]
+position = Vector2(-1, 0)
+script = ExtResource("1_i1num")
+
+[node name="DamageArea" type="CollisionShape2D" parent="DamageSource"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_vs7xu")
+
+[node name="DeathTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="DamageSource" to="DamageSource" method="_on_area_entered"]
