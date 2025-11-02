@@ -1,0 +1,267 @@
+[gd_scene load_steps=30 format=3 uid="uid://b5cx2oieym5y2"]
+
+[ext_resource type="Script" uid="uid://dmwxeqannjb00" path="res://Scripts/Towers/cannonball_tower.gd" id="1_h0jye"]
+[ext_resource type="Texture2D" uid="uid://tpth8tcw4pjv" path="res://Art/VisualArt/Towers/CannonballTower/Tower 07.png" id="1_jwlm4"]
+[ext_resource type="Texture2D" uid="uid://ced4qo1vknef0" path="res://Art/VisualArt/Towers/CannonballTower/Tower 07 - Level 01 - Weapon.png" id="2_h0jye"]
+[ext_resource type="PackedScene" uid="uid://c6bqw7jnei8s" path="res://Scenes/Projectiles/cannonball_tower_projectile.tscn" id="2_wcny2"]
+[ext_resource type="Texture2D" uid="uid://dgx35t055gdrl" path="res://Art/VisualArt/Towers/CannonballTower/Tower 07 - Level 02 - Weapon.png" id="3_wcny2"]
+[ext_resource type="Texture2D" uid="uid://b7cbk3kuhdjai" path="res://Art/VisualArt/Towers/CannonballTower/Tower 07 - Level 03 - Weapon.png" id="4_gskxo"]
+[ext_resource type="PackedScene" uid="uid://b4vs1v57h2d8s" path="res://Scenes/UI/tower_leveling_system.tscn" id="4_wcny2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gskxo"]
+bg_color = Color(0, 0, 0, 0.352941)
+corner_radius_top_left = 360
+corner_radius_top_right = 360
+corner_radius_bottom_right = 360
+corner_radius_bottom_left = 360
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yybj6"]
+atlas = ExtResource("2_h0jye")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svrpt"]
+atlas = ExtResource("2_h0jye")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mob25"]
+atlas = ExtResource("2_h0jye")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcny2"]
+atlas = ExtResource("3_wcny2")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gskxo"]
+atlas = ExtResource("3_wcny2")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2lxt"]
+atlas = ExtResource("3_wcny2")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eps4b"]
+atlas = ExtResource("4_gskxo")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7cef"]
+atlas = ExtResource("4_gskxo")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jf5t0"]
+atlas = ExtResource("4_gskxo")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouxkr"]
+atlas = ExtResource("2_h0jye")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sugja"]
+atlas = ExtResource("2_h0jye")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_noh8u"]
+atlas = ExtResource("2_h0jye")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfwfr"]
+atlas = ExtResource("3_wcny2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj5g7"]
+atlas = ExtResource("3_wcny2")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn8ut"]
+atlas = ExtResource("3_wcny2")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqlja"]
+atlas = ExtResource("4_gskxo")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ih6n"]
+atlas = ExtResource("4_gskxo")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnhs5"]
+atlas = ExtResource("4_gskxo")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_svrpt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yybj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svrpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mob25")
+}],
+"loop": false,
+"name": &"Default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcny2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gskxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2lxt")
+}],
+"loop": false,
+"name": &"Default2",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eps4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7cef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jf5t0")
+}],
+"loop": false,
+"name": &"Default3",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouxkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sugja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_noh8u")
+}],
+"loop": false,
+"name": &"Fire",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfwfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj5g7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn8ut")
+}],
+"loop": false,
+"name": &"Fire2",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqlja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ih6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnhs5")
+}],
+"loop": false,
+"name": &"Fire3",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mob25"]
+radius = 100.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2lxt"]
+size = Vector2(67.0455, 106.826)
+
+[node name="CannonballTower" type="Area2D" node_paths=PackedStringArray("firing_point2", "firing_point3", "firing_point4", "tower_range", "tower_base", "turret", "firing_point", "fire_timer", "shoot_sound") groups=["tower"]]
+z_index = 2
+texture_filter = 1
+scale = Vector2(0.88, 0.69)
+script = ExtResource("1_h0jye")
+firing_point2 = NodePath("Turret/Marker2D2")
+firing_point3 = NodePath("Turret/Marker2D3")
+firing_point4 = NodePath("Turret/Marker2D4")
+projectile_scene = ExtResource("2_wcny2")
+base_fire_cooldown = 1.5
+tower_range = NodePath("Range")
+base_range = 100
+tower_base = NodePath("Base")
+turret = NodePath("Turret")
+firing_point = NodePath("Turret/Marker2D")
+fire_timer = NodePath("FireTimer")
+shoot_sound = NodePath("cannonshoot")
+
+[node name="RangeArea" type="Panel" parent="."]
+z_index = 3
+offset_left = -99.0
+offset_top = -100.0
+offset_right = 101.0
+offset_bottom = 100.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gskxo")
+
+[node name="Base" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_jwlm4")
+hframes = 3
+
+[node name="Turret" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -37.6812)
+sprite_frames = SubResource("SpriteFrames_svrpt")
+animation = &"Default3"
+
+[node name="Marker2D" type="Marker2D" parent="Turret"]
+position = Vector2(0, -12.3188)
+
+[node name="Marker2D2" type="Marker2D" parent="Turret"]
+position = Vector2(0, 11.6812)
+
+[node name="Marker2D3" type="Marker2D" parent="Turret"]
+position = Vector2(13, -0.318802)
+
+[node name="Marker2D4" type="Marker2D" parent="Turret"]
+position = Vector2(-13, -0.318802)
+
+[node name="FireTimer" type="Timer" parent="."]
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+modulate = Color(0.294118, 0.294118, 0.294118, 0.67451)
+self_modulate = Color(0.27451, 0.27451, 0.27451, 0.52549)
+shape = SubResource("CircleShape2D_mob25")
+
+[node name="TowerLevelingSystem" parent="." node_paths=PackedStringArray("tower") instance=ExtResource("4_wcny2")]
+z_index = 101
+offset_left = -608.0
+offset_top = -72.0
+offset_right = -608.0
+offset_bottom = -72.0
+tower = NodePath("..")
+attack_damage_cost_1 = 750
+attack_damage_cost_2 = 2250
+attack_damage_value_2 = 10
+attack_speed_cost_1 = 600
+attack_speed_value_1 = 0.25
+attack_speed_cost_2 = 1800
+attack_speed_value_2 = 0.35
+range_cost_1 = 600
+range_value_1 = 10
+range_cost_2 = 1500
+range_value_2 = 10
+
+[node name="clickshape" type="CollisionShape2D" parent="."]
+z_index = 101
+position = Vector2(-0.568183, -5.58696)
+shape = SubResource("RectangleShape2D_y2lxt")
+
+[node name="cannonshoot" type="AudioStreamPlayer2D" parent="."]
+bus = &"sfx"
