@@ -31,16 +31,17 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_u7hjx")
 [node name="UpgradeAnchor" type="Control" parent="."]
 z_index = 101
 layout_mode = 1
-anchor_left = 0.764
+anchor_left = 0.75
 anchor_top = 0.185
 anchor_right = 1.0
 anchor_bottom = 0.963
-offset_left = -0.128052
+offset_left = 7.99994
 offset_top = 0.119995
 offset_right = -8.0
-offset_bottom = -0.0240479
+offset_bottom = -0.0239868
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TowerShop" parent="." instance=ExtResource("2_cleyv")]
 layout_mode = 1
