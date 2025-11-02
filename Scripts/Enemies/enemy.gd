@@ -11,7 +11,7 @@ var reached_distance = 5
 
 var path_follower: PathFollow2D = null
 var direction_vector: Vector2
-
+var is_dead: bool = false
 
 var stunned: bool = false
 var flash_tween: Tween = null
@@ -41,6 +41,9 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		return
+	
 	if stunned or not path_follower:
 		return
 	# 1. Store the enemy's global position before movement update.
@@ -121,3 +124,7 @@ func update_animation(current_velocity: Vector2) -> void:
 				animation.play("walk_up")
 	else:
 		animation.play("idle")
+		
+		
+func get_velocity() -> Vector2:
+	return direction_vector
