@@ -32,16 +32,16 @@ layout_mode = 2
 [node name="SniperTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("8_yderm")]
 layout_mode = 2
 
-[node name="LightningTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("4_0c3qk")]
+[node name="FlameTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("7_qlr4l")]
 layout_mode = 2
 
 [node name="SlingshotTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("5_qlr4l")]
 layout_mode = 2
 
-[node name="CatapultTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("6_yderm")]
+[node name="LightningTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("4_0c3qk")]
 layout_mode = 2
 
-[node name="FlameTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("7_qlr4l")]
+[node name="CatapultTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("6_yderm")]
 layout_mode = 2
 
 [node name="CannonballTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("8_wpp58")]

@@ -84,7 +84,7 @@ texture_filter = 1
 scale = Vector2(0.75, 0.75)
 script = ExtResource("1_fjmbi")
 speed = 150.0
-death_time = 0.7
+death_time = 0.9
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.87451)

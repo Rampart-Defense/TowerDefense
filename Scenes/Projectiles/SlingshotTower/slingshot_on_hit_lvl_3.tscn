@@ -55,7 +55,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34kda"]
-size = Vector2(96, 78)
+size = Vector2(112, 92)
 
 [node name="SlingshotOnHitLvl3" type="Node2D"]
 z_index = 5
@@ -70,14 +70,13 @@ frame = 5
 frame_progress = 1.0
 
 [node name="DamageSource" parent="." instance=ExtResource("3_5cvvu")]
-damage = 70
+damage = 140
 penetrating = true
 single_target = false
 on_hit = true
 offset = Vector2(0, -20)
 
 [node name="DamageArea" parent="DamageSource" index="0"]
-position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_34kda")
 
 [editable path="DamageSource"]

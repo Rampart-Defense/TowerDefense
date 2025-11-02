@@ -70,7 +70,7 @@ frame = 5
 frame_progress = 1.0
 
 [node name="DamageSource" parent="." instance=ExtResource("3_bdd3p")]
-damage = 50
+damage = 70
 penetrating = true
 single_target = false
 on_hit = true
