@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=4 uid="uid://nh8y2sfsefgi"]
+[gd_scene load_steps=33 format=4 uid="uid://nh8y2sfsefgi"]
 
 [ext_resource type="Texture2D" uid="uid://coeio8agxkqdu" path="res://Art/VisualArt/Tilesets/Jungle/Jungle.png" id="1_f2w30"]
 [ext_resource type="Texture2D" uid="uid://wv0ucjwwexmd" path="res://Art/VisualArt/Tilesets/Paths/AIPath6.png" id="2_4ktb2"]
 [ext_resource type="PackedScene" uid="uid://baeo8tirve5fm" path="res://Scenes/UI/debuggerButtons.tscn" id="3_3nd7u"]
 [ext_resource type="Texture2D" uid="uid://dp1kx71fu0ev" path="res://Art/VisualArt/Tilesets/Shadows/Shadows.png" id="3_4ktb2"]
+[ext_resource type="AudioStream" uid="uid://ceqt2l1r6xeqk" path="res://Art/Audio/Music/Of Far Different Nature - Tribal (CC0).mp3" id="5_3nd7u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wqrhx"]
 texture = ExtResource("1_f2w30")
@@ -7943,3 +7944,8 @@ scale = Vector2(0.5, 0.5)
 
 [node name="TowersAndEnemyYsorter" type="Node2D" parent="." groups=["ysorter"]]
 y_sort_enabled = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_3nd7u")
+autoplay = true
+bus = &"music"

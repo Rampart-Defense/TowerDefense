@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b5cx2oieym5y2"]
+[gd_scene load_steps=31 format=3 uid="uid://b5cx2oieym5y2"]
 
 [ext_resource type="Script" uid="uid://dmwxeqannjb00" path="res://Scripts/Towers/cannonball_tower.gd" id="1_h0jye"]
 [ext_resource type="Texture2D" uid="uid://tpth8tcw4pjv" path="res://Art/VisualArt/Towers/CannonballTower/Tower 07.png" id="1_jwlm4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dgx35t055gdrl" path="res://Art/VisualArt/Towers/CannonballTower/Tower 07 - Level 02 - Weapon.png" id="3_wcny2"]
 [ext_resource type="Texture2D" uid="uid://b7cbk3kuhdjai" path="res://Art/VisualArt/Towers/CannonballTower/Tower 07 - Level 03 - Weapon.png" id="4_gskxo"]
 [ext_resource type="PackedScene" uid="uid://b4vs1v57h2d8s" path="res://Scenes/UI/tower_leveling_system.tscn" id="4_wcny2"]
+[ext_resource type="AudioStream" uid="uid://binyq18lvwxr8" path="res://Art/Audio/Towers/CannonballTower/442872__qubodup__fire-magic.wav" id="8_gskxo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gskxo"]
 bg_color = Color(0, 0, 0, 0.352941)
@@ -264,4 +265,5 @@ position = Vector2(-0.568183, -5.58696)
 shape = SubResource("RectangleShape2D_y2lxt")
 
 [node name="cannonshoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_gskxo")
 bus = &"sfx"

@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=4 uid="uid://cy2vtacp3le3p"]
+[gd_scene load_steps=20 format=4 uid="uid://cy2vtacp3le3p"]
 
 [ext_resource type="Texture2D" uid="uid://ct8coj64f3hri" path="res://Art/VisualArt/Tilesets/Desert/Desert.png" id="1_tln7q"]
 [ext_resource type="Texture2D" uid="uid://8w63mqt8r7bf" path="res://Art/VisualArt/Tilesets/Autumn/Autumn1.png" id="2_p6gc8"]
 [ext_resource type="Texture2D" uid="uid://d1gx11rrftdxo" path="res://Art/VisualArt/Tilesets/Paths/AIPath.png" id="3_slp8q"]
 [ext_resource type="Texture2D" uid="uid://coeio8agxkqdu" path="res://Art/VisualArt/Tilesets/Jungle/Jungle.png" id="4_g8xih"]
 [ext_resource type="PackedScene" uid="uid://baeo8tirve5fm" path="res://Scenes/UI/debuggerButtons.tscn" id="5_p6gc8"]
+[ext_resource type="AudioStream" uid="uid://c13ok7y1a1wsd" path="res://Art/Audio/Music/desert4.mp3" id="6_slp8q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tln7q"]
 texture = ExtResource("1_tln7q")
@@ -2618,3 +2619,8 @@ scale = Vector2(0.75, 0.75)
 
 [node name="TowersAndEnemyYsorter" type="Node2D" parent="." groups=["ysorter"]]
 y_sort_enabled = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_slp8q")
+autoplay = true
+bus = &"music"
