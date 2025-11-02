@@ -383,6 +383,7 @@ offset_top = -72.0
 offset_right = -608.0
 offset_bottom = -72.0
 tower = NodePath("..")
+sell_price = 1500
 attack_damage_cost_1 = 3000
 attack_damage_value_1 = 15
 attack_damage_cost_2 = 7500

@@ -416,8 +416,8 @@ animation = &"idle"
 [node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -14)
 script = ExtResource("4_0e6nx")
-maxHealth = 100
-payout = 20
+maxHealth = 120
+payout = 15
 
 [node name="Hitbox" type="CollisionShape2D" parent="EnemyHealthSystem"]
 shape = SubResource("RectangleShape2D_r8mls")
