@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ceqt2l1r6xeqk"
+path="res://.godot/imported/Of Far Different Nature - Tribal (CC0).mp3-32a8d52c19a5267019a729521e30ce5a.mp3str"
+
+[deps]
+
+source_file="res://Art/Audio/Music/Of Far Different Nature - Tribal (CC0).mp3"
+dest_files=["res://.godot/imported/Of Far Different Nature - Tribal (CC0).mp3-32a8d52c19a5267019a729521e30ce5a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

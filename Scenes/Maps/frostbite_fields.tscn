@@ -1,9 +1,10 @@
-[gd_scene load_steps=39 format=4 uid="uid://3eiilcsr0v31"]
+[gd_scene load_steps=40 format=4 uid="uid://3eiilcsr0v31"]
 
 [ext_resource type="Texture2D" uid="uid://cqn53oq6ys702" path="res://Art/VisualArt/Tilesets/Winter/Ice.png" id="1_djkqo"]
 [ext_resource type="Texture2D" uid="uid://dtt85av4s03jp" path="res://Art/VisualArt/Tilesets/tileset1.png" id="2_lrgyx"]
 [ext_resource type="Texture2D" uid="uid://dtu671b0jv0b8" path="res://Art/VisualArt/Tilesets/Winter/Winter1.png" id="3_87ye4"]
 [ext_resource type="PackedScene" uid="uid://baeo8tirve5fm" path="res://Scenes/UI/debuggerButtons.tscn" id="4_djkqo"]
+[ext_resource type="AudioStream" uid="uid://m034ubujyaro" path="res://Art/Audio/Music/Snowfall (Looped ver.).ogg" id="5_lrgyx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87ye4"]
 texture = ExtResource("1_djkqo")
@@ -10037,3 +10038,8 @@ flip_h = true
 hframes = 10
 vframes = 6
 frame = 59
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_lrgyx")
+autoplay = true
+bus = &"music"

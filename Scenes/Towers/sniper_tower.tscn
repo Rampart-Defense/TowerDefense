@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://co5qpirovicau"]
+[gd_scene load_steps=50 format=3 uid="uid://co5qpirovicau"]
 
 [ext_resource type="Script" uid="uid://dmgepg1741m8t" path="res://Scripts/Towers/sniper_tower.gd" id="1_qilr5"]
 [ext_resource type="Texture2D" uid="uid://bjbo136tqxhkj" path="res://Art/VisualArt/Towers/SniperTower/Tower 06.png" id="1_xhyvm"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://b2ho6a77251w7" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/SellButtonPressed.png" id="21_tduoe"]
 [ext_resource type="Texture2D" uid="uid://sllesgmhn65g" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/SellButtonHover.png" id="22_3gbfn"]
 [ext_resource type="Texture2D" uid="uid://4272vxlnjwhn" path="res://Art/VisualArt/UI/Buttons/TowerLeveling/SellButtonDisabled.png" id="23_1w1tm"]
+[ext_resource type="AudioStream" uid="uid://mgbsw7uxiyxp" path="res://Art/Audio/Towers/ArcheryTower/arrow-twang_01-306041.mp3" id="27_sv081"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r308h"]
 bg_color = Color(0, 0, 0, 0.352941)
@@ -420,6 +421,7 @@ position = Vector2(-0.568183, -5.58696)
 shape = SubResource("RectangleShape2D_hjhmw")
 
 [node name="arrowshoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("27_sv081")
 bus = &"sfx"
 
 [connection signal="button_down" from="TowerLevelingSystem/Panel/AttackspeedLevelUp" to="TowerLevelingSystem" method="_on_attackspeed_level_up_button_down"]
