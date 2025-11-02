@@ -202,6 +202,7 @@ size = Vector2(67.0455, 106.826)
 [node name="SniperTower" type="Area2D" node_paths=PackedStringArray("tower_range", "tower_base", "turret", "firing_point", "fire_timer", "shoot_sound") groups=["tower"]]
 z_index = 2
 texture_filter = 1
+scale = Vector2(0.88, 0.69)
 script = ExtResource("1_qilr5")
 projectile_scene2 = ExtResource("2_ynwub")
 projectile_scene3 = ExtResource("3_sv081")
