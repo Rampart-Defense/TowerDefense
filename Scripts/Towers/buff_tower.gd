@@ -2,8 +2,7 @@ extends Area2D
 
 # NOTE: Renamed to clarify they are buff values, not attack stats.
 @export var base_fire_cooldown: float = 0.05  # Flat Cooldown Reduction (seconds)
-@export var base_damage: int = 10  # Flat Damage Increase(used just for display and TowerLevelingSystem)
-@export var damage_percent_increase: float = 0.1 #The real increase on leveling dmg
+@export var base_damage: int = 10  # Flat Damage Increase(used just for display and TowerLevelingSystem) turned into percents
 
 @export var tower_range: Area2D = null
 # ... (omitted: visual/range/placement variables) ...
@@ -33,7 +32,7 @@ var towers: Array = []
 var tower_level: int = 1
 
 # --- Current Stats (Now the Buff Stats) ---
-var damage: int  #(used just for display and TowerLevelingSystem)
+var damage: int  #(used just for display and TowerLevelingSystem) turned to percents to use buff
 var fire_cooldown: float 
 var current_range: float 
 var damage_percent: float = 0.1
@@ -75,7 +74,7 @@ func upgrade_tower(stat: String, value ):
 		"damage":
 			damage_level += 1
 			damage += value
-			damage_percent += damage_percent_increase
+			damage_percent = damage *0.01
 		"range":
 			range_level += 1
 			current_range += value
