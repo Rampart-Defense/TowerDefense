@@ -419,7 +419,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7lh27")
 }],
-"loop": true,
+"loop": false,
 "name": &"stun_down",
 "speed": 10.0
 }, {
@@ -442,7 +442,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oaapg")
 }],
-"loop": true,
+"loop": false,
 "name": &"stun_left",
 "speed": 10.0
 }, {
@@ -465,7 +465,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3mx5x")
 }],
-"loop": true,
+"loop": false,
 "name": &"stun_right",
 "speed": 10.0
 }, {
@@ -600,7 +600,7 @@ damage = 5
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_4ny7j")
-animation = &"death_up"
+animation = &"stun_up"
 
 [node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -14)

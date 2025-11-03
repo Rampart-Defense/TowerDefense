@@ -22,37 +22,37 @@ A simple (but challenging!) and fun Tower Defense game built with Godot game eng
 
 ## Towers
 - Archery tower
-    - The basic crossbow tower shoots up to 3 powerful arrow projectiles dealing medium damage with medium speed.
+	- The basic crossbow tower shoots up to 3 powerful arrow projectiles dealing medium damage with medium speed.
 - Sniper tower
-    - Shoots slow firing, high damaging bolts. Great for high priority targets.
+	- Shoots slow firing, high damaging bolts. Great for high priority targets.
 - Flame tower
-    - Fires extremely fast low damage flameballs in a small range.
+	- Fires extremely fast low damage flameballs in a small range.
 - Slingshot tower
-    - This tower lobs explosive projectiles, dealing high damage to a large group of enemies.
+	- This tower lobs explosive projectiles, dealing high damage to a large group of enemies.
 - Lightning tower
-    - These slow firing, medium damage lightning bolts stun and halt enemy movement for a short while in a large radius.
+	- These slow firing, medium damage lightning bolts stun and halt enemy movement for a short while in a large radius.
 - Catapult tower
-    - Launches high damaging, penetrating projectiles dealing massive damage to enemies in straight lines.
+	- Launches high damaging, penetrating projectiles dealing massive damage to enemies in straight lines.
 - Cannonball tower
-    - Upgrade this tower to shoot powerfull cannonballs up to 4 different directions.
+	- Upgrade this tower to shoot powerfull cannonballs up to 4 different directions.
 - Buffer tower
-    - Place this tower to upgrade the damage and firing speed of other towers in its range.
+	- Place this tower to upgrade the damage and firing speed of other towers in its range.
 
 ## Maps
 - Frostbite Fields
-    - This winter themed map offers many straight lines for powerful defensive strategies.
+	- This winter themed map offers many straight lines for powerful defensive strategies.
 - Scorched Sands
-    - This desert themed maps offers two different paths for the enemies to spawn on, forcing you to think about effective tower placement.
+	- This desert themed maps offers two different paths for the enemies to spawn on, forcing you to think about effective tower placement.
 - Oasis
-    - This desert themed map has enemies running around in a loop at the center of the map.
+	- This desert themed map has enemies running around in a loop at the center of the map.
 - Nature's Edge
-    - This jungle themed map offers long straight lines, but be careful about where you decide to place the towers.
+	- This jungle themed map offers long straight lines, but be careful about where you decide to place the towers.
 - Amber Fall
-    - This autumn themed map offers two very short, merging lanes.
+	- This autumn themed map offers two very short, merging lanes.
 - Crossroads Of Doom
-    - The litmus test. The hardest map in the game centers around a hellish theme with three converging paths for enemies to spawn on.
+	- The litmus test. The hardest map in the game centers around a hellish theme with three converging paths for enemies to spawn on.
 - Crystal Caverns
-    - These glistening caves offer straight lines for effective defense.
+	- These glistening caves offer straight lines for effective defense.
 
 ## Upcoming features
 - Player Profiles: We're working on adding a player profile system that will track your stats and achievements across all your games.

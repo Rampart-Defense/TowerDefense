@@ -442,7 +442,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gpb17")
 }],
-"loop": true,
+"loop": false,
 "name": &"stun_left",
 "speed": 10.0
 }, {
@@ -465,7 +465,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wbd25")
 }],
-"loop": true,
+"loop": false,
 "name": &"stun_right",
 "speed": 10.0
 }, {
@@ -599,7 +599,7 @@ damage = 7
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_qdr08")
-animation = &"death_up"
+animation = &"stun_down"
 
 [node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -14)
