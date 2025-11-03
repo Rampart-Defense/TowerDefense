@@ -2,6 +2,9 @@
 
 A simple (but challenging!) and fun Tower Defense game built with Godot game engine.
 
+## Try it
+- [https://rampart-defense.github.io/TowerDefense/](https://rampart-defense.github.io/TowerDefense/)
+  
 ## How to use
 - Download the latest Godot game engine (This project uses V.4.4.1): https://godotengine.org
 - Clone this repository into your own folder
