@@ -17,7 +17,7 @@ func _spawn_single_projectile(start_point: Marker2D, direction_vector: Vector2) 
 
 	# 3. Set damage and add to the scene
 	# We assume "DamageSource" node is a child of the projectile.
-	new_projectile.get_node("DamageSource").damage = damage
+	new_projectile.get_node("DamageSource").damage = damage + damage_buff
 
 	# Using call_deferred is correct for adding new nodes safely.
 	get_tree().current_scene.call_deferred("add_child", new_projectile)

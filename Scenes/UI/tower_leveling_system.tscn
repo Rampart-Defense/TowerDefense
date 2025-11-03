@@ -47,6 +47,7 @@ offset_top = 24.0
 offset_right = 184.0
 offset_bottom = 232.0
 theme_override_fonts/normal_font = ExtResource("18_k5twe")
+bbcode_enabled = true
 text = "asdsdsdasdasd"
 
 [node name="AttackspeedLevelUp" type="TextureButton" parent="Panel"]

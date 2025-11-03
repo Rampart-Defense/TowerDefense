@@ -28,6 +28,6 @@ func fire_projectile() -> void:
 			anim_sprite.play(projectile_anim_name)
 		projectile.global_position = firing_point.global_position / map_scale + offset
 		projectile.direction = (target_pos / map_scale - projectile.global_position).normalized()
-		projectile.get_node("DamageSource").damage = damage
+		projectile.get_node("DamageSource").damage = damage + damage_buff
 		get_tree().current_scene.call_deferred("add_child", projectile)
 	

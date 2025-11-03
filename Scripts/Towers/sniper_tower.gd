@@ -49,7 +49,7 @@ func fire_projectile() -> void:
 		
 		projectile.global_position = firing_point.global_position / map_scale
 		projectile.direction = (target_pos / map_scale - projectile.global_position ).normalized()
-		projectile.get_node("DamageSource").damage = damage
+		projectile.get_node("DamageSource").damage = damage + damage_buff
 		get_tree().current_scene.call_deferred("add_child", projectile)
 
 
@@ -73,8 +73,8 @@ func _on_fire_timer_timeout() -> void:
 			2: turret.play("Default2")
 			3: turret.play("Default3")
 		return
-	if fire_cooldown != fire_timer.wait_time:
-		fire_timer.wait_time = fire_cooldown
+	if fire_cooldown - cdr_buff != fire_timer.wait_time:
+		fire_timer.wait_time = fire_cooldown - cdr_buff
 		
 	if suppress_next_shot and enemies.is_empty():
 	# cooldown expired while enemies was empty → do nothing if enemies are still empty

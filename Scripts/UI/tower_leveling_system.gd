@@ -64,10 +64,14 @@ func update_stats_display() -> void:
 		push_error("Tower or StatsLabel is not set for display update.")
 		return
 
-	# Retrieve current actual stats
+		# Retrieve current actual stats
 	var dmg: int = tower.damage
 	var cd: float = tower.fire_cooldown
 	var rng: float = tower.current_range
+
+	#Retrieve buffs 
+	var dmg_buff: int = tower.damage_buff
+	var cdr_buff: float = tower.cdr_buff
 
 	# Retrieve current upgrade levels
 	var dmg_lvl: int = tower.damage_level
@@ -75,10 +79,30 @@ func update_stats_display() -> void:
 	var rng_lvl: int = tower.range_level
 	var t_lvl: int = tower.tower_level
 
-	# Format the display text
+	# --- Conditional Buff Text Formatting ---
+	
+	# 1. Damage Buff (+X)
+	var dmg_buff_text: String = ""
+	if dmg_buff > 0:
+		# Format the buff as +X and wrap it in green BBCode
+		dmg_buff_text = " [color=green](+%d)[/color]" % dmg_buff
+
+	# 2. Cooldown Reduction Buff (-X)
+	var cdr_buff_text: String = ""
+	if cdr_buff > 0.0:
+		# Format the reduction as -X (cdr_buff is the amount REDUCED)
+		cdr_buff_text = " [color=green](-%.2f)[/color]" % cdr_buff
+
+	# --- Format the Final Display Text ---
+	
 	var stat_text: String = "Tower Level: %d\n" % [t_lvl]
-	stat_text += "Damage: %d\n (Upgrades: %d/2)\n" % [dmg, dmg_lvl]
-	stat_text += "Cooldown: %.2f\n (Upgrades: %d/2)\n" % [cd, cd_lvl]
+	
+	# Insert dmg_buff_text after the base damage value
+	stat_text += "Damage: %d%s\n (Upgrades: %d/2)\n" % [dmg, dmg_buff_text, dmg_lvl]
+	
+	# Insert cdr_buff_text after the base cooldown value
+	stat_text += "Cooldown: %.2f%s\n (Upgrades: %d/2)\n" % [cd, cdr_buff_text, cd_lvl]
+	
 	stat_text += "Range: %d\n (Upgrades: %d/2)" % [rng, rng_lvl]
 
 	StatsLabel.text = stat_text
@@ -182,6 +206,8 @@ func update_sell_price():
 
 func _on_sell_tower_pressed() -> void:
 	self.visible = false
+	if tower.is_in_group("buffer_tower"):
+		tower.remove_buffs()
 	PlayerStats.add_money(sell_price)
 	tower.queue_free()
 	var side_panel = GlobalUi.get_node("SidePanel")

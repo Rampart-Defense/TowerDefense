@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://qcjcoo3nif0m"]
+[gd_scene load_steps=10 format=3 uid="uid://qcjcoo3nif0m"]
 
 [ext_resource type="Script" uid="uid://dht7aprvbd7h1" path="res://Scripts/UI/tower_shop.gd" id="1_bhdn4"]
 [ext_resource type="PackedScene" uid="uid://dvgmkrlkllw5w" path="res://Scenes/UI/Towershop/tower_shop_panel.tscn" id="1_obd1k"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d1e3lwulhrcop" path="res://Scenes/UI/Towershop/flame_tower_panel.tscn" id="7_qlr4l"]
 [ext_resource type="PackedScene" uid="uid://c653hikft38dr" path="res://Scenes/UI/Towershop/cannonball_tower_panel.tscn" id="8_wpp58"]
 [ext_resource type="PackedScene" uid="uid://drwmnb2ya6m8l" path="res://Scenes/UI/Towershop/sniper_tower_panel.tscn" id="8_yderm"]
+[ext_resource type="PackedScene" uid="uid://bd4e3mf8cgy0s" path="res://Scenes/UI/Towershop/buff_tower_panel.tscn" id="9_wpp58"]
 
 [node name="TowerShop" type="Control"]
 custom_minimum_size = Vector2(250, 600)
@@ -45,4 +46,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="CannonballTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("8_wpp58")]
+layout_mode = 2
+
+[node name="BuffTowerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("9_wpp58")]
 layout_mode = 2

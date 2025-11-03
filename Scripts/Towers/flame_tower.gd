@@ -9,9 +9,9 @@ const MAX_SPREAD_ANGLE: float = 30.0
 # EDITED: Handles Continuous Tracking, Firing, and Stopping.
 func _on_fire_timer_timeout() -> void:
 
-	if fire_cooldown != fire_timer.wait_time:
-		fire_timer.wait_time = fire_cooldown
-		
+	if fire_cooldown - cdr_buff != fire_timer.wait_time:
+		fire_timer.wait_time = fire_cooldown - cdr_buff
+
 	# 1. Stop if enemies are gone
 	if enemies.is_empty():
 		suppress_next_shot = true
@@ -97,7 +97,7 @@ func fire_projectile() -> void:
 	projectile.global_position = projectile_start_pos
 	
 	# Damage is the full base damage (no tick reduction)
-	projectile.get_node("DamageSource").damage = damage 
+	projectile.get_node("DamageSource").damage = damage + damage_buff 
 	
 	get_tree().current_scene.call_deferred("add_child", projectile)
 

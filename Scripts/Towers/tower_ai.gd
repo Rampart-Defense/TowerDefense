@@ -15,7 +15,6 @@ extends Node2D
 @export var fire_timer: Timer 
 
 
-@onready var range_area: CollisionShape2D = tower_range.get_child(0)
 
 # ---Enemy related ---
 var enemies: Array = [] # kaikki havaitut viholliset
@@ -49,16 +48,23 @@ var damage: int = base_damage
 var fire_cooldown: float = base_fire_cooldown
 var current_range: float = base_range
 
-
-@onready var tower_leveling_system: Control = $TowerLevelingSystem
-@export var shoot_sound: AudioStreamPlayer2D
-
-
 #Scale of the map
 var map_scale = 0
 
 #doubleshot fix
 var suppress_next_shot: bool = false
+
+#is the tower buffed yet?
+var buffed: bool = false
+var damage_buff: int = 0
+var cdr_buff: float = 0.0
+
+@onready var range_area: CollisionShape2D = tower_range.get_child(0)
+@onready var tower_leveling_system: Control = $TowerLevelingSystem
+@export var shoot_sound: AudioStreamPlayer2D
+
+
+
 
 
 func _ready() -> void:
@@ -84,7 +90,7 @@ func _ready() -> void:
 	
 	fire_cooldown = base_fire_cooldown
 	turret.play("Default")
-	fire_timer.wait_time = fire_cooldown
+	fire_timer.wait_time = fire_cooldown - cdr_buff
 	fire_timer.one_shot = true
 	fire_timer.timeout.connect(_on_fire_timer_timeout)
 	
@@ -103,8 +109,8 @@ func _ready() -> void:
 
 func _on_fire_timer_timeout() -> void:
 
-	if fire_cooldown != fire_timer.wait_time:
-		fire_timer.wait_time = fire_cooldown
+	if fire_cooldown - cdr_buff != fire_timer.wait_time:
+		fire_timer.wait_time = fire_cooldown - cdr_buff
 		
 	if suppress_next_shot and enemies.is_empty():
 	# cooldown expired while enemies was empty → do nothing if enemies are still empty
@@ -172,7 +178,7 @@ func fire_projectile() -> void:
 		var projectile = projectile_scene.instantiate()
 		projectile.global_position = firing_point.global_position / map_scale + offset
 		projectile.direction = (target_pos / map_scale - projectile.global_position + offset ).normalized()
-		projectile.get_node("DamageSource").damage = damage
+		projectile.get_node("DamageSource").damage = damage + damage_buff
 		get_tree().current_scene.call_deferred("add_child", projectile)
 
 func _calculate_prediction_point(target: Node2D, tower_position: Vector2, projectile_speed: float) -> Vector2:

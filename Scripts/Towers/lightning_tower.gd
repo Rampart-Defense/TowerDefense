@@ -23,7 +23,7 @@ func fire_projectile() -> void:
 			target_pos = _calculate_prediction_point(shoot_target, global_position, projectile_speed)
 			projectile.global_position = firing_point.global_position / map_scale 
 			projectile.direction = (target_pos / map_scale - projectile.global_position  ).normalized()
-			projectile.get_node("DamageSource").damage = damage
+			projectile.get_node("DamageSource").damage = damage + damage_buff
 			get_tree().current_scene.call_deferred("add_child", projectile)
 			
 		2:
@@ -33,7 +33,7 @@ func fire_projectile() -> void:
 			target_pos = _calculate_prediction_point(shoot_target, global_position, projectile_speed)
 			projectile.global_position = firing_point.global_position / map_scale 
 			projectile.direction = (target_pos / map_scale  - projectile.global_position).normalized()
-			projectile.get_node("DamageSource").damage = damage
+			projectile.get_node("DamageSource").damage = damage + damage_buff
 			get_tree().current_scene.call_deferred("add_child", projectile)
 		3:
 			var projectile = projectile_scene3.instantiate()
@@ -41,7 +41,7 @@ func fire_projectile() -> void:
 			target_pos = _calculate_prediction_point(shoot_target, global_position, projectile_speed)
 			projectile.global_position = firing_point.global_position / map_scale 
 			projectile.direction = (target_pos / map_scale  - projectile.global_position).normalized()
-			projectile.get_node("DamageSource").damage = damage
+			projectile.get_node("DamageSource").damage = damage + damage_buff
 			get_tree().current_scene.call_deferred("add_child", projectile)
 			
 			
