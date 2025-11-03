@@ -1,25 +1,39 @@
 # Tower Defense Game
 
-A simple and fun Tower Defense game built with Godot game engine.
+A simple (but challenging!) and fun Tower Defense game built with Godot game engine.
 
 ## How to use
 - Download the latest Godot game engine (This project uses V.4.4.1): https://godotengine.org
 - Clone this repository into your own folder
 - Open the repository folder in Godot
 - play the demo from the debug button (Play button in the top-right corner)
-
 - In the future we will release a playable build of the game here in Github
 
 ## Features
 - Main Menu: A main menu lets you start a new game and access other options.
-- Place towers to defend your base from waves of enemies
-- Currently only three waves available
-- Currently only one tower available
+- Background music for every map and main menu
+- Up to 80 unique, progressively difficult waves
+- Boss rounds every 10 waves
+- 8 unique towers to defend your base with
+- 7 unique maps, ranging from very easy to extremely difficult
+
+## Maps
+- Frostbite Fields
+    - This winter themed map offers many straight lines for powerful defensive strategies.
+- Scorched Sands
+    - This desert themed maps offers two different paths for the enemies to spawn on, forcing you to think about effective tower placement.
+- Oasis
+    - This desert themed map has enemies running around in a loop at the center of the map.
+- Nature's Edge
+    - This jungle themed map offers long straight lines, but be careful about where you decide to place the towers.
+- Amber Fall
+    - This autumn themed map offers two very short, merging lanes.
+- Crossroads Of Doom
+    - The litmus test. The hardest map in the game centers around a hellish theme with three converging paths for enemies to spawn on.
+- Crystal Caverns
+    - These glistening caves offer straight lines for effective defense.
 
 ## Upcoming features
-- Turrets: Build and upgrade several different turrets, each with unique abilities and attack styles.
-- Waves: Defend against more waves of enemies that increase in number and difficulty with each wave.
-- Boss Battles: Get ready for epic boss battles at the end of each level! These powerful enemies will test your defense skills to the limit.
 - Player Profiles: We're working on adding a player profile system that will track your stats and achievements across all your games.
 
 ## Gameplay
