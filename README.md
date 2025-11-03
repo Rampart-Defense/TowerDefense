@@ -20,6 +20,24 @@ A simple (but challenging!) and fun Tower Defense game built with Godot game eng
 - 8 unique towers to defend your base with
 - 7 unique maps, ranging from very easy to extremely difficult
 
+## Towers
+- Archery tower
+    - The basic crossbow tower shoots up to 3 powerful arrow projectiles dealing medium damage with medium speed.
+- Sniper tower
+    - Shoots slow firing, high damaging bolts. Great for high priority targets.
+- Flame tower
+    - Fires extremely fast low damage flameballs in a small range.
+- Slingshot tower
+    - This tower lobs explosive projectiles, dealing high damage to a large group of enemies.
+- Lightning tower
+    - These slow firing, medium damage lightning bolts stun and halt enemy movement for a short while in a large radius.
+- Catapult tower
+    - Launches high damaging, penetrating projectiles dealing massive damage to enemies in straight lines.
+- Cannonball tower
+    - Upgrade this tower to shoot powerfull cannonballs up to 4 different directions.
+- Buffer tower
+    - Place this tower to upgrade the damage and firing speed of other towers in its range.
+
 ## Maps
 - Frostbite Fields
     - This winter themed map offers many straight lines for powerful defensive strategies.
