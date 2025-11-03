@@ -599,7 +599,7 @@ damage = 7
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_qdr08")
-animation = &"stun_down"
+animation = &"death_down"
 
 [node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -14)
