@@ -419,7 +419,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yax0o")
 }],
-"loop": true,
+"loop": false,
 "name": &"stun_down",
 "speed": 10.0
 }, {
@@ -599,7 +599,7 @@ damage = 16
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_4f3uy")
-animation = &"death_down"
+animation = &"stun_up"
 
 [node name="EnemyHealthSystem" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(0, -26)
