@@ -368,7 +368,7 @@
 	  "enemies": [
 		{ "enemy_type": "goblin_battle_boyLVL2", "count": 120, "spawn_delay": 0.2, "delay_before_spawn": 5 },
 		{ "enemy_type": "goblin_battle_veteranLVL2", "count": 100, "spawn_delay": 0.2, "delay_before_spawn": 8 },
-	 	{ "enemy_type": "boss5", "count": 1, "spawn_delay": 0, "delay_before_spawn": 30 }
+	 	{ "enemy_type": "boss5", "count": 1, "spawn_delay": 0, "delay_before_spawn": 45 }
 	  ]
 	},
 	{
@@ -590,7 +590,7 @@
 		{ "enemy_type": "boss5", "count": 15, "spawn_delay": 3, "delay_before_spawn": 3 },
 		{ "enemy_type": "boss6", "count": 5, "spawn_delay": 10, "delay_before_spawn": 20 },
 	  	{ "enemy_type": "boss7", "count": 3, "spawn_delay": 20, "delay_before_spawn": 90 },
-	  	{ "enemy_type": "boss8", "count": 1, "spawn_delay": 0, "delay_before_spawn": 160 },
+	  	{ "enemy_type": "boss8", "count": 1, "spawn_delay": 0, "delay_before_spawn": 150 },
 	  ]
 	}
   ]
