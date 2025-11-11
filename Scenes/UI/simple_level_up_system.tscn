@@ -1,0 +1,118 @@
+[gd_scene load_steps=11 format=3 uid="uid://c11a8bgpubvhl"]
+
+[ext_resource type="FontFile" uid="uid://c3sky53vd0g4j" path="res://Art/VisualArt/UI/Fonts/Varnished.ttf" id="1_p31de"]
+[ext_resource type="Script" uid="uid://d308mfqogfxi3" path="res://Scripts/UI/simple_level_up_system.gd" id="1_wqdec"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wqdec"]
+load_path = "res://.godot/imported/RangeLvlButton.png-8c567b1806db676702253cbc6b480a3b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5xryy"]
+load_path = "res://.godot/imported/RangeLvlButtonPressed.png-25d379852739b83faeb189d5b7f408b1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o4w15"]
+load_path = "res://.godot/imported/RangeLvlButtonHover.png-b918d19c937f4a731194f56ce4b4346c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7sf2f"]
+load_path = "res://.godot/imported/RangeLvlButtonDisabled.png-ca7cc725cc3f6e2267d1596cf7ed6920.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gjlfk"]
+load_path = "res://.godot/imported/SellButton.png-09d310e81c226c0578cad5e82228b1d2.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x1obe"]
+load_path = "res://.godot/imported/SellButtonPressed.png-cabdeff4cd6662caa5d7834b2db32d68.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ffcg4"]
+load_path = "res://.godot/imported/SellButtonHover.png-8301914de73e869eb8e505a11e28ef13.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mcu4p"]
+load_path = "res://.godot/imported/SellButtonDisabled.png-95ac3321fa06a654a446083326888911.ctex"
+
+[node name="SimpleLevelUpSystem" type="Control" groups=["towerUpgrader"]]
+visible = false
+z_index = 1001
+layout_mode = 3
+anchors_preset = 0
+offset_left = 128.0
+offset_top = 48.0
+offset_right = 128.0
+offset_bottom = 48.0
+mouse_filter = 2
+script = ExtResource("1_wqdec")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -64.0
+offset_top = -56.0
+offset_right = 132.0
+offset_bottom = 464.0
+
+[node name="StatsLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 184.0
+offset_bottom = 232.0
+theme_override_fonts/normal_font = ExtResource("1_p31de")
+bbcode_enabled = true
+text = "asdsdsdasdasd"
+
+[node name="TowerLevelUp" type="TextureButton" parent="Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 32.0
+offset_top = 168.0
+offset_right = 160.0
+offset_bottom = 296.0
+texture_normal = SubResource("CompressedTexture2D_wqdec")
+texture_pressed = SubResource("CompressedTexture2D_5xryy")
+texture_hover = SubResource("CompressedTexture2D_o4w15")
+texture_disabled = SubResource("CompressedTexture2D_7sf2f")
+
+[node name="Label" type="Label" parent="Panel/TowerLevelUp"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 107.0
+offset_right = 103.0
+offset_bottom = 130.0
+text = "Level up"
+
+[node name="Label2" type="Label" parent="Panel/TowerLevelUp"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 131.0
+offset_right = 103.0
+offset_bottom = 154.0
+text = "cost"
+
+[node name="SellTower" type="TextureButton" parent="Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 32.0
+offset_top = 304.0
+offset_right = 160.0
+offset_bottom = 432.0
+texture_normal = SubResource("CompressedTexture2D_gjlfk")
+texture_pressed = SubResource("CompressedTexture2D_x1obe")
+texture_hover = SubResource("CompressedTexture2D_ffcg4")
+texture_disabled = SubResource("CompressedTexture2D_mcu4p")
+
+[node name="Label" type="Label" parent="Panel/SellTower"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 107.0
+offset_right = 103.0
+offset_bottom = 130.0
+text = "Sell tower"
+
+[node name="Label2" type="Label" parent="Panel/SellTower"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 131.0
+offset_right = 103.0
+offset_bottom = 154.0
+text = "price"
+
+[connection signal="button_down" from="Panel/TowerLevelUp" to="." method="_on_range_level_up_button_down"]
+[connection signal="button_down" from="Panel/TowerLevelUp" to="." method="_on_tower_level_up_button_down"]
+[connection signal="button_down" from="Panel/SellTower" to="." method="_on_sell_tower_button_down"]
+[connection signal="pressed" from="Panel/SellTower" to="." method="_on_sell_tower_pressed"]
