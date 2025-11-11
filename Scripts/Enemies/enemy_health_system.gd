@@ -50,7 +50,6 @@ func die(win: String) -> void:
 				death_animation_name = "death_down" if velocity.y > 0 else "death_up"
 			
 		if animated_sprite and animated_sprite.sprite_frames.has_animation(death_animation_name):
-			print(death_animation_name)
 			animated_sprite.play(death_animation_name)
 			animation_played = true
 
