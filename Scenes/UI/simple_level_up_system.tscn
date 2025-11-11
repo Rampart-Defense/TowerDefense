@@ -112,7 +112,7 @@ offset_right = 103.0
 offset_bottom = 154.0
 text = "price"
 
-[connection signal="button_down" from="Panel/TowerLevelUp" to="." method="_on_range_level_up_button_down"]
 [connection signal="button_down" from="Panel/TowerLevelUp" to="." method="_on_tower_level_up_button_down"]
+[connection signal="button_down" from="Panel/TowerLevelUp" to="." method="_on_range_level_up_button_down"]
 [connection signal="button_down" from="Panel/SellTower" to="." method="_on_sell_tower_button_down"]
 [connection signal="pressed" from="Panel/SellTower" to="." method="_on_sell_tower_pressed"]

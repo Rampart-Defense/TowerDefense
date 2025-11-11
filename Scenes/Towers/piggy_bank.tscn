@@ -287,8 +287,8 @@ theme_override_styles/background = SubResource("StyleBoxTexture_6h1he")
 theme_override_styles/fill = SubResource("StyleBoxTexture_20bb6")
 show_percentage = false
 
-[connection signal="button_down" from="SimpleLevelUpSystem/Panel/TowerLevelUp" to="SimpleLevelUpSystem" method="_on_range_level_up_button_down"]
 [connection signal="button_down" from="SimpleLevelUpSystem/Panel/TowerLevelUp" to="SimpleLevelUpSystem" method="_on_tower_level_up_button_down"]
+[connection signal="button_down" from="SimpleLevelUpSystem/Panel/TowerLevelUp" to="SimpleLevelUpSystem" method="_on_range_level_up_button_down"]
 [connection signal="button_down" from="SimpleLevelUpSystem/Panel/SellTower" to="SimpleLevelUpSystem" method="_on_sell_tower_button_down"]
 [connection signal="pressed" from="SimpleLevelUpSystem/Panel/SellTower" to="SimpleLevelUpSystem" method="_on_sell_tower_pressed"]
 [connection signal="toggled" from="SimpleLevelUpSystem/Panel/CheckBox" to="." method="_on_check_box_toggled"]

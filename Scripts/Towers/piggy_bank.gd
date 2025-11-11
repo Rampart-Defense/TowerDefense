@@ -83,12 +83,29 @@ func _apply_visuals():
 			progress_bar.position =Vector2(-19, 25)
 
 
+func get_next_payout() -> int:
+	if PlayerStats.get_money() > 0 and not placing_tower:
+		var money_to_add = 0
+		match tower_level:
+			1:
+				money_to_add = int(PlayerStats.get_money() * lvl1_gains)
+			2:
+				money_to_add = int(PlayerStats.get_money() * lvl2_gains)
+			3:
+				money_to_add = int(PlayerStats.get_money() * lvl3_gains)
+		return money_to_add
+	else:
+		return 0
+		
+
+
 func _on_tower_animation_finished() -> void:
 	_apply_visuals() 
 
 
 func _on_money_timer_timeout() -> void:
 	generate_intrest() # Replace with function body.
+	tower_leveling_system.update_payout_text()
 
 
 func _on_check_box_toggled(toggled_on: bool) -> void:

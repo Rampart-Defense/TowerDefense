@@ -11,7 +11,7 @@ extends Control
 
 @onready var SellButton =$Panel/SellTower
 
-#Statslabel for tower stats
+#Statslabel for tower stats e.g. payout for piggybank
 @onready var StatsLabel = $Panel/StatsLabel
 # bools for proper placement on screen
 var too_far_up = false
@@ -27,17 +27,13 @@ func _ready() -> void:
 		queue_free()
 	# Set initial button text and prices
 	TowerLevelUpButton.get_child(1).text = "cost: " + str(level_2_cost)
-
-	
+	update_payout_text()
 	update_sell_price()
-	update_stats_display()
 	# Initial check to set button disabled states
 	_on_money_changed(PlayerStats.get_money())
 	
 
 
-func update_stats_display() -> void:
-	pass
 
 func _on_money_changed(money: int) -> void:
 	if tower == null:
@@ -52,13 +48,22 @@ func _on_money_changed(money: int) -> void:
 		TowerLevelUpButton.disabled = current_money < level_3_cost
 	else:
 		TowerLevelUpButton.disabled = true
-	update_stats_display()
+	update_payout_text()
 
+func update_payout_text():
+		# 1. Get the payout amount
+	var payout_amount = tower.get_next_payout()
+	# 2. Format the string
+	var stats_label_text = "The next payout will be $%s" % payout_amount
 
+	# 3. Set the Label's text property
+	StatsLabel.text = stats_label_text
 
 func update_sell_price():
 	SellButton.get_child(1).text = "price: " + str(sell_price)
 
+func update_stats_display():
+	update_payout_text()
 
 func _on_sell_tower_pressed() -> void:
 	self.visible = false
@@ -83,7 +88,8 @@ func _on_tower_level_up_button_down() -> void:
 			tower.upgrade_tower(3)
 			PlayerStats.spend_money(level_3_cost)
 			TowerLevelUpButton.disabled = true
+		_on_money_changed(PlayerStats.get_money())
+		update_payout_text()
+		
 	else:
 		push_error("Please set the tower for the tower leveling system.")
-	update_stats_display()
-	_on_money_changed(PlayerStats.get_money())
