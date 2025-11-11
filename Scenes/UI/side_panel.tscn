@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://xcynxt58gebm" path="res://Scripts/UI/side_panel.gd" id="1_u7hjx"]
 [ext_resource type="PackedScene" uid="uid://qcjcoo3nif0m" path="res://Scenes/UI/Towershop/tower_shop.tscn" id="2_cleyv"]
 [ext_resource type="Texture2D" uid="uid://bjjhsb871d0jt" path="res://Art/VisualArt/UI/Buttons/start_wave_button.png" id="3_u7hjx"]
-[ext_resource type="Script" uid="uid://caru6un828bpk" path="res://Scenes/UI/start_wave_button.gd" id="4_4jt2b"]
+[ext_resource type="Texture2D" uid="uid://b0c575w66udek" path="res://Art/VisualArt/UI/Buttons/stop_waves_button.png" id="5_4jt2b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u7hjx"]
 texture = ExtResource("1_cleyv")
@@ -54,23 +54,32 @@ anchor_right = 0.995
 anchor_bottom = 0.963
 offset_left = 63.808
 offset_top = -15.856
-offset_right = 55.76
+offset_right = 267.216
 offset_bottom = 103.976
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="StartWaves" type="TextureButton" parent="."]
 z_index = 999
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.858
 anchor_bottom = 0.87
-offset_left = 959.0
-offset_top = 550.0
-offset_right = 1555.54
-offset_bottom = 861.52
+offset_left = 944.0
+offset_top = 532.0
+offset_right = 1540.54
+offset_bottom = 843.52
 scale = Vector2(0.105, 0.105)
 texture_normal = ExtResource("3_u7hjx")
 ignore_texture_size = true
-script = ExtResource("4_4jt2b")
 
-[connection signal="button_down" from="TextureButton" to="." method="_on_start_wave_button_down"]
+[node name="StopWaves" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1042.0
+offset_top = 532.0
+offset_right = 2066.0
+offset_bottom = 1556.0
+scale = Vector2(0.105, 0.105)
+texture_normal = ExtResource("5_4jt2b")
+
+[connection signal="button_down" from="StartWaves" to="." method="_on_start_wave_button_down"]
+[connection signal="button_down" from="StopWaves" to="." method="_on_stop_waves_button_down"]
