@@ -46,6 +46,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				if current_upgraded_tower == tower:
 					print("Same tower clicked again — closing upgrade menu.")
 					side_panel.show_shop()
+					side_panel.show_buttons()
 
 					# Disconnect and hide
 					if PlayerStats.money_changed.is_connected(tower.tower_leveling_system._on_money_changed):
@@ -70,6 +71,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 				# --- CASE 3: Show this tower’s upgrade menu
 				side_panel.hide_shop()
+				side_panel.hide_buttons()
 				if side_panel.is_hidden:
 					side_panel.show_side_panel()
 				var anchor = side_panel.get_node("UpgradeAnchor")
@@ -93,6 +95,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if not tower_clicked:
 			var side_panel = GlobalUi.get_node("SidePanel") # Adjust path if needed
 			side_panel.show_shop()
+			side_panel.show_buttons()
 			print("Blank space clicked. Hiding all tower menus.")
 			if current_upgraded_tower != null:
 				# Disconnect the signal from the menu before hiding it.

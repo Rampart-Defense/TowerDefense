@@ -11,9 +11,6 @@ var current_session_id: int = 0
 var paths: Array[Path2D] = []
 var current_path_index = 0
 
-
-
-
 #Preload enemies
 const goblin_tribesmanLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-tribesman_lvl_1.tscn")
 const goblin_huntsmanLVL1 = preload("res://Scenes/Enemies/GreenGoblins/goblin-huntsman_lvl_1.tscn")
@@ -82,6 +79,7 @@ var wave_data = {}
 
 var current_wave = 0
 var enemies_alive = 0
+var should_continue_waves = true
 var gold_gained_this_wave: int = 0
 
 
@@ -145,6 +143,7 @@ func start_wave() -> void:
 func spawn_wave_and_wait(wave_info: Dictionary, session_id: int) -> void:
 	if is_spawning_stopped:
 		return
+		
 	enemies_alive = calculate_total_enemies_in_wave(wave_info)
 	print("Spawning for Wave ", wave_info["wave_number"], " has started. Total enemies: ", enemies_alive)
 	
@@ -162,8 +161,13 @@ func spawn_wave_and_wait(wave_info: Dictionary, session_id: int) -> void:
 	print("All enemies in Wave ", wave_info["wave_number"], " have been defeated!")
 	_calculate_end_of_round_payout()
 	
-	start_wave()
-	
+	if should_continue_waves:
+		# Only start the next wave if the flag is true
+		start_wave()
+	else:
+		# Stop the wave progression and perhaps notify the player.
+		print("Waves are currently paused. Press Start Wave to continue.")
+		
 # A helper function to spawn a group of enemies after a specified delay.
 func _spawn_enemy_group_after_delay(enemy_group: Dictionary, session_id: int) -> void:
 	var delay_before_spawn = enemy_group.get("delay_before_spawn", 0.0)
@@ -188,7 +192,6 @@ func spawn_single_enemy(enemy_type: String) -> void:
 	if paths.is_empty():
 		print("Error: No paths found. Cannot spawn enemy.")
 		return
-
 
 	if enemy_scenes.has(enemy_type):
 		var enemy_scene = enemy_scenes[enemy_type]
@@ -238,6 +241,20 @@ func stop_spawning_and_clear_enemies() -> void:
 	
 	print("Spawning stopped and all enemies cleared.")
 	
+func stop_wave_spawning():
+	if current_wave != 0:
+		should_continue_waves = false
+		print("Wave spawning paused after current wave finishes.")
+	
+func start_wave_spawning():
+	# If should_continue_waves initial value is true, then call begin(). 
+	# Else the values is always false, meaning stop button was pressed and now resume spawning  
+	if should_continue_waves:
+		begin()
+	else: 
+		should_continue_waves = true
+		print("Wave spawing resumed.")
+		start_wave()
 	
 func _calculate_end_of_round_payout(): # <--- NEW function
 	var payout_amount = floor(gold_gained_this_wave * 0.2)
