@@ -248,18 +248,17 @@ offset_top = -72.0
 offset_right = -608.0
 offset_bottom = -72.0
 tower = NodePath("..")
-sell_price = 300
-attack_damage_cost_1 = 750
-attack_damage_cost_2 = 2250
+sell_price = 150
+attack_damage_cost_1 = 450
+attack_damage_cost_2 = 1000
 attack_damage_value_2 = 10
-attack_speed_cost_1 = 600
-attack_speed_value_1 = 0.25
-attack_speed_cost_2 = 1800
-attack_speed_value_2 = 0.35
-range_cost_1 = 600
+attack_speed_cost_1 = 500
+attack_speed_value_1 = 0.3
+attack_speed_cost_2 = 1100
+attack_speed_value_2 = 0.4
+range_cost_1 = 350
 range_value_1 = 10
-range_cost_2 = 1500
-range_value_2 = 10
+range_cost_2 = 1200
 
 [node name="clickshape" type="CollisionShape2D" parent="."]
 z_index = 101

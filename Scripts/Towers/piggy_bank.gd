@@ -16,9 +16,9 @@ var placing_tower: bool = false
 var tower_level: int = 1
 
 #percentual ammount for generating money
-@export var lvl1_gains: float = 0.05 # 5%
-@export var lvl2_gains: float = 0.075 # 7,5%
-@export var lvl3_gains: float = 0.1 # 10%
+@export var lvl1_gains: float = 0.075 # 7.5%
+@export var lvl2_gains: float = 0.1 # 10%
+@export var lvl3_gains: float = 0.125 # 12.5%
 
 @onready var tower_leveling_system: Control = $SimpleLevelUpSystem
 #Visuals

@@ -351,9 +351,9 @@
 	  "wave_number": 48,
 	  "enemies": [
 		{ "enemy_type": "goblin_tribesmanLVL2", "count": 200, "spawn_delay": 0.05, "delay_before_spawn": 1 },
-		{ "enemy_type": "goblin_huntsmanLVL2", "count": 140, "spawn_delay": 0.2, "delay_before_spawn": 3 },
-		{ "enemy_type": "goblin_battle_boyLVL2", "count": 100, "spawn_delay": 0.2, "delay_before_spawn": 5 },
-		{ "enemy_type": "goblin_battle_veteranLVL2", "count": 75, "spawn_delay": 0.2, "delay_before_spawn": 8 }
+		{ "enemy_type": "goblin_huntsmanLVL2", "count": 140, "spawn_delay": 0.2, "delay_before_spawn": 6 },
+		{ "enemy_type": "goblin_battle_boyLVL2", "count": 100, "spawn_delay": 0.2, "delay_before_spawn": 10 },
+		{ "enemy_type": "goblin_battle_veteranLVL2", "count": 75, "spawn_delay": 0.2, "delay_before_spawn": 15 }
 	  ]
 	},
 	{

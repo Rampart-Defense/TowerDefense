@@ -593,7 +593,7 @@ z_index = 2
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_ow2vg")
-movement_speed = 250.0
+movement_speed = 215.0
 damage = 15
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

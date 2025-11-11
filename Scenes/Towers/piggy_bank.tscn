@@ -175,6 +175,7 @@ offset_bottom = 48.0
 mouse_filter = 2
 script = ExtResource("2_6h1he")
 tower = NodePath("..")
+sell_price = 2500
 level_2_cost = 7500
 level_3_cost = 10000
 

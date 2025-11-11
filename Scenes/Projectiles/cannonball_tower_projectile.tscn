@@ -75,6 +75,7 @@ size = Vector2(10, 10)
 z_index = 5
 texture_filter = 1
 script = ExtResource("1_2sq3n")
+speed = 700.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
@@ -83,7 +84,6 @@ autoplay = "default"
 frame_progress = 0.574815
 
 [node name="DamageSource" type="Area2D" parent="." groups=["damageSource"]]
-position = Vector2(-1, 0)
 script = ExtResource("1_1320f")
 
 [node name="DamageArea" type="CollisionShape2D" parent="DamageSource"]
