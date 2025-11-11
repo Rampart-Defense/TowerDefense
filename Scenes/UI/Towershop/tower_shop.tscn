@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cve023ur7mal" path="res://Scenes/UI/Towershop/slingshot_tower_panel.tscn" id="5_qlr4l"]
 [ext_resource type="PackedScene" uid="uid://bbbnnj5e0btlt" path="res://Scenes/UI/Towershop/catapult_tower_panel.tscn" id="6_yderm"]
 [ext_resource type="PackedScene" uid="uid://d1e3lwulhrcop" path="res://Scenes/UI/Towershop/flame_tower_panel.tscn" id="7_qlr4l"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/Towershop/cannonball_tower_panel.tscn" id="8_wpp58"]
+[ext_resource type="PackedScene" uid="uid://c653hikft38dr" path="res://Scenes/UI/Towershop/cannonball_tower_panel.tscn" id="8_wpp58"]
 [ext_resource type="PackedScene" uid="uid://drwmnb2ya6m8l" path="res://Scenes/UI/Towershop/sniper_tower_panel.tscn" id="8_yderm"]
 [ext_resource type="PackedScene" uid="uid://bd4e3mf8cgy0s" path="res://Scenes/UI/Towershop/buff_tower_panel.tscn" id="9_wpp58"]
 [ext_resource type="PackedScene" uid="uid://cm18dyw32cun0" path="res://Scenes/UI/Towershop/piggy_bank_panel.tscn" id="10_2yb5k"]

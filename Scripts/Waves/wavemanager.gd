@@ -259,5 +259,7 @@ func start_wave_spawning():
 func _calculate_end_of_round_payout(): # <--- NEW function
 	var payout_amount = floor(gold_gained_this_wave * 0.2)
 	PlayerStats.add_money(payout_amount)
+	if payout_amount > 0:
+			SoundManager.get_node("coinsplash").play()
 	print("End of Round Payout: ", payout_amount, " gold (", 20, "% of ", gold_gained_this_wave, " earned).")
 	gold_gained_this_wave = 0

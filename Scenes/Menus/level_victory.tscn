@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d25xns72fkonc" path="res://Art/VisualArt/UI/Menus/game_end menu/mainmenubutton/mainmenubutton.png" id="6_jh0pk"]
 [ext_resource type="Texture2D" uid="uid://65f344jlv08o" path="res://Art/VisualArt/UI/Menus/game_end menu/mainmenubutton/mainmenubuttonpressed.png" id="7_i6yef"]
 [ext_resource type="Texture2D" uid="uid://ct8gvajax8sha" path="res://Art/VisualArt/UI/Menus/game_end menu/mainmenubutton/mainmenubuttonhovered.png" id="8_pwimx"]
-[ext_resource type="AudioStream" uid="uid://b408fl0t7yy68" path="res://Art/Audio/UI/Win sound.wav" id="9_4d6ap"]
+[ext_resource type="AudioStream" uid="uid://b408fl0t7yy68" path="res://Art/Audio/GameEvents/Win sound.wav" id="9_4d6ap"]
 
 [node name="GameVictory" type="CanvasLayer"]
 process_mode = 2

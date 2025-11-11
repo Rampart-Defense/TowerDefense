@@ -65,6 +65,8 @@ func damage_player(value: int):
 	if temp <= 0:
 		die()
 	set_current_health(temp)
+	SoundManager.get_node("playerhit").play()
+
 
 func die():
 	Waves.stop_spawning_and_clear_enemies()
