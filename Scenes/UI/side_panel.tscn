@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bg8rsrllvnpgj"]
+[gd_scene load_steps=7 format=3 uid="uid://bg8rsrllvnpgj"]
 
 [ext_resource type="Texture2D" uid="uid://c2s3igd4r1v5j" path="res://Art/VisualArt/UI/SideBar/ChatGPT Image 4. lokak. 2025 klo 20.34.30.png" id="1_cleyv"]
 [ext_resource type="Script" uid="uid://xcynxt58gebm" path="res://Scripts/UI/side_panel.gd" id="1_u7hjx"]
 [ext_resource type="PackedScene" uid="uid://qcjcoo3nif0m" path="res://Scenes/UI/Towershop/tower_shop.tscn" id="2_cleyv"]
+[ext_resource type="Texture2D" uid="uid://bjjhsb871d0jt" path="res://Art/VisualArt/UI/Buttons/start_wave_button.png" id="3_u7hjx"]
+[ext_resource type="Script" uid="uid://caru6un828bpk" path="res://Scenes/UI/start_wave_button.gd" id="4_4jt2b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u7hjx"]
 texture = ExtResource("1_cleyv")
@@ -54,3 +56,21 @@ offset_left = 63.808
 offset_top = -15.856
 offset_right = 55.76
 offset_bottom = 103.976
+
+[node name="TextureButton" type="TextureButton" parent="."]
+z_index = 999
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.858
+anchor_bottom = 0.87
+offset_left = 959.0
+offset_top = 550.0
+offset_right = 1555.54
+offset_bottom = 861.52
+scale = Vector2(0.105, 0.105)
+texture_normal = ExtResource("3_u7hjx")
+ignore_texture_size = true
+script = ExtResource("4_4jt2b")
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_start_wave_button_down"]
