@@ -8,6 +8,8 @@ extends Control
 @onready var medium_button: Button = $HBoxContainer/MediumButton
 @onready var hard_button: Button = $HBoxContainer/HardButton
 
+const CUSTOM_FONT = preload("res://Art/VisualArt/UI/Fonts/Varnished.ttf")
+
 # Variable to hold the map path retrieved from GameManager
 var selected_map_scene_path: String
 
@@ -18,12 +20,14 @@ func _ready():
 	GlobalUi.get_node("StatsDisplay").hide()
 	GlobalCamera.change_zoom_for_menu()
 	# Retrieve the stored data from the global GameManager
+
 	var name = GameManager.selected_map_name
 	var icon_path = GameManager.selected_map_icon_path
 	self.selected_map_scene_path = GameManager.selected_map_scene_path
 	
 	# --- Display the Map Image and Name ---
 	map_name_label.text = name
+	map_name_label.add_theme_font_override("font", CUSTOM_FONT)
 	map_image.texture = load(icon_path) # Load and display the image
 	
 	# --- Connect Difficulty Buttons ---

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtn7ynavh8ood"]
+[gd_scene load_steps=4 format=3 uid="uid://dtn7ynavh8ood"]
 
-[ext_resource type="Script" path="res://Scripts/Menus/options_menu.gd" id="1_886lm"]
-[ext_resource type="Script" path="res://Scripts/Menus/audio_control.gd" id="2_2fase"]
+[ext_resource type="Script" uid="uid://dd5b1w3c7r3rs" path="res://Scripts/Menus/options_menu.gd" id="1_886lm"]
+[ext_resource type="Script" uid="uid://biaix2qjtffhi" path="res://Scripts/Menus/audio_control.gd" id="2_2fase"]
+[ext_resource type="FontFile" uid="uid://c3sky53vd0g4j" path="res://Art/VisualArt/UI/Fonts/Varnished.ttf" id="2_4hrbf"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -34,6 +35,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 51.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_4hrbf")
 text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -51,6 +53,7 @@ offset_right = 22.5
 offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_4hrbf")
 text = "Back"
 
 [node name="Label2" type="Label" parent="Panel"]
@@ -62,6 +65,7 @@ offset_top = 63.5
 offset_right = 1.5
 offset_bottom = 86.5
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_4hrbf")
 text = "Music Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -85,6 +89,20 @@ value = 1.0
 script = ExtResource("2_2fase")
 audio_bus_name = "music"
 
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -57.0
+offset_top = -35.0
+offset_right = 52.0
+offset_bottom = -12.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_4hrbf")
+text = "SFX Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AudioControl2" type="HSlider" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -103,19 +121,6 @@ step = 0.01
 value = 1.0
 script = ExtResource("2_2fase")
 audio_bus_name = "sfx"
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = -57.0
-offset_top = -35.0
-offset_right = 52.0
-offset_bottom = -12.0
-grow_horizontal = 2
-text = "Sfx Volume"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="pressed" from="Panel/Back" to="." method="_on_back_pressed"]
 [connection signal="value_changed" from="AudioControl" to="AudioControl" method="_on_value_changed"]
