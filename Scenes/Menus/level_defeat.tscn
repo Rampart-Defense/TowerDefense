@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d25xns72fkonc" path="res://Art/VisualArt/UI/Menus/game_end menu/mainmenubutton/mainmenubutton.png" id="6_if53c"]
 [ext_resource type="Texture2D" uid="uid://65f344jlv08o" path="res://Art/VisualArt/UI/Menus/game_end menu/mainmenubutton/mainmenubuttonpressed.png" id="7_f8jvj"]
 [ext_resource type="Texture2D" uid="uid://ct8gvajax8sha" path="res://Art/VisualArt/UI/Menus/game_end menu/mainmenubutton/mainmenubuttonhovered.png" id="8_0ea1g"]
-[ext_resource type="AudioStream" uid="uid://bq0ofnr0pf6in" path="res://Art/Audio/UI/gameover.mp3" id="9_y7nt2"]
+[ext_resource type="AudioStream" uid="uid://bq0ofnr0pf6in" path="res://Art/Audio/GameEvents/gameover.mp3" id="9_y7nt2"]
 
 [node name="LevelDefeat" type="CanvasLayer"]
 process_mode = 2
