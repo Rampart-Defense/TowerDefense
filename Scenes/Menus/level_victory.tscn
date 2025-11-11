@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://deqha2h2vtl1j"]
+[gd_scene load_steps=11 format=3 uid="uid://deqha2h2vtl1j"]
 
 [ext_resource type="Script" uid="uid://brfwdhh1f3yoj" path="res://Scripts/Menus/level_victory.gd" id="1_f20tk"]
 [ext_resource type="Texture2D" uid="uid://dc0xwf67dijai" path="res://Art/VisualArt/UI/Menus/game_end menu/banners/victorybanner.png" id="2_u4u13"]
 [ext_resource type="Texture2D" uid="uid://bhcn4fa7kov32" path="res://Art/VisualArt/UI/Menus/game_end menu/newgamebutton/newgamebutton.png" id="3_4d6ap"]
+[ext_resource type="FontFile" uid="uid://c3sky53vd0g4j" path="res://Art/VisualArt/UI/Fonts/Varnished.ttf" id="3_t7pb3"]
 [ext_resource type="Texture2D" uid="uid://b15h4bw334la8" path="res://Art/VisualArt/UI/Menus/game_end menu/newgamebutton/newgamebuttonpress.png" id="4_t7pb3"]
 [ext_resource type="Texture2D" uid="uid://cx5mo7dn3qxym" path="res://Art/VisualArt/UI/Menus/game_end menu/newgamebutton/newgamebuttonhover.png" id="5_ahna1"]
 [ext_resource type="Texture2D" uid="uid://d25xns72fkonc" path="res://Art/VisualArt/UI/Menus/game_end menu/mainmenubutton/mainmenubutton.png" id="6_jh0pk"]
@@ -54,6 +55,7 @@ offset_right = 112.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_t7pb3")
 text = "You completed all the waves."
 
 [node name="PanelContainer" type="VBoxContainer" parent="Panel"]

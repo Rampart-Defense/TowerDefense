@@ -196,6 +196,7 @@ base_range = 100
 tower_base = NodePath("Base")
 turret = NodePath("Turret")
 firing_point = NodePath("Turret/Marker2D")
+rotating = true
 fire_timer = NodePath("FireTimer")
 shoot_sound = NodePath("cannonshoot")
 

@@ -1,0 +1,296 @@
+[gd_scene load_steps=31 format=3 uid="uid://rnmagefeipe5"]
+
+[ext_resource type="Script" uid="uid://v5lk8gxi7iqo" path="res://Scripts/Towers/piggy_bank.gd" id="1_tn54t"]
+[ext_resource type="Script" uid="uid://d308mfqogfxi3" path="res://Scripts/UI/simple_level_up_system.gd" id="2_6h1he"]
+[ext_resource type="Texture2D" uid="uid://dqqwq7arcbvou" path="res://Art/VisualArt/Towers/PiggyBank/PiggyBankLvl1.png" id="2_66mrt"]
+[ext_resource type="Texture2D" uid="uid://cglcu1gyoi67x" path="res://Art/VisualArt/Towers/PiggyBank/PiggyBankLvl2.png" id="3_aduhr"]
+[ext_resource type="FontFile" uid="uid://c3sky53vd0g4j" path="res://Art/VisualArt/UI/Fonts/Varnished.ttf" id="3_fie1e"]
+[ext_resource type="Texture2D" uid="uid://drq5o5sa8cudf" path="res://Art/VisualArt/Towers/PiggyBank/PiggyBankLvl3.png" id="4_og1a5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tn54t"]
+bg_color = Color(0, 0, 0, 0.352941)
+corner_radius_top_left = 360
+corner_radius_top_right = 360
+corner_radius_bottom_right = 360
+corner_radius_bottom_left = 360
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wqdec"]
+load_path = "res://.godot/imported/RangeLvlButton.png-8c567b1806db676702253cbc6b480a3b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5xryy"]
+load_path = "res://.godot/imported/RangeLvlButtonPressed.png-25d379852739b83faeb189d5b7f408b1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o4w15"]
+load_path = "res://.godot/imported/RangeLvlButtonHover.png-b918d19c937f4a731194f56ce4b4346c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7sf2f"]
+load_path = "res://.godot/imported/RangeLvlButtonDisabled.png-ca7cc725cc3f6e2267d1596cf7ed6920.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gjlfk"]
+load_path = "res://.godot/imported/SellButton.png-09d310e81c226c0578cad5e82228b1d2.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x1obe"]
+load_path = "res://.godot/imported/SellButtonPressed.png-cabdeff4cd6662caa5d7834b2db32d68.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ffcg4"]
+load_path = "res://.godot/imported/SellButtonHover.png-8301914de73e869eb8e505a11e28ef13.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mcu4p"]
+load_path = "res://.godot/imported/SellButtonDisabled.png-95ac3321fa06a654a446083326888911.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn1pm"]
+atlas = ExtResource("2_66mrt")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h1he"]
+atlas = ExtResource("3_aduhr")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fie1e"]
+atlas = ExtResource("4_og1a5")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20bb6"]
+atlas = ExtResource("2_66mrt")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7yg3"]
+atlas = ExtResource("2_66mrt")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r00bq"]
+atlas = ExtResource("3_aduhr")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w72vw"]
+atlas = ExtResource("3_aduhr")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8v27"]
+atlas = ExtResource("4_og1a5")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcx1j"]
+atlas = ExtResource("4_og1a5")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tn54t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn1pm")
+}],
+"loop": true,
+"name": &"Default1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6h1he")
+}],
+"loop": true,
+"name": &"Default2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fie1e")
+}],
+"loop": true,
+"name": &"Default3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20bb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7yg3")
+}],
+"loop": false,
+"name": &"Generate1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00bq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w72vw")
+}],
+"loop": false,
+"name": &"Generate2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8v27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcx1j")
+}],
+"loop": false,
+"name": &"Generate3",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clusp"]
+size = Vector2(67.0455, 106.826)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_og1a5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6h1he"]
+texture = SubResource("CanvasTexture_og1a5")
+modulate_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_fie1e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_20bb6"]
+texture = SubResource("CanvasTexture_fie1e")
+modulate_color = Color(0, 1, 0, 1)
+
+[node name="PiggyBank" type="Area2D" groups=["buffer_tower", "tower"]]
+z_index = 2
+texture_filter = 1
+script = ExtResource("1_tn54t")
+
+[node name="RangeArea" type="Panel" parent="."]
+z_index = 3
+offset_left = -59.0
+offset_top = -45.0
+offset_right = 58.0
+offset_bottom = 76.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tn54t")
+
+[node name="SimpleLevelUpSystem" type="Control" parent="." node_paths=PackedStringArray("tower") groups=["towerUpgrader"]]
+visible = false
+z_index = 1001
+layout_mode = 3
+anchors_preset = 0
+offset_left = 128.0
+offset_top = 48.0
+offset_right = 128.0
+offset_bottom = 48.0
+mouse_filter = 2
+script = ExtResource("2_6h1he")
+tower = NodePath("..")
+level_2_cost = 7500
+level_3_cost = 10000
+
+[node name="Panel" type="Panel" parent="SimpleLevelUpSystem"]
+layout_mode = 0
+offset_left = -64.0
+offset_top = -56.0
+offset_right = 132.0
+offset_bottom = 464.0
+
+[node name="StatsLabel" type="RichTextLabel" parent="SimpleLevelUpSystem/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 184.0
+offset_bottom = 232.0
+theme_override_fonts/normal_font = ExtResource("3_fie1e")
+bbcode_enabled = true
+text = "asdsdsdasdasd"
+
+[node name="TowerLevelUp" type="TextureButton" parent="SimpleLevelUpSystem/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 32.0
+offset_top = 168.0
+offset_right = 160.0
+offset_bottom = 296.0
+texture_normal = SubResource("CompressedTexture2D_wqdec")
+texture_pressed = SubResource("CompressedTexture2D_5xryy")
+texture_hover = SubResource("CompressedTexture2D_o4w15")
+texture_disabled = SubResource("CompressedTexture2D_7sf2f")
+
+[node name="Label" type="Label" parent="SimpleLevelUpSystem/Panel/TowerLevelUp"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 107.0
+offset_right = 103.0
+offset_bottom = 130.0
+text = "Level up"
+
+[node name="Label2" type="Label" parent="SimpleLevelUpSystem/Panel/TowerLevelUp"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 131.0
+offset_right = 103.0
+offset_bottom = 154.0
+text = "cost"
+
+[node name="SellTower" type="TextureButton" parent="SimpleLevelUpSystem/Panel"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 32.0
+offset_top = 304.0
+offset_right = 160.0
+offset_bottom = 432.0
+texture_normal = SubResource("CompressedTexture2D_gjlfk")
+texture_pressed = SubResource("CompressedTexture2D_x1obe")
+texture_hover = SubResource("CompressedTexture2D_ffcg4")
+texture_disabled = SubResource("CompressedTexture2D_mcu4p")
+
+[node name="Label" type="Label" parent="SimpleLevelUpSystem/Panel/SellTower"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 107.0
+offset_right = 103.0
+offset_bottom = 130.0
+text = "Sell tower"
+
+[node name="Label2" type="Label" parent="SimpleLevelUpSystem/Panel/SellTower"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 131.0
+offset_right = 103.0
+offset_bottom = 154.0
+text = "price"
+
+[node name="CheckBox" type="CheckButton" parent="SimpleLevelUpSystem/Panel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 140.0
+offset_right = 188.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("3_fie1e")
+text = "Show cooldown"
+
+[node name="Tower" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -17)
+sprite_frames = SubResource("SpriteFrames_tn54t")
+animation = &"Generate3"
+
+[node name="MoneyTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="clickshape" type="CollisionShape2D" parent="."]
+z_index = 101
+position = Vector2(-0.568183, -5.58696)
+shape = SubResource("RectangleShape2D_clusp")
+
+[node name="MoneySound" type="AudioStreamPlayer2D" parent="."]
+bus = &"sfx"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -19.0
+offset_top = 20.0
+offset_right = 19.0
+offset_bottom = 25.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_6h1he")
+theme_override_styles/fill = SubResource("StyleBoxTexture_20bb6")
+show_percentage = false
+
+[connection signal="button_down" from="SimpleLevelUpSystem/Panel/TowerLevelUp" to="SimpleLevelUpSystem" method="_on_range_level_up_button_down"]
+[connection signal="button_down" from="SimpleLevelUpSystem/Panel/TowerLevelUp" to="SimpleLevelUpSystem" method="_on_tower_level_up_button_down"]
+[connection signal="button_down" from="SimpleLevelUpSystem/Panel/SellTower" to="SimpleLevelUpSystem" method="_on_sell_tower_button_down"]
+[connection signal="pressed" from="SimpleLevelUpSystem/Panel/SellTower" to="SimpleLevelUpSystem" method="_on_sell_tower_pressed"]
+[connection signal="toggled" from="SimpleLevelUpSystem/Panel/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="animation_finished" from="Tower" to="." method="_on_tower_animation_finished"]
+[connection signal="timeout" from="MoneyTimer" to="." method="_on_money_timer_timeout"]

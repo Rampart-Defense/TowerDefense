@@ -1,7 +1,7 @@
 extends Control
 
 @onready var map_list = $ScrollContainer/CenterContainer/GridContainer
-
+const CUSTOM_FONT = preload("res://Art/VisualArt/UI/Fonts/Varnished.ttf")
 var maps = {
 	"Frostbite Fields": {
 		"path": "res://Scenes/Maps/frostbite_fields.tscn",
@@ -48,6 +48,7 @@ func _ready():
 		var button = Button.new()
 		button.text = map_name
 		
+		button.add_theme_font_override("font", CUSTOM_FONT)
 		# button.icon = load(map_data.icon) 
 		# button.expand_icon = true
 		
@@ -64,15 +65,9 @@ func _on_map_button_pressed(map_name, map_data):
 	# 1. Store the selected map data in the global GameManager
 	GameManager.selected_map_name = map_name
 	GameManager.selected_map_scene_path = map_data.path
-	GameManager.selected_map_icon_path = map_data.icon # Store the icon path!
+	GameManager.selected_map_icon_path = map_data.icon
 	
-	# NOTE: The game start logic is MOVED to the difficulty scene.
 	get_tree().change_scene_to_file("res://Scenes/Menus/difficulty_selection.tscn")
-
-	
-	
-	
-
 
 func _on_button_pressed() -> void:
 	SoundManager.get_node("buttonpress").play()
