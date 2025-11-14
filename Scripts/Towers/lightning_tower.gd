@@ -14,11 +14,13 @@ func fire_projectile() -> void:
 		return
 
 	var target_pos = pending_target_pos
-	
+	var tower_callback = Callable(self, "add_to_total_damage")
 	match tower_level:
 		1:
 			
 			var projectile = projectile_scene.instantiate()
+			if projectile.has_method("set_damage_callback"):
+				projectile.set_damage_callback(tower_callback)
 			var projectile_speed = projectile.speed
 			target_pos = _calculate_prediction_point(shoot_target, global_position, projectile_speed)
 			projectile.global_position = firing_point.global_position / map_scale 
@@ -29,6 +31,8 @@ func fire_projectile() -> void:
 		2:
 			
 			var projectile = projectile_scene2.instantiate()
+			if projectile.has_method("set_damage_callback"):
+				projectile.set_damage_callback(tower_callback)
 			var projectile_speed = projectile.speed
 			target_pos = _calculate_prediction_point(shoot_target, global_position, projectile_speed)
 			projectile.global_position = firing_point.global_position / map_scale 
@@ -37,6 +41,8 @@ func fire_projectile() -> void:
 			get_tree().current_scene.call_deferred("add_child", projectile)
 		3:
 			var projectile = projectile_scene3.instantiate()
+			if projectile.has_method("set_damage_callback"):
+				projectile.set_damage_callback(tower_callback)
 			var projectile_speed = projectile.speed
 			target_pos = _calculate_prediction_point(shoot_target, global_position, projectile_speed)
 			projectile.global_position = firing_point.global_position / map_scale 

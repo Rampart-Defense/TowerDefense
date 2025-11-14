@@ -152,6 +152,7 @@ modulate_color = Color(0, 1, 0, 1)
 [node name="PiggyBank" type="Area2D" groups=["buffer_tower", "tower"]]
 z_index = 2
 texture_filter = 1
+scale = Vector2(0.88, 0.68)
 script = ExtResource("1_tn54t")
 
 [node name="RangeArea" type="Panel" parent="."]

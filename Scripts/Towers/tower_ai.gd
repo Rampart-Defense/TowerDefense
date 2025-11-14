@@ -59,6 +59,9 @@ var buffed: bool = false
 var damage_buff: int = 0
 var cdr_buff: float = 0.0
 
+var total_damage_dealt = 0 #for display of total dmg
+
+
 @onready var range_area: CollisionShape2D = tower_range.get_child(0)
 @onready var tower_leveling_system: Control = $TowerLevelingSystem
 @export var shoot_sound: AudioStreamPlayer2D
@@ -105,7 +108,10 @@ func _ready() -> void:
 
 
 
-
+func add_to_total_damage(value: int):
+	total_damage_dealt += value
+	tower_leveling_system.update_stats_display()
+	print("ADDED Damage: " + str(value))
 
 func _on_fire_timer_timeout() -> void:
 
@@ -156,7 +162,7 @@ func fire_projectile() -> void:
 	var offsets: Array = []
 	
 	var target_pos = pending_target_pos
-	
+	var tower_callback = Callable(self, "add_to_total_damage")
 	match tower_level:
 		1:
 			offsets = [Vector2(0, 0)]  # single shot
@@ -172,10 +178,13 @@ func fire_projectile() -> void:
 		# --- CALL PREDICTION FUNCTION ---
 		var projectile = projectile_scene.instantiate()
 		var projectile_speed = projectile.speed
+		projectile.queue_free()
 		target_pos = _calculate_prediction_point(shoot_target, global_position, projectile_speed)
 	# Spawn all projectiles with the given offsets. also shoot towards the offset
 	for offset in offsets:
 		var projectile = projectile_scene.instantiate()
+		if projectile.has_method("set_damage_callback"):
+			projectile.set_damage_callback(tower_callback)
 		projectile.global_position = firing_point.global_position / map_scale + offset
 		projectile.direction = (target_pos / map_scale - projectile.global_position + offset ).normalized()
 		projectile.get_node("DamageSource").damage = damage + damage_buff

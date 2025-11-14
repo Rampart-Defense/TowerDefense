@@ -79,6 +79,10 @@ func update_stats_display() -> void:
 	var rng_lvl: int = tower.range_level
 	var t_lvl: int = tower.tower_level
 
+	#Retrieve total damage
+	var total_damage = 0
+	if not tower.is_in_group("buffer_tower"):
+		total_damage = tower.total_damage_dealt
 	# --- Conditional Buff Text Formatting ---
 	
 	# 1. Damage Buff (+X)
@@ -103,8 +107,9 @@ func update_stats_display() -> void:
 	# Insert cdr_buff_text after the base cooldown value
 	stat_text += "Cooldown: %.2f%s\n (Upgrades: %d/2)\n" % [cd, cdr_buff_text, cd_lvl]
 	
-	stat_text += "Range: %d\n (Upgrades: %d/2)" % [rng, rng_lvl]
-
+	stat_text += "Range: %d\n (Upgrades: %d/2)\n" % [rng, rng_lvl]
+	if not tower.is_in_group("buffer_tower"):
+		stat_text += "Total damage done: %d" % [total_damage]
 	StatsLabel.text = stat_text
 
 func _on_money_changed(money: int) -> void:

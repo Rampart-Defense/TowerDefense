@@ -69,7 +69,7 @@ func _fire() -> void:
 func fire_projectile() -> void:
 	if shoot_target == null or not is_instance_valid(shoot_target) or placing_tower:
 		return
-	
+	var tower_callback = Callable(self, "add_to_total_damage")
 	# Determine Projectile Speed (for prediction)
 	const FALLBACK_SPEED = 400.0 
 	var projectile_speed = FALLBACK_SPEED
@@ -84,7 +84,8 @@ func fire_projectile() -> void:
 	
 	# --- Projectile Spawning Logic ---
 	var projectile = projectile_scene.instantiate()
-	
+	if projectile.has_method("set_damage_callback"):
+		projectile.set_damage_callback(tower_callback)
 	# 1. Calculate base direction
 	var projectile_start_pos = firing_point.global_position / map_scale
 	var base_direction = (target_pos / map_scale - projectile_start_pos).normalized()

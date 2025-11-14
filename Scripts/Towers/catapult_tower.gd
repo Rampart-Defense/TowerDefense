@@ -4,7 +4,7 @@ extends "res://Scripts/Towers/tower_ai.gd"
 
 func fire_projectile() -> void:
 	var target_pos = pending_target_pos
-	
+	var tower_callback = Callable(self, "add_to_total_damage")
 	var offsets: Array = []
 	var projectile_anim_name: String = "default" # Default animation name
 	match tower_level:
@@ -23,6 +23,8 @@ func fire_projectile() -> void:
 	# Spawn all projectiles with the given offsets. also shoot towards the offset
 	for offset in offsets:
 		var projectile = projectile_scene.instantiate()
+		if projectile.has_method("set_damage_callback"):
+			projectile.set_damage_callback(tower_callback)
 		var anim_sprite = projectile.get_node_or_null("AnimatedSprite2D")
 		if anim_sprite:
 			anim_sprite.play(projectile_anim_name)

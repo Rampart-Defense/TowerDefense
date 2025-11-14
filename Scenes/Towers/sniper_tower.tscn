@@ -286,10 +286,10 @@ offset_bottom = 464.0
 
 [node name="StatsLabel" type="RichTextLabel" parent="TowerLevelingSystem/Panel"]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 24.0
-offset_right = 184.0
-offset_bottom = 232.0
+offset_left = 17.4545
+offset_top = 12.058
+offset_right = 185.455
+offset_bottom = 220.058
 theme_override_fonts/normal_font = ExtResource("7_3auby")
 bbcode_enabled = true
 text = "asdsdsdasdasd"

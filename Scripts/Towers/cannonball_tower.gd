@@ -8,9 +8,11 @@ extends "res://Scripts/Towers/tower_ai.gd"
 # --- HELPER FUNCTION ---
 # This function handles instantiating and setting the properties for a single projectile.
 func _spawn_single_projectile(start_point: Marker2D, direction_vector: Vector2) -> void:
+	var tower_callback = Callable(self, "add_to_total_damage")
 	# 1. Instantiate a new projectile every time this function is called.
 	var new_projectile = projectile_scene.instantiate()
-
+	if new_projectile.has_method("set_damage_callback"):
+			new_projectile.set_damage_callback(tower_callback)
 	# 2. Set position and direction
 	new_projectile.global_position = start_point.global_position / map_scale
 	new_projectile.direction = direction_vector

@@ -22,7 +22,7 @@ func _input(event):
 func fire_projectile() -> void:
 	
 	var target_pos = pending_target_pos
-	
+	var tower_callback = Callable(self, "add_to_total_damage")
 	
 	if shoot_target != null or user_controlled:
 		var projectile
@@ -33,6 +33,9 @@ func fire_projectile() -> void:
 				projectile = projectile_scene2.instantiate()
 			3: 
 				projectile = projectile_scene3.instantiate() 
+		#Give the damage callback to track total damage
+		if projectile.has_method("set_damage_callback"):
+			projectile.set_damage_callback(tower_callback)
 		# --- if user controls the tower take mouse position.
 		if user_controlled:
 			target_pos = get_global_mouse_position()

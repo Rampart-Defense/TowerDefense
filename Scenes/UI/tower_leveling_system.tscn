@@ -43,9 +43,9 @@ offset_bottom = 464.0
 [node name="StatsLabel" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 24.0
+offset_top = 8.0
 offset_right = 184.0
-offset_bottom = 232.0
+offset_bottom = 216.0
 theme_override_fonts/normal_font = ExtResource("18_k5twe")
 bbcode_enabled = true
 text = "asdsdsdasdasd"
