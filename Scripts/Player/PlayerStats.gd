@@ -67,6 +67,11 @@ func damage_player(value: int):
 	set_current_health(temp)
 	SoundManager.get_node("playerhit").play()
 
+func heal_player(value: int):
+	# Calculate the new health by adding the heal value
+	var new_health = _current_health + value
+	# Use set_current_health, which handles clamping to _max_health and signal emission
+	set_current_health(new_health)
 
 func die():
 	Waves.stop_spawning_and_clear_enemies()

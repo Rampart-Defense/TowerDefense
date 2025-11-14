@@ -104,7 +104,7 @@ func _on_tower_animation_finished() -> void:
 
 
 func _on_money_timer_timeout() -> void:
-	generate_intrest() # Replace with function body.
+	generate_intrest()
 	tower_leveling_system.update_payout_text()
 
 

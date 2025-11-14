@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://qcjcoo3nif0m"]
+[gd_scene load_steps=12 format=3 uid="uid://qcjcoo3nif0m"]
 
 [ext_resource type="Script" uid="uid://dht7aprvbd7h1" path="res://Scripts/UI/tower_shop.gd" id="1_bhdn4"]
 [ext_resource type="PackedScene" uid="uid://dvgmkrlkllw5w" path="res://Scenes/UI/Towershop/tower_shop_panel.tscn" id="1_obd1k"]
@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cve023ur7mal" path="res://Scenes/UI/Towershop/slingshot_tower_panel.tscn" id="5_qlr4l"]
 [ext_resource type="PackedScene" uid="uid://bbbnnj5e0btlt" path="res://Scenes/UI/Towershop/catapult_tower_panel.tscn" id="6_yderm"]
 [ext_resource type="PackedScene" uid="uid://d1e3lwulhrcop" path="res://Scenes/UI/Towershop/flame_tower_panel.tscn" id="7_qlr4l"]
-[ext_resource type="PackedScene" uid="uid://c653hikft38dr" path="res://Scenes/UI/Towershop/cannonball_tower_panel.tscn" id="8_wpp58"]
+[ext_resource type="PackedScene" uid="uid://g6dlaw0lrxsd" path="res://Scenes/UI/Towershop/cannonball_tower_panel.tscn" id="8_wpp58"]
 [ext_resource type="PackedScene" uid="uid://drwmnb2ya6m8l" path="res://Scenes/UI/Towershop/sniper_tower_panel.tscn" id="8_yderm"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/Towershop/buff_tower_panel.tscn" id="9_wpp58"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/Towershop/piggy_bank_panel.tscn" id="10_2yb5k"]
+[ext_resource type="PackedScene" uid="uid://bd4e3mf8cgy0s" path="res://Scenes/UI/Towershop/buff_tower_panel.tscn" id="9_wpp58"]
+[ext_resource type="PackedScene" uid="uid://cm18dyw32cun0" path="res://Scenes/UI/Towershop/piggy_bank_panel.tscn" id="10_2yb5k"]
+[ext_resource type="PackedScene" uid="uid://c758uc6ul1312" path="res://Scenes/UI/Towershop/income_joker_panel.tscn" id="11_dv08g"]
 
 [node name="TowerShop" type="Control"]
 custom_minimum_size = Vector2(250, 600)
@@ -53,4 +54,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="PiggyBankPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("10_2yb5k")]
+layout_mode = 2
+
+[node name="IncomeJokerPanel" parent="ScrollContainer/FlowContainer" instance=ExtResource("11_dv08g")]
 layout_mode = 2
