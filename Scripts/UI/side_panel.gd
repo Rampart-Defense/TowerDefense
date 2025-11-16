@@ -30,7 +30,9 @@ func show_buttons():
 	stopWaveButton.show()
 
 func _on_start_wave_button_down() -> void:
+	SoundManager.get_node("buttonpress").play()
 	Waves.start_wave_spawning()
 
 func _on_stop_waves_button_down() -> void:
+	SoundManager.get_node("buttonpress").play()
 	Waves.stop_wave_spawning()
