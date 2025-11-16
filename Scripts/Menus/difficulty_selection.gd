@@ -49,6 +49,7 @@ func _on_difficulty_selected(difficulty: String):
 	
 	# 2. Set up the necessary UI/Game state
 	GlobalUi.get_node("PauseMenu").can_pause = true
+	GlobalUi.get_node("PauseButton").visible = true
 	GlobalUi.get_node("SidePanel").show_all()
 	if GlobalUi.get_node("SidePanel").is_hidden:
 		GlobalUi.get_node("SidePanel").show_side_panel()
