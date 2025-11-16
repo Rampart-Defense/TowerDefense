@@ -1,6 +1,6 @@
-[gd_scene load_steps=41 format=3 uid="uid://4rp3y52xtlkb"]
+[gd_scene load_steps=41 format=3 uid="uid://qc7dtulnm1po"]
 
-[ext_resource type="Script" uid="uid://tntor02f0ngn" path="res://Scripts/Towers/buff_tower.gd" id="1_uaej4"]
+[ext_resource type="Script" path="res://Scripts/Towers/buff_tower.gd" id="1_uaej4"]
 [ext_resource type="Texture2D" uid="uid://dx5gwutsc341g" path="res://Art/VisualArt/Towers/BuffTower/Tower 08.png" id="2_n430v"]
 [ext_resource type="Texture2D" uid="uid://jkmuhtci6761" path="res://Art/VisualArt/Towers/BuffTower/Tower 08 - Level 01 - Weapon.png" id="3_y5edl"]
 [ext_resource type="Texture2D" uid="uid://c28yky1f3awfm" path="res://Art/VisualArt/Towers/BuffTower/Tower 08 - Level 02 - Weapon.png" id="4_lw1p4"]
@@ -273,7 +273,6 @@ texture = ExtResource("2_n430v")
 hframes = 3
 
 [node name="Turret" type="AnimatedSprite2D" parent="."]
-z_index = 1
 position = Vector2(0, -37.6812)
 sprite_frames = SubResource("SpriteFrames_74maw")
 animation = &"Default"

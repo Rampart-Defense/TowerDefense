@@ -796,7 +796,6 @@ texture = ExtResource("2_7beeb")
 hframes = 3
 
 [node name="Turret" type="AnimatedSprite2D" parent="."]
-z_index = 1
 position = Vector2(0, -45)
 sprite_frames = SubResource("SpriteFrames_leelw")
 animation = &"Transition"

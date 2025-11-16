@@ -234,7 +234,6 @@ texture = ExtResource("1_xhyvm")
 hframes = 3
 
 [node name="Turret" type="AnimatedSprite2D" parent="."]
-z_index = 1
 position = Vector2(0, -37.6812)
 sprite_frames = SubResource("SpriteFrames_1m4ve")
 animation = &"Default"

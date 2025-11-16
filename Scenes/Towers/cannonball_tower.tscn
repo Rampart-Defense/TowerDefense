@@ -215,7 +215,6 @@ texture = ExtResource("1_jwlm4")
 hframes = 3
 
 [node name="Turret" type="AnimatedSprite2D" parent="."]
-z_index = 1
 position = Vector2(0, -37.6812)
 sprite_frames = SubResource("SpriteFrames_svrpt")
 animation = &"Default3"
