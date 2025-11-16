@@ -11,6 +11,11 @@ var maps = {
 		"icon": "res://Art/VisualArt/UI/Menus/Mapselection/map_preview/frostbite_fields.png",
 		"mode": "easy"
 	},
+	"Verdant Meadow": {
+		"path": "res://Scenes/Maps/verdant_meadow.tscn",
+		"icon": "res://Art/VisualArt/UI/Menus/Mapselection/map_preview/verdant_meadow.png",
+		"mode": "easy"
+	},
 	"Scorched Sands": {
 		"path": "res://Scenes/Maps/scorched_sands.tscn",
 		"icon": "res://Art/VisualArt/UI/Menus/Mapselection/map_preview/scorched_sands.png",
@@ -19,12 +24,12 @@ var maps = {
 	"Oasis": {
 		"path": "res://Scenes/Maps/oasis.tscn",
 		"icon": "res://Art/VisualArt/UI/Menus/Mapselection/map_preview/oasis.png",
-		"mode": "medium"
+		"mode": "easy"
 	},
 	"Nature's Edge": {
 		"path": "res://Scenes/Maps/natures_edge.tscn",
 		"icon": "res://Art/VisualArt/UI/Menus/Mapselection/map_preview/natures_edge.png",
-		"mode": "easy"
+		"mode": "medium"
 	},
 	"Amber Fall": {
 		"path": "res://Scenes/Maps/amber_fall.tscn",
