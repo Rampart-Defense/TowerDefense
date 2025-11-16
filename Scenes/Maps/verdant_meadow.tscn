@@ -6382,6 +6382,7 @@ region_rect = Rect2(419, 1, 23, 29)
 
 [node name="Sprite2D3" type="Sprite2D" parent="TowersAndEnemyYsorter"]
 z_index = 2
+texture_filter = 1
 position = Vector2(335.374, 48.9796)
 scale = Vector2(2.4, 2.4)
 texture = ExtResource("3_j1i8s")

@@ -46,6 +46,11 @@ var maps = {
 		"icon": "res://Art/VisualArt/UI/Menus/Mapselection/map_preview/crystal_caverns.png",
 		"mode": "easy"
 	},
+	"Gemwood Grotto": {
+		"path": "res://Scenes/Maps/gemwood_grotto.tscn",
+		"icon": "res://Art/VisualArt/UI/Menus/Mapselection/map_preview/gemwood_grotto.png",
+		"mode": "medium"
+	},
 }
 
 func _ready():
