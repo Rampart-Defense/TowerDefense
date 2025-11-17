@@ -4,9 +4,9 @@ extends Control
 @onready var map_image = $MapImage as TextureRect
 @onready var map_name_label = $MapNameLabel as Label
 
-@onready var easy_button: Button = $HBoxContainer/EasyButton
-@onready var medium_button: Button = $HBoxContainer/MediumButton
-@onready var hard_button: Button = $HBoxContainer/HardButton
+@onready var easy_button: TextureButton = $HBoxContainer/EasyButton
+@onready var medium_button: TextureButton = $HBoxContainer/MediumButton
+@onready var hard_button: TextureButton = $HBoxContainer/HardButton
 
 const CUSTOM_FONT = preload("res://Art/VisualArt/UI/Fonts/Varnished.ttf")
 

@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4sh1l1hct3a6"]
+[gd_scene load_steps=9 format=3 uid="uid://b4sh1l1hct3a6"]
 
 [ext_resource type="Script" uid="uid://ckswnich5xj8m" path="res://Scripts/Menus/difficulty_selection.gd" id="1_af40x"]
 [ext_resource type="Texture2D" uid="uid://vxq8pl1b1icm" path="res://Art/VisualArt/UI/Menus/Mapselection/mapselectionbg.png" id="2_wbiky"]
-[ext_resource type="FontFile" uid="uid://c3sky53vd0g4j" path="res://Art/VisualArt/UI/Fonts/Varnished.ttf" id="3_ps14r"]
 [ext_resource type="Texture2D" uid="uid://c7cfttdrthhge" path="res://Art/VisualArt/UI/Buttons/backtomain/backtomenu.png" id="3_ye54x"]
+[ext_resource type="Texture2D" uid="uid://deh1p34byrr4p" path="res://Art/VisualArt/UI/Buttons/difficulty/medium_mode.png" id="4_6fihg"]
 [ext_resource type="Texture2D" uid="uid://cj6dogjkm3yb4" path="res://Art/VisualArt/UI/Buttons/backtomain/backpressed.png" id="4_ps14r"]
+[ext_resource type="Texture2D" uid="uid://bp26igbmtnpsg" path="res://Art/VisualArt/UI/Buttons/difficulty/easy_mode.png" id="4_rcnj2"]
+[ext_resource type="Texture2D" uid="uid://duv1ej8vsya8c" path="res://Art/VisualArt/UI/Buttons/difficulty/hard_mode.png" id="5_bjpj6"]
 [ext_resource type="Texture2D" uid="uid://dkftg8tco5g34" path="res://Art/VisualArt/UI/Buttons/backtomain/backhover.png" id="5_rcnj2"]
 
 [node name="DifficultySelection" type="Control"]
@@ -60,27 +62,37 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -85.0
-offset_top = -178.0
-offset_right = 85.0
-offset_bottom = -147.0
+offset_left = -181.0
+offset_top = -183.0
+offset_right = 67.0
+offset_bottom = -103.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(1.5, 1.5)
 
-[node name="EasyButton" type="Button" parent="HBoxContainer"]
+[node name="EasyButton" type="TextureButton" parent="HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_ps14r")
-text = "Easy"
+texture_normal = ExtResource("4_rcnj2")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="MediumButton" type="Button" parent="HBoxContainer"]
+[node name="MediumButton" type="TextureButton" parent="HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_ps14r")
-text = "Medium"
+texture_normal = ExtResource("4_6fihg")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="HardButton" type="Button" parent="HBoxContainer"]
+[node name="HardButton" type="TextureButton" parent="HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_ps14r")
-text = "Hard"
+texture_normal = ExtResource("5_bjpj6")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="BackButton" type="TextureButton" parent="."]
 layout_mode = 0

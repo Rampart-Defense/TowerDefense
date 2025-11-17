@@ -5809,11 +5809,9 @@ curve = SubResource("Curve2D_pod7n")
 
 [node name="Path_2" type="Path2D" parent="." groups=["path"]]
 visible = false
-scale = Vector2(1, 1)
 curve = SubResource("Curve2D_2n5hw")
 
 [node name="Clutter" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="Small Gemstones" type="TileMapLayer" parent="Clutter"]
 z_index = 1
@@ -5849,7 +5847,6 @@ y_sort_enabled = true
 [node name="crystal_tree_v1_1" type="Sprite2D" parent="TowersAndEnemyYsorter"]
 z_index = 2
 position = Vector2(108.844, 46.2585)
-scale = Vector2(1, 1)
 texture = ExtResource("3_ebjfx")
 region_enabled = true
 region_rect = Rect2(387, 400, 53, 106)
@@ -5857,7 +5854,6 @@ region_rect = Rect2(387, 400, 53, 106)
 [node name="crystal_tree_v1_2" type="Sprite2D" parent="TowersAndEnemyYsorter"]
 z_index = 2
 position = Vector2(202.721, 329.252)
-scale = Vector2(1, 1)
 texture = ExtResource("3_ebjfx")
 flip_h = true
 region_enabled = true
@@ -5873,7 +5869,6 @@ region_rect = Rect2(387, 400, 53, 106)
 [node name="crystal_tree_v2_1" type="Sprite2D" parent="TowersAndEnemyYsorter"]
 z_index = 2
 position = Vector2(474.83, 307.483)
-scale = Vector2(1, 1)
 texture = ExtResource("3_ebjfx")
 region_enabled = true
 region_rect = Rect2(255, 386, 56, 113)
@@ -5881,7 +5876,6 @@ region_rect = Rect2(255, 386, 56, 113)
 [node name="shrub_tree_v1_1" type="Sprite2D" parent="TowersAndEnemyYsorter"]
 z_index = 2
 position = Vector2(682.993, 98.6395)
-scale = Vector2(1, 1)
 texture = ExtResource("3_ebjfx")
 region_enabled = true
 region_rect = Rect2(326, 266, 52, 75)
@@ -5896,7 +5890,6 @@ region_rect = Rect2(68, 271, 56, 75)
 [node name="crystal_1" type="Sprite2D" parent="TowersAndEnemyYsorter"]
 z_index = 2
 position = Vector2(391.156, 38.7755)
-scale = Vector2(1, 1)
 texture = ExtResource("3_ebjfx")
 flip_h = true
 region_enabled = true
@@ -5905,7 +5898,6 @@ region_rect = Rect2(452, 393, 57, 111)
 [node name="tall_tree_1" type="Sprite2D" parent="TowersAndEnemyYsorter"]
 z_index = 2
 position = Vector2(761.224, 370.068)
-scale = Vector2(1, 1)
 texture = ExtResource("3_ebjfx")
 region_enabled = true
 region_rect = Rect2(455, 232, 48, 144)
