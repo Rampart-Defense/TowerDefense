@@ -1,7 +1,6 @@
 extends Area2D
 @export var maxHealth: int = 10
 @export var payout: int = 5
-@export var points: int = 5
 var currentHealth: int
 var goal_marker: Marker2D = null
 var has_died: bool = false
@@ -60,7 +59,6 @@ func die(win: String) -> void:
 	emit_signal("died", actual_payout_for_tracking)
 	
 	if win != "win":
-		PlayerStats.add_points(points)
 		PlayerStats.add_money(payout)
 		
 	var node_to_free = owner if owner else self

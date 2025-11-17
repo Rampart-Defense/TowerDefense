@@ -2,7 +2,6 @@ extends Node
 var _current_health: int
 var _max_health: int 
 var _money: int
-var _points: int
 var _wave: int
 var _difficulty: String
 
@@ -10,13 +9,10 @@ var _difficulty: String
 const LEVEL_DEFEAT_SCENE = preload("res://Scenes/Menus/level_defeat.tscn")
 const LEVEL_VICTORY_SCENE = preload("res://Scenes/Menus/level_victory.tscn")
 
-
 signal health_changed(new_value: int) # this is for current_health
 signal max_health_changed(new_value: int)
 signal money_changed(new_value: int)
-signal points_changed(new_value: int)
 signal wave_changed(new_value: int)
-
 
 # --- START GAME  ---
 func start_game(difficulty: String):
@@ -38,7 +34,6 @@ func start_game(difficulty: String):
 			set_difficulty("Easy")
 	set_wave(1)
 	set_current_health(_max_health)
-	set_points(0)
 
 # --- SETTERS AND GETTERS ---
 
@@ -102,12 +97,6 @@ func set_money(value: int) -> void:
 func get_money() -> int:
 	return _money
 	
-func set_difficulty(difficulty: String) -> void:
-	_difficulty = difficulty
-
-func get_difficulty() -> String:
-	return _difficulty
-
 func add_money(amount: int) -> void:
 	set_money(_money + amount)
 
@@ -117,17 +106,12 @@ func spend_money(amount: int) -> bool:
 		return true
 	return false
 
-# --- POINTS ---
-func set_points(value: int) -> void:
-	_points = max(value, 0)
-	points_changed.emit(_points)
-	
-func get_points() -> int:
-	return _points
+#--- Difficulty ---
+func set_difficulty(difficulty: String) -> void:
+	_difficulty = difficulty
 
-func add_points(amount: int) -> void:
-	set_points(_points + amount)
-
+func get_difficulty() -> String:
+	return _difficulty
 
 # --- Wave ---
 func set_wave(value: int) -> void:

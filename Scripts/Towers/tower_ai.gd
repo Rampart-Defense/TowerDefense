@@ -111,7 +111,6 @@ func _ready() -> void:
 func add_to_total_damage(value: int):
 	total_damage_dealt += value
 	tower_leveling_system.update_stats_display()
-	print("ADDED Damage: " + str(value))
 
 func _on_fire_timer_timeout() -> void:
 
