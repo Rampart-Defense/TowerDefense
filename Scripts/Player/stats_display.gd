@@ -16,11 +16,6 @@ func _ready() -> void:
 	_on_money_changed(PlayerStats.get_money())
 	_on_points_changed(PlayerStats.get_points())
 	
-
-
-
-	
-
 func _on_health_changed(new_value: int) -> void:
 	# Update the ProgressBar value.
 

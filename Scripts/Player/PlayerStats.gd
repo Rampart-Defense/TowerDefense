@@ -4,6 +4,7 @@ var _max_health: int
 var _money: int
 var _points: int
 var _wave: int
+var _difficulty: String
 
 #Signals
 const LEVEL_DEFEAT_SCENE = preload("res://Scenes/Menus/level_defeat.tscn")
@@ -24,14 +25,17 @@ func start_game(difficulty: String):
 			set_max_health(150)
 			set_current_health(150)
 			set_money(400)
+			set_difficulty("Medium")
 		"HARD":
-			set_max_health(10)
+			set_max_health(100)
 			set_current_health(100)
 			set_money(300)
+			set_difficulty("Hard")
 		# Default case for "EASY" or any other string
 		"EASY":	
 			set_max_health(200)
 			set_money(500)
+			set_difficulty("Easy")
 	set_wave(1)
 	set_current_health(_max_health)
 	set_points(0)
@@ -97,6 +101,12 @@ func set_money(value: int) -> void:
 
 func get_money() -> int:
 	return _money
+	
+func set_difficulty(difficulty: String) -> void:
+	_difficulty = difficulty
+
+func get_difficulty() -> String:
+	return _difficulty
 
 func add_money(amount: int) -> void:
 	set_money(_money + amount)

@@ -1,7 +1,11 @@
 extends Node
 
-enum Difficulty { EASY, MEDIUM, HARD }
-var difficulty: Difficulty = Difficulty.MEDIUM
+var difficulty: String
+const DIFFICULTY_WAVE_LIMITS = {
+	"Easy": 40,
+	"Medium": 60,
+	"Hard": 80,
+}
 
 # A flag to control whether new enemies can be spawned.
 var is_spawning_stopped = false
@@ -93,6 +97,7 @@ func calculate_total_enemies_in_wave(wave_info: Dictionary) -> int:
 func begin() -> void:
 	# Reset the spawning flag for the new wave
 	current_session_id += 1
+	difficulty = PlayerStats.get_difficulty()
 	is_spawning_stopped = false
 	var file = FileAccess.open(WAVES_FILE_PATH, FileAccess.READ)
 	if not file:
@@ -130,13 +135,17 @@ func start_wave() -> void:
 	current_wave += 1
 	print(current_wave)
 	PlayerStats.set_wave(current_wave)
-	if current_wave > wave_data["waves"].size():
+	
+	# Get the limit for the current difficulty
+	var max_waves = DIFFICULTY_WAVE_LIMITS[difficulty]
+		
+	if current_wave > wave_data["waves"].size() or current_wave > max_waves:
 		current_wave = 0
 		PlayerStats._handle_victory()
 		return
 
 	var wave_info = wave_data["waves"][current_wave - 1]
-	print("Starting Wave ", wave_info["wave_number"])
+	print("Starting Wave ", wave_info["wave_number"], " (Difficulty Limit: ", max_waves, ")")
 	await spawn_wave_and_wait(wave_info, current_session_id)
 	
 	
