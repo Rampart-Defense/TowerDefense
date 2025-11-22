@@ -68,6 +68,8 @@ func generate_intrest():
 
 func generate_health():
 	animation.play("Generate2")
+	if sound:
+		sound.play()
 	if PlayerStats.get_current_health() < PlayerStats.get_max_health():
 		match tower_level:
 			1:

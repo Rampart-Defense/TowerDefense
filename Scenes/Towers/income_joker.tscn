@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://ciufjmooellt4"]
+[gd_scene load_steps=43 format=3 uid="uid://ciufjmooellt4"]
 
 [ext_resource type="Script" uid="uid://bl2iqhe6gmtq5" path="res://Scripts/Towers/income_joker.gd" id="1_u1plp"]
 [ext_resource type="Script" uid="uid://d308mfqogfxi3" path="res://Scripts/UI/simple_level_up_system.gd" id="2_d6n6c"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cibmu0foalse2" path="res://Art/VisualArt/Towers/IncomeJokerTower/JokerTowerHeadIdle.png" id="5_sk5p7"]
 [ext_resource type="Texture2D" uid="uid://df3jn5soditru" path="res://Art/VisualArt/Towers/IncomeJokerTower/JokerTowerIdle2.png" id="6_rgfx3"]
 [ext_resource type="Texture2D" uid="uid://bl4ocvv2qy2qp" path="res://Art/VisualArt/Towers/IncomeJokerTower/JokerTowerFaces1.png" id="7_71crm"]
+[ext_resource type="AudioStream" uid="uid://0kisthjs2m87" path="res://Art/Audio/Towers/IncomeJoker/Incomejoker.wav" id="8_sk5p7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdxue"]
 bg_color = Color(0, 0, 0, 0.352941)
@@ -215,11 +216,12 @@ modulate_color = Color(1, 0, 0, 1)
 texture = SubResource("CanvasTexture_fie1e")
 modulate_color = Color(0, 1, 0, 1)
 
-[node name="IncomeJoker" type="Area2D" groups=["buffer_tower", "tower"]]
+[node name="IncomeJoker" type="Area2D" node_paths=PackedStringArray("sound") groups=["buffer_tower", "tower"]]
 z_index = 2
 texture_filter = 1
 scale = Vector2(0.88, 0.69)
 script = ExtResource("1_u1plp")
+sound = NodePath("MoneySound")
 
 [node name="RangeArea" type="Panel" parent="."]
 z_index = 3
@@ -349,6 +351,8 @@ position = Vector2(-0.568183, -5.58696)
 shape = SubResource("RectangleShape2D_ix5w6")
 
 [node name="MoneySound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_sk5p7")
+volume_db = -5.977
 bus = &"sfx"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
