@@ -87,6 +87,9 @@ var should_continue_waves = true
 var gold_gained_this_wave: int = 0
 
 
+func _ready() -> void:
+	self.process_mode = Node.PROCESS_MODE_PAUSABLE
+
 func calculate_total_enemies_in_wave(wave_info: Dictionary) -> int:
 	var total_enemies = 0
 	for enemy_group in wave_info["enemies"]:
@@ -189,7 +192,7 @@ func _spawn_enemy_group_after_delay(enemy_group: Dictionary, session_id: int) ->
 	var count = enemy_group["count"]
 	var spawn_delay = enemy_group["spawn_delay"]
 	
-	await get_tree().create_timer(delay_before_spawn).timeout
+	await get_tree().create_timer(delay_before_spawn, false).timeout
 	if session_id != current_session_id: return
 	
 	for i in range(count):
@@ -197,7 +200,7 @@ func _spawn_enemy_group_after_delay(enemy_group: Dictionary, session_id: int) ->
 		if is_spawning_stopped or session_id != current_session_id:
 			break
 		spawn_single_enemy(enemy_type)
-		await get_tree().create_timer(spawn_delay).timeout
+		await get_tree().create_timer(spawn_delay, false).timeout
 		if session_id != current_session_id: return
 		
 # A function to spawn a single enemy.
