@@ -53,6 +53,14 @@ A simple (but challenging!) and fun Tower Defense game built with Godot game eng
 - Buffer tower
 	- Place this tower to upgrade the damage and firing speed of other towers in its range.
 
+![PiggyBank tower lvl1 preview](Art/VisualArt/Towers/PiggyBank/PiggyBankPreview.png "PiggyBank tower lvl1")
+- PiggyBank tower
+	- Generates passive gold based on a percentage of your currently held money. The more gold you have, the more gold it earns!
+
+![IncomeJoker tower lvl1 preview](Art/VisualArt/Towers/IncomeJokerTower/IncomeJokerPreview.png "IncomeJoker tower lvl1")
+- IncomeJoker tower
+	- A gambling tower with a 50/50 chance each cycle to either generate gold (like the PiggyBank) or restore your health (based on the current difficulty).
+
 ## Maps
 - Frostbite Fields
 	- This winter themed map offers many straight lines for powerful defensive strategies.
