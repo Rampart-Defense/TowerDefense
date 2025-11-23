@@ -15,6 +15,11 @@ var placing_tower: bool = false
 #Tower lvl related
 var tower_level: int = 1
 
+#Timer variables to handle round stop and continue
+var timer_base_time: float = 10.0
+var time_left: float = 0.0
+var wave_was_stopped = false
+
 #percentual ammount for generating money
 @export var lvl1_gains: float = 0.05 # 5%
 @export var lvl2_gains: float = 0.075 # 7,5%
@@ -33,7 +38,7 @@ var money_or_health: bool = false # false = health, true = money
 const coin_icon = preload("res://Art/VisualArt/UI/SideBar/GeminiCoin.png")
 const heart_icon = preload("res://Art/VisualArt/UI/SideBar/Heart.png")
 
-@onready var timer = $MoneyTimer
+@onready var timer: Timer = $MoneyTimer
 @onready var progress_bar = $ProgressBar
 @onready var tower_base = $TowerBase
 
@@ -159,11 +164,26 @@ func get_random_outcome():
 		money_or_health = true
 
 
+
+func continue_generating_income():
+	timer.start()
+
+func stop_generating_income():
+	wave_was_stopped = true
+	if not timer.is_stopped():
+		timer.wait_time = timer.time_left
+	timer.stop()
+	
+
 func _on_tower_animation_finished() -> void:
 	_apply_visuals() 
 
 
 func _on_money_timer_timeout() -> void:
+	if wave_was_stopped:
+		timer.wait_time = timer_base_time
+		wave_was_stopped = false
+		timer.start()
 	if not placing_tower:
 		get_random_outcome()
 		generate_info_icon()

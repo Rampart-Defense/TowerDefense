@@ -173,7 +173,12 @@ func spawn_wave_and_wait(wave_info: Dictionary, session_id: int) -> void:
 	if should_continue_waves:
 		# Only start the next wave if the flag is true
 		start_wave()
+		
 	else:
+		#stop generating intrest.
+		var income_towers = get_tree().get_nodes_in_group("income_tower")
+		for income_tower in income_towers:
+			income_tower.stop_generating_income()
 		# Stop the wave progression and perhaps notify the player.
 		print("Waves are currently paused. Press Start Wave to continue.")
 		
@@ -263,6 +268,10 @@ func start_wave_spawning():
 	else: 
 		should_continue_waves = true
 		print("Wave spawing resumed.")
+		#Turn on the income towers
+		var income_towers = get_tree().get_nodes_in_group("income_tower")
+		for income_tower in income_towers:
+			income_tower.continue_generating_income()
 		start_wave()
 	
 func _calculate_end_of_round_payout(): # <--- NEW function

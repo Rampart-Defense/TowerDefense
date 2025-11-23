@@ -15,6 +15,11 @@ var placing_tower: bool = false
 #Tower lvl related
 var tower_level: int = 1
 
+#Timer variables to handle round stop and continue
+var timer_base_time: float = 10.0
+var time_left: float = 0.0
+var wave_was_stopped = false
+
 #percentual ammount for generating money
 @export var lvl1_gains: float = 0.075 # 7.5%
 @export var lvl2_gains: float = 0.1 # 10%
@@ -24,7 +29,7 @@ var tower_level: int = 1
 #Visuals
 @onready var animation =  $Tower
 
-@onready var timer = $MoneyTimer
+@onready var timer: Timer = $MoneyTimer
 @onready var progress_bar = $ProgressBar
 
 func _ready() -> void:
@@ -98,12 +103,25 @@ func get_next_payout() -> int:
 		return 0
 		
 
+func continue_generating_income():
+	
+	timer.start()
 
+func stop_generating_income():
+	wave_was_stopped = true
+	if not timer.is_stopped():
+		timer.wait_time = timer.time_left
+	timer.stop()
+	
 func _on_tower_animation_finished() -> void:
 	_apply_visuals() 
 
 
 func _on_money_timer_timeout() -> void:
+	if wave_was_stopped:
+		timer.wait_time = timer_base_time
+		wave_was_stopped = false
+		timer.start()
 	generate_intrest()
 	tower_leveling_system.update_payout_text()
 
