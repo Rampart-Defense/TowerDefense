@@ -21,20 +21,35 @@ A simple (but challenging!) and fun Tower Defense game built with Godot game eng
 - 7 unique maps, ranging from very easy to extremely difficult
 
 ## Towers
+![Archery tower lvl1 preview](Art/VisualArt/Towers/Previews/Tower1Preview.png "Archery tower lvl1")
 - Archery tower
 	- The basic crossbow tower shoots up to 3 powerful arrow projectiles dealing medium damage with medium speed.
+
+![Sniper tower lvl1 preview](Art/VisualArt/Towers/SniperTower/Tower6Preview.png "Sniper tower lvl1")
 - Sniper tower
 	- Shoots slow firing, high damaging bolts. Great for high priority targets.
+
+![Flame tower lvl1 preview](Art/VisualArt/Towers/FlameTower/Tower5Preview.png "Flame tower lvl1")
 - Flame tower
 	- Fires extremely fast low damage flameballs in a small range.
+
+![Slingshot tower lvl1 preview](Art/VisualArt/Towers/Previews/Tower3Preview.png "Slingshot tower lvl1")
 - Slingshot tower
 	- This tower lobs explosive projectiles, dealing high damage to a large group of enemies.
+
+![Lightning tower lvl1 preview](Art/VisualArt/Towers/Previews/Tower2Preview.png "Lightning tower lvl1")
 - Lightning tower
 	- These slow firing, medium damage lightning bolts stun and halt enemy movement for a short while in a large radius.
+
+![Catapult tower lvl1 preview](Art/VisualArt/Towers/Previews/Tower4Preview.png "Catapult tower lvl1")
 - Catapult tower
 	- Launches high damaging, penetrating projectiles dealing massive damage to enemies in straight lines.
+
+![Cannonball tower lvl1 preview](Art/VisualArt/Towers/CannonballTower/Tower7Preview.png "Cannonball tower lvl1")
 - Cannonball tower
 	- Upgrade this tower to shoot powerfull cannonballs up to 4 different directions.
+
+![Buffer tower lvl1 preview](Art/VisualArt/Towers/BuffTower/Tower8Preview.png "Buffer tower lvl1")
 - Buffer tower
 	- Place this tower to upgrade the damage and firing speed of other towers in its range.
 
