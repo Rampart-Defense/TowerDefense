@@ -43,6 +43,10 @@ func _on_wave_progression_paused() -> void:
 	startWaveButton.disabled = false
 	
 func _update_button_states() -> void:
+	#Make start waves button enabled at the beginning of the game
+	if Waves.current_wave == 0:
+		startWaveButton.disabled = false
+	
 	if can_start_waves:
 		stopWaveButton.disabled = true
 	else:

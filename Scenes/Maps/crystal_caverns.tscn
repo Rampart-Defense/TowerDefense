@@ -8857,6 +8857,7 @@ scale = Vector2(0.75, 0.75)
 texture = SubResource("AtlasTexture_asy8a")
 
 [node name="Debugger2" parent="." instance=ExtResource("3_sd42k")]
+visible = false
 offset_left = 627.891
 offset_top = 323.81
 offset_right = 667.891

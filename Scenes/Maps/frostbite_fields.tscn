@@ -9999,6 +9999,7 @@ tile_map_data = PackedByteArray("AABPAC0AAAAaAAgAAABPAC4AAAAaAAkAAABPAC8AAAAaAAo
 tile_set = SubResource("TileSet_c0e45")
 
 [node name="Debugger" parent="." instance=ExtResource("4_djkqo")]
+visible = false
 offset_left = 734.694
 offset_top = 225.85
 offset_right = 774.694

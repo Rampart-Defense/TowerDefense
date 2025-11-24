@@ -7936,6 +7936,7 @@ z_index = 10
 curve = SubResource("Curve2D_d4wk1")
 
 [node name="Debugger" parent="." instance=ExtResource("3_3nd7u")]
+visible = false
 offset_left = 734.694
 offset_top = 225.85
 offset_right = 774.694

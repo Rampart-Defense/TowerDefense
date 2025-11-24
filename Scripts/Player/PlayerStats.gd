@@ -75,6 +75,7 @@ func heal_player(value: int):
 func die():
 	Waves.stop_spawning_and_clear_enemies()
 	TowerUpgradeManager.close_all_tower_upgrade_menus()
+	GlobalUi.get_node("PauseButton").visible = false
 	print("Hävisit")
 	var defeat_screen = LEVEL_DEFEAT_SCENE.instantiate()
 	get_tree().root.add_child(defeat_screen)
@@ -84,6 +85,7 @@ func die():
 func _handle_victory() -> void:
 	Waves.stop_spawning_and_clear_enemies()
 	TowerUpgradeManager.close_all_tower_upgrade_menus()
+	GlobalUi.get_node("PauseButton").visible = false
 	print("all waves cleared ez w")
 	var victory_screen = LEVEL_VICTORY_SCENE.instantiate()
 	get_tree().root.add_child(victory_screen)

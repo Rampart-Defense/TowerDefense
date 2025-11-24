@@ -6693,6 +6693,7 @@ tile_map_data = PackedByteArray("AAACABcAAAAOABgAAAACABgAAAAOABkAAAADABcAAAAPABg
 tile_set = SubResource("TileSet_2rht6")
 
 [node name="Debugger" parent="." instance=ExtResource("3_k70cy")]
+visible = false
 anchors_preset = 0
 anchor_top = 0.0
 anchor_bottom = 0.0

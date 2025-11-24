@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://f523hwaqxe40"]
 
-[ext_resource type="Script" uid="uid://bhatvpleseqf3" path="res://Scripts/Menus/level_defeat.gd" id="1_whv42"]
+[ext_resource type="Script" path="res://Scripts/Menus/level_defeat.gd" id="1_whv42"]
 [ext_resource type="Texture2D" uid="uid://umc2uedo5rfr" path="res://Art/VisualArt/UI/Menus/game_end menu/banners/defeatbanner.png" id="2_kpnn3"]
 [ext_resource type="FontFile" uid="uid://c3sky53vd0g4j" path="res://Art/VisualArt/UI/Fonts/Varnished.ttf" id="3_gr861"]
 [ext_resource type="Texture2D" uid="uid://bhcn4fa7kov32" path="res://Art/VisualArt/UI/Menus/game_end menu/newgamebutton/newgamebutton.png" id="3_y7nt2"]
