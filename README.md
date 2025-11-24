@@ -63,23 +63,33 @@ A simple (but challenging!) and fun Tower Defense game built with Godot game eng
 
 ## Maps
 - Frostbite Fields
+  -	![Frostbite Fields](Art/VisualArt/UI/Menus/Mapselection/map_preview/frostbite_fields.png)
 	- This winter themed map offers many straight lines for powerful defensive strategies.
 - Scorched Sands
+  -	![Scorched Sands](Art/VisualArt/UI/Menus/Mapselection/map_preview/scorched_sands.png)
 	- This desert themed maps offers two different paths for the enemies to spawn on, forcing you to think about effective tower placement.
 - Oasis
+  -	![Oasis](Art/VisualArt/UI/Menus/Mapselection/map_preview/oasis.png)
 	- This desert themed map has enemies running around in a loop at the center of the map.
 - Nature's Edge
+  -	![Nature's Edge](Art/VisualArt/UI/Menus/Mapselection/map_preview/natures_edge.png)
 	- This jungle themed map offers long straight lines, but be careful about where you decide to place the towers.
 - Amber Fall
+  -	![Amber Fall](Art/VisualArt/UI/Menus/Mapselection/map_preview/amber_fall.png)
 	- This autumn themed map offers two very short, merging lanes.
 - Crossroads Of Doom
+  -	![Crossroads Of Doom](Art/VisualArt/UI/Menus/Mapselection/map_preview/crossroads_of_doom.png)
 	- The litmus test. The hardest map in the game centers around a hellish theme with three converging paths for enemies to spawn on.
 - Crystal Caverns
+  -	![Crystal Caverns](Art/VisualArt/UI/Menus/Mapselection/map_preview/crystal_caverns.png)
 	- These glistening caves offer straight lines for effective defense.
-
-## Upcoming features
-- Player Profiles: We're working on adding a player profile system that will track your stats and achievements across all your games.
-
+-  Verdant Meadow
+    - ![Verdant Meadow](Art/VisualArt/UI/Menus/Mapselection/map_preview/verdant_meadow.png)
+    - This map offers a forest themed setting with a calming soundtrack.
+- Gemwood Grotto
+  - ![Gemwood Grotto](Art/VisualArt/UI/Menus/Mapselection/map_preview/frostbite_fields.png)
+  - Continuation of Crystal Caverns, fight goblins in this hourglass shaped map coming from both ends.
+---
 ## Gameplay
 - Main Menu: From the main menu, select the Start Game option to begin your tower defense adventure.
 - Placing Turrets: On each level, buy turrets from the shop to place your turrets. Each turret automatically attacks enemies within its range.
