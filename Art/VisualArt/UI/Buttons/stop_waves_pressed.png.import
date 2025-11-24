@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjjhsb871d0jt"
-path="res://.godot/imported/start_wave_button.png-04f9dde17de1e0ee4d59096d8dc03103.ctex"
+uid="uid://b2o63mgeg3xas"
+path="res://.godot/imported/stop_waves_pressed.png-b23c3c1ea11a2a2c12626852b51896a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/VisualArt/UI/Buttons/start_wave_button.png"
-dest_files=["res://.godot/imported/start_wave_button.png-04f9dde17de1e0ee4d59096d8dc03103.ctex"]
+source_file="res://Art/VisualArt/UI/Buttons/stop_waves_pressed.png"
+dest_files=["res://.godot/imported/stop_waves_pressed.png-b23c3c1ea11a2a2c12626852b51896a8.ctex"]
 
 [params]
 

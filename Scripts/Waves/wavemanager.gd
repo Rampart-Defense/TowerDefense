@@ -81,11 +81,11 @@ var enemy_scenes = {
 }
 var wave_data = {}
 
+signal wave_progression_paused
 var current_wave = 0
 var enemies_alive = 0
 var should_continue_waves = true
 var gold_gained_this_wave: int = 0
-
 
 func _ready() -> void:
 	self.process_mode = Node.PROCESS_MODE_PAUSABLE
@@ -184,6 +184,7 @@ func spawn_wave_and_wait(wave_info: Dictionary, session_id: int) -> void:
 			income_tower.stop_generating_income()
 		# Stop the wave progression and perhaps notify the player.
 		print("Waves are currently paused. Press Start Wave to continue.")
+		wave_progression_paused.emit()
 		
 # A helper function to spawn a group of enemies after a specified delay.
 func _spawn_enemy_group_after_delay(enemy_group: Dictionary, session_id: int) -> void:
@@ -236,9 +237,6 @@ func _on_enemy_died(gold_value: int) -> void:
 	gold_gained_this_wave += gold_value
 	print("An enemy has died. Enemies remaining: ", enemies_alive)
 
-func _on_next_wave_button_pressed() -> void:
-	start_wave()
-
 # NEW FUNCTION to stop spawning and clear all enemies.
 func stop_spawning_and_clear_enemies() -> void:
 	# Set the flag to true to stop new enemies from spawning.
@@ -264,19 +262,23 @@ func stop_wave_spawning():
 		print("Wave spawning paused after current wave finishes.")
 	
 func start_wave_spawning():
-	# If should_continue_waves initial value is true, then call begin(). 
-	# Else the values is always false, meaning stop button was pressed and now resume spawning  
-	if should_continue_waves:
+	if current_wave == 0:
 		begin()
-	else: 
+	# If we are resuming from a paused state (stop_wave_spawning was called AND the previous wave finished)
+	elif not should_continue_waves: 
 		should_continue_waves = true
-		print("Wave spawing resumed.")
-		#Turn on the income towers
+		print("Wave spawning resumed.")
+		
+		# Turn on the income towers
 		var income_towers = get_tree().get_nodes_in_group("income_tower")
 		for income_tower in income_towers:
 			income_tower.continue_generating_income()
 		start_wave()
-	
+		
+	else:
+		print("Waves are already in progress.")
+
+
 func _calculate_end_of_round_payout(): # <--- NEW function
 	var payout_amount = floor(gold_gained_this_wave * 0.2)
 	PlayerStats.add_money(payout_amount)
