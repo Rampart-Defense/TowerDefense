@@ -47,7 +47,8 @@ func _ready() -> void:
 	_apply_visuals()
 	progress_bar.max_value = timer.wait_time
 	progress_bar.visible = false
-	
+	if not Waves.should_continue_waves and Waves.enemies_alive <= 0:
+		stop_generating_income()
 	
 
 func _process(delta: float) -> void:
