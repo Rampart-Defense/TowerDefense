@@ -18,7 +18,7 @@ A simple (but challenging!) and fun Tower Defense game built with Godot game eng
 - Up to 80 unique, progressively difficult waves
 - Boss rounds every 10 waves
 - 8 unique towers to defend your base with
-- 7 unique maps, ranging from very easy to extremely difficult
+- 9 unique maps, ranging from very easy to extremely difficult
 
 ## Towers
 ![Archery tower lvl1 preview](Art/VisualArt/Towers/Previews/Tower1Preview.png "Archery tower lvl1")
